@@ -1,0 +1,28 @@
+---
+repos:
+  - repo: https://github.com/dbt-checkpoint/dbt-checkpoint
+    rev: v2.0.3
+    hooks:
+      - id: dbt-deps
+      - id: dbt-parse
+      - id: dbt-docs-generate
+        args: ["--cmd-flags", "+t", "dev"]
+      - id: check-model-has-description
+      - id: check-model-columns-have-desc
+      - id: check-model-has-all-columns
+      - id: check-script-semicolon
+      - id: check-script-has-no-table-name
+  - repo: https://github.com/sqlfluff/sqlfluff
+    rev: 3.2.0
+    hooks:
+      - id: sqlfluff-lint
+        # For dbt projects, this installs the dbt "extras".
+        # You will need to select the relevant dbt adapter for your dialect
+        # (https://docs.getdbt.com/docs/available-adapters):
+        args: [--dialect, "postgres", --templater, "jinja"]
+        additional_dependencies:
+          ["dbt-postgres==1.8.2", "sqlfluff-templater-dbt"]
+  - repo: https://github.com/adrienverge/yamllint
+    rev: v1.35.1
+    hooks:
+      - id: yamllint

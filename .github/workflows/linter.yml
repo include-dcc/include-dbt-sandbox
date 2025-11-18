@@ -1,0 +1,38 @@
+---
+#checkov:skip=CKV2_GHA_1:skipping for now
+name: Lint Code Base
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  build:
+    name: Lint New Commits
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          # ref: ${{ github.head_ref }}
+
+      - name: Lint Code Base
+        uses: super-linter/super-linter@v7.1.0
+        env:
+          VALIDATE_ALL_CODEBASE: false
+          DEFAULT_BRANCH: main
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VALIDATE_BASH: false
+          VALIDATE_GITHUB_ACTIONS: false
+          PYTHON_BLACK_CONFIG_FILE: pyproject.toml
+          PYTHON_ISORT_CONFIG_FILE: pyproject.toml
+          MARKDOWN_CONFIG_FILE: .markdownlint.yml
+          # validate sqlfluff seperately b/c it requires seperate dep install
+          VALIDATE_SQLFLUFF: false
+          SQLFLUFF_CONFIG_FILE: .sqlfluff
+          LINTER_RULES_PATH: /

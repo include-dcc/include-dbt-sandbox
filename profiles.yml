@@ -1,0 +1,23 @@
+---
+# TODO: update to match the name dbt_project.yml
+d3b_template_dbt_project:
+  target: ci
+  outputs:
+    ci:
+      type: postgres
+      host: d3b-warehouse-aurora-prd.d3b.io
+      user: "{{ env_var('D3BWAREHOUSE_SCV_USERNAME') }}"
+      password: "{{ env_var('D3BWAREHOUSE_SCV_PASSWORD') }}"
+      port: 5432
+      dbname: postgres
+      schema: ci
+      threads: 4
+    dev:
+      dbname: postgres
+      host: d3b-warehouse-aurora-prd.d3b.io
+      pass: "{{ env_var('D3BWAREHOUSE_PASSWORD') }}"
+      port: 5432
+      schema: friedmanc1_dev_schema
+      threads: 4
+      type: postgres
+      user: "{{ env_var('D3BWAREHOUSE_USERNAME') }}"

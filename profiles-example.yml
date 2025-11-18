@@ -1,0 +1,12 @@
+d3b_template_dbt_project: # TODO: update to match the name dbt_project.yml
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: d3b-warehouse-aurora-prd.d3b.io
+      user: "{{ env_var('DB_USERNAME') }}"
+      password: "{{ env_var('DB_PASSWORD') }}"
+      port: 5432
+      dbname: postgres
+      schema: "[your_username_here]_dev_schema"
+      threads: 4

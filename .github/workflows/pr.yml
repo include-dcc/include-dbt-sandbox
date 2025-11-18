@@ -1,0 +1,60 @@
+---
+name: dbt-checkpoint
+
+on:
+  #push:
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  dbt-checkpoint:
+    runs-on: chopd3bPrd-linux-small
+    env:
+      D3BWAREHOUSE_SCV_USERNAME: ${{ vars.D3BWAREHOUSE_SCV_USERNAME }}
+      D3BWAREHOUSE_SCV_PASSWORD: ${{ secrets.D3BWAREHOUSE_SCV_PASSWORD }}
+    timeout-minutes: 15
+    steps:
+      - name: "Cleanup build folder"
+        shell: bash -l {0}
+        run: |
+          ls -la ./
+          rm -rf ./* || true
+          rm -rf ./.??* || true
+          ls -la ./
+
+      - name: ⬇️ Checkout repo
+        uses: actions/checkout@v4
+
+      - name: 🚚 Copy CI pre-commit yaml
+        shell: bash -l {0}
+        run: |
+          cp .ci_config/.pre-commit-config.yaml .pre-commit-config.yaml
+          cp .ci_config/.sqlfluff .sqlfluff
+
+      - name: 🐍 Install python
+        shell: bash -l {0}
+        run: |
+          sudo yum update && sudo yum install -y python3.11
+          python3.11 -m ensurepip --upgrade
+
+      - name: Install dbt and pre-commit
+        shell: bash -l {0}
+        run: |
+          pip3.11 install -r requirements.txt
+          pip3.11 install -r dev_requirements.txt
+
+      - name: Get changed files
+        id: get_file_changes
+        uses: trilom/file-changes-action@v1.2.4
+        with:
+          output: " "
+
+      - name: Run pre-commit
+        shell: bash -l {0}
+        run: |
+          pre-commit run --files ${{ steps.get_file_changes.outputs.files }}
