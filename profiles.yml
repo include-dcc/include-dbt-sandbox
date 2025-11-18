@@ -1,6 +1,6 @@
 ---
 # TODO: update to match the name dbt_project.yml
-d3b_template_dbt_project:
+include_dbt_sandbox:
   target: ci
   outputs:
     ci:

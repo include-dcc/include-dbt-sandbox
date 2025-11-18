@@ -2,12 +2,12 @@
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
 # TODO: update the name of the project
-name: "d3b_template_dbt_project"
+name: "include_dbt_sandbox"
 version: "1.0.0"
 
 # This setting configures which "profile" dbt uses for this project.
 # TODO: update the profile name to match the profile name in profiles.yml
-profile: "d3b_template_dbt_project"
+profile: "include_dbt_sandbox"
 
 # These configurations specify where dbt should look for different types of
 # files. The `model-paths` config, for example, states that models in this
@@ -33,7 +33,7 @@ clean-targets: # directories to be removed by `dbt clean`
 # files using the `{{ config(...) }}` macro.
 models:
   # TODO: update the model name below to match name above
-  d3b_template_dbt_project:
+  include_dbt_sandbox:
     # Config indicated by + and applies to all files under models/example/
     example:
       +materialized: view
