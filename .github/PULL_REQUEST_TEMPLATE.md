@@ -32,6 +32,10 @@ your test configuration
 
 ## Checklist
 
+Please check all of the items below before merging this pull request. If an
+item in the list below does not need to be completed, please indicate the
+reason why.
+
 - [ ] I ensured that all tables have proper source and ref definitions
 - [ ] I Defined {{ config(schema=[schema name], tags = [list, of, tags]) }} at
       the start of each script
