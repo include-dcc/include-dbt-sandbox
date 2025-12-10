@@ -1,0 +1,27 @@
+name: Export Repo to Airflow
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+    contents: read
+
+jobs:
+  build:
+    runs-on: include-linux-small
+
+    steps:
+      - uses: actions/checkout@v6
+
+      # Runs a single command using the runners shell
+      - name: list buckets that the runner has access to
+        run: aws s3 ls 
+
+      # Runs a single command using the runners shell
+      - name: list files
+        run: ls -al 
