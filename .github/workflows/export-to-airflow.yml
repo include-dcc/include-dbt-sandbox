@@ -1,0 +1,25 @@
+name: Export Repo to Airflow
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+
+permissions:
+    contents: read
+
+jobs:
+  send-to-airflow-s3-bucket:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: send repository dispatch
+        run: |
+          curl -L \
+          -X POST \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer ${{ secrets.INCLUDE_AF_PAT }}" \
+          -H "X-GitHub-Api-Version: 2022-11-28" \
+          https://api.github.com/repos/include-dcc/include-dbt-airflow-mirror/dispatches \
+          -d '{"event_type":"export-to-airflow","client_payload":{"repo": "include-dbt-sandbox", "ref": "'${{ github.ref }}'", "run_id": "'${{ github.run_id }}'"}}'
