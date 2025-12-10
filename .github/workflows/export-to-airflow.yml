@@ -19,5 +19,9 @@ jobs:
       - uses: actions/checkout@v6
 
       # Runs a single command using the runners shell
-      - name: Run a one-line script
+      - name: list buckets that the runner has access to
         run: aws s3 ls 
+
+      # Runs a single command using the runners shell
+      - name: list files
+        run: ls -al 
