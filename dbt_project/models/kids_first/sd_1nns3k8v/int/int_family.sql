@@ -9,7 +9,5 @@ external_id,
 family_type, -- not historically populated but it should be; can use logic rules to calculate
 visible,
 visibility_reason,
-visibility_comment,
-created_at,
-modified_at
+visibility_comment
 from {{ ref('src_family')}}

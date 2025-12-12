@@ -17,7 +17,5 @@ affected_status,
 species,
 visible,
 visibility_reason,
-visibility_comment,
-created_at,
-modified_at
+visibility_comment
 from {{ ref('src_participant')}}

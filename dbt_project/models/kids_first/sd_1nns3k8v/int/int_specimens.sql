@@ -25,7 +25,5 @@ specimen_status, -- should this be set as a constant for all kf studies ?
 has_matched_normal_sample, 
 visible,
 visibility_reason,
-visibility_comment,
-created_at, 
-modified_at
+visibility_comment
 from {{ ref('src_specimens')}}
