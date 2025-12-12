@@ -16,6 +16,6 @@ gender,
 affected_status,
 species,
 visible,
-visibility_reason,
+visibility_reason, -- can we standardize this a bit more? maybe release status instead of reason? and try to standardize more? 
 visibility_comment
 from {{ ref('src_participant')}}
