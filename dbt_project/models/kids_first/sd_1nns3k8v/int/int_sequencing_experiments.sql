@@ -68,4 +68,4 @@ select distinct
     -- _sdc_source_lineno,
     -- _sdc_sync_started_at,
 
-from {{ ref('src_sequencing_experiment')}}
+from {{ ref('src_sequencing_experiments')}}
