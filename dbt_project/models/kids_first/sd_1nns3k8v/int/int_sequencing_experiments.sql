@@ -24,7 +24,7 @@ select distinct
     mean_insert_size,
     mean_depth,
     total_reads,
-    mean_read_length,
+    mean_read_length
 
      /*
         TODO: discuss with bix necessary fields to include
