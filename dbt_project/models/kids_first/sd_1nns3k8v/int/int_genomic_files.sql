@@ -28,7 +28,7 @@ select distinct
 
     -- could be useful after delivery but would be null during source load
     cavatica_file_id, 
-    cavatica_volume,
+    cavatica_volume
 
     -- is sdc relevant here?
     -- _sdc_batched_at,
