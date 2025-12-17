@@ -3,6 +3,9 @@
 ) }}
 
 select distinct 
+    uuid,
+    created_at,
+    modified_at,
     specimen_id,
     dewrangle_specimen_id,
     external_sample_id,
@@ -23,5 +26,18 @@ select distinct
     has_matched_normal_sample, 
     visible,
     visibility_reason,
-    visibility_comment
+    visibility_comment,
+
+    shipment_origin,
+    concentration_mg_per_ml,
+    volume_ul,
+    shipment_date,
+    uberon_id_anatomical_site,
+    ncit_id_tissue_type,
+    ncit_id_anatomical_site,
+    spatial_descriptor,
+    preservation_method,
+    amount,
+    amount_units,
+    cell_entity 
 from {{ ref('int_specimens')}}

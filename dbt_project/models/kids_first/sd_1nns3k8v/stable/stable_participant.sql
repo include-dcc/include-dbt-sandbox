@@ -3,6 +3,9 @@
 ) }}
 
 select distinct 
+    uuid,
+    created_at, 
+    modified_at,
     study_id, 
     dewrangle_study_id, 
     participant_id, 
