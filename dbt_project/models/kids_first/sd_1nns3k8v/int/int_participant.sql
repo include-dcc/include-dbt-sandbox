@@ -4,8 +4,8 @@
 
 select distinct 
     uuid, -- we can leave this out ; it's not used,
-    created_at::date, 
-    modified_at::date,
+    created_at, 
+    modified_at,
     alias_group_id, -- we can leave this out; it's not used
     study_id as study_id, 
     lower(replace(study_id, '_', '-')) as dewrangle_study_id, 

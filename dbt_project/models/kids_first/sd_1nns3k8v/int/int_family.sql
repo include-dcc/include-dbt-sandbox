@@ -3,6 +3,9 @@
 ) }}
 
 select distinct 
+    uuid, -- we can leave this out; isn't used,
+    created_at,
+    modified_at, 
     kf_id as family_id, 
     lower(replace(kf_id, '_', '-')) as dewrangle_family_id,
     external_id, 
