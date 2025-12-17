@@ -3,6 +3,10 @@
 ) }}
 
 select distinct 
+    uuid, -- we can leave this out ; it's not used,
+    created_at::date, 
+    modified_at::date,
+    alias_group_id, -- we can leave this out; it's not used
     study_id as study_id, 
     lower(replace(study_id, '_', '-')) as dewrangle_study_id, 
     kf_id as participant_id, 
