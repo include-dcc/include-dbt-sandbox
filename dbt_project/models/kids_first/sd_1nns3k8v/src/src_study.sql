@@ -3,4 +3,4 @@
 ) }}
 
 select * 
-from {{ ref('sd_1nns3k8v_study')}}
+from {{ ref('sd_1nns3k8v_study') }}
