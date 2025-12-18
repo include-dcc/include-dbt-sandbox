@@ -3,7 +3,9 @@
 ) }}
 
 select distinct 
+    uuid,
     genomic_file_id,
+    dewrangle_genomic_file_id,
     created_at, 
     modified_at, 
     external_id,

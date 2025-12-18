@@ -3,7 +3,9 @@
 ) }}
 
 select distinct 
+    uuid,
     sequencing_experiment_id,
+    dewrangle_sequencing_experiment_id,
     sequencing_center_id,
     external_id,
     experiment_date,
@@ -14,8 +16,7 @@ select distinct
     visible,
     visibility_reason, 
     visibility_comment,
-
-  -- I think these should be included? talk with BIX
+    
     library_name,
     library_strand,
     library_prep,
@@ -25,4 +26,31 @@ select distinct
     mean_depth,
     total_reads,
     mean_read_length
+    adapter_sequencing,
+    is_adapter_trimmed,
+    read_pair_number,
+    target_capture_kit,
+    acquisition_type,
+    cdna_read,
+    cdna_read_offset,
+    cell_barcode_offset,
+    cell_barcode_read,
+    cell_barcode_size,
+    chromatography_approach,
+    end_bias,
+    enrichment_approach,
+    fraction_number,
+    fractionation_approach,
+    ion_fragmentation,
+    library_construction,
+    mass_spec_rawfile_conversion,
+    proteomics_experiment,
+    quantification_label_id,
+    quantification_labeling_method,
+    quantification_technique,
+    sequencing_mode,
+    target_cell_number,
+    umi_barcode_offset,
+    umi_barcode_read,
+    umi_barcode_size,
 from {{ ref('int_sequencing_experiment')}}

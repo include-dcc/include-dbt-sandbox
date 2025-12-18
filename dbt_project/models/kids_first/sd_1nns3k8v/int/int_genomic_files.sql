@@ -3,7 +3,9 @@
 ) }}
 
 select distinct 
+    uuid, -- we can leave this out; it's not used,
     kf_id as genomic_file_id,
+    lower(replace(kf_id, '_', '-')) as dewrangle_genomic_file_id,
     created_at, -- think these could be useful when answering questions about changes over time
     modified_at, -- ^^^
     external_id,
