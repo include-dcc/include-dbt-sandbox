@@ -3,4 +3,4 @@
 ) }}
 
 select *
-from {{ ref('sd_1nns3k8v_genomic_files')}}
+from {{ ref('sd_1nns3k8v_genomic_files') }}

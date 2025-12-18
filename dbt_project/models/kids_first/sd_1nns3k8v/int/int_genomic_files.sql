@@ -18,18 +18,18 @@ select distinct
     visibility_reason,
     visibility_comment,
 
-    -- should we discuss with bix about standardizing these values? I know ingest mapping logic has changed over time
-    data_type, 
-    file_format,
-    data_category,
-    workflow_tool,
-    workflow_type,
-    workflow_version,
-    workflow_endpoint,
-    file_version_descriptor, -- should discuss with bix about reliability of these values in dataservice currently
+  -- should we discuss with bix about standardizing these values? I know ingest mapping logic has changed over time
+  data_type, 
+  file_format,
+  data_category,
+  workflow_tool,
+  workflow_type,
+  workflow_version,
+  workflow_endpoint,
+  file_version_descriptor, -- should discuss with bix about reliability of these values in dataservice currently
 
-    -- could be useful after delivery but would be null during source load
-    cavatica_file_id, 
-    cavatica_volume
+  -- could be useful after delivery but would be null during source load
+  cavatica_file_id, 
+  cavatica_volume
 
 from {{ ref('src_genomic_files') }}

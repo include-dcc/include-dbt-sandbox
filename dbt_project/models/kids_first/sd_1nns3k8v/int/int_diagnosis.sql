@@ -20,4 +20,4 @@ select distinct
     uberon_id_tumor_location,
     spatial_descriptor
    
-from {{ ref('src_diagnosis')}}
+from {{ ref('src_diagnosis') }}

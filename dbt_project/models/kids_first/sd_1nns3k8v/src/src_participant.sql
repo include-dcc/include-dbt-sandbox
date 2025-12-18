@@ -3,5 +3,5 @@
 ) }}
 
 select *
-from {{ ref('sd_1nns3k8v_participants')}}
+from {{ ref('sd_1nns3k8v_participants') }}
 
