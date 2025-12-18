@@ -7,7 +7,7 @@ select distinct
     modified_at,
     uuid, 
     visible,
-    sequencing_experimen_id, 
+    sequencing_experiment_id, 
     genomic_file_id,
     external_id, 
     segf_id,
