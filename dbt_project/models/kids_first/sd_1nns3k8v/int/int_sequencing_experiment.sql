@@ -26,7 +26,7 @@ select distinct
     mean_insert_size,
     mean_depth,
     total_reads,
-    mean_read_length
+    mean_read_length,
     adapter_sequencing,
     is_adapter_trimmed,
     read_pair_number,
@@ -53,6 +53,6 @@ select distinct
     target_cell_number,
     umi_barcode_offset,
     umi_barcode_read,
-    umi_barcode_size,
+    umi_barcode_size
 
 from {{ ref('src_sequencing_experiments') }}
