@@ -30,15 +30,4 @@ select distinct
     cavatica_file_id, 
     cavatica_volume
 
-    -- is sdc relevant here?
-    -- _sdc_batched_at,
-    -- _sdc_extracted_at,
-    -- _sdc_deleted_at,
-    -- _sdc_received_at,
-    -- _sdc_table_version,
-    -- _sdc_sequence,
-    -- _sdc_source_file,
-    -- _sdc_source_lineno,
-    -- _sdc_sync_started_at,
-
 from {{ ref('src_genomic_files') }}
