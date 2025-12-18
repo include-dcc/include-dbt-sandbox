@@ -13,7 +13,7 @@ select distinct
     instrument_model,
     visible,
     visibility_reason, 
-    visibility_comment
+    visibility_comment,
 
   -- I think these should be included? talk with BIX
     library_name,
@@ -56,16 +56,5 @@ select distinct
     -- umi_barcode_offset,
     -- umi_barcode_read,
     -- umi_barcode_size,
-
-    -- are these relevant? not sure what sdc is
-    -- _sdc_batched_at,
-    -- _sdc_extracted_at,
-    -- _sdc_deleted_at,
-    -- _sdc_received_at,
-    -- _sdc_table_version,
-    -- _sdc_sequence,
-    -- _sdc_source_file,
-    -- _sdc_source_lineno,
-    -- _sdc_sync_started_at,
 
 from {{ ref('src_sequencing_experiments')}}
