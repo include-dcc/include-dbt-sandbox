@@ -26,6 +26,7 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
+.python-version
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -126,6 +127,9 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+# sqlfluff
+.sqlfluff
+
 ##########################
 ## macOS.gitignore
 ##########################
@@ -162,3 +166,4 @@ target/
 dbt_packages/
 logs/
 .user.yml
+/dbt_project/seeds
