@@ -1,3 +1,12 @@
+"""
+This DAG is a tutorial example DAG that demonstrates the basic structure
+of an Airflow DAG and how to use the BashOperator. It's taken from the
+Airflow documentation here https://airflow.apache.org/docs/apache-airflow/stable/tutorial/fundamentals.html.
+
+This dag prints the current date, then sleeps for 5 seconds, and finally
+runs a templated bash command that prints the execution date 5 times.
+"""
+
 import textwrap
 from datetime import datetime, timedelta
 

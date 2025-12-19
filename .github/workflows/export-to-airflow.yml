@@ -1,8 +1,6 @@
 name: Export Repo to Airflow
 
-# Controls when the workflow will run
 on:
-  # Triggers the workflow on push events but only for the "main" branch
   push:
     branches: [ "main" ]
 
