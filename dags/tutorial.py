@@ -51,7 +51,7 @@ with DAG(
     # t1, t2 and t3 are examples of tasks created by instantiating operators
     t1 = BashOperator(
         task_id="print_python_version",
-        bash_command="python --version",
+        bash_command="python3 --version",
     )
 
     t2 = BashOperator(
