@@ -2,7 +2,7 @@
 
 The tools used to run and deploy dbt models are hosted in AWS and require setup
 to use. This guide describes the steps needed to connect to hosted
-infrastructure the first as well as what is needed to authenticate after
+infrastructure the first time, as well as what is needed to authenticate after
 first-time setup.
 
 ## First Time Setup
