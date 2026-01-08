@@ -52,7 +52,7 @@ The Kids First assigned kf id that represents a participant. In the format, "PT_
 The Kids First assigned kf id that represents a family. In the format, "FM_XXXXXXXX"
 {% enddocs %}
 
-{% docs biospecimen_id %}
+{% docs specimen_id %}
 The Kids First assigned kf id that represents a biospecimen. In the format, "BS_XXXXXXXX"
 {% enddocs %}
 
@@ -270,8 +270,344 @@ The ID of the term from Systematized Nomenclature of Medicine --Clinical Terms w
 
 ### sequencing experiment fields
 
+{% docs dewrangle_sequencing_experiment_id %} 
+The dewrangle generated id for a phenotype. This id is a lower-cased version of the corresponding kf id.
+{% enddocs %}
 
+{% docs sequencing_center_id %}
+The kf_id of the sequencing center.
+{% enddocs %}
 
+{% docs experiment_date %}
+Date of the sequencing experiment conducted. Not actively populated.
+{% enddocs %}
+
+{% docs experiment_strategy %}
+Text term that represents the Library strategy.
+{% enddocs %}
+
+{% docs is_paired_end %}
+Boolean term specifies whether reads have paired end.
+{% enddocs %}
+
+{% docs platform %}
+Name of the platform used to obtain data.
+{% enddocs %}
+    
+{% docs instrument_model %}
+Text term that represents the model of instrument.
+{% enddocs %}
+
+{% docs library_name %}
+Text term that represents the name of the library.
+{% enddocs %}
+
+{% docs library_strand %}
+Text term that represents the library stranded-ness.
+{% enddocs %}
+
+{% docs library_prep %}
+Text term that describes the library preparation method.
+{% enddocs %}
+
+{% docs library_selection %}
+Text term that describes the library selection method.
+{% enddocs %}
+
+{% docs max_insert_size %}
+Maximum size of the fragmented DNA.
+{% enddocs %}
+
+{% docs mean_insert_size %}
+Mean size of the fragmented DNA.
+{% enddocs %}
+
+{% docs mean_depth %}
+Mean depth or coverage describes the amount of sequence data that is available per position in the sequenced genome territory.
+{% enddocs %}
+
+{% docs total_reads %}
+Total reads of the sequencing experiment.
+{% enddocs %}
+
+{% docs mean_read_length %}
+Mean lenth of the reads.
+{% enddocs %}
+
+{% docs adapter_sequencing %}
+Specifies the base sequence of the sequencing adapter. 
+{% enddocs %}
+
+{% docs is_adapter_trimmed %}
+Indicates whether the FASTQ file has undergone adapter trimming.
+{% enddocs %}
+
+{% docs read_pair_number %}
+Identifies the specific target capture kit utilized. Can be either the production-level kit name or a file path.
+{% enddocs %}
+
+{% docs target_capture_kit %}
+Identifies the specific target capture kit utilized. Can be either the production-level kit name or a file path.
+{% enddocs %}
+
+{% docs acquisition_type %}
+Data acquisition type.
+{% enddocs %}
+
+{% docs cdna_read %}
+The type of read that contains the cDNA read.
+{% enddocs %}
+
+{% docs cdna_read_offset %}
+The offset in sequence for the cDNA read.
+{% enddocs %}
+
+{% docs cell_barcode_offset %}
+The offset in sequence of the cell identifying barcode.
+{% enddocs %}
+
+{% docs cell_barcode_read %}
+The type of read that contains the cell barcode.
+{% enddocs %}
+
+{% docs cell_barcode_size %}
+The size of the cell identifying barcode.
+{% enddocs %}
+
+{% docs chromatography_approach %}
+Column type used for liquid chromatography.
+{% enddocs %}
+
+{% docs end_bias %}
+The end of the cDNA molecule that is preferentially sequenced.
+{% enddocs %}
+
+{% docs enrichment_approach %}
+Enrichment method used for phospho, ubiquitin,acetyl, or other enrichment.
+{% enddocs %}
+
+{% docs fraction_number %}
+Number of fractions generated for sample.
+{% enddocs %}
+
+{% docs fractionation_approach %}
+Method used to fractionate sample.
+{% enddocs %}
+
+{% docs ion_fragmentation %}
+Reporter ion MS level.
+{% enddocs %}
+
+{% docs library_construction %}
+The library construction method (including version) that was used
+{% enddocs %}
+
+{% docs mass_spec_rawfile_conversion %}
+Method of converting raw spectra files to XML-based format.
+{% enddocs %}
+
+{% docs proteomics_experiment %}
+The type of omics experiment that the sample was subject to.
+{% enddocs %}
+
+{% docs quantification_label_id %}
+Specific label used or NA if label-free.
+{% enddocs %}
+
+{% docs quantification_labeling_method %}
+Method used for labeling or NA if label-free.
+{% enddocs %}
+
+{% docs quantification_technique %}
+Approach used for peptide quantification.
+{% enddocs %}
+
+{% docs sequencing_mode %}
+The modes of sequencing technology.
+{% enddocs %}
+
+{% docs target_cell_number %}
+The target number of cells per experiment or library.
+{% enddocs %}
+
+{% docs umi_barcode_offset %}
+The offset in sequence of the UMI identifying barcode.
+{% enddocs %}
+
+{% docs umi_barcode_read %}
+The type of read that contains the UMI barcode.
+{% enddocs %}
+
+{% docs umi_barcode_siz %}
+The size of the UMI identifying barcode.
+{% enddocs %}
+
+### specimen fields
+
+{% docs dewrangle_specimen_id %}
+The dewrangle generated id for a specimen. This id is a lower-cased version of the corresponding kf id, which replaces the pre-fix "BS_" with "bs-".
+{% enddocs %}
+
+{% docs external_sample_id %}
+Name given to sample by contributor.
+{% enddocs %}
+
+{% docs external_aliquot_id %}
+Name given to aliquot by contributor.
+{% enddocs %}
+
+{% docs source_text_tissue_type %}
+Description of the kind of biospecimen collected.
+{% enddocs %}
+
+{% docs composition %}
+The cellular composition of the biospecimen.
+{% enddocs %}
+
+{% docs source_text_anatomical_site %}
+The anatomical location of collection.
+{% enddocs %}
+
+{% docs source_text_tumor_descriptor %}
+Disease present in the biospecimen.
+{% enddocs %}
+
+{% docs analyte_type %}
+The molecular description of the aliquot.
+{% enddocs %}
+
+{% docs dbgap_consent_code %}
+Consent classification code from dbgap.
+{% enddocs %}
+
+{% docs consent_type %}
+Short name of consent.
+{% enddocs %}
+
+{% docs method_of_sample_procurement %}
+The method used to procure the sample used to extract analyte(s).
+{% enddocs %}
+
+{% docs sample_id %}
+The kf_id of the sample this specimen comes from.
+{% enddocs %}
+
+{% docs specimen_status %}
+Whether the specimen is available for further processing in the biorepository.
+{% enddocs %}
+
+{% docs has_matched_normal_sample %}
+Indicates if the biospecimen has a matched normal sample.
+{% enddocs %}
+
+{% docs shipment_origin %}
+The original site of the aliquot.
+{% enddocs %}
+
+{% docs concentration_mg_per_ml %}
+The concentration of the aliquot.
+{% enddocs %}
+
+{% docs volume_ul %}
+The volume of the aliquot.
+{% enddocs %}
+
+{% docs shipment_date %}
+The date the aliquot was shipped.
+{% enddocs %}
+
+{% docs uberon_id_anatomical_site %}
+The ID of the term from Uber-anatomy ontology which represents harmonized anatomical ontologies.
+{% enddocs %}
+
+{% docs ncit_id_tissue_type %}
+The ID term from the National CancerInstitute Thesaurus which represents a harmonized tissue_type.
+{% enddocs %}
+
+{% docs ncit_id_anatomical_site %}
+The ID term from the NationalCancer Institute Thesaurus which represents a harmonized anatomical_site.
+{% enddocs %}
+
+{% docs spatial_descriptor %}
+Ontology term that harmonizes thespatial concepts from Biological Spatial Ontology.
+{% enddocs %}
+
+{% docs preservation_method %}
+Text term that represents the method used to preserve the sample.
+{% enddocs %}
+
+{% docs amount %}
+The amount of the aliquot.
+{% enddocs %}
+
+{% docs amount_units %}
+The units of the amount of the aliquot.
+{% enddocs %}
+
+{% docs cell_entity %}
+The type of single cell entity.
+{% enddocs %}
+
+### study fields 
+{% docs data_access_authority %}
+Not actively populated.
+{% enddocs %}
+
+{% docs version %}
+dbGaP version.
+{% enddocs %}
+
+{% docs name %}
+Name or title of study.
+{% enddocs %}
+
+{% docs short_name %}
+Short name for study.
+{% enddocs %}
+
+{% docs attribution %}
+Link to attribution prose provided by dbGaP.
+{% enddocs %}
+
+{% docs release_status %}
+Release status of the study.
+{% enddocs %}
+
+{% docs dewrangle_study_id %}
+The dewrangle generated id for a study. This id is a lower-cased version of the corresponding kf id, which replaces the pre-fix "SD_" with "sd-".
+{% enddocs %}
+
+{% docs short_code %}
+Alphanumeric string to identify the study.
+{% enddocs %}
+
+{% docs domain %}
+The diagnosis domain of the study (e.g. Cancer).
+{% enddocs %}
+
+{% docs program %}
+The project/program the study is a part of.
+{% enddocs %}
+
+{% docs parent_study_id %}
+KF ID of the parent study.
+{% enddocs %}
+
+{% docs biobank_email %}
+Email for study biobank or source of specimens.
+{% enddocs %}
+
+{% docs biobank_name %}
+Name of study biobank or source of specimens.
+{% enddocs %}
+
+{% docs biobank_request_instructions %}
+Instructions for requesting specimens from study biobank.
+{% enddocs %}
+
+{% docs biobank_request_link  %}
+Link to request specimens from study biobank.
+{% enddocs %}
 
 
 
