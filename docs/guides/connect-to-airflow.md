@@ -1,6 +1,6 @@
 # How to connect to the hosted Airflow instance
 
-This guide documents how to connected to the AWS hosted Airflow instance
+This guide documents how to connect to the AWS hosted Airflow instance
 
 ## First Time Setup
 
