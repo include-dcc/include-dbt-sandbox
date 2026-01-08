@@ -254,8 +254,8 @@ models:
     - name: genomic_file_id
       description: '{{ doc("genomic_file_id") }}'
 
-- name: src_sequencing_experiment
-  description: '{{ doc("src_sequencing_experiment") }}'
+- name: src_sequencing_experiments
+  description: '{{ doc("src_sequencing_experiments") }}'
   columns: 
     - name: uuid
       description: '{{ doc("uuid") }}'

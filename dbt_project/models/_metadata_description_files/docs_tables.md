@@ -34,6 +34,10 @@ Kids First Dataservice source table for harmonized conditions curated to HPO cod
 Kids First Dataservice source table for linking sequencing experiments to genomic files. Multiple files can be linked to one sequencing experiment.
 {% enddocs %}
 
+{% docs src_sequencing_experiments %}
+Kids First Dataservice source table for sequencing experiments that holds sequencing metadata. 
+{% enddocs %}
+
 {% docs src_specimens %}
 Kids First Dataservice source table for biospecimen information. Contains specimen collection information and specimen material information, as well as VBR specific entities to support CBTN VBR fields. Each row represents one aliquot per participant. 
 {% enddocs %}
@@ -76,6 +80,10 @@ Intermediate table for src_phenotype. Transforms dataservice entities for better
 Intermediate table for src_segf. Transforms dataservice entities for better usability and clarity. Excludes certain entites that are not needed.
 {% enddocs %}
 
+{% docs int_sequencing_experiment %}
+Intermediate table for src_sequencing_experiments. Transforms dataservice entities for better usability and clarity. Excludes certain entites that are not needed.
+{% enddocs %}
+
 {% docs int_specimens %}
 Intermediate table for src_specimens. Transforms dataservice entities for better usability and clarity. Excludes certain entites that are not needed.
 {% enddocs %}
@@ -98,7 +106,7 @@ Stable table for int_diagnosis. Finalized mapping of transformed dataservice ent
 Stable table for int_family. Finalized mapping of transformed dataservice entities that are ready to be brought into the access layer.
 {% enddocs %}
 
-{% docs stable_genomic_files %}
+{% docs stable_genomic_file %}
 Stable table for int_families. Finalized mapping of transformed dataservice entities that are ready to be brought into the access layer.
 {% enddocs %}
 
@@ -116,6 +124,10 @@ Stable table for int_phenotype. Finalized mapping of transformed dataservice ent
 
 {% docs stable_segf %}
 Stable table for int_segf. Finalized mapping of transformed dataservice entities that are ready to be brought into the access layer.
+{% enddocs %}
+
+{% docs stable_sequencing_experiment %}
+Stable table for int_sequencing_experiment. Finalized mapping of transformed dataservice entities that are ready to be brought into the access layer.
 {% enddocs %}
 
 {% docs stable_specimens %}

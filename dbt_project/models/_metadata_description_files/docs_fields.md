@@ -28,7 +28,7 @@ Flags visbility of a record in Kids First Dataservice. Used in downstream operat
 Gives justification for the value in the visible column from a set of enums. Set by the data analyst at the time of ingest and modified as needed. Only for internal use.
 {% enddocs %}
 
-{% docs visbility_comment %}
+{% docs visibility_comment %}
 Additional details for the visbility reason. Typically notes the associated jira ticket number when applicable. Set by the data analyst at the time of ingest and modified as needed. Only for internal use. 
 {% enddocs %}
 
@@ -56,7 +56,7 @@ The Kids First assigned kf id that represents a family. In the format, "FM_XXXXX
 The Kids First assigned kf id that represents a biospecimen. In the format, "BS_XXXXXXXX"
 {% enddocs %}
 
-{% docs genomimc_file_id %}
+{% docs genomic_file_id %}
 The Kids First assigned kf id that represents a genomic file. In the format, "GF_XXXXXXXX"
 {% enddocs %}
 
@@ -84,6 +84,10 @@ The Kids First assigned kf id that represents a phenotype. In the format, "PH_XX
 Age at the time of event occurred in number of days since birth
 {% enddocs %}
 
+{% docs name %}
+For investigator tables: the full name of the investigator. For study tables: the title of the study.
+{% enddocs %}
+
 ### diagnosis fields
 
 {% docs dewrangle_diagnosis_id %}
@@ -102,10 +106,6 @@ The ID of the term from the Monary Disease Ontology which represents a harmonize
 The ID of the term from the International Classification of Diseases which represents harmonized diagnosis. Not actively populated.
 {% enddocs %}
 
-{% docs observed %}
-Value that denotes whether a condition has been observed in a patient. This is a constant value added to the diagnosis intermediate tables, since every condition in the diagnosis is implied to be observed. Added to explicitly show observed value and more closely match the phenotype table.
-{% enddocs %}
-
 {% docs diagnosis_category%}
 High level diagnosis categorization. Not actively populated.
 {% enddocs %}
@@ -116,10 +116,6 @@ Only applicable for cancer studies. Represents the location of the tumor.
 
 {% docs uberon_id_tumor_location %}
 The ID of the term from Uber anatomy ontology which represents harmonized anatomical ontologies. Not actively populated.
-{% enddocs %}
-
-{% docs spatial_descriptor %}
-Ontology term that harmonizes thespatial concepts from Biological Spatial Ontology. Not actively populated.
 {% enddocs %}
 
 ### family fields
@@ -202,10 +198,6 @@ Indicates the CAVATICA volume ID, mediating cloud storage access. Popualted and 
 
 {% docs dewrangle_investigator_id %}
 The dewrangle generated id for an investigator. This id is a lower-cased version of the corresponding kf id.
-{% enddocs %}
-
-{% docs name %}
-The full name of the investigator
 {% enddocs %}
 
 {% docs institution %}
@@ -438,7 +430,7 @@ The offset in sequence of the UMI identifying barcode.
 The type of read that contains the UMI barcode.
 {% enddocs %}
 
-{% docs umi_barcode_siz %}
+{% docs umi_barcode_size %}
 The size of the UMI identifying barcode.
 {% enddocs %}
 
@@ -555,10 +547,6 @@ Not actively populated.
 
 {% docs version %}
 dbGaP version.
-{% enddocs %}
-
-{% docs name %}
-Name or title of study.
 {% enddocs %}
 
 {% docs short_name %}
