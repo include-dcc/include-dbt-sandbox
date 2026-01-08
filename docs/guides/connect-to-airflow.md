@@ -11,7 +11,7 @@ the first time setup again.
 
 ## Connecting to Airflow
 
-1. run the command `saml2aws login`. When using this tool, you will want to connect create a
+1. run the command `saml2aws login`. When using this tool, you will want to create a
 profile for the AWS account `373997854230`.
 2. Navigate to the `ssm_forward_to_mwaa` directory within the `devops_utils`
 repository you cloned on to your machine during first time setup
