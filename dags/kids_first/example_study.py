@@ -1,5 +1,5 @@
 import os
-from datetime import datetime, timedelta
+from datetime import datetime
 
 from cosmos import (
     DbtDag,
@@ -10,31 +10,26 @@ from cosmos import (
 )
 
 profile_config = ProfileConfig(
-    profile_name="d3b_study_transform",
-    target_name="dev",
-    profiles_yml_filepath="/opt/airflow/dbt/profiles.yml",
+    profile_name=os.environ["DBT_PROFILE_NAME"],
+    profiles_yml_filepath=os.environ["DBT_PROFILES_YML_PATH"],
+    target_name="prd",
 )
 
-access_dag = DbtDag(
+example_study_dag = DbtDag(
     project_config=ProjectConfig(
-        "/opt/airflow/dbt/deidentified_etl",
-        # todo uncomment the line below and remove the corresponding,
-        # `install_deps` operator arg
-        # install_dbt_deps=True, #this is a feature coming in v1.9
+        os.environ["DBT_PROJECT_DIR"],
+        install_dbt_deps=True,
     ),
     profile_config=profile_config,
     execution_config=ExecutionConfig(
-        dbt_executable_path=f"{os.environ['AIRFLOW_HOME']}/dbt_venv/bin/dbt",
+        dbt_executable_path=os.environ["DBT_EXECUTABLE_PATH"],
     ),
     render_config=RenderConfig(select=["config.meta.study:kf_example_study"]),
-    operator_args={
-        "install_deps": True,
-    },
     # normal dag parameters
     schedule="@daily",
     start_date=datetime(2026, 1, 1),
     catchup=False,
     dag_id="kf_example_study",
     tags=["POC", "Kids First"],
-    # default_args={"retries": 2},
+    default_args={"retries": 2},
 )
