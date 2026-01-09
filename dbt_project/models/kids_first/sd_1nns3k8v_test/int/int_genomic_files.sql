@@ -3,20 +3,20 @@
 ) }}
 
 select distinct 
-    uuid, -- we can leave this out; it's not used,
-    kf_id as genomic_file_id,
-    lower(replace(kf_id, '_', '-')) as dewrangle_genomic_file_id,
-    created_at, -- think these could be useful when answering questions about changes over time
-    modified_at, -- ^^^
-    external_id,
-    is_harmonized,
-    reference_genome,
-    controlled_access, -- would be nice to incorporate mappung logic for this field based on file type, location and harmonization
-    availability,
-    paired_end,
-    visible,
-    visibility_reason,
-    visibility_comment,
+  uuid, -- we can leave this out; it's not used,
+  kf_id as genomic_file_id,
+  lower(replace(kf_id, '_', '-')) as dewrangle_genomic_file_id,
+  created_at, -- think these could be useful when answering questions about changes over time
+  modified_at, -- ^^^
+  external_id,
+  is_harmonized,
+  reference_genome,
+  controlled_access, -- would be nice to incorporate mappung logic for this field based on file type, location and harmonization
+  availability,
+  paired_end,
+  visible,
+  visibility_reason,
+  visibility_comment,
 
   -- should we discuss with bix about standardizing these values? I know ingest mapping logic has changed over time
   data_type, 
