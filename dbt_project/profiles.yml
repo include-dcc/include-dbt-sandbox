@@ -2,15 +2,6 @@
 include_dbt_sandbox:
   target: ci
   outputs:
-    ci:
-      type: postgres
-      host: "{{ env_var('INCLUDEWAREHOUSE_HOST') }}"
-      user: "{{ env_var('INCLUDEWAREHOUSE_SCV_USERNAME') }}"
-      password: "{{ env_var('INCLUDEWAREHOUSE_SCV_PASSWORD') }}"
-      port: 5432
-      dbname: postgres
-      schema: ci
-      threads: 4
     dev:
       dbname: postgres
       host: "{{ env_var('INCLUDEWAREHOUSE_HOST') }}"
