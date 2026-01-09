@@ -1,0 +1,6 @@
+version: 2
+seeds: 
+  - name: ds_ses
+    config: 
+      column_types: 
+        total_reads: bigint 
