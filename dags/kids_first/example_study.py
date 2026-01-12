@@ -27,9 +27,6 @@ example_study_dag = DbtDag(
     render_config=RenderConfig(select=["config.meta.study:kf_example_study"]),
     # normal dag parameters
     schedule="@daily",
-    start_date=datetime(2026, 1, 1),
-    catchup=False,
     dag_id="kf_example_study",
     tags=["POC", "Kids First"],
-    default_args={"retries": 2},
 )

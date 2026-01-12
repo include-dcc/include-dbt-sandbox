@@ -19,6 +19,10 @@ seed-paths: ["seeds"]
 macro-paths: ["macros"]
 snapshot-paths: ["snapshots"]
 
+# Note that this the dbt version here should align with the dbt version
+# specified in requirements.txt and with the dbt version installed in the Airflow
+# environment. That installation is managed here:
+# https://github.com/d3b-center/aws-infra-d3b-accounts/blob/main/mwaa/terraform/include/us-east-1/prd/startup_script.sh
 require-dbt-version: [">=1.10.0", "<1.11.0"]
 
 target-path: "target" # directory which will store compiled SQL files
