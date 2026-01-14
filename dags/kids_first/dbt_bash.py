@@ -48,3 +48,4 @@ with DAG(
     t2 = BashOperator(
         task_id="list_files_in_dbt_project",
         bash_command="ls -la " + Variable.get("DBT_PROJECT_DIR"),
+    )
