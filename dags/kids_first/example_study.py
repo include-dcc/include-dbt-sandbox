@@ -1,4 +1,5 @@
 import os
+from airflow.sdk import Variable
 from datetime import datetime
 
 from cosmos import (
@@ -10,19 +11,19 @@ from cosmos import (
 )
 
 profile_config = ProfileConfig(
-    profile_name=os.environ.get("DBT_PROFILE_NAME", "default"),
-    profiles_yml_filepath=os.environ.get("DBT_PROFILES_YML_PATH", "default"),
+    profile_name=Variable.get("DBT_PROFILE_NAME"),
+    profiles_yml_filepath=Variable.get("DBT_PROFILES_YML_PATH"),
     target_name="prd",
 )
 
 example_study_dag = DbtDag(
     project_config=ProjectConfig(
-        os.environ.get("DBT_PROJECT_DIR", "default"),
+        Variable.get("DBT_PROJECT_DIR"),
         install_dbt_deps=True,
     ),
     profile_config=profile_config,
     execution_config=ExecutionConfig(
-        dbt_executable_path=os.environ.get("DBT_EXECUTABLE_PATH", "default"),
+        dbt_executable_path=Variable.get("DBT_EXECUTABLE_PATH"),
     ),
     render_config=RenderConfig(select=["config.meta.study:kf_example_study"]),
     # normal dag parameters
