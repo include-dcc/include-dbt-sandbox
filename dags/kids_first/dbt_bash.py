@@ -45,7 +45,3 @@ with DAG(
         task_id="dbt_version",
         bash_command=f"{os.environ['AIRFLOW_HOME']}/dbt_venv/bin/dbt --version",
     )
-    t2 = BashOperator(
-        task_id="list_files_in_dbt_project",
-        bash_command="ls -la usr/local/airflow/dags",
-    )
