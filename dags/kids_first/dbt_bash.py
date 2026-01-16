@@ -50,9 +50,9 @@ with DAG(
     def check_for_warehouse_host_var():
         warehouse_host = Variable.get("INCLUDEWAREHOUSE_HOST", default=None)
         if warehouse_host:
-            print("WAREHOUSE_HOST exists!")
+            print("INCLUDEWAREHOUSE_HOST exists!")
         else:
-            print("WAREHOUSE_HOST variable is not set.")
+            print("INCLUDEWAREHOUSE_HOST variable is not set.")
 
     t2 = PythonOperator(
         task_id="check_for_warehouse_host_var",

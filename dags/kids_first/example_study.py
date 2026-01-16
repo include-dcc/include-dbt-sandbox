@@ -9,11 +9,14 @@ from cosmos import (
     ExecutionConfig,
     RenderConfig,
 )
+from cosmos.profiles import PostgresUserPasswordProfileMapping
 
 profile_config = ProfileConfig(
     profile_name=Variable.get("DBT_PROFILE_NAME"),
-    profiles_yml_filepath=Variable.get("DBT_PROFILES_YML_PATH"),
     target_name="prd",
+    profile_mapping=PostgresUserPasswordProfileMapping(
+        conn_id="postgres_dev_svc"
+    ),
 )
 
 example_study_dag = DbtDag(
