@@ -1,0 +1,12 @@
+seeds:
+    - name: alphabet_grouping
+      config:
+        schema: kf
+      description: |
+        An example seed file that groups letters of the alphabet. This seed is
+        used by the kids first example study models.
+      columns:
+        - name: letter
+          description: A letter of the alphabet
+        - name: letter_grouping
+          description: The grouping that the letter belongs to
