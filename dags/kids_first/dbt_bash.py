@@ -7,6 +7,7 @@ from airflow.models.dag import DAG
 
 # Operators; we need this to operate!
 from airflow.operators.bash import BashOperator
+from airflow.operators.python import PythonOperator
 
 with DAG(
     "dbt_bash_status",
@@ -44,4 +45,16 @@ with DAG(
     t1 = BashOperator(
         task_id="dbt_version",
         bash_command=f"{os.environ['AIRFLOW_HOME']}/dbt_venv/bin/dbt --version",
+    )
+
+    def check_for_warehouse_host_var():
+        warehouse_host = Variable.get("INCLUDEWAREHOUSE_HOST", default_var=None)
+        if warehouse_host:
+            print("WAREHOUSE_HOST exists!")
+        else:
+            print("WAREHOUSE_HOST variable is not set.")
+
+    t2 = PythonOperator(
+        task_id="check_for_warehouse_host_var",
+        python_callable=check_for_warehouse_host_var,
     )
