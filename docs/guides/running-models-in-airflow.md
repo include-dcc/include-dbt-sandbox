@@ -43,8 +43,7 @@ sections. The purpose of this DAG is to run models in the study
 `kf_example_study` every day.
 
 ```python
-import os
-from datetime import datetime
+from airflow.sdk import Variable
 
 from cosmos import (
     DbtDag,
@@ -53,30 +52,31 @@ from cosmos import (
     ExecutionConfig,
     RenderConfig,
 )
+from cosmos.profiles import PostgresUserPasswordProfileMapping
 
 profile_config = ProfileConfig(
-    profile_name=os.environ["DBT_PROFILE_NAME"],
-    profiles_yml_filepath=os.environ["DBT_PROFILES_YML_PATH"],
+    profile_name=Variable.get("DBT_PROFILE_NAME"),
     target_name="prd",
+    profile_mapping=PostgresUserPasswordProfileMapping(
+        conn_id="postgres_dev_svc",
+        profile_args={"schema": "prd"},
+    ),
 )
 
 example_study_dag = DbtDag(
     project_config=ProjectConfig(
-        "/opt/airflow/dbt/deidentified_etl",
+        Variable.get("DBT_PROJECT_DIR"),
         install_dbt_deps=True,
     ),
     profile_config=profile_config,
     execution_config=ExecutionConfig(
-        dbt_executable_path=os.environ["DBT_EXECUTABLE_PATH"],
+        dbt_executable_path=Variable.get("DBT_EXECUTABLE_PATH"),
     ),
     render_config=RenderConfig(select=["config.meta.study:kf_example_study"]),
     # normal dag parameters
     schedule="@daily",
-    start_date=datetime(2026, 1, 1),
-    catchup=False,
     dag_id="kf_example_study",
     tags=["POC", "Kids First"],
-    default_args={"retries": 2},
 )
 ```
 
@@ -98,18 +98,20 @@ from cosmos import (
     ExecutionConfig,
     RenderConfig,
 )
+from cosmos.profiles import PostgresUserPasswordProfileMapping
 ```
 
-In the example, the `import os` is used to extract environment variables on the
-machine used to run dbt and `import datetime` is used to identify when the
-DAG should start being run.
+In the example, the `from airflow.sdk import Variable` is used to extract
+environment variables in the airflow environment used by commands in the DAG.
 
 ### `profile_config`
 
 The `profile_config` is used by cosmos to identify the profile to be used by dbt
-commands. The values for `profile_name` and `profiles_yml_filepath` should use
-the indicated environment variables. Acceptable values for `target_name` are
-`qa` and `prd`
+commands. The value for `profile_name` should use the indicated variables. Acceptable values for `target_name` are `qa` and `prd`.
+
+The `profile_mapping` takes advantage of an airflow connection object to connect
+to the warehouse. Pass it the indicated connection id and make sure to set the
+`schema` appropriately for the `target_name`
 
 ### the model DAG
 

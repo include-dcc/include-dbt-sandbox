@@ -1,6 +1,4 @@
-import os
 from airflow.sdk import Variable
-from datetime import datetime
 
 from cosmos import (
     DbtDag,
