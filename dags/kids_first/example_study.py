@@ -15,7 +15,8 @@ profile_config = ProfileConfig(
     profile_name=Variable.get("DBT_PROFILE_NAME"),
     target_name="prd",
     profile_mapping=PostgresUserPasswordProfileMapping(
-        conn_id="postgres_dev_svc"
+        conn_id="postgres_dev_svc",
+        profile_args={"schema": "prd"},
     ),
 )
 
