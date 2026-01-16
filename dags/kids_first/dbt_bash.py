@@ -48,7 +48,7 @@ with DAG(
     )
 
     def check_for_warehouse_host_var():
-        warehouse_host = Variable.get("INCLUDEWAREHOUSE_HOST", default_var=None)
+        warehouse_host = Variable.get("INCLUDEWAREHOUSE_HOST", default=None)
         if warehouse_host:
             print("WAREHOUSE_HOST exists!")
         else:
