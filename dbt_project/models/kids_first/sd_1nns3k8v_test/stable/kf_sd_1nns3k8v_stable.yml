@@ -2,13 +2,13 @@ version: 2
 
 models: 
 
-- name: src_bsgf
-  description: '{{ doc("src_bsgf") }}'
+- name: kf_sd_1nns3k8v_stable_bsgf
+  description: '{{ doc("stable_bsgf") }}'
   columns: 
     - name: uuid
       description: '{{ doc("uuid") }}'
-    - name: kf_id
-      description: '{{ doc("kf_id") }}'
+    - name: bsgf_id
+      description: '{{ doc("bsgf_id") }}'
     - name: created_at
       description: '{{ doc("created_at") }}'
     - name: modified_at
@@ -26,13 +26,15 @@ models:
     - name: biospecimen_id
       description: '{{ doc("specimen_id") }}'
 
-- name: src_diagnosis
-  description: '{{ doc("src_diagnosis") }}'
+- name: kf_sd_1nns3k8v_stable_diagnosis
+  description: '{{ doc("stable_diagnosis") }}'
   columns: 
     - name: uuid
       description: '{{ doc("uuid") }}'
-    - name: kf_id
-      description: '{{ doc("kf_id") }}'
+    - name: diagnosis_id
+      description: '{{ doc("diagnosis_id") }}'
+    - name: dewrangle_diagnosis_id
+      description: '{{ doc("dewrangle_diagnosis_id") }}'
     - name: created_at
       description: '{{ doc("created_at") }}'
     - name: modified_at
@@ -63,14 +65,19 @@ models:
       description: '{{ doc("uberon_id_tumor_location") }}'
     - name: spatial_descriptor
       description: '{{ doc("spatial_descriptor") }}'
+    - name: observed
+      description: '{{ doc("observed") }}'
+    
 
-- name: src_family
-  description: '{{ doc("src_family") }}'
+- name: kf_sd_1nns3k8v_stable_family
+  description: '{{ doc("stable_family") }}'
   columns: 
     - name: uuid
       description: '{{ doc("uuid") }}'
-    - name: kf_id
-      description: '{{ doc("kf_id") }}'
+    - name: family_id
+      description: '{{ doc("family_id") }}'
+    - name: dewrangle_family_id
+      description: '{{ doc("dewrangle_family_id") }}'
     - name: created_at
       description: '{{ doc("created_at") }}'
     - name: modified_at
@@ -86,13 +93,15 @@ models:
     - name: family_type
       description: '{{ doc("family_type") }}'
 
-- name: src_genomic_files
-  description: '{{ doc("src_genomic_files") }}'
+- name: kf_sd_1nns3k8v_stable_genomic_file
+  description: '{{ doc("stable_genomic_file") }}'
   columns: 
     - name: uuid
       description: '{{ doc("uuid") }}'
-    - name: kf_id
-      description: '{{ doc("kf_id") }}'
+    - name: genomic_file_id
+      description: '{{ doc("genomic_file_id") }}'
+    - name: dewrangle_genomic_file_id
+      description: '{{ doc("dewrangle_genomic_file_id") }}'
     - name: created_at
       description: '{{ doc("created_at") }}'
     - name: modified_at
@@ -136,13 +145,15 @@ models:
     - name: cavatica_volume
       description: '{{ doc("cavatica_volume") }}'
 
-- name: src_investigator
-  description: '{{ doc("src_investigator") }}'
+- name: kf_sd_1nns3k8v_stable_investigator
+  description: '{{ doc("stable_investigator") }}'
   columns: 
     - name: uuid
       description: '{{ doc("uuid") }}'
-    - name: kf_id
-      description: '{{ doc("kf_id") }}'
+    - name: investigator_id
+      description: '{{ doc("investigator_id") }}'
+    - name: dewrangle_investigator_id
+      description: '{{ doc("dewrangle_investigator_id") }}'
     - name: created_at
       description: '{{ doc("created_at") }}'
     - name: modified_at
@@ -160,13 +171,15 @@ models:
     - name: institution
       description: '{{ doc("institution") }}'
 
-- name: src_participant
-  description: '{{ doc("src_participant") }}'
+- name: kf_sd_1nns3k8v_stable_participant
+  description: '{{ doc("stable_participant") }}'
   columns: 
     - name: uuid
       description: '{{ doc("uuid") }}'
-    - name: kf_id
-      description: '{{ doc("kf_id") }}'
+    - name: participant_id
+      description: '{{ doc("participant_id") }}'
+    - name: dewrangle_participant_id
+      description: '{{ doc("dewrangle_participant_id") }}'
     - name: created_at
       description: '{{ doc("created_at") }}'
     - name: modified_at
@@ -183,6 +196,8 @@ models:
       description: '{{ doc("alias_group_id") }}'
     - name: study_id
       description: '{{ doc("study_id") }}'
+    - name: dewrangle_study_id
+      description: '{{ doc("dewrangle_study_id") }}'
     - name: family_id
       description: '{{ doc("family_id") }}'
     - name: is_proband
@@ -198,13 +213,15 @@ models:
     - name: species
       description: '{{ doc("species") }}'
 
-- name: src_phenotype
-  description: '{{ doc("src_phenotype") }}'
+- name: kf_sd_1nns3k8v_stable_phenotype
+  description: '{{ doc("stable_phenotype") }}'
   columns: 
     - name: uuid
       description: '{{ doc("uuid") }}'
-    - name: kf_id
-      description: '{{ doc("kf_id") }}'
+    - name: phenotype_id
+      description: '{{ doc("phenotype_id") }}'
+    - name: dewrangle_phenotype_id
+      description: '{{ doc("dewrangle_phenotype_id") }}'
     - name: created_at
       description: '{{ doc("created_at") }}'
     - name: modified_at
@@ -230,13 +247,13 @@ models:
     - name: snomed_id_phenotype
       description: '{{ doc("snomed_id_phenotype") }}'
 
-- name: src_segf
-  description: '{{ doc("src_segf") }}'
+- name: kf_sd_1nns3k8v_stable_segf
+  description: '{{ doc("stable_segf") }}'
   columns: 
     - name: uuid
       description: '{{ doc("uuid") }}'
-    - name: kf_id
-      description: '{{ doc("kf_id") }}'
+    - name: segf_id
+      description: '{{ doc("segf_id") }}'
     - name: created_at
       description: '{{ doc("created_at") }}'
     - name: modified_at
@@ -254,13 +271,15 @@ models:
     - name: genomic_file_id
       description: '{{ doc("genomic_file_id") }}'
 
-- name: src_sequencing_experiments
-  description: '{{ doc("src_sequencing_experiments") }}'
+- name: kf_sd_1nns3k8v_stable_sequencing_experiment
+  description: '{{ doc("stable_sequencing_experiment") }}'
   columns: 
     - name: uuid
       description: '{{ doc("uuid") }}'
-    - name: kf_id
-      description: '{{ doc("kf_id") }}'
+    - name: sequencing_experiment_id
+      description: '{{ doc("sequencing_experiment_id") }}'
+    - name: dewrangle_sequencing_experiment_id
+      description: '{{ doc("dewrangle_sequencing_experiment_id") }}'
     - name: created_at
       description: '{{ doc("created_at") }}'
     - name: modified_at
@@ -358,13 +377,15 @@ models:
     - name: umi_barcode_size
       description: '{{ doc("umi_barcode_size") }}'
 
-- name: src_specimens
-  description: '{{ doc("src_specimens") }}'
+- name: kf_sd_1nns3k8v_stable_specimens
+  description: '{{ doc("stable_specimens") }}'
   columns: 
     - name: uuid
       description: '{{ doc("uuid") }}'
-    - name: kf_id
-      description: '{{ doc("kf_id") }}'
+    - name: specimen_id
+      description: '{{ doc("specimen_id") }}'
+    - name: dewrangle_specimen_id
+      description: '{{ doc("dewrangle_specimen_id") }}'
     - name: created_at
       description: '{{ doc("created_at") }}'
     - name: modified_at
@@ -434,13 +455,15 @@ models:
     - name: cell_entity
       description: '{{ doc("cell_entity") }}'
 
-- name: src_study
-  description: '{{ doc("src_study") }}'
+- name: kf_sd_1nns3k8v_stable_study
+  description: '{{ doc("stable_study") }}'
   columns: 
     - name: uuid
       description: '{{ doc("uuid") }}'
-    - name: kf_id
-      description: '{{ doc("kf_id") }}'
+    - name: study_id
+      description: '{{ doc("study_id") }}'
+    - name: dewrangle_study_id
+      description: '{{ doc("dewrangle_study_id") }}'
     - name: created_at
       description: '{{ doc("created_at") }}'
     - name: modified_at
@@ -483,13 +506,3 @@ models:
       description: '{{ doc("biobank_request_instructions") }}'
     - name: biobank_request_link
       description: '{{ doc("biobank_request_link") }}'
-
-
-
-  
-
-
-
-
-      
-

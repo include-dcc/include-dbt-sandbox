@@ -2,7 +2,7 @@ version: 2
 
 models: 
 
-- name: int_bsgf
+- name: kf_sd_1nns3k8v_int_bsgf
   description: '{{ doc("int_bsgf") }}'
   columns: 
     - name: uuid
@@ -26,7 +26,7 @@ models:
     - name: biospecimen_id
       description: '{{ doc("specimen_id") }}'
 
-- name: int_diagnosis
+- name: kf_sd_1nns3k8v_int_diagnosis
   description: '{{ doc("int_diagnosis") }}'
   columns: 
     - name: uuid
@@ -69,7 +69,7 @@ models:
       description: '{{ doc("observed") }}'
     
 
-- name: int_family
+- name: kf_sd_1nns3k8v_int_family
   description: '{{ doc("int_family") }}'
   columns: 
     - name: uuid
@@ -93,7 +93,7 @@ models:
     - name: family_type
       description: '{{ doc("family_type") }}'
 
-- name: int_genomic_files
+- name: kf_sd_1nns3k8v_int_genomic_files
   description: '{{ doc("int_genomic_files") }}'
   columns: 
     - name: uuid
@@ -145,7 +145,7 @@ models:
     - name: cavatica_volume
       description: '{{ doc("cavatica_volume") }}'
 
-- name: int_investigator
+- name: kf_sd_1nns3k8v_int_investigator
   description: '{{ doc("int_investigator") }}'
   columns: 
     - name: uuid
@@ -171,7 +171,7 @@ models:
     - name: institution
       description: '{{ doc("institution") }}'
 
-- name: int_participant
+- name: kf_sd_1nns3k8v_int_participant
   description: '{{ doc("int_participant") }}'
   columns: 
     - name: uuid
@@ -213,7 +213,7 @@ models:
     - name: species
       description: '{{ doc("species") }}'
 
-- name: int_phenotype
+- name: kf_sd_1nns3k8v_int_phenotype
   description: '{{ doc("int_phenotype") }}'
   columns: 
     - name: uuid
@@ -247,7 +247,7 @@ models:
     - name: snomed_id_phenotype
       description: '{{ doc("snomed_id_phenotype") }}'
 
-- name: int_segf
+- name: kf_sd_1nns3k8v_int_segf
   description: '{{ doc("int_segf") }}'
   columns: 
     - name: uuid
@@ -271,7 +271,7 @@ models:
     - name: genomic_file_id
       description: '{{ doc("genomic_file_id") }}'
 
-- name: int_sequencing_experiment
+- name: kf_sd_1nns3k8v_int_sequencing_experiment
   description: '{{ doc("int_sequencing_experiment") }}'
   columns: 
     - name: uuid
@@ -377,7 +377,7 @@ models:
     - name: umi_barcode_size
       description: '{{ doc("umi_barcode_size") }}'
 
-- name: int_specimens
+- name: kf_sd_1nns3k8v_int_specimens
   description: '{{ doc("int_specimens") }}'
   columns: 
     - name: uuid
@@ -455,7 +455,7 @@ models:
     - name: cell_entity
       description: '{{ doc("cell_entity") }}'
 
-- name: int_study
+- name: kf_sd_1nns3k8v_int_study
   description: '{{ doc("int_study") }}'
   columns: 
     - name: uuid
