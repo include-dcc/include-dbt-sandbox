@@ -1,24 +1,24 @@
 # How to Run dbt in Airflow
 
-This guide discusses how dbt models may be run in airflow and the file
+This guide discusses how dbt models may be run in Airflow and the file
 configuration that is needed to run those models.
 
 ## How Airflow Runs dbt Models
 
-The airflow instance that is used to orchestrate data pipelines is hosted in
+The Airflow instance that is used to orchestrate data pipelines is hosted in
 AWS using Managed Workflow for Apache Airflow (MWAA). MWAA provides a simple way
-for the airflow instance - as well as its workers to be provisioned and
+for the Airflow instance - as well as its workers to be provisioned and
 dispatched. As of the writing of this guide, the MWAA instance used by these
 workflows is utilizing Airflow version 3.0.6 and python version 3.12.
 
 To run dbt models, we utilize [`cosmos`](https://astronomer.github.io/astronomer-cosmos/index.html).
 `cosmos` is a python library written for Airflow that has operators that use dbt
 and convert sets of dbt models within a dbt project into DAGs. While an older
-approach may have specified running dbt models within a bash command within an
-airflow bash operator, using the `cosmos` `DbtDag` operator allows individual
-models and those models' tests to be materialized as individual tasks.
+approach may have specified running dbt models via a bash command within an
+Airflow bash operator, using the `cosmos` `DbtDag` operator allows individual
+models and their corresponding tests to be materialized as individual tasks.
 
-For a dbt model - or set of models - to be picked up by airflow and run, those
+For a dbt model - or set of models - to be picked up by Airflow and run, those
 models need to be referenced by a DAG.
 
 ### Getting files into MWAA
