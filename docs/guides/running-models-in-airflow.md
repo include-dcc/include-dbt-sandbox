@@ -16,7 +16,7 @@ To run dbt models, we utilize [`cosmos`](https://astronomer.github.io/astronomer
 and convert sets of dbt models within a dbt project into DAGs. While an older
 approach may have specified running dbt models via a bash command within an
 Airflow bash operator, using the `cosmos` `DbtDag` operator allows individual
-models and those models' tests to be materialized as individual tasks.
+models and their corresponding tests to be materialized as individual tasks.
 
 For a dbt model - or set of models - to be picked up by Airflow and run, those
 models need to be referenced by a DAG.
