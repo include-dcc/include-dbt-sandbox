@@ -5,7 +5,7 @@ configuration that is needed to run those models.
 
 ## How Airflow Runs dbt Models
 
-The airflow instance that is used to orchestrate data pipelines is hosted in
+The Airflow instance that is used to orchestrate data pipelines is hosted in
 AWS using Managed Workflow for Apache Airflow (MWAA). MWAA provides a simple way
 for the airflow instance - as well as its workers to be provisioned and
 dispatched. As of the writing of this guide, the MWAA instance used by these
