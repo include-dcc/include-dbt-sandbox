@@ -7,7 +7,7 @@ configuration that is needed to run those models.
 
 The Airflow instance that is used to orchestrate data pipelines is hosted in
 AWS using Managed Workflow for Apache Airflow (MWAA). MWAA provides a simple way
-for the airflow instance - as well as its workers to be provisioned and
+for the Airflow instance - as well as its workers to be provisioned and
 dispatched. As of the writing of this guide, the MWAA instance used by these
 workflows is utilizing Airflow version 3.0.6 and python version 3.12.
 
