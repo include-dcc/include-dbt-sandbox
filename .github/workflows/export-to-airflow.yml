@@ -3,6 +3,8 @@ name: Export Repo to Airflow
 on:
   push:
     branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
 permissions:
     contents: read
