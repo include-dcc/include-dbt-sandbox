@@ -1,6 +1,6 @@
 # How to Run dbt in Airflow
 
-This guide discusses how dbt models may be run in airflow and the file
+This guide discusses how dbt models may be run in Airflow and the file
 configuration that is needed to run those models.
 
 ## How Airflow Runs dbt Models
