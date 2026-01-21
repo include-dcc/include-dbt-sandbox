@@ -14,7 +14,7 @@ workflows is utilizing Airflow version 3.0.6 and python version 3.12.
 To run dbt models, we utilize [`cosmos`](https://astronomer.github.io/astronomer-cosmos/index.html).
 `cosmos` is a python library written for Airflow that has operators that use dbt
 and convert sets of dbt models within a dbt project into DAGs. While an older
-approach may have specified running dbt models within a bash command within an
+approach may have specified running dbt models via a bash command within an
 airflow bash operator, using the `cosmos` `DbtDag` operator allows individual
 models and those models' tests to be materialized as individual tasks.
 
