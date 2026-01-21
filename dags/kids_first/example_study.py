@@ -10,6 +10,7 @@ from cosmos import (
 from cosmos.profiles import PostgresUserPasswordProfileMapping
 
 profile_config = ProfileConfig(
+    # make sure target_name and profile_mapping align
     profile_name=Variable.get("DBT_PROFILE_NAME"),
     target_name="prd",
     profile_mapping=PostgresUserPasswordProfileMapping(
