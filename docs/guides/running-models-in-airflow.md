@@ -18,7 +18,7 @@ approach may have specified running dbt models via a bash command within an
 airflow bash operator, using the `cosmos` `DbtDag` operator allows individual
 models and those models' tests to be materialized as individual tasks.
 
-For a dbt model - or set of models - to be picked up by airflow and run, those
+For a dbt model - or set of models - to be picked up by Airflow and run, those
 models need to be referenced by a DAG.
 
 ### Getting files into MWAA
