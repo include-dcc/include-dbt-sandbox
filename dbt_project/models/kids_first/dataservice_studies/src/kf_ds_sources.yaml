@@ -2,7 +2,7 @@ version: 2
 
 models: 
 
-- name: kf_ds_kf_ds_src_bsgf
+- name: kf_ds_src_bsgf
   description: '{{ doc("kf_ds_src_bsgf") }}'
   columns: 
     - name: uuid
@@ -26,7 +26,7 @@ models:
     - name: biospecimen_id
       description: '{{ doc("specimen_id") }}'
 
-- name: kf_ds_kf_ds_src_diagnosis
+- name: kf_ds_src_diagnosis
   description: '{{ doc("kf_ds_src_diagnosis") }}'
   columns: 
     - name: uuid
@@ -64,7 +64,7 @@ models:
     - name: spatial_descriptor
       description: '{{ doc("spatial_descriptor") }}'
 
-- name: kf_ds_kf_ds_src_family_relationship
+- name: kf_ds_src_family_relationship
   description: '{{ doc("kf_ds_src_family_relationship") }}'
   columns: 
     - name: uuid
@@ -94,7 +94,7 @@ models:
     - name: source_text_notes
       description: '{{ doc("source_text_notes") }}'
 
-- name: kf_ds_kf_ds_src_family
+- name: kf_ds_src_family
   description: '{{ doc("kf_ds_src_family") }}'
   columns: 
     - name: uuid
@@ -116,7 +116,7 @@ models:
     - name: family_type
       description: '{{ doc("family_type") }}'
 
-- name: kf_ds_kf_ds_src_genomic_file
+- name: kf_ds_src_genomic_file
   description: '{{ doc("kf_ds_src_genomic_file") }}'
   columns: 
     - name: uuid
@@ -166,7 +166,7 @@ models:
     - name: cavatica_volume
       description: '{{ doc("cavatica_volume") }}'
 
-- name: kf_ds_kf_ds_src_investigator
+- name: kf_ds_src_investigator
   description: '{{ doc("kf_ds_src_investigator") }}'
   columns: 
     - name: uuid
@@ -190,7 +190,7 @@ models:
     - name: institution
       description: '{{ doc("institution") }}'
 
-- name: kf_ds_kf_ds_src_outcome
+- name: kf_ds_src_outcome
   description: '{{ doc("kf_ds_src_outcome") }}'
   columns: 
     - name: uuid
@@ -216,7 +216,7 @@ models:
     - name: age_at_event_days
       description: '{{ doc("age_at_event_days") }}'
 
-- name: kf_ds_kf_ds_src_participant
+- name: kf_ds_src_participant
   description: '{{ doc("kf_ds_src_participant") }}'
   columns: 
     - name: uuid
@@ -254,7 +254,7 @@ models:
     - name: species
       description: '{{ doc("species") }}'
 
-- name: kf_ds_kf_ds_src_phenotype
+- name: kf_ds_src_phenotype
   description: '{{ doc("kf_ds_src_phenotype") }}'
   columns: 
     - name: uuid
@@ -286,7 +286,7 @@ models:
     - name: snomed_id_phenotype
       description: '{{ doc("snomed_id_phenotype") }}'
 
-- name: kf_ds_kf_ds_src_sample
+- name: kf_ds_src_sample
   description: '{{ doc("kf_ds_src_sample") }}'
   columns: 
     - name: uuid
@@ -333,7 +333,7 @@ models:
       description: '{{ doc("amount_units") }}'
 
 
-- name: kf_ds_kf_ds_src_segf
+- name: kf_ds_src_segf
   description: '{{ doc("kf_ds_src_segf") }}'
   columns: 
     - name: uuid
@@ -357,7 +357,7 @@ models:
     - name: genomic_file_id
       description: '{{ doc("genomic_file_id") }}'
 
-- name: kf_ds_kf_ds_src_sequencing_center
+- name: kf_ds_src_sequencing_center
   description: '{{ doc("kf_ds_src_sequencing_center") }}'
   columns: 
     - name: uuid
@@ -379,8 +379,8 @@ models:
     - name: name
       description: '{{ doc("name") }}'
 
-- name: kf_ds_kf_ds_src_sequencing_experiment
-  description: '{{ doc("kf_ds_src_sequencing_experiments") }}'
+- name: kf_ds_src_sequencing_experiment
+  description: '{{ doc("kf_ds_src_sequencing_experiment") }}'
   columns: 
     - name: uuid
       description: '{{ doc("uuid") }}'
@@ -483,7 +483,7 @@ models:
     - name: umi_barcode_size
       description: '{{ doc("umi_barcode_size") }}'
 
-- name: kf_ds_kf_ds_src_biospecimen
+- name: kf_ds_src_biospecimen
   description: '{{ doc("kf_ds_src_biospecimen") }}'
   columns: 
     - name: uuid
@@ -559,7 +559,7 @@ models:
     - name: cell_entity
       description: '{{ doc("cell_entity") }}'
 
-- name: kf_ds_kf_ds_src_study
+- name: kf_ds_src_study
   description: '{{ doc("kf_ds_src_study") }}'
   columns: 
     - name: uuid

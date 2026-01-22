@@ -13,5 +13,5 @@ select distinct
   name as sequencing_center_name,
   visible,
   visibility_reason,
-  visibility_comment,
-from {{ ref('kf_ds_src_sequencing_centers') }}
+  visibility_comment
+from {{ ref('kf_ds_src_sequencing_center') }}
