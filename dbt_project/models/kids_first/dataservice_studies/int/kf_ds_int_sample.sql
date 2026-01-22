@@ -1,5 +1,5 @@
 {{ config(
-    schema='stable'
+    schema='int'
 ) }}
 
 select distinct 
@@ -24,4 +24,4 @@ select distinct
   visible,
   visibility_reason,
   visibility_comment
-from {{ ref('int_samples') }}
+from {{ ref('kf_ds_src_sample') }}

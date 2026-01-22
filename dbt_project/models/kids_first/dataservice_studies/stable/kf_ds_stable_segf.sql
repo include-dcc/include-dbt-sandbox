@@ -1,5 +1,5 @@
 {{ config(
-    schema='int'
+    schema='stable'
 ) }}
 
 select distinct
@@ -10,7 +10,7 @@ select distinct
   sequencing_experiment_id, 
   genomic_file_id,
   external_id, -- this is rarely populated, it could be left out
-  kf_id as segf_id,
+  segf_id,
   visibility_reason,
   visibility_comment 
-from {{ ref ('src_segf') }}
+from {{ ref ('kf_ds_int_segf') }}

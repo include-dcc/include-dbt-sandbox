@@ -13,4 +13,4 @@ select distinct
   visible,
   visibility_reason,
   visibility_comment
-from {{ ref('src_family') }}
+from {{ ref('kf_ds_src_family') }}

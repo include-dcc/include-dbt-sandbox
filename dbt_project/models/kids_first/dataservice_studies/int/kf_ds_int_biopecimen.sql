@@ -1,5 +1,5 @@
 {{ config(
-    schema='stable'
+    schema='int'
 ) }}
 
 -- need to review all fields in ds and which ones are neeeded
@@ -8,8 +8,8 @@ select distinct
   uuid, -- we can leave this out; it's not used,
   created_at,
   modified_at,
-  specimen_id,
-  dewrangle_specimen_id,
+  kf_id as specimen_id,
+  lower(replace(kf_id, '_', '-')) as dewrangle_specimen_id,
   external_sample_id,
   external_aliquot_id,
   source_text_tissue_type, -- can rename without source text prefix? 
@@ -43,4 +43,4 @@ select distinct
   amount,
   amount_units,
   cell_entity 
-from {{ ref('int_specimens') }}
+from {{ ref('kf_ds_src_biospecimen') }}

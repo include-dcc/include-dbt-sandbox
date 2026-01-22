@@ -1,5 +1,5 @@
 {{ config(
-    schema='int'
+    schema='stable'
 ) }}
 
 
@@ -9,8 +9,8 @@ select distinct
   modified_at,
   external_id,
   kf_id,
-  name as sequencing_center_name,
+  sequencing_center_name,
   visible,
   visibility_reason,
   visibility_comment,
-from {{ ref('src_sequencing_centers') }}
+from {{ ref('kf_ds_int_sequencing_centers') }}

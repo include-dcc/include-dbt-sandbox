@@ -15,4 +15,4 @@ select distinct
   visible,
   visibility_reason,
   visibility_comment,
-from {{ ref('int_outcomes') }}
+from {{ ref('kf_ds_int_outcome') }}

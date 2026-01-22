@@ -1,5 +1,5 @@
 {{ config(
-    schema='int'
+    schema='stable'
 ) }}
 
 -- we currently use this table in DS to link specimens/gfs
@@ -11,9 +11,9 @@ select distinct
   modified_at,
   genomic_file_id,
   biospecimen_id,
-  kf_id as bsgf_id,
+  bsgf_id,
   visible,
   external_id, -- i think we can leave this out - it's rarely populated/used, 
   visibility_reason,
   visibility_comment
-from {{ ref('src_bsgf') }}
+from {{ ref('kf_ds_int_bsgf') }}

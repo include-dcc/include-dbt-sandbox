@@ -32,4 +32,4 @@ select distinct
   cavatica_file_id, 
   cavatica_volume
 
-from {{ ref('int_genomic_files') }}
+from {{ ref('kf_ds_int_genomic_files') }}
