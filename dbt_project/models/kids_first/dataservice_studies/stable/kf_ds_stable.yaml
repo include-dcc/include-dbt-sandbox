@@ -73,8 +73,8 @@ models:
   columns: 
     - name: uuid
       description: '{{ doc("uuid") }}'
-    - name: relation_id
-      description: '{{ doc("relation_id") }}'
+    - name: relationship_id
+      description: '{{ doc("relationship_id") }}'
     - name: created_at
       description: '{{ doc("created_at") }}'
     - name: modified_at
@@ -166,8 +166,8 @@ models:
       description: '{{ doc("workflow_type") }}'
     - name: workflow_version
       description: '{{ doc("workflow_version") }}'
-    - name: workflow_endpostable
-      description: '{{ doc("workflow_endpostable") }}'
+    - name: workflow_endpoint
+      description: '{{ doc("workflow_endpoint") }}'
     - name: file_version_descriptor
       description: '{{ doc("file_version_descriptor") }}'
     - name: cavatica_file_id
@@ -502,7 +502,7 @@ models:
       description: '{{ doc("umi_barcode_size") }}'
 
 - name: kf_ds_stable_biospecimen
-  description: '{{ doc("kf_ds_stable_biopecimen") }}'
+  description: '{{ doc("kf_ds_stable_biospecimen") }}'
   columns: 
     - name: uuid
       description: '{{ doc("uuid") }}'

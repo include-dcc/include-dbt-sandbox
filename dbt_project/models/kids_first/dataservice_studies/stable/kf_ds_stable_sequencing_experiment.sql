@@ -1,11 +1,11 @@
 {{ config(
-    schema='int'
+    schema='stable'
 ) }}
 
 select distinct 
   uuid, -- we can leave this out; it's not used,
-  kf_id as sequencing_experiment_id, 
-  lower(replace(kf_id, '_', '-')) as dewrangle_sequencing_experiment_id,
+  sequencing_experiment_id, 
+  dewrangle_sequencing_experiment_id,
   sequencing_center_id,
   external_id,
   experiment_date,
@@ -55,4 +55,4 @@ select distinct
   umi_barcode_read,
   umi_barcode_size
 
-from {{ ref('kf_src_sequencing_experiment') }}
+from {{ ref('kf_ds_int_sequencing_experiment') }}

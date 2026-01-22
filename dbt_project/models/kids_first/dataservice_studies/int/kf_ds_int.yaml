@@ -73,8 +73,8 @@ models:
   columns: 
     - name: uuid
       description: '{{ doc("uuid") }}'
-    - name: relation_id
-      description: '{{ doc("relation_id") }}'
+    - name: relationship_id
+      description: '{{ doc("relationship_id") }}'
     - name: created_at
       description: '{{ doc("created_at") }}'
     - name: modified_at
@@ -502,7 +502,7 @@ models:
       description: '{{ doc("umi_barcode_size") }}'
 
 - name: kf_ds_int_biospecimen
-  description: '{{ doc("kf_ds_int_biopecimen") }}'
+  description: '{{ doc("kf_ds_int_biospecimen") }}'
   columns: 
     - name: uuid
       description: '{{ doc("uuid") }}'

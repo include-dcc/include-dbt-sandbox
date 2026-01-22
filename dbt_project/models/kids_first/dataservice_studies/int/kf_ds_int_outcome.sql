@@ -14,5 +14,5 @@ select distinct
   kf_id,
   visible,
   visibility_reason,
-  visibility_comment,
+  visibility_comment
 from {{ ref('kf_ds_src_outcome') }}

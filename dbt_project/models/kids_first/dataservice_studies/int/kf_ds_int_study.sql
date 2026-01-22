@@ -29,6 +29,6 @@ select distinct
   biobank_request_link -- has been NA for kids first, only used for CBTN, should we keep? 
 from {{ ref('kf_ds_src_study') }}
 where lower(program) in (
-    'kids first',
-    'kf/include',
+  'kids first',
+  'kf/include'
 )
