@@ -138,7 +138,7 @@ Stable table for kf_ds_int_diagnosis. Finalized mapping of transformed dataservi
 Stable table for kf_ds_int_family. Finalized mapping of transformed dataservice entities that are ready to be brought into the access layer.
 {% enddocs %}
 
-{% docs kf_ds_int_family_relationship %}
+{% docs kf_ds_stable_family_relationship %}
 Stable table for kf_ds_src_family_relationship. Finalized mapping of transformed dataservice entities that are ready to be brought into the access layer.
 {% enddocs %}
 
