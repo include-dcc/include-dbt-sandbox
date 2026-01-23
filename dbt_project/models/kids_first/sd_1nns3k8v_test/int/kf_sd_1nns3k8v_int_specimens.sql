@@ -43,4 +43,4 @@ select distinct
   amount,
   amount_units,
   cell_entity 
-from {{ ref('src_specimens') }}
+from {{ ref('kf_sd_1nns3k8v_src_specimens') }}
