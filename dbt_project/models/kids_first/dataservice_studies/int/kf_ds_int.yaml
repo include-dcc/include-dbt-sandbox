@@ -4,6 +4,9 @@ models:
 
 - name: kf_ds_int_bsgf
   description: '{{ doc("kf_ds_int_bsgf") }}'
+  config:
+    meta:
+      study: kf_dataservice_study
   columns: 
     - name: uuid
       description: '{{ doc("uuid") }}'
