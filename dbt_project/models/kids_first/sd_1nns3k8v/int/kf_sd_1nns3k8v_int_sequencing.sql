@@ -17,7 +17,7 @@ select distinct
     "md5_path" as md5_path,
     "root_sample_id" as root_sample_id,
     "mean_coverage" as mean_coverage,
-    "adapter_rate" as adapter_rate,
+    -- "adapter_rate" as adapter_rate,
     -- "pf_hq_aligned_q20_bases" as pf_hq_aligned_q20_bases,
     -- "pf_hq_aligned_reads" as pf_hq_aligned_reads,
     -- "pf_mismatch_rate" as pf_mismatch_rate,

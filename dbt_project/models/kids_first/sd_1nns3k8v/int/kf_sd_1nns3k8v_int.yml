@@ -1,0 +1,91 @@
+version: 2
+
+models: 
+
+- name: kf_sd_1nns3k8v_int_clinical
+  description: '{{ doc("int_clinical") }}'
+  config:
+    meta:
+      study: kf_sd_1nns3k8v
+  columns: 
+    - name: family_id
+      description: '{{ doc("family_id") }}'
+    - name: participant_id
+      description: '{{ doc("participant_id") }}'
+    - name: family_relationship_target_participant_id
+      description: '{{ doc("family_relationship_target_participant_id") }}'
+    - name: aliquot_id
+      description: '{{ doc("aliquot_id") }}'
+    - name: consent_group
+      description: '{{ doc("consent_group") }}'
+    - name: age_at_sample
+      description: '{{ doc("age_at_sample") }}'
+    - name: sample_composition
+      description: '{{ doc("sample_composition") }}'
+    - name: sample_tissue_type
+      description: '{{ doc("sample_tissue_type") }}'
+    - name: race
+      description: '{{ doc("race") }}'
+    - name: sex
+      description: '{{ doc("sex") }}'
+    - name: ethnicity
+      description: '{{ doc("ethnicity") }}'
+    - name: analyte_type
+      description: '{{ doc("analyte_type") }}'
+    - name: age_at_phenotype
+      description: '{{ doc("age_at_phenotype") }}'
+    - name: affected_status
+      description: '{{ doc("affected_status") }}'
+    - name: vital_status
+      description: '{{ doc("vital_status") }}'
+
+- name: kf_sd_1nns3k8v_int_sequencing
+  description: '{{ doc("int_sequencing") }}'
+  config:
+    meta:
+      study: kf_sd_1nns3k8v
+  columns: 
+    - name: sample_id
+      description: '{{ doc("sample_id") }}'
+    - name: project
+      description: '{{ doc("project") }}'
+    - name: collaborator_sample_id
+      description: '{{ doc("collaborator_sample_id") }}'
+    - name: data_type
+      description: '{{ doc("data_type") }}'
+    - name: collaborator_participant_id
+      description: '{{ doc("collaborator_participant_id") }}'
+    - name: cram_path
+      description: '{{ doc("cram_path") }}'
+    - name: crai_path
+      description: '{{ doc("crai_path") }}'
+    - name: md5_path
+      description: '{{ doc("md5_path") }}'
+    - name: root_sample_id
+      description: '{{ doc("root_sample_id") }}'
+    - name: mean_coverage
+      description: '{{ doc("mean_coverage") }}'
+    - name: total_reads
+      description: '{{ doc("total_reads") }}'
+    - name: mean_read_length
+      description: '{{ doc("mean_read_length") }}'
+    
+
+- name: kf_sd_1nns3k8v_int_s3
+  description: '{{ doc("int_s3") }}'
+  config:
+    meta:
+      study: kf_sd_1nns3k8v
+  columns: 
+    - name: bucket
+      description: '{{ doc("bucket") }}'
+    - name: key
+      description: '{{ doc("key") }}'
+    - name: last_modified
+      description: '{{ doc("last_modified") }}'
+    - name: etag
+      description: '{{ doc("etag") }}'
+    - name: size
+      description: '{{ doc("size") }}'
+    - name: storage_class
+      description: '{{ doc("storage_class") }}'
