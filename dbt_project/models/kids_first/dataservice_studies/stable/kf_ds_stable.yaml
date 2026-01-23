@@ -4,7 +4,10 @@ models:
 
 - name: kf_ds_stable_bsgf
   description: '{{ doc("kf_ds_stable_bsgf") }}'
-  columns: 
+  config:
+    meta:
+      study: kf_dataservice_study
+  columns:  
     - name: uuid
       description: '{{ doc("uuid") }}'
     - name: bsgf_id
@@ -28,7 +31,10 @@ models:
 
 - name: kf_ds_stable_diagnosis
   description: '{{ doc("kf_ds_stable_diagnosis") }}'
-  columns: 
+  config:
+    meta:
+      study: kf_dataservice_study
+  columns:  
     - name: uuid
       description: '{{ doc("uuid") }}'
     - name: diagnosis_id
@@ -70,7 +76,10 @@ models:
 
 - name: kf_ds_stable_family_relationship
   description: '{{ doc("kf_ds_stable_family_relationship") }}'
-  columns: 
+  config:
+    meta:
+      study: kf_dataservice_study
+  columns:  
     - name: uuid
       description: '{{ doc("uuid") }}'
     - name: relationship_id
@@ -101,7 +110,10 @@ models:
 
 - name: kf_ds_stable_family
   description: '{{ doc("kf_ds_stable_family") }}'
-  columns: 
+  config:
+    meta:
+      study: kf_dataservice_study
+  columns:  
     - name: uuid
       description: '{{ doc("uuid") }}'
     - name: family_id
@@ -125,7 +137,10 @@ models:
 
 - name: kf_ds_stable_genomic_file
   description: '{{ doc("kf_ds_stable_genomic_file") }}'
-  columns: 
+  config:
+    meta:
+      study: kf_dataservice_study
+  columns:  
     - name: uuid
       description: '{{ doc("uuid") }}'
     - name: genomic_file_id
@@ -177,7 +192,10 @@ models:
 
 - name: kf_ds_stable_investigator
   description: '{{ doc("kf_ds_stable_investigator") }}'
-  columns: 
+  config:
+    meta:
+      study: kf_dataservice_study
+  columns:  
     - name: uuid
       description: '{{ doc("uuid") }}'
     - name: investigator_id
@@ -203,7 +221,10 @@ models:
 
 - name: kf_ds_stable_outcome
   description: '{{ doc("kf_ds_stable_outcome") }}'
-  columns: 
+  config:
+    meta:
+      study: kf_dataservice_study
+  columns:  
     - name: uuid
       description: '{{ doc("uuid") }}'
     - name: kf_id
@@ -229,7 +250,10 @@ models:
 
 - name: kf_ds_stable_participant
   description: '{{ doc("kf_ds_stable_participant") }}'
-  columns: 
+  config:
+    meta:
+      study: kf_dataservice_study
+  columns:  
     - name: uuid
       description: '{{ doc("uuid") }}'
     - name: participant_id
@@ -271,7 +295,10 @@ models:
 
 - name: kf_ds_stable_phenotype
   description: '{{ doc("kf_ds_stable_phenotype") }}'
-  columns: 
+  config:
+    meta:
+      study: kf_dataservice_study
+  columns:  
     - name: uuid
       description: '{{ doc("uuid") }}'
     - name: phenotype_id
@@ -305,7 +332,10 @@ models:
 
 - name: kf_ds_stable_sample
   description: '{{ doc("kf_ds_src_sample") }}'
-  columns: 
+  config:
+    meta:
+      study: kf_dataservice_study
+  columns:  
     - name: uuid
       description: '{{ doc("uuid") }}'
     - name: kf_id
@@ -351,7 +381,10 @@ models:
 
 - name: kf_ds_stable_sequencing_center
   description: '{{ doc("kf_ds_stable_sequencing_center") }}'
-  columns: 
+  config:
+    meta:
+      study: kf_dataservice_study
+  columns:  
     - name: uuid
       description: '{{ doc("uuid") }}'
     - name: kf_id
@@ -373,7 +406,10 @@ models:
 
 - name: kf_ds_stable_segf
   description: '{{ doc("kf_ds_stable_segf") }}'
-  columns: 
+  config:
+    meta:
+      study: kf_dataservice_study
+  columns:  
     - name: uuid
       description: '{{ doc("uuid") }}'
     - name: segf_id
@@ -397,7 +433,10 @@ models:
 
 - name: kf_ds_stable_sequencing_experiment
   description: '{{ doc("kf_ds_stable_sequencing_experiment") }}'
-  columns: 
+  config:
+    meta:
+      study: kf_dataservice_study
+  columns:  
     - name: uuid
       description: '{{ doc("uuid") }}'
     - name: sequencing_experiment_id
@@ -503,7 +542,10 @@ models:
 
 - name: kf_ds_stable_biospecimen
   description: '{{ doc("kf_ds_stable_biospecimen") }}'
-  columns: 
+  config:
+    meta:
+      study: kf_dataservice_study
+  columns:  
     - name: uuid
       description: '{{ doc("uuid") }}'
     - name: specimen_id
@@ -581,7 +623,10 @@ models:
 
 - name: kf_ds_stable_study
   description: '{{ doc("kf_ds_stable_study") }}'
-  columns: 
+  config:
+    meta:
+      study: kf_dataservice_study
+  columns:  
     - name: uuid
       description: '{{ doc("uuid") }}'
     - name: study_id
