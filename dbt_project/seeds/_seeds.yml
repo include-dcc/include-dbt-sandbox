@@ -1,4 +1,6 @@
-seeds:
+version: 2
+
+seeds: 
     - name: alphabet_grouping
       config:
         schema: kf
@@ -10,3 +12,8 @@ seeds:
           description: A letter of the alphabet
         - name: letter_grouping
           description: The grouping that the letter belongs to
+          
+  - name: ds_ses
+    config: 
+      column_types: 
+        total_reads: bigint 
