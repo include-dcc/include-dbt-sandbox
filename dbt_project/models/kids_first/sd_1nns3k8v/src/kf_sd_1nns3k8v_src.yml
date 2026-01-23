@@ -3,12 +3,12 @@ version: 2
 models: 
 
 - name: kf_sd_1nns3k8v_src_clinical
-  description: '{{ doc("src_clinical") }}'
+  description: '{{ doc("kf_sd_1nns3k8v_src_clinical") }}'
   config:
     meta:
       study: kf_sd_1nns3k8v
   columns: 
-    - name: family_id
+    - name: "family_id"
       description: '{{ doc("family_id") }}'
     - name: participant_id
       description: '{{ doc("participant_id") }}'
@@ -40,19 +40,15 @@ models:
       description: '{{ doc("vital_status") }}'
 
 - name: kf_sd_1nns3k8v_src_sequencing
-  description: '{{ doc("src_sequencing") }}'
+  description: '{{ doc("kf_sd_1nns3k8v_src_sequencing") }}'
   config:
     meta:
       study: kf_sd_1nns3k8v
   columns: 
     - name: sample_id
       description: '{{ doc("sample_id") }}'
-    - name: project
-      description: '{{ doc("project") }}'
     - name: collaborator_sample_id
       description: '{{ doc("collaborator_sample_id") }}'
-    - name: data_type
-      description: '{{ doc("data_type") }}'
     - name: collaborator_participant_id
       description: '{{ doc("collaborator_participant_id") }}'
     - name: cram_path
@@ -72,7 +68,7 @@ models:
     
 
 - name: kf_sd_1nns3k8v_src_s3
-  description: '{{ doc("src_s3") }}'
+  description: '{{ doc("kf_sd_1nns3k8v_src_s3") }}'
   config:
     meta:
       study: kf_sd_1nns3k8v

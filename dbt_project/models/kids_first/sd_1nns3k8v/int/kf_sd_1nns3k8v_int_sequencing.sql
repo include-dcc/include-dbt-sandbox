@@ -4,10 +4,10 @@
 
 select distinct
     "entity:sample_id" as sample_id,
-    "project" as project,
+    -- "project" as project,
     "collaborator_sample_id" as collaborator_sample_id,
     -- "version" as version,
-    "data_type" as data_type,
+    -- "data_type" as data_type,
     -- "pdo" as pdo,
     -- "release_date" as release_date,
     -- "reference_sequence_name" as reference_sequence_name,

@@ -600,3 +600,91 @@ Link to request specimens from study biobank.
 
 
 
+## Cody Fields
+{% docs family_relationship_target_participant_id %}
+Participant ID of Proband of Family
+{% enddocs %}
+
+{% docs aliquot_id %}
+Aliquot ID from sequencing manifest
+{% enddocs %}
+
+{% docs consent_group %}
+Consent group of study
+{% enddocs %}
+
+{% docs age_at_sample %}
+Age sample was collected from sequencing manifest
+{% enddocs %}
+
+{% docs sample_composition %}
+Composition of specimen
+{% enddocs %}
+
+{% docs sample_tissue_type %}
+Tissue type of collected specimen
+{% enddocs %}
+
+{% docs sex %}
+Sex of pariticipant
+{% enddocs %}
+
+{% docs age_at_phenotype %}
+Age of participant when phenotype was asserted
+{% enddocs %}
+
+{% docs vital_status %}
+Vital status of participant
+{% enddocs %}
+
+{% docs collaborator_sample_id %}
+Sample ID submitted by PI to sequencing center 
+{% enddocs %}
+
+{% docs collaborator_participant_id %}
+Participant ID submitted by PI to sequencing center 
+{% enddocs %}
+
+{% docs cram_path %}
+path of cram file from sequencing manifest
+{% enddocs %}
+
+{% docs crai_path %}
+path of crai file from sequencing manifest
+{% enddocs %}
+
+{% docs md5_path %}
+path of md5 file from sequencing manifest
+{% enddocs %}
+
+{% docs root_sample_id %}
+Specimen sample ID from sequencing manifest
+{% enddocs %}
+
+{% docs mean_coverage %}
+mean coverage value from sequencing manifest
+{% enddocs %}
+
+{% docs bucket %}
+s3 bucket for file
+{% enddocs %}
+
+{% docs key %}
+s3 key for file
+{% enddocs %}
+
+{% docs last_modified %}
+last time s3 file was modified
+{% enddocs %}
+
+{% docs etag %}
+etag hash from s3 manifest
+{% enddocs %}
+
+{% docs size %}
+size of file from s3 manifest
+{% enddocs %}
+
+{% docs storage_class %}
+s3 storage class for file
+{% enddocs %}
