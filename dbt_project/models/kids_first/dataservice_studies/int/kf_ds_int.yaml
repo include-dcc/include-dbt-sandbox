@@ -31,6 +31,9 @@ models:
 
 - name: kf_ds_int_diagnosis
   description: '{{ doc("kf_ds_int_diagnosis") }}'
+  config:
+    meta:
+      study: kf_dataservice_study
   columns: 
     - name: uuid
       description: '{{ doc("uuid") }}'
@@ -73,6 +76,9 @@ models:
 
 - name: kf_ds_int_family_relationship
   description: '{{ doc("kf_ds_int_family_relationship") }}'
+  config:
+    meta:
+      study: kf_dataservice_study
   columns: 
     - name: uuid
       description: '{{ doc("uuid") }}'
@@ -104,6 +110,9 @@ models:
 
 - name: kf_ds_int_family
   description: '{{ doc("kf_ds_int_family") }}'
+  config:
+    meta:
+      study: kf_dataservice_study
   columns: 
     - name: uuid
       description: '{{ doc("uuid") }}'
@@ -128,6 +137,9 @@ models:
 
 - name: kf_ds_int_genomic_file
   description: '{{ doc("kf_ds_int_genomic_file") }}'
+  config:
+    meta:
+      study: kf_dataservice_study
   columns: 
     - name: uuid
       description: '{{ doc("uuid") }}'
@@ -180,6 +192,9 @@ models:
 
 - name: kf_ds_int_investigator
   description: '{{ doc("kf_ds_int_investigator") }}'
+  config:
+    meta:
+      study: kf_dataservice_study
   columns: 
     - name: uuid
       description: '{{ doc("uuid") }}'
@@ -206,6 +221,9 @@ models:
 
 - name: kf_ds_int_outcome
   description: '{{ doc("kf_ds_int_outcome") }}'
+  config:
+    meta:
+      study: kf_dataservice_study
   columns: 
     - name: uuid
       description: '{{ doc("uuid") }}'
@@ -232,6 +250,9 @@ models:
 
 - name: kf_ds_int_participant
   description: '{{ doc("kf_ds_int_participant") }}'
+  config:
+    meta:
+      study: kf_dataservice_study
   columns: 
     - name: uuid
       description: '{{ doc("uuid") }}'
@@ -274,6 +295,9 @@ models:
 
 - name: kf_ds_int_phenotype
   description: '{{ doc("kf_ds_int_phenotype") }}'
+  config:
+    meta:
+      study: kf_dataservice_study
   columns: 
     - name: uuid
       description: '{{ doc("uuid") }}'
@@ -308,6 +332,9 @@ models:
 
 - name: kf_ds_int_sample
   description: '{{ doc("kf_ds_src_sample") }}'
+  config:
+    meta:
+      study: kf_dataservice_study
   columns: 
     - name: uuid
       description: '{{ doc("uuid") }}'
@@ -354,6 +381,9 @@ models:
 
 - name: kf_ds_int_sequencing_center
   description: '{{ doc("kf_ds_int_sequencing_center") }}'
+  config:
+    meta:
+      study: kf_dataservice_study
   columns: 
     - name: uuid
       description: '{{ doc("uuid") }}'
@@ -376,7 +406,10 @@ models:
 
 - name: kf_ds_int_segf
   description: '{{ doc("kf_ds_int_segf") }}'
-  columns: 
+    config:
+    meta:
+      study: kf_dataservice_study 
+    columns: 
     - name: uuid
       description: '{{ doc("uuid") }}'
     - name: segf_id
@@ -400,6 +433,9 @@ models:
 
 - name: kf_ds_int_sequencing_experiment
   description: '{{ doc("kf_ds_int_sequencing_experiment") }}'
+  config:
+    meta:
+      study: kf_dataservice_study
   columns: 
     - name: uuid
       description: '{{ doc("uuid") }}'
@@ -506,6 +542,9 @@ models:
 
 - name: kf_ds_int_biospecimen
   description: '{{ doc("kf_ds_int_biospecimen") }}'
+  config:
+    meta:
+      study: kf_dataservice_study
   columns: 
     - name: uuid
       description: '{{ doc("uuid") }}'
@@ -584,6 +623,9 @@ models:
 
 - name: kf_ds_int_study
   description: '{{ doc("kf_ds_int_study") }}'
+  config:
+    meta:
+      study: kf_dataservice_study
   columns: 
     - name: uuid
       description: '{{ doc("uuid") }}'
