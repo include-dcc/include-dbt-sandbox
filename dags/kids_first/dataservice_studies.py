@@ -28,7 +28,7 @@ example_study_dag = DbtDag(
     execution_config=ExecutionConfig(
         dbt_executable_path=Variable.get("DBT_EXECUTABLE_PATH"),
     ),
-    render_config=RenderConfig(select=["config.meta.study:kf_example_study"]),
+    render_config=RenderConfig(select=["config.meta.study:kf_dataservice_study"]),
     # normal dag parameters
     schedule="@daily",
     dag_id="kf_dataservice_studies",
