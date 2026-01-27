@@ -25,8 +25,10 @@ select distinct
     -- "pf_reads" as pf_reads,
     -- "pf_reads_aligned" as pf_reads_aligned,
     "total_reads" as total_reads,
-    "mean_read_length" as mean_read_length,
+    "mean_read_length" as mean_read_length
     -- "pf_reads_rate" as pf_reads_rate,
     -- "pf_reads_aligned_rate" as pf_reads_aligned_rate,
     -- "pf_aligned_bases" as pf_aligned_bases,
     -- "reads_aligned_in_pairs" as reads_aligned_in_pairs,
+
+from {{ ref('kf_sd_1nns3k8v_src_sequencing') }}
