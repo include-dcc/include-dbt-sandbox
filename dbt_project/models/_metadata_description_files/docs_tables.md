@@ -137,3 +137,29 @@ Stable table for int_specimens. Finalized mapping of transformed dataservice ent
 {% docs stable_study %}
 Stable table for int_study. Finalized mapping of transformed dataservice entities that are ready to be brought into the access layer.
 {% enddocs %}
+
+
+## Kids First Study SD_1NNS3K8V 
+{% docs kf_sd_1nns3k8v_src_clinical %}
+Source table for Cody study source clinical data 
+{% enddocs %}
+
+{% docs kf_sd_1nns3k8v_src_sequencing %}
+Source table for Cody study source sequencing data 
+{% enddocs %}
+
+{% docs kf_sd_1nns3k8v_src_s3 %}
+Source table for Cody study s3 file manifest
+{% enddocs %}
+
+{% docs kf_sd_1nns3k8v_int_clinical %}
+Intermediate table for src_clinical. Transforms dataservice entities for better usability and clarity. Excludes certain entites that are not needed. 
+{% enddocs %}
+
+{% docs kf_sd_1nns3k8v_int_sequencing %}
+Intermediate table for src_sequencing. Transforms dataservice entities for better usability and clarity. Excludes certain entites that are not needed. 
+{% enddocs %}
+
+{% docs kf_sd_1nns3k8v_int_s3 %}
+Intermediate table for src_s3. Transforms dataservice entities for better usability and clarity. Excludes certain entites that are not needed. 
+{% enddocs %}
