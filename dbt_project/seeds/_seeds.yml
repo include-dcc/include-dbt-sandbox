@@ -19,6 +19,7 @@ seeds:
     - name: sample
       config:
         column_types:
+        # these were all the columns that had the highest integers and I narrowed it down to what would pass
           total_reads: bigint
           pf_aligned_bases: bigint
           pf_hq_aligned_bases: bigint

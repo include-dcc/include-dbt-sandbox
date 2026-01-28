@@ -598,9 +598,10 @@ Link to request specimens from study biobank.
 {% enddocs %}
 
 
+## Kids First Source Data Fields
 
+### Clinical Data
 
-## Cody Fields
 {% docs family_relationship_target_participant_id %}
 Participant ID of Proband of Family
 {% enddocs %}
@@ -636,6 +637,35 @@ Age of participant when phenotype was asserted
 {% docs vital_status %}
 Vital status of participant
 {% enddocs %}
+
+
+### Broad Manifest 
+
+{% docs collaborator_sample_id %}
+Sample ID submitted by PI to sequencing center 
+{% enddocs %}
+
+{% docs collaborator_participant_id %}
+Participant ID submitted by PI to sequencing center 
+{% enddocs %}
+
+{% docs cram_path %}
+path of cram file from sequencing manifest
+{% enddocs %}
+
+{% docs crai_path %}
+path of crai file from sequencing manifest
+{% enddocs %}
+
+{% docs md5_path %}
+path of md5 file from sequencing manifest
+{% enddocs %}
+
+{% docs root_sample_id %}
+Specimen sample ID from sequencing manifest
+{% enddocs %}
+
+### S3 Scrape
 
 {% docs collaborator_sample_id %}
 Sample ID submitted by PI to sequencing center 
@@ -688,3 +718,8 @@ size of file from s3 manifest
 {% docs storage_class %}
 s3 storage class for file
 {% enddocs %}
+
+
+## Study Specific Fields
+
+# SD_1NNS3K8V Fields
