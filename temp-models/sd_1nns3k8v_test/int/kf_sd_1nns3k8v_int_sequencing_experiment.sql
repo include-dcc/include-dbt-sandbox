@@ -55,4 +55,4 @@ select distinct
   umi_barcode_read,
   umi_barcode_size
 
-from {{ ref('src_sequencing_experiments') }}
+from {{ ref('kf_sd_1nns3k8v_src_sequencing_experiments') }}

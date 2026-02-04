@@ -27,4 +27,4 @@ select distinct
   file_version_descriptor,
   cavatica_volume
 
-from {{ ref('int_genomic_files') }}
+from {{ ref('kf_sd_1nns3k8v_int_genomic_files') }}

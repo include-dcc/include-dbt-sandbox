@@ -21,4 +21,4 @@ select distinct
   visible,
   visibility_reason, 
   visibility_comment
-from {{ ref('int_participant') }}
+from {{ ref('kf_sd_1nns3k8v_int_participant') }}

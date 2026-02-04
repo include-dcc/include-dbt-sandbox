@@ -16,4 +16,4 @@ select distinct
   external_id, -- i think we can leave this out - it's rarely populated/used, 
   visibility_reason,
   visibility_comment
-from {{ ref('int_bsgf') }}
+from {{ ref('kf_sd_1nns3k8v_int_bsgf') }}

@@ -14,4 +14,4 @@ select distinct
   visible,
   visibility_reason,
   visibility_comment
-from {{ ref('src_investigator') }}
+from {{ ref('kf_sd_1nns3k8v_src_investigator') }}

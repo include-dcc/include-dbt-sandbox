@@ -1,4 +1,3 @@
-
 /*
     Welcome to your first dbt model!
     Did you know that you can also configure models directly within SQL files?
@@ -11,9 +10,9 @@
 
 with source_data as (
 
-    select 1 as id
-    union all
-    select null as id
+  select 1 as id
+  union all
+  select null as id
 
 )
 
