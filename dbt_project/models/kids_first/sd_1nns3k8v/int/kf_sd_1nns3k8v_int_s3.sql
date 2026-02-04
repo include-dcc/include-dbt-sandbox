@@ -9,4 +9,4 @@ select distinct
   "ETag" as etag,
   "Size" as size,
   "StorageClass" as storage_class
-from {{ ref('s3_scrape_cody') }}
+from {{ ref('kf_sd_1nns3k8v_src_s3') }}
