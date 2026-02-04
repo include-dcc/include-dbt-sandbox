@@ -667,30 +667,6 @@ Specimen sample ID from sequencing manifest
 
 ### S3 Scrape
 
-{% docs collaborator_sample_id %}
-Sample ID submitted by PI to sequencing center 
-{% enddocs %}
-
-{% docs collaborator_participant_id %}
-Participant ID submitted by PI to sequencing center 
-{% enddocs %}
-
-{% docs cram_path %}
-path of cram file from sequencing manifest
-{% enddocs %}
-
-{% docs crai_path %}
-path of crai file from sequencing manifest
-{% enddocs %}
-
-{% docs md5_path %}
-path of md5 file from sequencing manifest
-{% enddocs %}
-
-{% docs root_sample_id %}
-Specimen sample ID from sequencing manifest
-{% enddocs %}
-
 {% docs mean_coverage %}
 mean coverage value from sequencing manifest
 {% enddocs %}

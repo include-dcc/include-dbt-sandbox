@@ -1,5 +1,15 @@
 version: 2
 
+sources:
+  - name: kf_sd_1nns3k8v_src
+    database: includewarehouse
+    schema: prd_import
+    tables:
+      - name: kids_first_update
+      - name: sample
+      - name: s3_scrape_cody
+
+
 models: 
 
 - name: kf_sd_1nns3k8v_src_clinical
