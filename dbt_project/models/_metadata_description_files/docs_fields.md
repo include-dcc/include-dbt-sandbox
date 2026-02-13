@@ -128,6 +128,32 @@ The dewrangle generated id for a family. This id is a lower-cased version of the
 Denotes type of family using a set of enums, such as proband only or trio. Not currently populated in Kids First dataservie, but is calculcated by the portal etl and displayed on the Kids First portal. 
 {% enddocs %}
 
+### family relationship fields
+
+{% docs participant1_id %}
+The kf id of one person in the family relationship.
+{% enddocs %}
+
+{% docs participant2_id %}
+The kf id of the second person in the family relationship.
+{% enddocs %}
+
+{% docs participant1_to_participant2_relation %}
+A descriptor that indicates person 1's genetic relationship to person 2. Is typically mother, father, child, or sibling. 
+{% enddocs %}
+
+{% docs participant2_to_participant1_relation %}
+A descriptor that indicates person 2's genetic relationship to person 1. Is typically null, mother, father, son/daughter, brother/sister. 
+{% enddocs %}
+
+{% docs relationship_id %}
+The Kids First assigned kf id that represents a genetic relationship between two participants. In the format, "FR_XXXXXXXX"
+{% enddocs %}
+
+{% docs source_text_notes %}
+Additional text notes from source describing the relationship. Not typically populated.
+{% enddocs %}
+
 ### genomic_file fields
 
 {% docs dewrangle_genomic_file_id %}
@@ -204,6 +230,16 @@ The dewrangle generated id for an investigator. This id is a lower-cased version
 The name of the investigator's institution. 
 {% enddocs %}
 
+### outcome fields 
+
+{% docs vital_status %}
+The patient's reported state of being alive or deceased. 
+{% enddocs %}
+
+{% docs disease_related %}
+A yes or no field indicating whether a patient's deceased vital status is a result of the disease.
+{% enddocs %}
+
 ### participant fields 
 
 {% docs alias_group_id %}
@@ -258,6 +294,34 @@ Denotes whether a phenotype is negative or positive
 
 {% docs snomed_id_phenotype %}
 The ID of the term from Systematized Nomenclature of Medicine --Clinical Terms which encodes clinical terminology. Not actively populated.
+{% enddocs %}
+
+### sample fields 
+
+{% docs sample_event_key %}
+Identifier for event when sample was first drawn
+{% enddocs %}
+
+{% docs tissue_type %}
+Description of the kind of tissue collected if its a tissue type sample.
+{% enddocs %}
+
+{% docs sample_type %}
+The kind of material of the sample.
+{% enddocs %}
+
+{% docs anatomical_location %}
+The anatomical location of collection.
+{% enddocs %}
+
+{% docs external_collection_id %}
+Identifier for the collection event
+{% enddocs %}
+
+### sequencing center fields
+
+{% docs sequencing_center_name %}
+The official name of the sequencing center used to generate source genomic file outputs.
 {% enddocs %}
 
 ### sequencing experiment fields
@@ -632,10 +696,6 @@ Sex of pariticipant
 
 {% docs age_at_phenotype %}
 Age of participant when phenotype was asserted
-{% enddocs %}
-
-{% docs vital_status %}
-Vital status of participant
 {% enddocs %}
 
 
