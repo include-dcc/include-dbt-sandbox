@@ -1,0 +1,16 @@
+{{ config(
+    schema='int'
+) }}
+
+select distinct 
+  uuid, -- we can leave this out; isn't used,
+  created_at,
+  modified_at, 
+  kf_id as family_id, 
+  lower(replace(kf_id, '_', '-')) as dewrangle_family_id,
+  external_id, 
+  family_type, -- not historically populated but it should be; can use logic rules to calculate
+  visible,
+  visibility_reason,
+  visibility_comment
+from {{ref('kf_ds_src_family')}}
