@@ -3,4 +3,4 @@
 ) }}
 
 select * 
-from{{ref('ds_sequencing_centers')}}
+from{{ ref('ds_sequencing_centers') }}

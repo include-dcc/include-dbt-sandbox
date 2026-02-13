@@ -3,4 +3,4 @@
 ) }}
 
 select * 
-from {{ ref('ds_bsgfs')}}
+from {{ ref('ds_bsgfs') }}

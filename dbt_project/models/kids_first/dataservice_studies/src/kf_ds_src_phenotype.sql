@@ -3,4 +3,4 @@
 ) }}
 
 select * 
-from{{ref('ds_phenotypes')}}
+from{{ ref('ds_phenotypes') }}

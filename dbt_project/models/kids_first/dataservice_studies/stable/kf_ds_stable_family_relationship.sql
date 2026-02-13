@@ -16,4 +16,4 @@ select distinct
   visibility_reason,
   visibility_comment,
   source_text_notes -- don't think we need this? we never populate it
-from {{ref('kf_ds_int_family_relationship')}}
+from {{ ref('kf_ds_int_family_relationship') }}

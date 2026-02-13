@@ -3,4 +3,4 @@
 ) }}
 
 select * 
-from{{ref('ds_samples')}}
+from{{ ref('ds_samples') }}

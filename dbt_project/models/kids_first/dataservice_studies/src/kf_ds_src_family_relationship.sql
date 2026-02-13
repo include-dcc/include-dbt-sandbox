@@ -3,4 +3,4 @@
 ) }}
 
 select * 
-from{{ref('ds_family_relationships')}}
+from{{ ref('ds_family_relationships') }}

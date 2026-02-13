@@ -31,4 +31,4 @@ select distinct
   -- could be useful after delivery but would be null during source load
   cavatica_file_id, 
   cavatica_volume
-from {{ref('kf_ds_int_genomic_file')}}
+from {{ ref('kf_ds_int_genomic_file') }}

@@ -13,4 +13,4 @@ select distinct
   kf_id as segf_id,
   visibility_reason,
   visibility_comment 
-from {{ref('kf_ds_src_segf')}}
+from {{ ref('kf_ds_src_segf') }}

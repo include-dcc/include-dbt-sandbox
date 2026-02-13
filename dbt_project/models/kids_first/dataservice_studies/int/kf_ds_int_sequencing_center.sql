@@ -14,4 +14,4 @@ select distinct
   visible,
   visibility_reason,
   visibility_comment
-from {{ref('kf_ds_src_sequencing_center')}}
+from {{ ref('kf_ds_src_sequencing_center') }}

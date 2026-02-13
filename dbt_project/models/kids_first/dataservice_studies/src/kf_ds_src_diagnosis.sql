@@ -3,4 +3,4 @@
 ) }}
 
 select * 
-from{{ ref('ds_diagnoses')}}
+from{{ ref('ds_diagnoses') }}

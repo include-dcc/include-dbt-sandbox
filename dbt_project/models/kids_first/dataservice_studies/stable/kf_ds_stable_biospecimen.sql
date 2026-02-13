@@ -43,4 +43,4 @@ select distinct
   amount,
   amount_units,
   cell_entity 
-from {{ref('kf_ds_int_biospecimen')}}
+from {{ ref('kf_ds_int_biospecimen') }}

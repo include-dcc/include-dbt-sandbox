@@ -19,4 +19,4 @@ select distinct
   source_text_tumor_location,
   uberon_id_tumor_location,
   spatial_descriptor
-from {{ref('kf_ds_src_diagnosis')}}  
+from {{ ref('kf_ds_src_diagnosis') }}  

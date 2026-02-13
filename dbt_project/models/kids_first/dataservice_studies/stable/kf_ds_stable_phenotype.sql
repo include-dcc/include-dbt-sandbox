@@ -1,5 +1,3 @@
-
-
 select distinct 
   uuid, -- we can leave this out; it's not used,
   phenotype_id, 
@@ -13,4 +11,4 @@ select distinct
   -- additional fields that may be included
   snomed_id_phenotype,
   external_id
-from {{ref('kf_ds_int_phenotype')}}
+from {{ ref('kf_ds_int_phenotype') }}

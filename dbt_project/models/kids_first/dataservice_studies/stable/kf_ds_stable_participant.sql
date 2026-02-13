@@ -1,5 +1,3 @@
-
-
 select distinct 
   uuid, -- we can leave this out ; it's not used,
   created_at, 
@@ -20,4 +18,4 @@ select distinct
   visible,
   visibility_reason, -- can we standardize this a bit more? maybe release status instead of reason? and try to standardize more? 
   visibility_comment
-from {{ref('kf_ds_int_participant')}}
+from {{ ref('kf_ds_int_participant') }}

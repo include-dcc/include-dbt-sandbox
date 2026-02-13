@@ -3,4 +3,4 @@
 ) }}
 
 select * 
-from{{ref('ds_segfs')}}
+from{{ ref('ds_segfs') }}
