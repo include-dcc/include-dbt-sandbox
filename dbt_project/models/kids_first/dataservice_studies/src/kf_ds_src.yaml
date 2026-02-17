@@ -1,5 +1,26 @@
 version: 2
 
+sources:
+  - name: kf_ds_src
+    database: includewarehouse
+    schema: prd_import
+    tables:
+      - name: ds_specimens
+      - name: ds_bsgfs
+      - name: ds_diagnoses
+      - name: ds_family_relationships
+      - name: ds_families
+      - name: ds_genomic_files
+      - name: ds_investigators
+      - name: ds_outcomes
+      - name: ds_participants
+      - name: ds_phenotypes
+      - name: ds_samples
+      - name: ds_segfs
+      - name: ds_sequencing_centers
+      - name: ds_ses
+      - name: ds_studies
+
 models: 
 
 - name: kf_ds_src_bsgf

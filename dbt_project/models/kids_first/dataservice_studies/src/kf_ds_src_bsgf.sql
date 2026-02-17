@@ -3,4 +3,4 @@
 ) }}
 
 select * 
-from {{ ref('ds_bsgfs') }}
+from {{ source('kf_ds_src', 'ds_bsgfs') }}

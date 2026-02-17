@@ -3,4 +3,4 @@
 ) }}
 
 select * 
-from{{ ref('ds_investigators') }}
+from{{ source('kf_ds_src', 'ds_investigators') }}

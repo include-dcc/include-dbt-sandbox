@@ -3,4 +3,4 @@
 ) }}
 
 select * 
-from{{ ref('ds_genomic_files') }}
+from{{ source('kf_ds_src', 'ds_genomic_files') }}

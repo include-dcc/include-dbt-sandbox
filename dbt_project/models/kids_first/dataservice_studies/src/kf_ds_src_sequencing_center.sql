@@ -3,4 +3,4 @@
 ) }}
 
 select * 
-from{{ ref('ds_sequencing_centers') }}
+from{{ source('kf_ds_src', 'ds_sequencing_centers') }}
