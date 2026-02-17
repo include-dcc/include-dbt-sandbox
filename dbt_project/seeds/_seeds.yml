@@ -15,6 +15,7 @@ seeds:
       config:
         column_types:
           Size: bigint
+          LastModified: varchar
 
     - name: sample
       config:
@@ -26,9 +27,13 @@ seeds:
           pf_hq_aligned_q20_bases: bigint
           genome_territory: bigint
           library-1_estimated_library_size: bigint
-          # pf_reads: bigint
-          # pf_reads_aligned: bigint
-          # reads_aligned_in_pairs: bigint
-          # pf_hq_aligned_reads: bigint
-          # library-1_read_pairs: bigint
-          # pf_reads_improper_pairs: bigint
+          pf_reads: bigint
+          pf_reads_aligned: bigint
+          reads_aligned_in_pairs: bigint
+          pf_hq_aligned_reads: bigint
+          library-1_read_pairs: bigint
+          pf_reads_improper_pairs: bigint
+    - name: ds_ses
+      config: 
+        column_types: 
+          total_reads: bigint 
