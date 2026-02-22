@@ -1,8 +1,8 @@
 {{ config(materialized='table', schema='aadsc_data') }}
 
-{% set relation = ref('studies') %}
+{% set relation = source('lookups', 'studies') %}
 {% set exclude_columns = ['one','two','three','four'] %}
-{% set study_columns = get_columns(relation=relation, exclude=constant_columns) %}
+{% set study_columns = get_columns(relation=relation, exclude=exclude_columns) %}
 
 
     with 
@@ -12,7 +12,7 @@
             "{{ col }}"::text AS "{{ col.lower().replace(" ", "_") }}"
             {% if not loop.last %},{% endif %}
         {% endfor %}
-    from {{ ref('studies') }} as s
+    from {{ source('lookups', 'studies') }} as s
     WHERE "Study Code" = 'AADSC'
     )
 

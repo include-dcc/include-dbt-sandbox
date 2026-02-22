@@ -504,3 +504,71 @@ sources:
         }}'
     - name: Xerosis cutis
       description: '{{ doc("chicoine_down_syndrome_extract_xerosis_cutis") }}'
+- name: lookups
+  schema: bg_dev_schema
+  tables:
+  - name: studies
+    description: Source table for studies.
+    columns:
+    - name: Study Code
+      description: '{{ doc("studies_study_code") }}'
+    - name: Study Title
+      description: '{{ doc("studies_study_title") }}'
+    - name: Program
+      description: '{{ doc("studies_program") }}'
+    - name: Study Description
+      description: '{{ doc("studies_study_description") }}'
+    - name: Principal Investigator Name
+      description: '{{ doc("studies_principal_investigator_name") }}'
+    - name: Study Contact Name
+      description: '{{ doc("studies_study_contact_name") }}'
+    - name: Study Contact Institution
+      description: '{{ doc("studies_study_contact_institution") }}'
+    - name: Study Contact Email
+      description: '{{ doc("studies_study_contact_email") }}'
+    - name: VBR Email
+      description: '{{ doc("studies_vbr_email") }}'
+    - name: VBR URL
+      description: '{{ doc("studies_vbr_url") }}'
+    - name: VBR Readme
+      description: '{{ doc("studies_vbr_readme") }}'
+    - name: Research Domain
+      description: '{{ doc("studies_research_domain") }}'
+    - name: Participant Lifespan Stage
+      description: '{{ doc("studies_participant_lifespan_stage") }}'
+    - name: Selection Criteria
+      description: '{{ doc("studies_selection_criteria") }}'
+    - name: Study Design
+      description: '{{ doc("studies_study_design") }}'
+    - name: Clinical Data Source Type
+      description: '{{ doc("studies_clinical_data_source_type") }}'
+    - name: Data Category
+      description: '{{ doc("studies_data_category") }}'
+    - name: Study Website
+      description: '{{ doc("studies_study_website") }}'
+    - name: dbGaP
+      description: '{{ doc("studies_dbgap") }}'
+    - name: Publication
+      description: '{{ doc("studies_publication") }}'
+    - name: Expected Number of Participants
+      description: '{{ doc("studies_expected_number_of_participants") }}'
+    - name: GUID Type
+      description: '{{ doc("studies_guid_type") }}'
+    - name: GUID Mapped
+      description: '{{ doc("studies_guid_mapped") }}'
+    - name: Acknowledgments
+      description: '{{ doc("studies_acknowledgments") }}'
+    - name: Citation Statement
+      description: '{{ doc("studies_citation_statement") }}'
+    - name: DOI
+      description: '{{ doc("studies_doi") }}'
+    - name: DOI Citation
+      description: '{{ doc("studies_doi_citation") }}'
+    - name: one
+      description: '{{ doc("studies_one") }}'
+    - name: two
+      description: '{{ doc("studies_two") }}'
+    - name: three
+      description: '{{ doc("studies_three") }}'
+    - name: four
+      description: '{{ doc("studies_four") }}'
