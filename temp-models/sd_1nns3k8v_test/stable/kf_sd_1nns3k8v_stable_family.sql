@@ -10,6 +10,6 @@ select distinct
   visible,
   visibility_reason,
   visibility_comment
-from {{ ref('int_family') }}
+from {{ ref('kf_sd_1nns3k8v_int_family') }}
 
 

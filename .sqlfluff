@@ -10,7 +10,7 @@ project_dir = dbt_project
 target = dev
 # If needed, uncomment the line below to specify the directory where your
 # profiles.yml file is located
-profiles_dir = ~/.dbt/include
+profiles_dir = ~/.dbt/
 
 [sqlfluff:indentation]
 tab_space_size = 2

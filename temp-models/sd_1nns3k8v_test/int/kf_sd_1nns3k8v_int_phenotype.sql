@@ -16,4 +16,4 @@ select distinct
   snomed_id_phenotype,
   external_id
     
-from {{ ref('src_phenotype') }}
+from {{ ref('kf_sd_1nns3k8v_src_phenotype') }}

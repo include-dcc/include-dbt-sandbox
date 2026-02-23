@@ -26,7 +26,7 @@ include_dbt_sandbox:
       user: "{{ env_var('INCLUDEWAREHOUSE_SCV_USERNAME') }}"
       password: "{{ env_var('INCLUDEWAREHOUSE_SCV_PASSWORD') }}"
       port: 5432
-      dbname: postgres
+      dbname: includewarehouse
       schema: prd
       threads: 4
     
