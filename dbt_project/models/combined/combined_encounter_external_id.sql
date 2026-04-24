@@ -1,0 +1,4 @@
+{{ config(materialized='table') }}
+
+select *
+from {{ ref('inc_aadsc_stb_encounter_external_id') }}
