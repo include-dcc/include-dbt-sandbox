@@ -15,5 +15,5 @@
     quantity::text as "quantity",
     quantity_units::text as "quantity_units",
     access_policy_id::text as "access_policy_id"
-    from {{ ref('access_sample') }}
+    {# from {{ ref('') }} #} -- COMMENTED OUT TO AVOID ERROR, REPLACE WITH APPROPRIATE REF
     

@@ -8,5 +8,5 @@
     website::text as "website",
     collection_status::text as "collection_status",
     access_policy_id::text as "access_policy_id"
-    from {{ ref('access_researchstudycollection') }}
+    {# from {{ ref('') }} #} -- COMMENTED OUT TO AVOID ERROR, REPLACE WITH APPROPRIATE REF
     

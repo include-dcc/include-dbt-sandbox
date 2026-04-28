@@ -22,5 +22,5 @@
     body_laterality::text as "body_laterality",
     cancer_stage::text as "cancer_stage",
     access_policy_id::text as "access_policy_id"
-    from {{ ref('access_participantassertion') }}
+    {# from {{ ref('') }} #} -- COMMENTED OUT TO AVOID ERROR, REPLACE WITH APPROPRIATE REF
     

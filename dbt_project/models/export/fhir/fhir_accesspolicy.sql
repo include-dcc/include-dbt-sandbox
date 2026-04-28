@@ -8,5 +8,5 @@
     consent_scope::text as "consent_scope",
     disease_limitation::text as "disease_limitation",
     status::text as "status"
-    from {{ ref('access_accesspolicy') }}
+    {# from {{ ref('') }} #} -- COMMENTED OUT TO AVOID ERROR, REPLACE WITH APPROPRIATE REF
     

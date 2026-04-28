@@ -5,5 +5,5 @@
     location_uri::text as "location_uri",
     file_name::text as "file_name",
     access_policy_id::text as "access_policy_id"
-    from {{ ref('access_filelocation') }}
+    {# from {{ ref('') }} #} -- COMMENTED OUT TO AVOID ERROR, REPLACE WITH APPROPRIATE REF
     

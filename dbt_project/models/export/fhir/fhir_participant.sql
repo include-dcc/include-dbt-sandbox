@@ -13,5 +13,6 @@
     patient_knowledge_source::text as "patient_knowledge_source",
     family_global_id::text as "family_global_id",
     access_policy_id::text as "access_policy_id"
-    from {{ ref('access_participant') }}
+    {# from {{ ref('') }} #} -- COMMENTED OUT TO AVOID ERROR, REPLACE WITH APPROPRIATE REF
+    
     

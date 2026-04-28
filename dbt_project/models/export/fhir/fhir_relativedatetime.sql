@@ -5,5 +5,5 @@
     offset_end::integer as "offset_end",
     offset_type::text as "offset_type",
     id::text as "id"
-    from {{ ref('access_relativedatetime') }}
+    {# from {{ ref('') }} #} -- COMMENTED OUT TO AVOID ERROR, REPLACE WITH APPROPRIATE REF
     

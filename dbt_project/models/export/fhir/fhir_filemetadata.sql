@@ -15,5 +15,5 @@
     workflow_type::text as "workflow_type",
     workflow_tool::text as "workflow_tool",
     access_policy_id::text as "access_policy_id"
-    from {{ ref('access_filemetadata') }}
+    {# from {{ ref('') }} #} -- COMMENTED OUT TO AVOID ERROR, REPLACE WITH APPROPRIATE REF
     

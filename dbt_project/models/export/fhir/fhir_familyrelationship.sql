@@ -7,5 +7,5 @@
     relationship::text as "relationship",
     knowledge_source::text as "knowledge_source",
     access_policy_id::text as "access_policy_id"
-    from {{ ref('access_familyrelationship') }}
+    {# from {{ ref('') }} #} -- COMMENTED OUT TO AVOID ERROR, REPLACE WITH APPROPRIATE REF
     

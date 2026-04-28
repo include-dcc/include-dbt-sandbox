@@ -6,5 +6,5 @@
     age_code::text as "age_code",
     as_date::text as "as_date",
     id::text as "id"
-    from {{ ref('access_ageat') }}
+    {# from {{ ref('') }} #} -- COMMENTED OUT TO AVOID ERROR, REPLACE WITH APPROPRIATE REF
     

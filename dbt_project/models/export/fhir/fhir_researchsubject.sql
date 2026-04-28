@@ -5,5 +5,5 @@
     participant_id::text as "participant_id",
     study_membership_id::text as "study_membership_id",
     access_policy_id::text as "access_policy_id"
-    from {{ ref('access_researchsubject') }}
+    {# from {{ ref('') }} #} -- COMMENTED OUT TO AVOID ERROR, REPLACE WITH APPROPRIATE REF
     

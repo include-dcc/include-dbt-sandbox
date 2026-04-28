@@ -9,5 +9,5 @@
     description::text as "description",
     practitioner_title::text as "practitioner_title",
     access_policy_id::text as "access_policy_id"
-    from {{ ref('access_practitioner') }}
+    {# from {{ ref('') }} #} -- COMMENTED OUT TO AVOID ERROR, REPLACE WITH APPROPRIATE REF
     

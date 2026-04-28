@@ -12,5 +12,5 @@
     description::text as "description",
     file_global_id::text as "file_global_id",
     access_policy_id::text as "access_policy_id"
-    from {{ ref('access_ncpifile') }}
+    {# from {{ ref('') }} #} -- COMMENTED OUT TO AVOID ERROR, REPLACE WITH APPROPRIATE REF
     

@@ -7,5 +7,5 @@
     description::text as "description",
     study_status::text as "study_status",
     access_policy_id::text as "access_policy_id"
-    from {{ ref('access_researchstudy') }}
+    {# from {{ ref('') }} #} -- COMMENTED OUT TO AVOID ERROR, REPLACE WITH APPROPRIATE REF
     

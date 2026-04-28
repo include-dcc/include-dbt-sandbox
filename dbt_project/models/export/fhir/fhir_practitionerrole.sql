@@ -5,5 +5,5 @@
     institution_id::text as "institution_id",
     practitioner_id::text as "practitioner_id",
     period_id::text as "period_id"
-    from {{ ref('access_practitionerrole') }}
+    {# from {{ ref('') }} #} -- COMMENTED OUT TO AVOID ERROR, REPLACE WITH APPROPRIATE REF
     
