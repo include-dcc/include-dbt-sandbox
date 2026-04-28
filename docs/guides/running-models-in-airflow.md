@@ -72,7 +72,7 @@ example_study_dag = DbtDag(
     execution_config=ExecutionConfig(
         dbt_executable_path=Variable.get("DBT_EXECUTABLE_PATH"),
     ),
-    render_config=RenderConfig(select=["config.meta.study:kf_example_study"]),
+    render_config=RenderConfig(select=["tag:[study_level,aadsc]"]),
     # normal dag parameters
     schedule="@daily",
     dag_id="kf_example_study",
@@ -134,13 +134,71 @@ The rest of the DAG's parameters are familiar to other airflow operators.
 * `schedule` indicates how often a DAG should be run
 * `dag_id` is the identifier for the DAG within airflow and should follow the
   form `{program}_{study}`.
-* `tags` is used to tag the DAG and should minimally have a tag for the program
-  the DAG corresponds to.
+* `tags` is used to organize DAGs in the Airflow UI.
 
-## Required components of models
+## Tag usage in DAGs and dbt
 
-To be picked up by airflow, all that is required for models is that they have
-the corresponding filtering criteria used in the `select` of the `RenderConfig`.
+This repository uses two different kinds of tags:
 
-In this example, the `meta` `config` property `study` was created and used to
-filter models.
+1. Airflow DAG tags (`DbtDag(..., tags=[...])`)
+2. dbt model tags (`+tags` in `dbt_project.yml` or model config)
+
+These are not the same thing.
+
+### Type 1: Tagging Airflow DAGs
+
+Airflow DAG tags are metadata for organizing DAGs in the Airflow UI. They do
+not change which dbt models are selected.
+
+Example:
+
+```python
+DbtDag(
+        ...
+        tags=["include"],
+)
+```
+
+| DAG tag | Use to tag... |
+| --- | --- |
+
+| `[PROJECT_IDENTIFIER]` | study_level models of a single project. ie: include |
+| `[STUDY_IDENTIFIER]` | models of a single study |
+| `study_level` | models in the src, int, and stb stages |
+| `combined_stage` | models in the combined stage |
+| `access_stage` | models in the access stage |
+| `export_stage` | models in the export stage |
+| `[EXPORT_MODEL_IDENTIFIER]` | a specific export model. ie fhir |
+
+
+### Type 2: Tagging dbt models in the `dbt_project.yml` file
+
+#### Purpose:
+These tags are used to select or exclude dbt nodes in Airflow DAG runs.
+`RenderConfig(select=[...], exclude=["tag:TAGS_HERE"])`.
+
+##### How to define models with tags:
+Each group of models should be defined in the dbt_project.yml file.
+Use the table below to choose tags that properly define a group of models.
+Tags can be inherited by subgroups. Place tags at the highest level that makes sense.
+``` 
+include_dbt_sandbox:
+    include:
+      +tags: [study_stage,include]
+      aadsc:
+        +tags: [SD_ID_HERE, aadsc]
+    access:
+      +tags: [access_stage]
+
+```
+
+| DAG tag | Use to tag... |
+| --- | --- |
+
+| `[PROJECT_IDENTIFIER]` | study_level models of a single project. ie: include |
+| `[STUDY_IDENTIFIER]` | models of a single study |
+| `study_level` | models in the src, int, and stb stages |
+| `combined_stage` | models in the combined stage |
+| `access_stage` | models in the access stage |
+| `export_stage` | models in the export stage |
+| `[EXPORT_MODEL_IDENTIFIER]` | a specific export model. ie fhir |
