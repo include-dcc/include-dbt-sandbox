@@ -1,0 +1,10 @@
+-r requirements.txt
+
+# Airflow dependencies
+apache-airflow==3.0.6
+astronomer-cosmos
+
+# Developer dependencies
+pre-commit
+sqlfluff
+sqlfluff-templater-dbt

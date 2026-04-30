@@ -1,0 +1,3 @@
+# Runtime dependencies
+dbt-core==1.10.18
+dbt-postgres==1.10.0

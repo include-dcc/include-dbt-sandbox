@@ -1,0 +1,600 @@
+models:
+- name: fhir_accesspolicy
+  description: Model for fhir_accesspolicy.
+  columns:
+  - name: access_policy_id
+    description: '{{ doc("fhir_accesspolicy_access_policy_id") }}'
+  - name: description
+    description: '{{ doc("fhir_accesspolicy_description") }}'
+  - name: data_access_type
+    description: '{{ doc("fhir_accesspolicy_data_access_type") }}'
+  - name: website
+    description: '{{ doc("fhir_accesspolicy_website") }}'
+  - name: consent_scope
+    description: '{{ doc("fhir_accesspolicy_consent_scope") }}'
+  - name: disease_limitation
+    description: '{{ doc("fhir_accesspolicy_disease_limitation") }}'
+  - name: status
+    description: '{{ doc("fhir_accesspolicy_status") }}'
+- name: fhir_accesspolicy_access_policy_code
+  description: Model for fhir_accesspolicy_access_policy_code.
+  columns:
+  - name: AccessPolicy_access_policy_id
+    description: '{{ doc("fhir_accesspolicy_access_policy_code_accesspolicy_a_a654d529")
+      }}'
+  - name: access_policy_code
+    description: '{{ doc("fhir_accesspolicy_access_policy_code_access_policy_code")
+      }}'
+- name: fhir_ageat
+  description: Model for fhir_ageat.
+  columns:
+  - name: value_type
+    description: '{{ doc("fhir_ageat_value_type") }}'
+  - name: relative_date_time_id
+    description: '{{ doc("fhir_ageat_relative_date_time_id") }}'
+  - name: age_code
+    description: '{{ doc("fhir_ageat_age_code") }}'
+  - name: as_date
+    description: '{{ doc("fhir_ageat_as_date") }}'
+  - name: id
+    description: '{{ doc("fhir_ageat_id") }}'
+- name: fhir_aliquot
+  description: Model for fhir_aliquot.
+  columns:
+  - name: aliquot_id
+    description: '{{ doc("fhir_aliquot_aliquot_id") }}'
+  - name: availability_status
+    description: '{{ doc("fhir_aliquot_availability_status") }}'
+  - name: volume
+    description: '{{ doc("fhir_aliquot_volume") }}'
+  - name: volume_units
+    description: '{{ doc("fhir_aliquot_volume_units") }}'
+  - name: concentration
+    description: '{{ doc("fhir_aliquot_concentration") }}'
+  - name: sample_id
+    description: '{{ doc("fhir_aliquot_sample_id") }}'
+  - name: access_policy_id
+    description: '{{ doc("fhir_aliquot_access_policy_id") }}'
+- name: fhir_aliquot_external_id
+  description: Model for fhir_aliquot_external_id.
+  columns:
+  - name: Aliquot_aliquot_id
+    description: '{{ doc("fhir_aliquot_external_id_aliquot_aliquot_id") }}'
+  - name: external_id
+    description: '{{ doc("fhir_aliquot_external_id_external_id") }}'
+- name: fhir_associatedparty
+  description: Model for fhir_associatedparty.
+  columns:
+  - name: name
+    description: '{{ doc("fhir_associatedparty_name") }}'
+  - name: role
+    description: '{{ doc("fhir_associatedparty_role") }}'
+  - name: associated_party_practitioner_id
+    description: '{{ doc("fhir_associatedparty_associated_party_practitioner_id")
+      }}'
+  - name: associated_party_practitioner_role_id
+    description: '{{ doc("fhir_associatedparty_associated_party_practitioner_role_id")
+      }}'
+  - name: associated_party_institution_id
+    description: '{{ doc("fhir_associatedparty_associated_party_institution_id") }}'
+  - name: id
+    description: '{{ doc("fhir_associatedparty_id") }}'
+- name: fhir_associatedparty_classifier
+  description: Model for fhir_associatedparty_classifier.
+  columns:
+  - name: AssociatedParty_id
+    description: '{{ doc("fhir_associatedparty_classifier_associatedparty_id") }}'
+  - name: classifier
+    description: '{{ doc("fhir_associatedparty_classifier_classifier") }}'
+- name: fhir_associatedparty_period_id
+  description: Model for fhir_associatedparty_period_id.
+  columns:
+  - name: AssociatedParty_id
+    description: '{{ doc("fhir_associatedparty_period_id_associatedparty_id") }}'
+  - name: period_id_period_id
+    description: '{{ doc("fhir_associatedparty_period_id_period_id_period_id") }}'
+- name: fhir_family
+  description: Model for fhir_family.
+  columns:
+  - name: family_global_id
+    description: '{{ doc("fhir_family_family_global_id") }}'
+  - name: family_id
+    description: '{{ doc("fhir_family_family_id") }}'
+  - name: family_type
+    description: '{{ doc("fhir_family_family_type") }}'
+  - name: description
+    description: '{{ doc("fhir_family_description") }}'
+  - name: consanguinity
+    description: '{{ doc("fhir_family_consanguinity") }}'
+  - name: family_focus
+    description: '{{ doc("fhir_family_family_focus") }}'
+  - name: access_policy_id
+    description: '{{ doc("fhir_family_access_policy_id") }}'
+- name: fhir_familyrelationship
+  description: Model for fhir_familyrelationship.
+  columns:
+  - name: family_relationship_id
+    description: '{{ doc("fhir_familyrelationship_family_relationship_id") }}'
+  - name: patient_id
+    description: '{{ doc("fhir_familyrelationship_patient_id") }}'
+  - name: relative_id
+    description: '{{ doc("fhir_familyrelationship_relative_id") }}'
+  - name: relationship
+    description: '{{ doc("fhir_familyrelationship_relationship") }}'
+  - name: knowledge_source
+    description: '{{ doc("fhir_familyrelationship_knowledge_source") }}'
+  - name: access_policy_id
+    description: '{{ doc("fhir_familyrelationship_access_policy_id") }}'
+- name: fhir_family_external_id
+  description: Model for fhir_family_external_id.
+  columns:
+  - name: Family_family_global_id
+    description: '{{ doc("fhir_family_external_id_family_family_global_id") }}'
+  - name: external_id
+    description: '{{ doc("fhir_family_external_id_external_id") }}'
+- name: fhir_filelocation
+  description: Model for fhir_filelocation.
+  columns:
+  - name: file_location_id
+    description: '{{ doc("fhir_filelocation_file_location_id") }}'
+  - name: location_uri
+    description: '{{ doc("fhir_filelocation_location_uri") }}'
+  - name: file_name
+    description: '{{ doc("fhir_filelocation_file_name") }}'
+  - name: access_policy_id
+    description: '{{ doc("fhir_filelocation_access_policy_id") }}'
+- name: fhir_filemetadata
+  description: Model for fhir_filemetadata.
+  columns:
+  - name: file_meta_data_id
+    description: '{{ doc("fhir_filemetadata_file_meta_data_id") }}'
+  - name: meta_data_type
+    description: '{{ doc("fhir_filemetadata_meta_data_type") }}'
+  - name: assay_strategy
+    description: '{{ doc("fhir_filemetadata_assay_strategy") }}'
+  - name: platform_instrument
+    description: '{{ doc("fhir_filemetadata_platform_instrument") }}'
+  - name: library_prep
+    description: '{{ doc("fhir_filemetadata_library_prep") }}'
+  - name: library_selection
+    description: '{{ doc("fhir_filemetadata_library_selection") }}'
+  - name: strandedness
+    description: '{{ doc("fhir_filemetadata_strandedness") }}'
+  - name: target_region
+    description: '{{ doc("fhir_filemetadata_target_region") }}'
+  - name: is_paired_end
+    description: '{{ doc("fhir_filemetadata_is_paired_end") }}'
+  - name: adaptor_trimmed
+    description: '{{ doc("fhir_filemetadata_adaptor_trimmed") }}'
+  - name: reference_genome
+    description: '{{ doc("fhir_filemetadata_reference_genome") }}'
+  - name: workflow_type
+    description: '{{ doc("fhir_filemetadata_workflow_type") }}'
+  - name: workflow_tool
+    description: '{{ doc("fhir_filemetadata_workflow_tool") }}'
+  - name: access_policy_id
+    description: '{{ doc("fhir_filemetadata_access_policy_id") }}'
+- name: fhir_filemetadata_samples
+  description: Model for fhir_filemetadata_samples.
+  columns:
+  - name: FileMetaData_file_meta_data_id
+    description: '{{ doc("fhir_filemetadata_samples_filemetadata_file_meta_data_id")
+      }}'
+  - name: samples_sample_id
+    description: '{{ doc("fhir_filemetadata_samples_samples_sample_id") }}'
+- name: fhir_hasexternalid_external_id
+  description: Model for fhir_hasexternalid_external_id.
+  columns:
+  - name: HasExternalId_id
+    description: '{{ doc("fhir_hasexternalid_external_id_hasexternalid_id") }}'
+  - name: external_id
+    description: '{{ doc("fhir_hasexternalid_external_id_external_id") }}'
+- name: fhir_institution
+  description: Model for fhir_institution.
+  columns:
+  - name: institution_id
+    description: '{{ doc("fhir_institution_institution_id") }}'
+  - name: name
+    description: '{{ doc("fhir_institution_name") }}'
+  - name: access_policy_id
+    description: '{{ doc("fhir_institution_access_policy_id") }}'
+- name: fhir_institution_external_id
+  description: Model for fhir_institution_external_id.
+  columns:
+  - name: Institution_institution_id
+    description: '{{ doc("fhir_institution_external_id_institution_institution_id")
+      }}'
+  - name: external_id
+    description: '{{ doc("fhir_institution_external_id_external_id") }}'
+- name: fhir_ncpifile
+  description: Model for fhir_ncpifile.
+  columns:
+  - name: participant_id
+    description: '{{ doc("fhir_ncpifile_participant_id") }}'
+  - name: file_format
+    description: '{{ doc("fhir_ncpifile_file_format") }}'
+  - name: file_size
+    description: '{{ doc("fhir_ncpifile_file_size") }}'
+  - name: file_size_unit
+    description: '{{ doc("fhir_ncpifile_file_size_unit") }}'
+  - name: content_version
+    description: '{{ doc("fhir_ncpifile_content_version") }}'
+  - name: file_type
+    description: '{{ doc("fhir_ncpifile_file_type") }}'
+  - name: file_hash
+    description: '{{ doc("fhir_ncpifile_file_hash") }}'
+  - name: file_hash_type
+    description: '{{ doc("fhir_ncpifile_file_hash_type") }}'
+  - name: description
+    description: '{{ doc("fhir_ncpifile_description") }}'
+  - name: file_global_id
+    description: '{{ doc("fhir_ncpifile_file_global_id") }}'
+  - name: access_policy_id
+    description: '{{ doc("fhir_ncpifile_access_policy_id") }}'
+- name: fhir_ncpifile_external_id
+  description: Model for fhir_ncpifile_external_id.
+  columns:
+  - name: NCPIFile_file_global_id
+    description: '{{ doc("fhir_ncpifile_external_id_ncpifile_file_global_id") }}'
+  - name: external_id
+    description: '{{ doc("fhir_ncpifile_external_id_external_id") }}'
+- name: fhir_ncpifile_file_location_id
+  description: Model for fhir_ncpifile_file_location_id.
+  columns:
+  - name: NCPIFile_file_global_id
+    description: '{{ doc("fhir_ncpifile_file_location_id_ncpifile_file_global_id")
+      }}'
+  - name: file_location_id_file_location_id
+    description: '{{ doc("fhir_ncpifile_file_location_id_file_location_id_fil_910b15cb")
+      }}'
+- name: fhir_ncpifile_file_meta_data_id
+  description: Model for fhir_ncpifile_file_meta_data_id.
+  columns:
+  - name: NCPIFile_file_global_id
+    description: '{{ doc("fhir_ncpifile_file_meta_data_id_ncpifile_file_global_id")
+      }}'
+  - name: file_meta_data_id_file_meta_data_id
+    description: '{{ doc("fhir_ncpifile_file_meta_data_id_file_meta_data_id_f_04b23a97")
+      }}'
+- name: fhir_participant
+  description: Model for fhir_participant.
+  columns:
+  - name: participant_id
+    description: '{{ doc("fhir_participant_participant_id") }}'
+  - name: birthsex
+    description: '{{ doc("fhir_participant_birthsex") }}'
+  - name: ethnicity
+    description: '{{ doc("fhir_participant_ethnicity") }}'
+  - name: population
+    description: '{{ doc("fhir_participant_population") }}'
+  - name: dob
+    description: '{{ doc("fhir_participant_dob") }}'
+  - name: dob_method
+    description: '{{ doc("fhir_participant_dob_method") }}'
+  - name: age_at_last_vital
+    description: '{{ doc("fhir_participant_age_at_last_vital") }}'
+  - name: is_deceased
+    description: '{{ doc("fhir_participant_is_deceased") }}'
+  - name: deceased_rel
+    description: '{{ doc("fhir_participant_deceased_rel") }}'
+  - name: patient_knowledge_source
+    description: '{{ doc("fhir_participant_patient_knowledge_source") }}'
+  - name: family_global_id
+    description: '{{ doc("fhir_participant_family_global_id") }}'
+  - name: access_policy_id
+    description: '{{ doc("fhir_participant_access_policy_id") }}'
+- name: fhir_participantassertion
+  description: Model for fhir_participantassertion.
+  columns:
+  - name: participant_assertion_id
+    description: '{{ doc("fhir_participantassertion_participant_assertion_id") }}'
+  - name: participant_id
+    description: '{{ doc("fhir_participantassertion_participant_id") }}'
+  - name: age_at_event
+    description: '{{ doc("fhir_participantassertion_age_at_event") }}'
+  - name: age_at_assertion
+    description: '{{ doc("fhir_participantassertion_age_at_assertion") }}'
+  - name: age_at_onset
+    description: '{{ doc("fhir_participantassertion_age_at_onset") }}'
+  - name: age_at_resolution
+    description: '{{ doc("fhir_participantassertion_age_at_resolution") }}'
+  - name: entity_asserter
+    description: '{{ doc("fhir_participantassertion_entity_asserter") }}'
+  - name: other_condition_modifiers
+    description: '{{ doc("fhir_participantassertion_other_condition_modifiers") }}'
+  - name: assertion_type
+    description: '{{ doc("fhir_participantassertion_assertion_type") }}'
+  - name: assertion_code
+    description: '{{ doc("fhir_participantassertion_assertion_code") }}'
+  - name: assertion_text
+    description: '{{ doc("fhir_participantassertion_assertion_text") }}'
+  - name: assertion_source
+    description: '{{ doc("fhir_participantassertion_assertion_source") }}'
+  - name: value_code
+    description: '{{ doc("fhir_participantassertion_value_code") }}'
+  - name: value_string
+    description: '{{ doc("fhir_participantassertion_value_string") }}'
+  - name: value_number
+    description: '{{ doc("fhir_participantassertion_value_number") }}'
+  - name: value_units
+    description: '{{ doc("fhir_participantassertion_value_units") }}'
+  - name: body_site
+    description: '{{ doc("fhir_participantassertion_body_site") }}'
+  - name: body_location
+    description: '{{ doc("fhir_participantassertion_body_location") }}'
+  - name: body_laterality
+    description: '{{ doc("fhir_participantassertion_body_laterality") }}'
+  - name: cancer_stage
+    description: '{{ doc("fhir_participantassertion_cancer_stage") }}'
+  - name: access_policy_id
+    description: '{{ doc("fhir_participantassertion_access_policy_id") }}'
+- name: fhir_participant_external_id
+  description: Model for fhir_participant_external_id.
+  columns:
+  - name: Participant_participant_id
+    description: '{{ doc("fhir_participant_external_id_participant_participant_id")
+      }}'
+  - name: external_id
+    description: '{{ doc("fhir_participant_external_id_external_id") }}'
+- name: fhir_participant_race
+  description: Model for fhir_participant_race.
+  columns:
+  - name: Participant_participant_id
+    description: '{{ doc("fhir_participant_race_participant_participant_id") }}'
+  - name: race
+    description: '{{ doc("fhir_participant_race_race") }}'
+- name: fhir_participant_sample_id
+  description: Model for fhir_participant_sample_id.
+  columns:
+  - name: Participant_participant_id
+    description: '{{ doc("fhir_participant_sample_id_participant_participant_id")
+      }}'
+  - name: sample_id_sample_id
+    description: '{{ doc("fhir_participant_sample_id_sample_id_sample_id") }}'
+- name: fhir_period
+  description: Model for fhir_period.
+  columns:
+  - name: period_id
+    description: '{{ doc("fhir_period_period_id") }}'
+  - name: start
+    description: '{{ doc("fhir_period_start") }}'
+  - name: end
+    description: '{{ doc("fhir_period_end") }}'
+- name: fhir_person
+  description: Model for fhir_person.
+  columns:
+  - name: person_id
+    description: '{{ doc("fhir_person_person_id") }}'
+  - name: access_policy_id
+    description: '{{ doc("fhir_person_access_policy_id") }}'
+- name: fhir_person_participant_id
+  description: Model for fhir_person_participant_id.
+  columns:
+  - name: Person_person_id
+    description: '{{ doc("fhir_person_participant_id_person_person_id") }}'
+  - name: participant_id_participant_id
+    description: '{{ doc("fhir_person_participant_id_participant_id_participant_id")
+      }}'
+- name: fhir_practitioner
+  description: Model for fhir_practitioner.
+  columns:
+  - name: practitioner_id
+    description: '{{ doc("fhir_practitioner_practitioner_id") }}'
+  - name: name
+    description: '{{ doc("fhir_practitioner_name") }}'
+  - name: email
+    description: '{{ doc("fhir_practitioner_email") }}'
+  - name: institution_id
+    description: '{{ doc("fhir_practitioner_institution_id") }}'
+  - name: practitioner_role_id
+    description: '{{ doc("fhir_practitioner_practitioner_role_id") }}'
+  - name: description
+    description: '{{ doc("fhir_practitioner_description") }}'
+  - name: practitioner_title
+    description: '{{ doc("fhir_practitioner_practitioner_title") }}'
+  - name: access_policy_id
+    description: '{{ doc("fhir_practitioner_access_policy_id") }}'
+- name: fhir_practitionerrole
+  description: Model for fhir_practitionerrole.
+  columns:
+  - name: practitioner_role_id
+    description: '{{ doc("fhir_practitionerrole_practitioner_role_id") }}'
+  - name: institution_id
+    description: '{{ doc("fhir_practitionerrole_institution_id") }}'
+  - name: practitioner_id
+    description: '{{ doc("fhir_practitionerrole_practitioner_id") }}'
+  - name: period_id
+    description: '{{ doc("fhir_practitionerrole_period_id") }}'
+- name: fhir_practitioner_external_id
+  description: Model for fhir_practitioner_external_id.
+  columns:
+  - name: Practitioner_practitioner_id
+    description: '{{ doc("fhir_practitioner_external_id_practitioner_practitioner_id")
+      }}'
+  - name: external_id
+    description: '{{ doc("fhir_practitioner_external_id_external_id") }}'
+- name: fhir_relativedatetime
+  description: Model for fhir_relativedatetime.
+  columns:
+  - name: offset
+    description: '{{ doc("fhir_relativedatetime_offset") }}'
+  - name: offset_end
+    description: '{{ doc("fhir_relativedatetime_offset_end") }}'
+  - name: offset_type
+    description: '{{ doc("fhir_relativedatetime_offset_type") }}'
+  - name: id
+    description: '{{ doc("fhir_relativedatetime_id") }}'
+- name: fhir_researchstudy
+  description: Model for fhir_researchstudy.
+  columns:
+  - name: research_study_id
+    description: '{{ doc("fhir_researchstudy_research_study_id") }}'
+  - name: study_title
+    description: '{{ doc("fhir_researchstudy_study_title") }}'
+  - name: parent_study_id
+    description: '{{ doc("fhir_researchstudy_parent_study_id") }}'
+  - name: description
+    description: '{{ doc("fhir_researchstudy_description") }}'
+  - name: study_status
+    description: '{{ doc("fhir_researchstudy_study_status") }}'
+  - name: access_policy_id
+    description: '{{ doc("fhir_researchstudy_access_policy_id") }}'
+- name: fhir_researchstudycollection
+  description: Model for fhir_researchstudycollection.
+  columns:
+  - name: research_study_collection_id
+    description: '{{ doc("fhir_researchstudycollection_research_study_collection_id")
+      }}'
+  - name: description
+    description: '{{ doc("fhir_researchstudycollection_description") }}'
+  - name: collection_title
+    description: '{{ doc("fhir_researchstudycollection_collection_title") }}'
+  - name: research_study_collection_type
+    description: '{{ doc("fhir_researchstudycollection_research_study_collection_type")
+      }}'
+  - name: website
+    description: '{{ doc("fhir_researchstudycollection_website") }}'
+  - name: collection_status
+    description: '{{ doc("fhir_researchstudycollection_collection_status") }}'
+  - name: access_policy_id
+    description: '{{ doc("fhir_researchstudycollection_access_policy_id") }}'
+- name: fhir_researchstudycollection_external_id
+  description: Model for fhir_researchstudycollection_external_id.
+  columns:
+  - name: ResearchStudyCollection_research_study_collection_id
+    description: '{{ doc("fhir_researchstudycollection_external_id_researchst_60446094")
+      }}'
+  - name: external_id
+    description: '{{ doc("fhir_researchstudycollection_external_id_external_id") }}'
+- name: fhir_researchstudycollection_label
+  description: Model for fhir_researchstudycollection_label.
+  columns:
+  - name: ResearchStudyCollection_research_study_collection_id
+    description: '{{ doc("fhir_researchstudycollection_label_researchstudycol_928057ac")
+      }}'
+  - name: label
+    description: '{{ doc("fhir_researchstudycollection_label_label") }}'
+- name: fhir_researchstudycollection_research_study_collection_member_id
+  description: Model for fhir_researchstudycollection_research_study_collection_member_id.
+  columns:
+  - name: ResearchStudyCollection_research_study_collection_id
+    description: '{{ doc("fhir_researchstudycollection_research_study_collect_3e78ba3c")
+      }}'
+  - name: research_study_collection_member_id_research_study_id
+    description: '{{ doc("fhir_researchstudycollection_research_study_collect_21d5b404")
+      }}'
+- name: fhir_researchstudy_external_id
+  description: Model for fhir_researchstudy_external_id.
+  columns:
+  - name: ResearchStudy_research_study_id
+    description: '{{ doc("fhir_researchstudy_external_id_researchstudy_resear_76472f67")
+      }}'
+  - name: external_id
+    description: '{{ doc("fhir_researchstudy_external_id_external_id") }}'
+- name: fhir_researchstudy_study_acknowledgement
+  description: Model for fhir_researchstudy_study_acknowledgement.
+  columns:
+  - name: ResearchStudy_research_study_id
+    description: '{{ doc("fhir_researchstudy_study_acknowledgement_researchst_979b6203")
+      }}'
+  - name: study_acknowledgement
+    description: '{{ doc("fhir_researchstudy_study_acknowledgement_study_ackn_62f32293")
+      }}'
+- name: fhir_researchstudy_study_condition
+  description: Model for fhir_researchstudy_study_condition.
+  columns:
+  - name: ResearchStudy_research_study_id
+    description: '{{ doc("fhir_researchstudy_study_condition_researchstudy_re_80ef294b")
+      }}'
+  - name: study_condition
+    description: '{{ doc("fhir_researchstudy_study_condition_study_condition") }}'
+- name: fhir_researchstudy_study_design
+  description: Model for fhir_researchstudy_study_design.
+  columns:
+  - name: ResearchStudy_research_study_id
+    description: '{{ doc("fhir_researchstudy_study_design_researchstudy_resea_e7ccf5b9")
+      }}'
+  - name: study_design
+    description: '{{ doc("fhir_researchstudy_study_design_study_design") }}'
+- name: fhir_researchstudy_study_focus
+  description: Model for fhir_researchstudy_study_focus.
+  columns:
+  - name: ResearchStudy_research_study_id
+    description: '{{ doc("fhir_researchstudy_study_focus_researchstudy_resear_51c38d62")
+      }}'
+  - name: study_focus
+    description: '{{ doc("fhir_researchstudy_study_focus_study_focus") }}'
+- name: fhir_researchstudy_study_personnel
+  description: Model for fhir_researchstudy_study_personnel.
+  columns:
+  - name: ResearchStudy_research_study_id
+    description: '{{ doc("fhir_researchstudy_study_personnel_researchstudy_re_01cba331")
+      }}'
+  - name: study_personnel_id
+    description: '{{ doc("fhir_researchstudy_study_personnel_study_personnel_id")
+      }}'
+- name: fhir_researchsubject
+  description: Model for fhir_researchsubject.
+  columns:
+  - name: research_subject_id
+    description: '{{ doc("fhir_researchsubject_research_subject_id") }}'
+  - name: participant_id
+    description: '{{ doc("fhir_researchsubject_participant_id") }}'
+  - name: study_membership_id
+    description: '{{ doc("fhir_researchsubject_study_membership_id") }}'
+  - name: access_policy_id
+    description: '{{ doc("fhir_researchsubject_access_policy_id") }}'
+- name: fhir_sample
+  description: Model for fhir_sample.
+  columns:
+  - name: sample_id
+    description: '{{ doc("fhir_sample_sample_id") }}'
+  - name: parent_sample_id
+    description: '{{ doc("fhir_sample_parent_sample_id") }}'
+  - name: participant_id
+    description: '{{ doc("fhir_sample_participant_id") }}'
+  - name: sample_type
+    description: '{{ doc("fhir_sample_sample_type") }}'
+  - name: age_at_collection
+    description: '{{ doc("fhir_sample_age_at_collection") }}'
+  - name: collection_method
+    description: '{{ doc("fhir_sample_collection_method") }}'
+  - name: collection_site
+    description: '{{ doc("fhir_sample_collection_site") }}'
+  - name: spatial_qualifier
+    description: '{{ doc("fhir_sample_spatial_qualifier") }}'
+  - name: laterality
+    description: '{{ doc("fhir_sample_laterality") }}'
+  - name: availability_status
+    description: '{{ doc("fhir_sample_availability_status") }}'
+  - name: storage_method
+    description: '{{ doc("fhir_sample_storage_method") }}'
+  - name: quantity
+    description: '{{ doc("fhir_sample_quantity") }}'
+  - name: quantity_units
+    description: '{{ doc("fhir_sample_quantity_units") }}'
+  - name: access_policy_id
+    description: '{{ doc("fhir_sample_access_policy_id") }}'
+- name: fhir_sample_external_id
+  description: Model for fhir_sample_external_id.
+  columns:
+  - name: Sample_sample_id
+    description: '{{ doc("fhir_sample_external_id_sample_sample_id") }}'
+  - name: external_id
+    description: '{{ doc("fhir_sample_external_id_external_id") }}'
+- name: fhir_sample_processing
+  description: Model for fhir_sample_processing.
+  columns:
+  - name: Sample_sample_id
+    description: '{{ doc("fhir_sample_processing_sample_sample_id") }}'
+  - name: processing
+    description: '{{ doc("fhir_sample_processing_processing") }}'
+- name: fhir_studymembership
+  description: Model for fhir_studymembership.
+  columns:
+  - name: study_membership_id
+    description: '{{ doc("fhir_studymembership_study_membership_id") }}'
+  - name: access_policy_id
+    description: '{{ doc("fhir_studymembership_access_policy_id") }}'
+  - name: research_study_id
+    description: '{{ doc("fhir_studymembership_research_study_id") }}'
