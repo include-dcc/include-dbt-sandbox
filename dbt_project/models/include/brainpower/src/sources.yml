@@ -1,0 +1,285 @@
+sources:
+- name: brainpower
+  schema: inc_brainpower_src
+  tables:
+  - name: bp_age_event_latency
+    description: Source table for bp_age_event_latency.
+    columns:
+    - name: id
+      description: '{{ doc("bp_age_event_latency_id") }}'
+    - name: timepoint
+      description: '{{ doc("bp_age_event_latency_timepoint") }}'
+    - name: age_at_visit
+      description: '{{ doc("bp_age_event_latency_age_at_visit") }}'
+    - name: age_cog
+      description: '{{ doc("bp_age_event_latency_age_cog") }}'
+    - name: age_mri
+      description: '{{ doc("bp_age_event_latency_age_mri") }}'
+    - name: visit_latency
+      description: '{{ doc("bp_age_event_latency_visit_latency") }}'
+    - name: cog_latency
+      description: '{{ doc("bp_age_event_latency_cog_latency") }}'
+    - name: mri_latency
+      description: '{{ doc("bp_age_event_latency_mri_latency") }}'
+  - name: bp_anthropometrics
+    description: Source table for bp_anthropometrics.
+    columns:
+    - name: id
+      description: '{{ doc("bp_anthropometrics_id") }}'
+    - name: timepoint
+      description: '{{ doc("bp_anthropometrics_timepoint") }}'
+    - name: height
+      description: '{{ doc("bp_anthropometrics_height") }}'
+    - name: weight
+      description: '{{ doc("bp_anthropometrics_weight") }}'
+    - name: bmi
+      description: '{{ doc("bp_anthropometrics_bmi") }}'
+    - name: waist
+      description: '{{ doc("bp_anthropometrics_waist") }}'
+    - name: sbp
+      description: '{{ doc("bp_anthropometrics_sbp") }}'
+    - name: dbp
+      description: '{{ doc("bp_anthropometrics_dbp") }}'
+    - name: resting_hr
+      description: '{{ doc("bp_anthropometrics_resting_hr") }}'
+  - name: bp_cognitive_function
+    description: Source table for bp_cognitive_function.
+    columns:
+    - name: id
+      description: '{{ doc("bp_cognitive_function_id") }}'
+    - name: timepoint
+      description: '{{ doc("bp_cognitive_function_timepoint") }}'
+    - name: mtticmd
+      description: '{{ doc("bp_cognitive_function_mtticmd") }}'
+    - name: mttlmd
+      description: '{{ doc("bp_cognitive_function_mttlmd") }}'
+    - name: mttmtcmd
+      description: '{{ doc("bp_cognitive_function_mttmtcmd") }}'
+    - name: mtttic
+      description: '{{ doc("bp_cognitive_function_mtttic") }}'
+    - name: palfams
+      description: '{{ doc("bp_cognitive_function_palfams") }}'
+    - name: paltea
+      description: '{{ doc("bp_cognitive_function_paltea") }}'
+    - name: rtifmdmt
+      description: '{{ doc("bp_cognitive_function_rtifmdmt") }}'
+    - name: rtifmdrt
+      description: '{{ doc("bp_cognitive_function_rtifmdrt") }}'
+    - name: rtismdmt
+      description: '{{ doc("bp_cognitive_function_rtismdmt") }}'
+    - name: rtismdrt
+      description: '{{ doc("bp_cognitive_function_rtismdrt") }}'
+  - name: bp_imaging
+    description: Source table for bp_imaging.
+    columns:
+    - name: id
+      description: '{{ doc("bp_imaging_id") }}'
+    - name: timepoint
+      description: '{{ doc("bp_imaging_timepoint") }}'
+    - name: norm_gray
+      description: '{{ doc("bp_imaging_norm_gray") }}'
+    - name: norm_white
+      description: '{{ doc("bp_imaging_norm_white") }}'
+    - name: norm_lhippo
+      description: '{{ doc("bp_imaging_norm_lhippo") }}'
+    - name: norm_rhippo
+      description: '{{ doc("bp_imaging_norm_rhippo") }}'
+    - name: total_icv
+      description: '{{ doc("bp_imaging_total_icv") }}'
+    - name: total_gray
+      description: '{{ doc("bp_imaging_total_gray") }}'
+    - name: total_white
+      description: '{{ doc("bp_imaging_total_white") }}'
+    - name: total_lhippo
+      description: '{{ doc("bp_imaging_total_lhippo") }}'
+    - name: total_rhippo
+      description: '{{ doc("bp_imaging_total_rhippo") }}'
+    - name: rspcc_dmnmask
+      description: '{{ doc("bp_imaging_rspcc_dmnmask") }}'
+    - name: rspcc_mpfc
+      description: '{{ doc("bp_imaging_rspcc_mpfc") }}'
+    - name: rspcc_lpar
+      description: '{{ doc("bp_imaging_rspcc_lpar") }}'
+    - name: rspcc_rpar
+      description: '{{ doc("bp_imaging_rspcc_rpar") }}'
+    - name: dti_fa
+      description: '{{ doc("bp_imaging_dti_fa") }}'
+    - name: dti_md
+      description: '{{ doc("bp_imaging_dti_md") }}'
+    - name: pcasl
+      description: '{{ doc("bp_imaging_pcasl") }}'
+  - name: bp_physical_activity_day
+    description: Source table for bp_physical_activity_day.
+    columns:
+    - name: id
+      description: '{{ doc("bp_physical_activity_day_id") }}'
+    - name: timepoint
+      description: '{{ doc("bp_physical_activity_day_timepoint") }}'
+    - name: days
+      description: '{{ doc("bp_physical_activity_day_days") }}'
+    - name: weekday
+      description: '{{ doc("bp_physical_activity_day_weekday") }}'
+    - name: season
+      description: '{{ doc("bp_physical_activity_day_season") }}'
+    - name: counts
+      description: '{{ doc("bp_physical_activity_day_counts") }}'
+    - name: vmc
+      description: '{{ doc("bp_physical_activity_day_vmc") }}'
+    - name: steps
+      description: '{{ doc("bp_physical_activity_day_steps") }}'
+    - name: wear_time
+      description: '{{ doc("bp_physical_activity_day_wear_time") }}'
+    - name: sedentary
+      description: '{{ doc("bp_physical_activity_day_sedentary") }}'
+    - name: light
+      description: '{{ doc("bp_physical_activity_day_light") }}'
+    - name: moderate
+      description: '{{ doc("bp_physical_activity_day_moderate") }}'
+    - name: vigorous
+      description: '{{ doc("bp_physical_activity_day_vigorous") }}'
+    - name: mvpa
+      description: '{{ doc("bp_physical_activity_day_mvpa") }}'
+  - name: bp_physical_activity_person
+    description: Source table for bp_physical_activity_person.
+    columns:
+    - name: id
+      description: '{{ doc("bp_physical_activity_person_id") }}'
+    - name: timepoint
+      description: '{{ doc("bp_physical_activity_person_timepoint") }}'
+    - name: counts
+      description: '{{ doc("bp_physical_activity_person_counts") }}'
+    - name: vmc
+      description: '{{ doc("bp_physical_activity_person_vmc") }}'
+    - name: steps
+      description: '{{ doc("bp_physical_activity_person_steps") }}'
+    - name: wear_time
+      description: '{{ doc("bp_physical_activity_person_wear_time") }}'
+    - name: sedentary
+      description: '{{ doc("bp_physical_activity_person_sedentary") }}'
+    - name: light
+      description: '{{ doc("bp_physical_activity_person_light") }}'
+    - name: moderate
+      description: '{{ doc("bp_physical_activity_person_moderate") }}'
+    - name: vigorous
+      description: '{{ doc("bp_physical_activity_person_vigorous") }}'
+    - name: mvpa
+      description: '{{ doc("bp_physical_activity_person_mvpa") }}'
+    - name: valid_days
+      description: '{{ doc("bp_physical_activity_person_valid_days") }}'
+    - name: valid_weekend_days
+      description: '{{ doc("bp_physical_activity_person_valid_weekend_days") }}'
+  - name: bp_randomization
+    description: Source table for bp_randomization.
+    columns:
+    - name: id
+      description: '{{ doc("bp_randomization_id") }}'
+    - name: cohort
+      description: '{{ doc("bp_randomization_cohort") }}'
+    - name: strata
+      description: '{{ doc("bp_randomization_strata") }}'
+    - name: randomization
+      description: '{{ doc("bp_randomization_randomization") }}'
+  - name: bp_demographics
+    description: Source table for bp_demographics.
+    columns:
+    - name: id
+      description: '{{ doc("bp_demographics_id") }}'
+    - name: timepoint
+      description: '{{ doc("bp_demographics_timepoint") }}'
+    - name: gender
+      description: '{{ doc("bp_demographics_gender") }}'
+    - name: level_support
+      description: '{{ doc("bp_demographics_level_support") }}'
+    - name: race
+      description: '{{ doc("bp_demographics_race") }}'
+    - name: ethnicity
+      description: '{{ doc("bp_demographics_ethnicity") }}'
+  - name: bp_health_conditions
+    description: Source table for bp_health_conditions.
+    columns:
+    - name: id
+      description: '{{ doc("bp_health_conditions_id") }}'
+    - name: timepoint
+      description: '{{ doc("bp_health_conditions_timepoint") }}'
+    - name: heart_condition
+      description: '{{ doc("bp_health_conditions_heart_condition") }}'
+    - name: vsd
+      description: '{{ doc("bp_health_conditions_vsd") }}'
+    - name: asd
+      description: '{{ doc("bp_health_conditions_asd") }}'
+    - name: pda
+      description: '{{ doc("bp_health_conditions_pda") }}'
+    - name: avsd
+      description: '{{ doc("bp_health_conditions_avsd") }}'
+    - name: mitral
+      description: '{{ doc("bp_health_conditions_mitral") }}'
+    - name: murmur
+      description: '{{ doc("bp_health_conditions_murmur") }}'
+    - name: hole_no_surgery
+      description: '{{ doc("bp_health_conditions_hole_no_surgery") }}'
+    - name: blood_vessel_surgery
+      description: '{{ doc("bp_health_conditions_blood_vessel_surgery") }}'
+    - name: type1_diabetes
+      description: '{{ doc("bp_health_conditions_type1_diabetes") }}'
+    - name: metabolic_disorder
+      description: '{{ doc("bp_health_conditions_metabolic_disorder") }}'
+    - name: hypertension
+      description: '{{ doc("bp_health_conditions_hypertension") }}'
+    - name: type2_diabetes
+      description: '{{ doc("bp_health_conditions_type2_diabetes") }}'
+    - name: asthma
+      description: '{{ doc("bp_health_conditions_asthma") }}'
+    - name: food_allergies
+      description: '{{ doc("bp_health_conditions_food_allergies") }}'
+    - name: hypothyroidism
+      description: '{{ doc("bp_health_conditions_hypothyroidism") }}'
+  - name: bp_oxygen_kinetics_meta
+    description: Source table for bp_oxygen_kinetics_meta.
+    columns:
+    - name: id
+      description: '{{ doc("bp_oxygen_kinetics_meta_id") }}'
+    - name: timepoint
+      description: '{{ doc("bp_oxygen_kinetics_meta_timepoint") }}'
+    - name: start_time
+      description: '{{ doc("bp_oxygen_kinetics_meta_start_time") }}'
+    - name: room_temperature
+      description: '{{ doc("bp_oxygen_kinetics_meta_room_temperature") }}'
+    - name: barometric_pressure
+      description: '{{ doc("bp_oxygen_kinetics_meta_barometric_pressure") }}'
+    - name: room_humidity
+      description: '{{ doc("bp_oxygen_kinetics_meta_room_humidity") }}'
+    - name: o2_measured
+      description: '{{ doc("bp_oxygen_kinetics_meta_o2_measured") }}'
+    - name: co2_measured
+      description: '{{ doc("bp_oxygen_kinetics_meta_co2_measured") }}'
+  - name: bp_oxygen_kinetics_group
+    description: Source table for bp_oxygen_kinetics_group.
+    columns:
+    - name: id
+      description: '{{ doc("bp_oxygen_kinetics_group_id") }}'
+    - name: timepoint
+      description: '{{ doc("bp_oxygen_kinetics_group_timepoint") }}'
+    - name: predicted_max_hr
+      description: '{{ doc("bp_oxygen_kinetics_group_predicted_max_hr") }}'
+    - name: measured_peak_hr
+      description: '{{ doc("bp_oxygen_kinetics_group_measured_peak_hr") }}'
+    - name: speed
+      description: '{{ doc("bp_oxygen_kinetics_group_speed") }}'
+    - name: incline
+      description: '{{ doc("bp_oxygen_kinetics_group_incline") }}'
+    - name: time_to_peak
+      description: '{{ doc("bp_oxygen_kinetics_group_time_to_peak") }}'
+    - name: vo2_l_min
+      description: '{{ doc("bp_oxygen_kinetics_group_vo2_l_min") }}'
+    - name: vo2_ml_kg_min
+      description: '{{ doc("bp_oxygen_kinetics_group_vo2_ml_kg_min") }}'
+    - name: rer
+      description: '{{ doc("bp_oxygen_kinetics_group_rer") }}'
+    - name: criteria_exhaustion
+      description: '{{ doc("bp_oxygen_kinetics_group_criteria_exhaustion") }}'
+    - name: criteria_hr10
+      description: '{{ doc("bp_oxygen_kinetics_group_criteria_hr10") }}'
+    - name: criteria_rer
+      description: '{{ doc("bp_oxygen_kinetics_group_criteria_rer") }}'
+    - name: valid_peak_test
+      description: '{{ doc("bp_oxygen_kinetics_group_valid_peak_test") }}'

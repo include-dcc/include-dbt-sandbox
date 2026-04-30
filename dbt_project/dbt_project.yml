@@ -24,6 +24,13 @@ models:
           +schema: inc_aadsc_src
         int:
           +schema: inc_aadsc_int
+      brainpower:
+        +tags:
+        - brainpower
+        src:
+          +schema: inc_brainpower_src
+        int:
+          +schema: inc_brainpower_int
     kids_first:
       +tags: [study_stage,kids_first]
       sd_1nns3k8v:
