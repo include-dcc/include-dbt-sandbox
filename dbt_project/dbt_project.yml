@@ -13,6 +13,9 @@ clean-targets:
 - target
 - dbt_packages
 vars: {}
+seeds:
+  include_dbt_sandbox:
+    +schema: kf_inc_seeds # all seeds in this project will use the schema "mappings" by default
 models:
   +materialized: table
   include_dbt_sandbox:

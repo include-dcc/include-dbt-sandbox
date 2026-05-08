@@ -1,0 +1,58 @@
+version: 2
+
+seeds:
+ - name: global_identifiers_include_dcc_brainpower
+   config:
+     schema: kf_inc_seeds
+
+# seeds:
+#   - name: global_identifiers_include_dcc_brainpower
+#     description: "Global IDs for BrainPower Data"
+#     config:
+#       # Control materialization
+#       schema: kf_inc_seeds
+#   - name: BrainPower_MD_mappings
+#     description: "Map Dragon Annotations for BrainPower conditions"
+#     config:
+#       schema: kf_inc_seeds
+  
+
+# seeds:
+#     - name: alphabet_grouping
+#       config:
+#         schema: kf
+#       description: |
+#         An example seed file that groups letters of the alphabet. This seed is
+#         used by the kids first example study models.
+#       columns:
+#         - name: letter
+#           description: A letter of the alphabet
+#         - name: letter_grouping
+#           description: The grouping that the letter belongs to
+
+#     - name: s3_scrape_cody
+#       config:
+#         column_types:
+#           Size: bigint
+#           LastModified: varchar
+
+#     - name: sample
+#       config:
+#         column_types:
+#         # these were all the columns that had the highest integers and I narrowed it down to what would pass
+#           total_reads: bigint
+#           pf_aligned_bases: bigint
+#           pf_hq_aligned_bases: bigint
+#           pf_hq_aligned_q20_bases: bigint
+#           genome_territory: bigint
+#           library-1_estimated_library_size: bigint
+#           pf_reads: bigint
+#           pf_reads_aligned: bigint
+#           reads_aligned_in_pairs: bigint
+#           pf_hq_aligned_reads: bigint
+#           library-1_read_pairs: bigint
+#           pf_reads_improper_pairs: bigint
+#     - name: ds_ses
+#       config: 
+#         column_types: 
+#           total_reads: bigint 
