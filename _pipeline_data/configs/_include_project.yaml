@@ -1,0 +1,166 @@
+# This config file is required for running pipeline-utils and defines the necessary 
+#    paths and configurations for the include_dbt_sandbox project.
+
+
+paths:
+  pl_dir:
+    root: repo_root
+    template: dbt_project
+
+  # Study input data (CSV + DD)
+  src_data_dir:
+    root: repo_root
+    template: "{study_data_dir}"
+
+  # Static metadata root used for internal/export model generation
+  static_data_dir:
+    root: repo_root
+    template: "{pipeline_data_dir}/static"
+
+  # static_int_metadata_dir is hardcoded since it is necessary prior to loading the paths from this file. This path is set in factory_functions.py
+  # static_exp_metadata_dir is hardcoded since it is necessary prior to loading the paths from this file. This path is set in factory_functions.py
+
+  static_int_additions_dir:
+    root: repo_root
+    template: "{pipeline_data_dir}/static/common_data_models/internal/additions"
+
+  static_sp_exp_dir:
+    root: repo_root
+    template: "{pipeline_data_dir}/static/common_data_models/export/{exp_model_name}"
+
+  pl_exp_dir:
+    root: repo_root
+    template: dbt_project/models/export/{exp_model_name}
+
+  pl_access_dir:
+    root: repo_root
+    template: dbt_project/models/access
+
+  pl_combined_dir:
+    root: repo_root
+    template: dbt_project/models/combined
+
+  pl_macros_dir:
+    root: repo_root
+    template: dbt_project/macros
+
+  pl_profiles:
+    root: repo_root
+    template: dbt_project/profiles.yml
+
+  utils_files_dir:
+    root: repo_root
+    template: .
+
+  utils_macros_dir:
+    root: repo_root
+    template: dbt_project/macros
+
+  pl_dag_dir:
+    base: repo_root
+    template: dags/{project_id}
+
+overridable_paths:
+  # Values come from the study YAML and are interpreted from repo root.
+  study_data_dir:
+    context_attr: study_data_dir
+    root: repo_root
+    template: _study_data/{study_id}
+    override_root: repo_root
+
+  pipeline_data_dir:
+    context_attr: pipeline_data_dir
+    root: repo_root
+    template: _pipeline_data
+    override_root: repo_root
+
+derived_paths:
+  dbtp_src_study_dir:
+    base: pl_dir
+    template: models/include/{study_id}/src
+
+  dbtp_ftdc_study_dir:
+    base: pl_dir
+    template: models/include/{study_id}/int
+
+  dbtp_ftdc_study_docs_dir:
+    base: dbtp_ftdc_study_dir
+    template: docs
+
+  dbtp_ftdc_dir:
+    base: pl_dir
+    template: models/include/{study_id}
+
+  pl_scripts_dir:
+    base: pl_dir
+    template: scripts
+
+
+stages:
+  sources:
+    models_dir: dbtp_src_study_dir
+    yml_dir: dbtp_src_study_dir
+    docs_dir: dbtp_src_study_dir
+
+  intermediate:
+    models_dir: dbtp_ftdc_study_dir
+    yml_dir: dbtp_ftdc_study_dir
+    docs_dir: dbtp_ftdc_study_docs_dir
+    macros_dir: pl_macros_dir
+
+  access:
+    models_dir: pl_access_dir
+    yml_dir: pl_access_dir
+    docs_dir: pl_access_dir
+    macros_dir: pl_macros_dir
+
+  combined:
+    models_dir: pl_combined_dir
+    yml_dir: pl_combined_dir
+    docs_dir: pl_combined_dir
+    macros_dir: pl_macros_dir
+
+  export:
+    models_dir: pl_exp_dir
+    yml_dir: pl_exp_dir
+    docs_dir: pl_exp_dir
+
+dbt_projects:
+  - dir_key: pl_dir
+    name: "include_dbt_sandbox"
+
+dbt_project_stages:
+  sources:
+    dir_key: pl_dir
+    dbtp_def: src
+    tables_attr: src_prefixed_tables
+
+  intermediate:
+    dir_key: pl_dir
+    dbtp_def: stb
+    tables_attr: stb_prefixed_tables
+
+  access:
+    dir_key: pl_dir
+    dbtp_def: access
+    tables_attr: int_prefixed_tables
+
+  combined:
+    dir_key: pl_dir
+    dbtp_def: combined
+    tables_attr: combined_prefixed_tables
+
+  export:
+    dir_key: pl_dir
+    dbtp_def: exp
+    tables_attr: exp_prefixed_tables
+
+run_script_dir: pl_scripts_dir
+
+study_sql_method: study_select_sql
+
+features:
+  copy_export_dir: false
+  copy_macros_dir: false
+  copy_profiles: false
+  copy_import_macros: false
