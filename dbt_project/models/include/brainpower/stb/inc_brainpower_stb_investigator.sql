@@ -1,12 +1,11 @@
 {{ config(materialized='table') }}
 
-    select
+select
     null::integer as "id",
-    null::text as "name",
-    null::text as "institution",
+    string_to_table(s."Principal Investigator Name", '|')::text as "name",
+    s."Study Contact Institution"::text as "institution",
     null::text as "investigator_title",
-    null::text as "email",
+    s."Study Contact Email"::text as "email",
     null::text as "access_policy_id",
     null::text as "study_id"
-    from {{ ref('inc_brainpower_src_bp_age_event_latency') }}
-    
+from {{ ref('study') }} as s
