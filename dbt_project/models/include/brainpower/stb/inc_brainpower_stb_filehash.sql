@@ -1,8 +1,8 @@
 {{ config(materialized='table') }}
 
-    select
+select
     null::integer as "id",
     null::text as "hash_type",
-    null::text as "hash_value"
-    from {{ ref('inc_brainpower_src_bp_age_event_latency') }}
+    "File Hash"::text as "hash_value"
+from {{ ref('brainpower_datafile_manifest_2025-06-26') }}
     

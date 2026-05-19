@@ -1,17 +1,17 @@
 {{ config(materialized='table') }}
 
-    select
+select
     null::text as "file_id",
-    null::text as "filename",
+    df."File Name"::text as "filename",
     null::text as "format",
-    null::text as "data_category",
+    string_to_table(replace(lower(df."Data Category"), ' ', '_'), '|')::text as "data_category",
     null::text as "data_type",
-    null::integer as "size",
+    df."File Size"::integer as "size",
     null::text as "staging_url",
-    null::text as "release_url",
-    null::text as "drs_uri",
+    df."File S3 Location"::text as "release_url",
+    df."DRS URI"::text as "drs_uri",
     null::text as "access_policy_id",
     null::text as "study_id",
     null::integer as "hash_id"
-    from {{ ref('inc_brainpower_src_bp_age_event_latency') }}
+from {{ ref('brainpower_datafile_manifest_2025-06-26') }} as df
     
