@@ -1,4 +1,3 @@
 {{ config(materialized='table') }}
 
-select *
-from {{ ref('inc_aadsc_stb_dataset_file_id') }}
+{{ combined_union_from_current_model() }}
