@@ -453,45 +453,57 @@ sources:
       description: '{{ doc("brainpower_md_mappings_code_system") }}'
     - name: comment
       description: '{{ doc("brainpower_md_mappings_comment") }}'
-  - name: bp_datafile_manifest_output
-    description: Source table for bp_datafile_manifest_output.
+  - name: brainpower_datafile_manifest_2025_06_26
+    description: Source table for brainpower_datafile_manifest_2025_06_26.
     columns:
     - name: Study Code
-      description: '{{ doc("bp_datafile_manifest_output_study_code") }}'
+      description: '{{ doc("brainpower_datafile_manifest_2025_06_26_study_code") }}'
     - name: Participant Global ID
-      description: '{{ doc("bp_datafile_manifest_output_participant_global_id") }}'
+      description: '{{ doc("brainpower_datafile_manifest_2025_06_26_participant_1292c5dd")
+        }}'
     - name: Participant External ID
-      description: '{{ doc("bp_datafile_manifest_output_participant_external_id")
+      description: '{{ doc("brainpower_datafile_manifest_2025_06_26_participant_4947aa84")
         }}'
     - name: Sample Global ID
-      description: '{{ doc("bp_datafile_manifest_output_sample_global_id") }}'
+      description: '{{ doc("brainpower_datafile_manifest_2025_06_26_sample_global_id")
+        }}'
     - name: Sample External ID
-      description: '{{ doc("bp_datafile_manifest_output_sample_external_id") }}'
+      description: '{{ doc("brainpower_datafile_manifest_2025_06_26_sample_external_id")
+        }}'
     - name: File Name
-      description: '{{ doc("bp_datafile_manifest_output_file_name") }}'
+      description: '{{ doc("brainpower_datafile_manifest_2025_06_26_file_name") }}'
     - name: File Global ID
-      description: '{{ doc("bp_datafile_manifest_output_file_global_id") }}'
+      description: '{{ doc("brainpower_datafile_manifest_2025_06_26_file_global_id")
+        }}'
     - name: File Upload Location
-      description: '{{ doc("bp_datafile_manifest_output_file_upload_location") }}'
+      description: '{{ doc("brainpower_datafile_manifest_2025_06_26_file_upload_location")
+        }}'
     - name: File S3 Location
-      description: '{{ doc("bp_datafile_manifest_output_file_s3_location") }}'
+      description: '{{ doc("brainpower_datafile_manifest_2025_06_26_file_s3_location")
+        }}'
     - name: DRS URI
-      description: '{{ doc("bp_datafile_manifest_output_drs_uri") }}'
+      description: '{{ doc("brainpower_datafile_manifest_2025_06_26_drs_uri") }}'
     - name: File Hash
-      description: '{{ doc("bp_datafile_manifest_output_file_hash") }}'
+      description: '{{ doc("brainpower_datafile_manifest_2025_06_26_file_hash") }}'
     - name: Data Access
-      description: '{{ doc("bp_datafile_manifest_output_data_access") }}'
+      description: '{{ doc("brainpower_datafile_manifest_2025_06_26_data_access")
+        }}'
     - name: Data Category
-      description: '{{ doc("bp_datafile_manifest_output_data_category") }}'
+      description: '{{ doc("brainpower_datafile_manifest_2025_06_26_data_category")
+        }}'
     - name: Data Type
-      description: '{{ doc("bp_datafile_manifest_output_data_type") }}'
+      description: '{{ doc("brainpower_datafile_manifest_2025_06_26_data_type") }}'
     - name: Experimental Strategy
-      description: '{{ doc("bp_datafile_manifest_output_experimental_strategy") }}'
+      description: '{{ doc("brainpower_datafile_manifest_2025_06_26_experimenta_06c2fc0a")
+        }}'
     - name: Experimental Platform
-      description: '{{ doc("bp_datafile_manifest_output_experimental_platform") }}'
+      description: '{{ doc("brainpower_datafile_manifest_2025_06_26_experimenta_fc0c4497")
+        }}'
     - name: File Format
-      description: '{{ doc("bp_datafile_manifest_output_file_format") }}'
+      description: '{{ doc("brainpower_datafile_manifest_2025_06_26_file_format")
+        }}'
     - name: File Size
-      description: '{{ doc("bp_datafile_manifest_output_file_size") }}'
+      description: '{{ doc("brainpower_datafile_manifest_2025_06_26_file_size") }}'
     - name: File Size Unit
-      description: '{{ doc("bp_datafile_manifest_output_file_size_unit") }}'
+      description: '{{ doc("brainpower_datafile_manifest_2025_06_26_file_size_unit")
+        }}'
