@@ -21,5 +21,5 @@
     "File Format"::text as "file_format",
     "File Size"::integer as "file_size",
     "File Size Unit"::text as "file_size_unit"
-    from {{ source('brainpower', 'bp_datafile_manifest_output') }}
+    from {{ source('brainpower', 'brainpower_datafile_manifest_2025_06_26') }}
     

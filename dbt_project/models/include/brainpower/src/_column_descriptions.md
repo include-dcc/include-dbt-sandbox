@@ -798,78 +798,78 @@ code system
 comment
 {% enddocs %}
 
-{% docs bp_datafile_manifest_output_study_code %}
+{% docs brainpower_datafile_manifest_2025_06_26_study_code %}
 Study Code
 {% enddocs %}
 
-{% docs bp_datafile_manifest_output_participant_global_id %}
+{% docs brainpower_datafile_manifest_2025_06_26_participant_1292c5dd %}
 Participant Global ID
 {% enddocs %}
 
-{% docs bp_datafile_manifest_output_participant_external_id %}
+{% docs brainpower_datafile_manifest_2025_06_26_participant_4947aa84 %}
 Participant External ID
 {% enddocs %}
 
-{% docs bp_datafile_manifest_output_sample_global_id %}
+{% docs brainpower_datafile_manifest_2025_06_26_sample_global_id %}
 Sample Global ID
 {% enddocs %}
 
-{% docs bp_datafile_manifest_output_sample_external_id %}
+{% docs brainpower_datafile_manifest_2025_06_26_sample_external_id %}
 Sample External ID
 {% enddocs %}
 
-{% docs bp_datafile_manifest_output_file_name %}
+{% docs brainpower_datafile_manifest_2025_06_26_file_name %}
 File Name
 {% enddocs %}
 
-{% docs bp_datafile_manifest_output_file_global_id %}
+{% docs brainpower_datafile_manifest_2025_06_26_file_global_id %}
 File Global ID
 {% enddocs %}
 
-{% docs bp_datafile_manifest_output_file_upload_location %}
+{% docs brainpower_datafile_manifest_2025_06_26_file_upload_location %}
 File Upload Location
 {% enddocs %}
 
-{% docs bp_datafile_manifest_output_file_s3_location %}
+{% docs brainpower_datafile_manifest_2025_06_26_file_s3_location %}
 File S3 Location
 {% enddocs %}
 
-{% docs bp_datafile_manifest_output_drs_uri %}
+{% docs brainpower_datafile_manifest_2025_06_26_drs_uri %}
 DRS URI
 {% enddocs %}
 
-{% docs bp_datafile_manifest_output_file_hash %}
+{% docs brainpower_datafile_manifest_2025_06_26_file_hash %}
 File Hash
 {% enddocs %}
 
-{% docs bp_datafile_manifest_output_data_access %}
+{% docs brainpower_datafile_manifest_2025_06_26_data_access %}
 Data Access
 {% enddocs %}
 
-{% docs bp_datafile_manifest_output_data_category %}
+{% docs brainpower_datafile_manifest_2025_06_26_data_category %}
 Data Category
 {% enddocs %}
 
-{% docs bp_datafile_manifest_output_data_type %}
+{% docs brainpower_datafile_manifest_2025_06_26_data_type %}
 Data Type
 {% enddocs %}
 
-{% docs bp_datafile_manifest_output_experimental_strategy %}
+{% docs brainpower_datafile_manifest_2025_06_26_experimenta_06c2fc0a %}
 Experimental Strategy
 {% enddocs %}
 
-{% docs bp_datafile_manifest_output_experimental_platform %}
+{% docs brainpower_datafile_manifest_2025_06_26_experimenta_fc0c4497 %}
 Experimental Platform
 {% enddocs %}
 
-{% docs bp_datafile_manifest_output_file_format %}
+{% docs brainpower_datafile_manifest_2025_06_26_file_format %}
 File Format
 {% enddocs %}
 
-{% docs bp_datafile_manifest_output_file_size %}
+{% docs brainpower_datafile_manifest_2025_06_26_file_size %}
 File Size
 {% enddocs %}
 
-{% docs bp_datafile_manifest_output_file_size_unit %}
+{% docs brainpower_datafile_manifest_2025_06_26_file_size_unit %}
 File Size Unit
 {% enddocs %}
