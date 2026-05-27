@@ -15,6 +15,14 @@ dbt seed --full-refresh
 # dbt run --select inc_brainpower_src_bp_health_conditions
 # dbt run --select inc_brainpower_src_bp_oxygen_kinetics_meta
 # dbt run --select inc_brainpower_src_bp_oxygen_kinetics_group
+# dbt run --select inc_brainpower_src_datasets
+# dbt run --select inc_brainpower_src_study
+# dbt run --select inc_brainpower_src_tablename_key
+# dbt run --select inc_brainpower_src_timepoint_key
+# dbt run --select inc_brainpower_src_brainpower_md_mappings
+# dbt run --select inc_brainpower_src_inc_kf_access_enums_20260508
+# dbt run --select inc_brainpower_src_brainpower_datafile_manifest_2025_06_26
+
 # Stable tables
 # dbt run --select inc_brainpower_stb_accesspolicy
 # dbt run --select inc_brainpower_stb_activitydefinition
