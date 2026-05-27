@@ -6,5 +6,5 @@ select
     null::text as "description",
     null::text as "access_policy_id",
     null::text as "study_id"
-from {{ ref('tablename_key') }}
+from {{ ref('inc_brainpower_src_tablename_key') }}
     

@@ -28,8 +28,8 @@ end as value_concept
   field_name="health_cond",
   value_name="cond_code"
 ) }}) as d
-left join (select "local code", code from {{ ref('BrainPower_MD_mappings') }} where table_name = 'Health Conditions') as anno
-    on cast(d.health_cond as text) = cast(anno."local code" as text)
+left join (select local_code, code from {{ ref('inc_brainpower_src_brainpower_md_mappings') }} where table_name = 'Health Conditions') as anno
+    on cast(d.health_cond as text) = cast(anno.local_code as text)
 left join (select age_at_visit, timepoint, id from {{ ref('inc_brainpower_src_bp_age_event_latency') }}) as age_data
     on d.id = age_data.id and d.timepoint = age_data.timepoint
 
@@ -59,8 +59,8 @@ select
   field_name="health_meas",
   value_name="meas_val"
 ) }}) as a
-left join (select "local code", code from {{ ref('BrainPower_MD_mappings') }} where table_name = 'Anthropometrics') as anno2
-    on cast(a.health_meas as text) = cast(anno2."local code" as text)
+left join (select local_code, code from {{ ref('inc_brainpower_src_brainpower_md_mappings') }} where table_name = 'Anthropometrics') as anno2
+    on cast(a.health_meas as text) = cast(anno2.local_code as text)
 left join (select age_at_visit, timepoint, id from {{ ref('inc_brainpower_src_bp_age_event_latency') }}) as age_data2
     on a.id = age_data2.id and a.timepoint = age_data2.timepoint
 where a.meas_val is not null

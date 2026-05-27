@@ -3,8 +3,8 @@
 with categories as(
 select
     null::text as "study_study_id",
-    string_to_table(replace(lower(s."Data Category"), ' ', '_'), '|')::text as "data_category"
-from {{ ref('study') }} as s )
+    string_to_table(replace(lower(s.data_category), ' ', '_'), '|')::text as "data_category"
+from {{ ref('inc_brainpower_src_study') }} as s )
 
 select
     "study_study_id",

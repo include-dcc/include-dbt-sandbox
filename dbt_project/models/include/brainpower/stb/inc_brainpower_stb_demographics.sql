@@ -11,10 +11,10 @@ select
     null::text as "access_policy_id",
     null::text as "study_id"
 from (select * from {{ ref('inc_brainpower_src_bp_demographics') }}) as d
-left join (select "local code", code from {{ ref('BrainPower_MD_mappings') }} where parent_varname = 'gender') as gen_map
-    on cast(d.gender as integer) = cast(gen_map."local code" as integer)
-left join (select "local code", code from {{ ref('BrainPower_MD_mappings') }} where parent_varname = 'ethnicity') as eth_map
-    on cast(d.ethnicity as integer) = cast(eth_map."local code" as integer)
+left join (select local_code, code from {{ ref('inc_brainpower_src_brainpower_md_mappings') }} where parent_varname = 'gender') as gen_map
+    on cast(d.gender as integer) = cast(gen_map.local_code as integer)
+left join (select local_code, code from {{ ref('inc_brainpower_src_brainpower_md_mappings') }} where parent_varname = 'ethnicity') as eth_map
+    on cast(d.ethnicity as integer) = cast(eth_map.local_code as integer)
 -- {# left join (select enumeration_meaning from {{ ref('inc_kf_access_enums_20260508')}} where enumeration_code = 't21') as t21_data #}
 left join (select age_at_visit, timepoint, id from {{ ref('inc_brainpower_src_bp_age_event_latency') }} where timepoint = '5') as age_data
     on d.id = age_data.id

@@ -2,5 +2,5 @@
 
 select
     null::text as "study_study_id",
-    lower(s."Program")::text as "program"
-from {{ ref('study') }} as s
+    lower(s.program)::text as "program"
+from {{ ref('inc_brainpower_src_study') }} as s

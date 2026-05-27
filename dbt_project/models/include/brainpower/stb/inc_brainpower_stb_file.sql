@@ -2,16 +2,16 @@
 
 select
     null::text as "file_id",
-    df."File Name"::text as "filename",
+    df.file_name::text as "filename",
     null::text as "format",
-    string_to_table(replace(lower(df."Data Category"), ' ', '_'), '|')::text as "data_category",
+    string_to_table(replace(lower(df.data_category), ' ', '_'), '|')::text as "data_category",
     null::text as "data_type",
-    df."File Size"::integer as "size",
+    df.file_size::integer as "size",
     null::text as "staging_url",
-    df."File S3 Location"::text as "release_url",
-    df."DRS URI"::text as "drs_uri",
+    df.file_s3_location::text as "release_url",
+    df.drs_uri::text as "drs_uri",
     null::text as "access_policy_id",
     null::text as "study_id",
     null::integer as "hash_id"
-from {{ ref('brainpower_datafile_manifest_2025-06-26') }} as df
+from {{ ref('inc_brainpower_src_brainpower_datafile_manifest_2025_06_26') }} as df
     

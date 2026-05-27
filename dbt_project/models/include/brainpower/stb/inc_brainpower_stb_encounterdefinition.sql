@@ -6,5 +6,5 @@ select
     visit_name::text as "description",
     null::text as "access_policy_id",
     null::text as "study_id"
-from {{ ref('timepoint_key') }}
+from {{ ref('inc_brainpower_src_timepoint_key') }}
     

@@ -1,13 +1,13 @@
 {{ config(materialized='table') }}
 
 select
-    {{ generate_global_id(prefix='ob',descriptor=['dbgap'], study_id='brainpower') }}::text as "access_policy_id",
-    a."dbgap"::text as "data_use_accession",
-    d."Access Limitations"::text as "data_use_permission",
-    d."Access Requirements"::text as "data_use_modifier",
-    a."Selection Criteria"::text as "disease_limitation",
+    {{ generate_global_id(prefix='ob',descriptor=['a.dbgap'], study_id='brainpower') }}::text as "access_policy_id",
+    a.dbgap::text as "data_use_accession",
+    d.access_limitations::text as "data_use_permission",
+    d.access_requirements::text as "data_use_modifier",
+    a.selection_criteria::text as "disease_limitation",
     null::text as "access_description",
-    a."Study Website"::text as "website"
-from {{ ref('datasets') }} as d
-left join (select "Study Code", "Study Website", 123456::text as "dbgap", "Selection Criteria" from {{ ref('study') }}) as a
-on d."Study Code" = a."Study Code"
+    a.study_website::text as "website"
+from {{ ref('inc_brainpower_src_datasets') }} as d
+left join (select study_code, study_website, dbgap, selection_criteria from {{ ref('inc_brainpower_src_study') }}) as a
+on d.study_code = a.study_code
