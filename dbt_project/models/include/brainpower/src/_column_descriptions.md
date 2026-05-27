@@ -493,3 +493,383 @@ criteria_rer
 {% docs bp_oxygen_kinetics_group_valid_peak_test %}
 valid_peak_test
 {% enddocs %}
+
+{% docs tablename_key_table_name %}
+table_name
+{% enddocs %}
+
+{% docs timepoint_key_timepoint %}
+timepoint
+{% enddocs %}
+
+{% docs timepoint_key_visit_name %}
+visit_name
+{% enddocs %}
+
+{% docs study_study_code %}
+Study Code
+{% enddocs %}
+
+{% docs study_study_title %}
+Study Title
+{% enddocs %}
+
+{% docs study_program %}
+Program
+{% enddocs %}
+
+{% docs study_study_description %}
+Study Description
+{% enddocs %}
+
+{% docs study_principal_investigator_name %}
+Principal Investigator Name
+{% enddocs %}
+
+{% docs study_study_contact_name %}
+Study Contact Name
+{% enddocs %}
+
+{% docs study_study_contact_institution %}
+Study Contact Institution
+{% enddocs %}
+
+{% docs study_study_contact_email %}
+Study Contact Email
+{% enddocs %}
+
+{% docs study_vbr_email %}
+VBR Email
+{% enddocs %}
+
+{% docs study_vbr_url %}
+VBR URL
+{% enddocs %}
+
+{% docs study_vbr_readme %}
+VBR Readme
+{% enddocs %}
+
+{% docs study_research_domain %}
+Research Domain
+{% enddocs %}
+
+{% docs study_participant_lifespan_stage %}
+Participant Lifespan Stage
+{% enddocs %}
+
+{% docs study_selection_criteria %}
+Selection Criteria
+{% enddocs %}
+
+{% docs study_study_design %}
+Study Design
+{% enddocs %}
+
+{% docs study_clinical_data_source_type %}
+Clinical Data Source Type
+{% enddocs %}
+
+{% docs study_data_category %}
+Data Category
+{% enddocs %}
+
+{% docs study_study_website %}
+Study Website
+{% enddocs %}
+
+{% docs study_dbgap %}
+dbGaP
+{% enddocs %}
+
+{% docs study_publication %}
+Publication
+{% enddocs %}
+
+{% docs study_expected_number_of_participants %}
+Expected Number of Participants
+{% enddocs %}
+
+{% docs study_guid_type %}
+GUID Type
+{% enddocs %}
+
+{% docs study_guid_mapped %}
+GUID Mapped
+{% enddocs %}
+
+{% docs study_acknowledgments %}
+Acknowledgments
+{% enddocs %}
+
+{% docs study_citation_statement %}
+Citation Statement
+{% enddocs %}
+
+{% docs study_doi %}
+DOI
+{% enddocs %}
+
+{% docs study_doi_citation %}
+DOI Citation
+{% enddocs %}
+
+{% docs inc_kf_access_enums_20260508_table_name %}
+table_name
+{% enddocs %}
+
+{% docs inc_kf_access_enums_20260508_variable_name %}
+variable_name
+{% enddocs %}
+
+{% docs inc_kf_access_enums_20260508_enumeration_code %}
+enumeration_code
+{% enddocs %}
+
+{% docs inc_kf_access_enums_20260508_enumeration_display %}
+enumeration_display
+{% enddocs %}
+
+{% docs inc_kf_access_enums_20260508_enumeration_title %}
+enumeration_title
+{% enddocs %}
+
+{% docs inc_kf_access_enums_20260508_enumeration_meaning %}
+enumeration_meaning
+{% enddocs %}
+
+{% docs inc_kf_access_enums_20260508_enumeration_system %}
+enumeration_system
+{% enddocs %}
+
+{% docs inc_kf_access_enums_20260508_enumeration_group %}
+enumeration_group
+{% enddocs %}
+
+{% docs datasets_study_code %}
+Study Code
+{% enddocs %}
+
+{% docs datasets_dataset_name %}
+Dataset Name
+{% enddocs %}
+
+{% docs datasets_dataset_external_id %}
+Dataset External ID
+{% enddocs %}
+
+{% docs datasets_dataset_global_id %}
+Dataset Global ID
+{% enddocs %}
+
+{% docs datasets_dataset_description %}
+Dataset Description
+{% enddocs %}
+
+{% docs datasets_data_collection_start_year %}
+Data Collection Start Year
+{% enddocs %}
+
+{% docs datasets_data_collection_end_year %}
+Data Collection End Year
+{% enddocs %}
+
+{% docs datasets_data_category %}
+Data Category
+{% enddocs %}
+
+{% docs datasets_data_type %}
+Data Type
+{% enddocs %}
+
+{% docs datasets_experimental_strategy %}
+Experimental Strategy
+{% enddocs %}
+
+{% docs datasets_experimental_platform %}
+Experimental Platform
+{% enddocs %}
+
+{% docs datasets_publication %}
+Publication
+{% enddocs %}
+
+{% docs datasets_access_limitations %}
+Access Limitations
+{% enddocs %}
+
+{% docs datasets_access_requirements %}
+Access Requirements
+{% enddocs %}
+
+{% docs datasets_dbgap %}
+dbGaP
+{% enddocs %}
+
+{% docs datasets_other_repository %}
+Other Repository
+{% enddocs %}
+
+{% docs datasets_other_access_authority %}
+Other Access Authority
+{% enddocs %}
+
+{% docs datasets_is_harmonized %}
+Is Harmonized
+{% enddocs %}
+
+{% docs datasets_dataset_manifest_location %}
+Dataset Manifest Location
+{% enddocs %}
+
+{% docs datasets_doi %}
+DOI
+{% enddocs %}
+
+{% docs datasets_doi_citation %}
+DOI Citation
+{% enddocs %}
+
+{% docs brainpower_md_mappings_study_title %}
+study_title
+{% enddocs %}
+
+{% docs brainpower_md_mappings_study_name %}
+study_name
+{% enddocs %}
+
+{% docs brainpower_md_mappings_study_id %}
+study_id
+{% enddocs %}
+
+{% docs brainpower_md_mappings_dd_name %}
+dd_name
+{% enddocs %}
+
+{% docs brainpower_md_mappings_dd_id %}
+dd_id
+{% enddocs %}
+
+{% docs brainpower_md_mappings_version %}
+version
+{% enddocs %}
+
+{% docs brainpower_md_mappings_table_id %}
+table_id
+{% enddocs %}
+
+{% docs brainpower_md_mappings_local_code %}
+local code
+{% enddocs %}
+
+{% docs brainpower_md_mappings_text %}
+text
+{% enddocs %}
+
+{% docs brainpower_md_mappings_table_name %}
+table_name
+{% enddocs %}
+
+{% docs brainpower_md_mappings_parent_varname %}
+parent_varname
+{% enddocs %}
+
+{% docs brainpower_md_mappings_local_code_system %}
+local code system
+{% enddocs %}
+
+{% docs brainpower_md_mappings_mapping_relationship %}
+mapping_relationship
+{% enddocs %}
+
+{% docs brainpower_md_mappings_code %}
+code
+{% enddocs %}
+
+{% docs brainpower_md_mappings_display %}
+display
+{% enddocs %}
+
+{% docs brainpower_md_mappings_code_system %}
+code system
+{% enddocs %}
+
+{% docs brainpower_md_mappings_comment %}
+comment
+{% enddocs %}
+
+{% docs bp_datafile_manifest_output_study_code %}
+Study Code
+{% enddocs %}
+
+{% docs bp_datafile_manifest_output_participant_global_id %}
+Participant Global ID
+{% enddocs %}
+
+{% docs bp_datafile_manifest_output_participant_external_id %}
+Participant External ID
+{% enddocs %}
+
+{% docs bp_datafile_manifest_output_sample_global_id %}
+Sample Global ID
+{% enddocs %}
+
+{% docs bp_datafile_manifest_output_sample_external_id %}
+Sample External ID
+{% enddocs %}
+
+{% docs bp_datafile_manifest_output_file_name %}
+File Name
+{% enddocs %}
+
+{% docs bp_datafile_manifest_output_file_global_id %}
+File Global ID
+{% enddocs %}
+
+{% docs bp_datafile_manifest_output_file_upload_location %}
+File Upload Location
+{% enddocs %}
+
+{% docs bp_datafile_manifest_output_file_s3_location %}
+File S3 Location
+{% enddocs %}
+
+{% docs bp_datafile_manifest_output_drs_uri %}
+DRS URI
+{% enddocs %}
+
+{% docs bp_datafile_manifest_output_file_hash %}
+File Hash
+{% enddocs %}
+
+{% docs bp_datafile_manifest_output_data_access %}
+Data Access
+{% enddocs %}
+
+{% docs bp_datafile_manifest_output_data_category %}
+Data Category
+{% enddocs %}
+
+{% docs bp_datafile_manifest_output_data_type %}
+Data Type
+{% enddocs %}
+
+{% docs bp_datafile_manifest_output_experimental_strategy %}
+Experimental Strategy
+{% enddocs %}
+
+{% docs bp_datafile_manifest_output_experimental_platform %}
+Experimental Platform
+{% enddocs %}
+
+{% docs bp_datafile_manifest_output_file_format %}
+File Format
+{% enddocs %}
+
+{% docs bp_datafile_manifest_output_file_size %}
+File Size
+{% enddocs %}
+
+{% docs bp_datafile_manifest_output_file_size_unit %}
+File Size Unit
+{% enddocs %}

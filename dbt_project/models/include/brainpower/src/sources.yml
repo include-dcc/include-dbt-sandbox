@@ -283,3 +283,215 @@ sources:
       description: '{{ doc("bp_oxygen_kinetics_group_criteria_rer") }}'
     - name: valid_peak_test
       description: '{{ doc("bp_oxygen_kinetics_group_valid_peak_test") }}'
+  - name: tablename_key
+    description: Source table for tablename_key.
+    columns:
+    - name: table_name
+      description: '{{ doc("tablename_key_table_name") }}'
+  - name: timepoint_key
+    description: Source table for timepoint_key.
+    columns:
+    - name: timepoint
+      description: '{{ doc("timepoint_key_timepoint") }}'
+    - name: visit_name
+      description: '{{ doc("timepoint_key_visit_name") }}'
+  - name: study
+    description: Source table for study.
+    columns:
+    - name: Study Code
+      description: '{{ doc("study_study_code") }}'
+    - name: Study Title
+      description: '{{ doc("study_study_title") }}'
+    - name: Program
+      description: '{{ doc("study_program") }}'
+    - name: Study Description
+      description: '{{ doc("study_study_description") }}'
+    - name: Principal Investigator Name
+      description: '{{ doc("study_principal_investigator_name") }}'
+    - name: Study Contact Name
+      description: '{{ doc("study_study_contact_name") }}'
+    - name: Study Contact Institution
+      description: '{{ doc("study_study_contact_institution") }}'
+    - name: Study Contact Email
+      description: '{{ doc("study_study_contact_email") }}'
+    - name: VBR Email
+      description: '{{ doc("study_vbr_email") }}'
+    - name: VBR URL
+      description: '{{ doc("study_vbr_url") }}'
+    - name: VBR Readme
+      description: '{{ doc("study_vbr_readme") }}'
+    - name: Research Domain
+      description: '{{ doc("study_research_domain") }}'
+    - name: Participant Lifespan Stage
+      description: '{{ doc("study_participant_lifespan_stage") }}'
+    - name: Selection Criteria
+      description: '{{ doc("study_selection_criteria") }}'
+    - name: Study Design
+      description: '{{ doc("study_study_design") }}'
+    - name: Clinical Data Source Type
+      description: '{{ doc("study_clinical_data_source_type") }}'
+    - name: Data Category
+      description: '{{ doc("study_data_category") }}'
+    - name: Study Website
+      description: '{{ doc("study_study_website") }}'
+    - name: dbGaP
+      description: '{{ doc("study_dbgap") }}'
+    - name: Publication
+      description: '{{ doc("study_publication") }}'
+    - name: Expected Number of Participants
+      description: '{{ doc("study_expected_number_of_participants") }}'
+    - name: GUID Type
+      description: '{{ doc("study_guid_type") }}'
+    - name: GUID Mapped
+      description: '{{ doc("study_guid_mapped") }}'
+    - name: Acknowledgments
+      description: '{{ doc("study_acknowledgments") }}'
+    - name: Citation Statement
+      description: '{{ doc("study_citation_statement") }}'
+    - name: DOI
+      description: '{{ doc("study_doi") }}'
+    - name: DOI Citation
+      description: '{{ doc("study_doi_citation") }}'
+  - name: inc_kf_access_enums_20260508
+    description: Source table for inc_kf_access_enums_20260508.
+    columns:
+    - name: table_name
+      description: '{{ doc("inc_kf_access_enums_20260508_table_name") }}'
+    - name: variable_name
+      description: '{{ doc("inc_kf_access_enums_20260508_variable_name") }}'
+    - name: enumeration_code
+      description: '{{ doc("inc_kf_access_enums_20260508_enumeration_code") }}'
+    - name: enumeration_display
+      description: '{{ doc("inc_kf_access_enums_20260508_enumeration_display") }}'
+    - name: enumeration_title
+      description: '{{ doc("inc_kf_access_enums_20260508_enumeration_title") }}'
+    - name: enumeration_meaning
+      description: '{{ doc("inc_kf_access_enums_20260508_enumeration_meaning") }}'
+    - name: enumeration_system
+      description: '{{ doc("inc_kf_access_enums_20260508_enumeration_system") }}'
+    - name: enumeration_group
+      description: '{{ doc("inc_kf_access_enums_20260508_enumeration_group") }}'
+  - name: datasets
+    description: Source table for datasets.
+    columns:
+    - name: Study Code
+      description: '{{ doc("datasets_study_code") }}'
+    - name: Dataset Name
+      description: '{{ doc("datasets_dataset_name") }}'
+    - name: Dataset External ID
+      description: '{{ doc("datasets_dataset_external_id") }}'
+    - name: Dataset Global ID
+      description: '{{ doc("datasets_dataset_global_id") }}'
+    - name: Dataset Description
+      description: '{{ doc("datasets_dataset_description") }}'
+    - name: Data Collection Start Year
+      description: '{{ doc("datasets_data_collection_start_year") }}'
+    - name: Data Collection End Year
+      description: '{{ doc("datasets_data_collection_end_year") }}'
+    - name: Data Category
+      description: '{{ doc("datasets_data_category") }}'
+    - name: Data Type
+      description: '{{ doc("datasets_data_type") }}'
+    - name: Experimental Strategy
+      description: '{{ doc("datasets_experimental_strategy") }}'
+    - name: Experimental Platform
+      description: '{{ doc("datasets_experimental_platform") }}'
+    - name: Publication
+      description: '{{ doc("datasets_publication") }}'
+    - name: Access Limitations
+      description: '{{ doc("datasets_access_limitations") }}'
+    - name: Access Requirements
+      description: '{{ doc("datasets_access_requirements") }}'
+    - name: dbGaP
+      description: '{{ doc("datasets_dbgap") }}'
+    - name: Other Repository
+      description: '{{ doc("datasets_other_repository") }}'
+    - name: Other Access Authority
+      description: '{{ doc("datasets_other_access_authority") }}'
+    - name: Is Harmonized
+      description: '{{ doc("datasets_is_harmonized") }}'
+    - name: Dataset Manifest Location
+      description: '{{ doc("datasets_dataset_manifest_location") }}'
+    - name: DOI
+      description: '{{ doc("datasets_doi") }}'
+    - name: DOI Citation
+      description: '{{ doc("datasets_doi_citation") }}'
+  - name: brainpower_md_mappings
+    description: Source table for brainpower_md_mappings.
+    columns:
+    - name: study_title
+      description: '{{ doc("brainpower_md_mappings_study_title") }}'
+    - name: study_name
+      description: '{{ doc("brainpower_md_mappings_study_name") }}'
+    - name: study_id
+      description: '{{ doc("brainpower_md_mappings_study_id") }}'
+    - name: dd_name
+      description: '{{ doc("brainpower_md_mappings_dd_name") }}'
+    - name: dd_id
+      description: '{{ doc("brainpower_md_mappings_dd_id") }}'
+    - name: version
+      description: '{{ doc("brainpower_md_mappings_version") }}'
+    - name: table_id
+      description: '{{ doc("brainpower_md_mappings_table_id") }}'
+    - name: local code
+      description: '{{ doc("brainpower_md_mappings_local_code") }}'
+    - name: text
+      description: '{{ doc("brainpower_md_mappings_text") }}'
+    - name: table_name
+      description: '{{ doc("brainpower_md_mappings_table_name") }}'
+    - name: parent_varname
+      description: '{{ doc("brainpower_md_mappings_parent_varname") }}'
+    - name: local code system
+      description: '{{ doc("brainpower_md_mappings_local_code_system") }}'
+    - name: mapping_relationship
+      description: '{{ doc("brainpower_md_mappings_mapping_relationship") }}'
+    - name: code
+      description: '{{ doc("brainpower_md_mappings_code") }}'
+    - name: display
+      description: '{{ doc("brainpower_md_mappings_display") }}'
+    - name: code system
+      description: '{{ doc("brainpower_md_mappings_code_system") }}'
+    - name: comment
+      description: '{{ doc("brainpower_md_mappings_comment") }}'
+  - name: bp_datafile_manifest_output
+    description: Source table for bp_datafile_manifest_output.
+    columns:
+    - name: Study Code
+      description: '{{ doc("bp_datafile_manifest_output_study_code") }}'
+    - name: Participant Global ID
+      description: '{{ doc("bp_datafile_manifest_output_participant_global_id") }}'
+    - name: Participant External ID
+      description: '{{ doc("bp_datafile_manifest_output_participant_external_id")
+        }}'
+    - name: Sample Global ID
+      description: '{{ doc("bp_datafile_manifest_output_sample_global_id") }}'
+    - name: Sample External ID
+      description: '{{ doc("bp_datafile_manifest_output_sample_external_id") }}'
+    - name: File Name
+      description: '{{ doc("bp_datafile_manifest_output_file_name") }}'
+    - name: File Global ID
+      description: '{{ doc("bp_datafile_manifest_output_file_global_id") }}'
+    - name: File Upload Location
+      description: '{{ doc("bp_datafile_manifest_output_file_upload_location") }}'
+    - name: File S3 Location
+      description: '{{ doc("bp_datafile_manifest_output_file_s3_location") }}'
+    - name: DRS URI
+      description: '{{ doc("bp_datafile_manifest_output_drs_uri") }}'
+    - name: File Hash
+      description: '{{ doc("bp_datafile_manifest_output_file_hash") }}'
+    - name: Data Access
+      description: '{{ doc("bp_datafile_manifest_output_data_access") }}'
+    - name: Data Category
+      description: '{{ doc("bp_datafile_manifest_output_data_category") }}'
+    - name: Data Type
+      description: '{{ doc("bp_datafile_manifest_output_data_type") }}'
+    - name: Experimental Strategy
+      description: '{{ doc("bp_datafile_manifest_output_experimental_strategy") }}'
+    - name: Experimental Platform
+      description: '{{ doc("bp_datafile_manifest_output_experimental_platform") }}'
+    - name: File Format
+      description: '{{ doc("bp_datafile_manifest_output_file_format") }}'
+    - name: File Size
+      description: '{{ doc("bp_datafile_manifest_output_file_size") }}'
+    - name: File Size Unit
+      description: '{{ doc("bp_datafile_manifest_output_file_size_unit") }}'
