@@ -1,0 +1,215 @@
+sources:
+- name: chr_18
+  schema: inc_chr_18_src
+  tables:
+  - name: chr_18_phenotype_data
+    description: Source table for chr_18_phenotype_data.
+    columns:
+    - name: Family ID
+      description: '{{ doc("chr_18_phenotype_data_family_id") }}'
+    - name: Participant ID
+      description: '{{ doc("chr_18_phenotype_data_participant_id") }}'
+    - name: Family Relationship Target Participant ID
+      description: '{{ doc("chr_18_phenotype_data_family_relationship_target_pa_59d6df7d")
+        }}'
+    - name: alliquot_id
+      description: '{{ doc("chr_18_phenotype_data_alliquot_id") }}'
+    - name: Consent Group
+      description: '{{ doc("chr_18_phenotype_data_consent_group") }}'
+    - name: Age at Sample
+      description: '{{ doc("chr_18_phenotype_data_age_at_sample") }}'
+    - name: Sample Composition
+      description: '{{ doc("chr_18_phenotype_data_sample_composition") }}'
+    - name: Race
+      description: '{{ doc("chr_18_phenotype_data_race") }}'
+    - name: Sex
+      description: '{{ doc("chr_18_phenotype_data_sex") }}'
+    - name: Ethnicity
+      description: '{{ doc("chr_18_phenotype_data_ethnicity") }}'
+    - name: Analyte Type
+      description: '{{ doc("chr_18_phenotype_data_analyte_type") }}'
+    - name: Age at Phenotype
+      description: '{{ doc("chr_18_phenotype_data_age_at_phenotype") }}'
+    - name: Affected Status
+      description: '{{ doc("chr_18_phenotype_data_affected_status") }}'
+    - name: Vital Status
+      description: '{{ doc("chr_18_phenotype_data_vital_status") }}'
+    - name: chiari 2
+      description: '{{ doc("chr_18_phenotype_data_chiari_2") }}'
+    - name: pituitary gland abn
+      description: '{{ doc("chr_18_phenotype_data_pituitary_gland_abn") }}'
+    - name: cleft palate
+      description: '{{ doc("chr_18_phenotype_data_cleft_palate") }}'
+    - name: hearing loss
+      description: '{{ doc("chr_18_phenotype_data_hearing_loss") }}'
+    - name: tetralogy of fallot
+      description: '{{ doc("chr_18_phenotype_data_tetralogy_of_fallot") }}'
+    - name: conductive hearing loss
+      description: '{{ doc("chr_18_phenotype_data_conductive_hearing_loss") }}'
+    - name: holoprosencephaly
+      description: '{{ doc("chr_18_phenotype_data_holoprosencephaly") }}'
+    - name: choanal atresia
+      description: '{{ doc("chr_18_phenotype_data_choanal_atresia") }}'
+    - name: aural atresia
+      description: '{{ doc("chr_18_phenotype_data_aural_atresia") }}'
+    - name: midface hypoplasia
+      description: '{{ doc("chr_18_phenotype_data_midface_hypoplasia") }}'
+    - name: dysmyelination
+      description: '{{ doc("chr_18_phenotype_data_dysmyelination") }}'
+    - name: polymicrogyria
+      description: '{{ doc("chr_18_phenotype_data_polymicrogyria") }}'
+    - name: cryptorchidism
+      description: '{{ doc("chr_18_phenotype_data_cryptorchidism") }}'
+    - name: sensorineural hearing loss
+      description: '{{ doc("chr_18_phenotype_data_sensorineural_hearing_loss") }}'
+    - name: cleft lip
+      description: '{{ doc("chr_18_phenotype_data_cleft_lip") }}'
+    - name: imperforate anus
+      description: '{{ doc("chr_18_phenotype_data_imperforate_anus") }}'
+    - name: microcephaly
+      description: '{{ doc("chr_18_phenotype_data_microcephaly") }}'
+    - name: vertical talus
+      description: '{{ doc("chr_18_phenotype_data_vertical_talus") }}'
+    - name: hypospadias
+      description: '{{ doc("chr_18_phenotype_data_hypospadias") }}'
+    - name: rocker bottom foot
+      description: '{{ doc("chr_18_phenotype_data_rocker_bottom_foot") }}'
+    - name: chiari 1
+      description: '{{ doc("chr_18_phenotype_data_chiari_1") }}'
+    - name: ptosis
+      description: '{{ doc("chr_18_phenotype_data_ptosis") }}'
+    - name: strabismus
+      description: '{{ doc("chr_18_phenotype_data_strabismus") }}'
+    - name: bilateral coxa valga
+      description: '{{ doc("chr_18_phenotype_data_bilateral_coxa_valga") }}'
+    - name: cardiac_nos
+      description: '{{ doc("chr_18_phenotype_data_cardiac_nos") }}'
+    - name: corpus callosum abn
+      description: '{{ doc("chr_18_phenotype_data_corpus_callosum_abn") }}'
+    - name: pulmonary valve stenosis
+      description: '{{ doc("chr_18_phenotype_data_pulmonary_valve_stenosis") }}'
+    - name: metatarsus varus
+      description: '{{ doc("chr_18_phenotype_data_metatarsus_varus") }}'
+    - name: decreased white matter volume
+      description: '{{ doc("chr_18_phenotype_data_decreased_white_matter_volume")
+        }}'
+    - name: macrocephaly
+      description: '{{ doc("chr_18_phenotype_data_macrocephaly") }}'
+    - name: suprasellar cyst
+      description: '{{ doc("chr_18_phenotype_data_suprasellar_cyst") }}'
+    - name: hydrocephalus
+      description: '{{ doc("chr_18_phenotype_data_hydrocephalus") }}'
+    - name: micropenis
+      description: '{{ doc("chr_18_phenotype_data_micropenis") }}'
+    - name: anal stenosis
+      description: '{{ doc("chr_18_phenotype_data_anal_stenosis") }}'
+    - name: congenital heart malformation
+      description: '{{ doc("chr_18_phenotype_data_congenital_heart_malformation")
+        }}'
+    - name: bilateral choanal atresia
+      description: '{{ doc("chr_18_phenotype_data_bilateral_choanal_atresia") }}'
+    - name: dandy walker malformation
+      description: '{{ doc("chr_18_phenotype_data_dandy_walker_malformation") }}'
+    - name: dandy walker
+      description: '{{ doc("chr_18_phenotype_data_dandy_walker") }}'
+    - name: congenital heart defect
+      description: '{{ doc("chr_18_phenotype_data_congenital_heart_defect") }}'
+    - name: aural stenosis
+      description: '{{ doc("chr_18_phenotype_data_aural_stenosis") }}'
+    - name: kidney malform
+      description: '{{ doc("chr_18_phenotype_data_kidney_malform") }}'
+    - name: pituitary fossa enlargement
+      description: '{{ doc("chr_18_phenotype_data_pituitary_fossa_enlargement") }}'
+    - name: submucous cleft
+      description: '{{ doc("chr_18_phenotype_data_submucous_cleft") }}'
+    - name: virchow robins spaces
+      description: '{{ doc("chr_18_phenotype_data_virchow_robins_spaces") }}'
+    - name: retinal coloboma
+      description: '{{ doc("chr_18_phenotype_data_retinal_coloboma") }}'
+    - name: corneal staphyloma
+      description: '{{ doc("chr_18_phenotype_data_corneal_staphyloma") }}'
+    - name: club foot
+      description: '{{ doc("chr_18_phenotype_data_club_foot") }}'
+    - name: macroglossia
+      description: '{{ doc("chr_18_phenotype_data_macroglossia") }}'
+    - name: dandy walker variant
+      description: '{{ doc("chr_18_phenotype_data_dandy_walker_variant") }}'
+    - name: coanal atresia
+      description: '{{ doc("chr_18_phenotype_data_coanal_atresia") }}'
+    - name: occipatal lobe abn
+      description: '{{ doc("chr_18_phenotype_data_occipatal_lobe_abn") }}'
+    - name: asd
+      description: '{{ doc("chr_18_phenotype_data_asd") }}'
+    - name: vsd
+      description: '{{ doc("chr_18_phenotype_data_vsd") }}'
+    - name: pectus excavatum
+      description: '{{ doc("chr_18_phenotype_data_pectus_excavatum") }}'
+    - name: peripherial pulmonary stenosis
+      description: '{{ doc("chr_18_phenotype_data_peripherial_pulmonary_stenosis")
+        }}'
+    - name: sagittal stenosis
+      description: '{{ doc("chr_18_phenotype_data_sagittal_stenosis") }}'
+    - name: hydronephrosis
+      description: '{{ doc("chr_18_phenotype_data_hydronephrosis") }}'
+    - name: patent ductus arteriosus
+      description: '{{ doc("chr_18_phenotype_data_patent_ductus_arteriosus") }}'
+    - name: duanes syndrome
+      description: '{{ doc("chr_18_phenotype_data_duanes_syndrome") }}'
+    - name: laryngomalacia
+      description: '{{ doc("chr_18_phenotype_data_laryngomalacia") }}'
+    - name: metatarsus adductus
+      description: '{{ doc("chr_18_phenotype_data_metatarsus_adductus") }}'
+    - name: ptosisbilateral
+      description: '{{ doc("chr_18_phenotype_data_ptosisbilateral") }}'
+    - name: microphallus
+      description: '{{ doc("chr_18_phenotype_data_microphallus") }}'
+    - name: sacral agenesis
+      description: '{{ doc("chr_18_phenotype_data_sacral_agenesis") }}'
+    - name: situs inversus
+      description: '{{ doc("chr_18_phenotype_data_situs_inversus") }}'
+    - name: Sample Tissue Type
+      description: '{{ doc("chr_18_phenotype_data_sample_tissue_type") }}'
+  - name: ha_delivery_manifest_6735
+    description: Source table for ha_delivery_manifest_6735.
+    columns:
+    - name: type
+      description: '{{ doc("ha_delivery_manifest_6735_type") }}'
+    - name: sample.sample_id
+      description: '{{ doc("ha_delivery_manifest_6735_sample") }}'
+    - name: file_name
+      description: '{{ doc("ha_delivery_manifest_6735_file_name") }}'
+    - name: file_type
+      description: '{{ doc("ha_delivery_manifest_6735_file_type") }}'
+    - name: file_description
+      description: '{{ doc("ha_delivery_manifest_6735_file_description") }}'
+    - name: file_size
+      description: '{{ doc("ha_delivery_manifest_6735_file_size") }}'
+    - name: md5sum
+      description: '{{ doc("ha_delivery_manifest_6735_md5sum") }}'
+    - name: library_id
+      description: '{{ doc("ha_delivery_manifest_6735_library_id") }}'
+    - name: library_strategy
+      description: '{{ doc("ha_delivery_manifest_6735_library_strategy") }}'
+    - name: library_layout
+      description: '{{ doc("ha_delivery_manifest_6735_library_layout") }}'
+    - name: library_source
+      description: '{{ doc("ha_delivery_manifest_6735_library_source") }}'
+    - name: platform
+      description: '{{ doc("ha_delivery_manifest_6735_platform") }}'
+    - name: instrument_model
+      description: '{{ doc("ha_delivery_manifest_6735_instrument_model") }}'
+  - name: s3_scrape_cody
+    description: Source table for s3_scrape_cody.
+    columns:
+    - name: Size
+      description: '{{ doc("s3_scrape_cody_size") }}'
+    - name: Key
+      description: '{{ doc("s3_scrape_cody_key") }}'
+    - name: ETag
+      description: '{{ doc("s3_scrape_cody_etag") }}'
+    - name: Bucket
+      description: '{{ doc("s3_scrape_cody_bucket") }}'
+    - name: LastModified
+      description: '{{ doc("s3_scrape_cody_lastmodified") }}'
+    - name: StorageClass
+      description: '{{ doc("s3_scrape_cody_storageclass") }}'

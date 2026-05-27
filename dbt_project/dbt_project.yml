@@ -24,6 +24,11 @@ models:
           +schema: inc_aadsc_src
         int:
           +schema: inc_aadsc_int
+      chr_18:
+        src:
+          +schema: inc_chr_18_src
+        int:
+          +schema: inc_chr_18_int
     kids_first:
       +tags: [study_stage,kids_first]
       sd_1nns3k8v:
@@ -32,6 +37,9 @@ models:
           +schema: kf_sd_1nns3k8v_src
         int:
           +schema: kf_sd_1nns3k8v_int
+      chr_18:
+        +tags:
+        - chr_18
     access:
       +tags: [access_stage]
       +schema: access
