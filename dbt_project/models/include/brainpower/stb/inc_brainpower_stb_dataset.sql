@@ -1,7 +1,7 @@
 {{ config(materialized='table') }}
 
 select
-    {{ generate_global_id(prefix='gp',descriptor=['dataset_name'], study_id='brainpower') }}::text as "dataset_id",
+    null::text as "dataset_id",
     d.dataset_name::text as "name",
     d.dataset_description::text as "description",
     null::text as "do_id",

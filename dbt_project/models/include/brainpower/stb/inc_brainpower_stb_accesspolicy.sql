@@ -1,7 +1,7 @@
 {{ config(materialized='table') }}
 
 select
-    {{ generate_global_id(prefix='ob',descriptor=['a.dbgap'], study_id='brainpower') }}::text as "access_policy_id",
+    null::text as "access_policy_id",
     a.dbgap::text as "data_use_accession",
     d.access_limitations::text as "data_use_permission",
     d.access_requirements::text as "data_use_modifier",
