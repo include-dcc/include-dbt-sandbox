@@ -67,3 +67,5 @@ models:
       +tags:
       - combined_stage
       +schema: combined
+on-run-end:
+  - "{{ grant_inc_devs_access() }}"
