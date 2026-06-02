@@ -1,9 +1,9 @@
 version: 2
 
-seeds:
- - name: global_identifiers_include_dcc_brainpower
-   config:
-     schema: kf_inc_seeds
+# seeds:
+#  - name: global_identifiers_include_dcc_brainpower
+#    config:
+#      schema: kf_inc_seeds
 
 # seeds:
 #   - name: global_identifiers_include_dcc_brainpower

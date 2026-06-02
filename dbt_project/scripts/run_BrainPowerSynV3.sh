@@ -24,75 +24,75 @@ dbt seed --full-refresh
 # dbt run --select inc_brainpower_src_brainpower_datafile_manifest_2025_06_26
 
 # Stable tables
-# dbt run --select inc_brainpower_stb_accesspolicy
-# dbt run --select inc_brainpower_stb_activitydefinition
-# dbt run --select inc_brainpower_stb_activitydefinition_external_id
-# dbt run --select inc_brainpower_stb_aliquot
-# dbt run --select inc_brainpower_stb_aliquot_external_id
-# dbt run --select inc_brainpower_stb_biospecimencollection
-# dbt run --select inc_brainpower_stb_biospecimencollection_external_id
-# dbt run --select inc_brainpower_stb_concept
-# dbt run --select inc_brainpower_stb_doi
-# dbt run --select inc_brainpower_stb_doi_external_id
-# dbt run --select inc_brainpower_stb_dataset
-# dbt run --select inc_brainpower_stb_dataset_file_id
-# dbt run --select inc_brainpower_stb_dataset_publication
-# dbt run --select inc_brainpower_stb_demographics
-# dbt run --select inc_brainpower_stb_demographics_external_id
-# dbt run --select inc_brainpower_stb_demographics_race
-# dbt run --select inc_brainpower_stb_encounter
-# dbt run --select inc_brainpower_stb_encounterdefinition
-# dbt run --select inc_brainpower_stb_encounterdefinition_activity_definition_id
-# dbt run --select inc_brainpower_stb_encounterdefinition_external_id
-# dbt run --select inc_brainpower_stb_encounter_external_id
-# dbt run --select inc_brainpower_stb_family
-# dbt run --select inc_brainpower_stb_familymember
-# dbt run --select inc_brainpower_stb_familymember_external_id
-# dbt run --select inc_brainpower_stb_familyrelationship
-# dbt run --select inc_brainpower_stb_familyrelationship_external_id
-# dbt run --select inc_brainpower_stb_family_external_id
-# dbt run --select inc_brainpower_stb_file
-# dbt run --select inc_brainpower_stb_filehash
-# dbt run --select inc_brainpower_stb_file_external_id
-# dbt run --select inc_brainpower_stb_file_sample_id
-# dbt run --select inc_brainpower_stb_file_subject_id
-# dbt run --select inc_brainpower_stb_investigator
-# dbt run --select inc_brainpower_stb_investigator_external_id
-# dbt run --select inc_brainpower_stb_publication
-# dbt run --select inc_brainpower_stb_publication_external_id
-# dbt run --select inc_brainpower_stb_record_external_id
-# dbt run --select inc_brainpower_stb_sample
-# dbt run --select inc_brainpower_stb_sample_external_id
-# dbt run --select inc_brainpower_stb_sample_processing
-# dbt run --select inc_brainpower_stb_sample_storage_method
-# dbt run --select inc_brainpower_stb_study
-# dbt run --select inc_brainpower_stb_studymetadata
-# dbt run --select inc_brainpower_stb_studymetadata_clinical_data_source_type
-# dbt run --select inc_brainpower_stb_studymetadata_data_category
-# dbt run --select inc_brainpower_stb_studymetadata_external_id
-# dbt run --select inc_brainpower_stb_studymetadata_participant_lifespan_stage
-# dbt run --select inc_brainpower_stb_studymetadata_research_domain
-# dbt run --select inc_brainpower_stb_studymetadata_study_design
-# dbt run --select inc_brainpower_stb_study_clinical_data_source_type
-# dbt run --select inc_brainpower_stb_study_contact
-# dbt run --select inc_brainpower_stb_study_data_category
-# dbt run --select inc_brainpower_stb_study_external_id
-# dbt run --select inc_brainpower_stb_study_funding_source
-# dbt run --select inc_brainpower_stb_study_participant_lifespan_stage
-# dbt run --select inc_brainpower_stb_study_principal_investigator
-# dbt run --select inc_brainpower_stb_study_program
-# dbt run --select inc_brainpower_stb_study_publication
-# dbt run --select inc_brainpower_stb_study_research_domain
-# dbt run --select inc_brainpower_stb_study_study_design
-# dbt run --select inc_brainpower_stb_subject
-# dbt run --select inc_brainpower_stb_subjectassertion
-# dbt run --select inc_brainpower_stb_subjectassertion_concept
-# dbt run --select inc_brainpower_stb_subjectassertion_external_id
-# dbt run --select inc_brainpower_stb_subjectassertion_value_concept
-# dbt run --select inc_brainpower_stb_subject_external_id
-# dbt run --select inc_brainpower_stb_virtualbiorepository
-# dbt run --select inc_brainpower_stb_virtualbiorepository_contact
-# dbt run --select inc_brainpower_stb_virtualbiorepository_external_id
+dbt run --select inc_brainpower_stb_accesspolicy
+dbt run --select inc_brainpower_stb_activitydefinition
+dbt run --select inc_brainpower_stb_activitydefinition_external_id
+dbt run --select inc_brainpower_stb_aliquot
+dbt run --select inc_brainpower_stb_aliquot_external_id
+dbt run --select inc_brainpower_stb_biospecimencollection
+dbt run --select inc_brainpower_stb_biospecimencollection_external_id
+dbt run --select inc_brainpower_stb_concept
+dbt run --select inc_brainpower_stb_doi
+dbt run --select inc_brainpower_stb_doi_external_id
+dbt run --select inc_brainpower_stb_dataset
+dbt run --select inc_brainpower_stb_dataset_file_id
+dbt run --select inc_brainpower_stb_dataset_publication
+dbt run --select inc_brainpower_stb_demographics
+dbt run --select inc_brainpower_stb_demographics_external_id
+dbt run --select inc_brainpower_stb_demographics_race
+dbt run --select inc_brainpower_stb_encounter
+dbt run --select inc_brainpower_stb_encounterdefinition
+dbt run --select inc_brainpower_stb_encounterdefinition_activity_definition_id
+dbt run --select inc_brainpower_stb_encounterdefinition_external_id
+dbt run --select inc_brainpower_stb_encounter_external_id
+dbt run --select inc_brainpower_stb_family
+dbt run --select inc_brainpower_stb_familymember
+dbt run --select inc_brainpower_stb_familymember_external_id
+dbt run --select inc_brainpower_stb_familyrelationship
+dbt run --select inc_brainpower_stb_familyrelationship_external_id
+dbt run --select inc_brainpower_stb_family_external_id
+dbt run --select inc_brainpower_stb_file
+dbt run --select inc_brainpower_stb_filehash
+dbt run --select inc_brainpower_stb_file_external_id
+dbt run --select inc_brainpower_stb_file_sample_id
+dbt run --select inc_brainpower_stb_file_subject_id
+dbt run --select inc_brainpower_stb_investigator
+dbt run --select inc_brainpower_stb_investigator_external_id
+dbt run --select inc_brainpower_stb_publication
+dbt run --select inc_brainpower_stb_publication_external_id
+dbt run --select inc_brainpower_stb_record_external_id
+dbt run --select inc_brainpower_stb_sample
+dbt run --select inc_brainpower_stb_sample_external_id
+dbt run --select inc_brainpower_stb_sample_processing
+dbt run --select inc_brainpower_stb_sample_storage_method
+dbt run --select inc_brainpower_stb_study
+dbt run --select inc_brainpower_stb_studymetadata
+dbt run --select inc_brainpower_stb_studymetadata_clinical_data_source_type
+dbt run --select inc_brainpower_stb_studymetadata_data_category
+dbt run --select inc_brainpower_stb_studymetadata_external_id
+dbt run --select inc_brainpower_stb_studymetadata_participant_lifespan_stage
+dbt run --select inc_brainpower_stb_studymetadata_research_domain
+dbt run --select inc_brainpower_stb_studymetadata_study_design
+dbt run --select inc_brainpower_stb_study_clinical_data_source_type
+dbt run --select inc_brainpower_stb_study_contact
+dbt run --select inc_brainpower_stb_study_data_category
+dbt run --select inc_brainpower_stb_study_external_id
+dbt run --select inc_brainpower_stb_study_funding_source
+dbt run --select inc_brainpower_stb_study_participant_lifespan_stage
+dbt run --select inc_brainpower_stb_study_principal_investigator
+dbt run --select inc_brainpower_stb_study_program
+dbt run --select inc_brainpower_stb_study_publication
+dbt run --select inc_brainpower_stb_study_research_domain
+dbt run --select inc_brainpower_stb_study_study_design
+dbt run --select inc_brainpower_stb_subject
+dbt run --select inc_brainpower_stb_subjectassertion
+dbt run --select inc_brainpower_stb_subjectassertion_concept
+dbt run --select inc_brainpower_stb_subjectassertion_external_id
+dbt run --select inc_brainpower_stb_subjectassertion_value_concept
+dbt run --select inc_brainpower_stb_subject_external_id
+dbt run --select inc_brainpower_stb_virtualbiorepository
+dbt run --select inc_brainpower_stb_virtualbiorepository_contact
+dbt run --select inc_brainpower_stb_virtualbiorepository_external_id
 # Combined tables
 # dbt run --select combined_accesspolicy
 # dbt run --select combined_activitydefinition
