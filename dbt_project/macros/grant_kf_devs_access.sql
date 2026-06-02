@@ -1,13 +1,13 @@
 {% macro grant_inc_devs_access() %}
   {% if execute %}
-    {% set grantee_name = 'include_users' %}
+    {% set grantee_name = 'kf_users' %}
     {% set grantee = adapter.quote(grantee_name) %}
     {% set ns = namespace(run_schemas=[]) %}
 
     {% if results is defined %}
       {% for res in results %}
         {% set node_tags = res.node.tags if res.node.tags is defined else [] %}
-        {% if res.node.resource_type == 'model' and 'kids_first' not in node_tags %}
+        {% if res.node.resource_type == 'model' and 'include' not in node_tags %}
           {% do ns.run_schemas.append(res.node.schema) %}
         {% endif %}
       {% endfor %}
@@ -34,7 +34,7 @@
       {% endif %}
 
       {% if not schema_granted %}
-        {% do log('Applying include_users grants on schema ' ~ schema_name, info=True) %}
+        {% do log('Applying kf_users grants on schema ' ~ schema_name, info=True) %}
 
         {% do run_query("grant usage on schema " ~ quoted_schema ~ " to " ~ grantee) %}
         {% do run_query("grant select, insert, update, delete on all tables in schema " ~ quoted_schema ~ " to " ~ grantee) %}
@@ -52,5 +52,5 @@
 {% endmacro %}
 
 {% macro grant_devs_access() %}
-  {{ return(grant_inc_devs_access()) }}
+  {{ return(grant_kf_devs_access()) }}
 {% endmacro %}
