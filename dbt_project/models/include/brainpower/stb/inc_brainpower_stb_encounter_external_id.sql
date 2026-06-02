@@ -1,7 +1,7 @@
 {{ config(materialized='table') }}
 
-    select
-    null::text as "encounter_encounter_id",
-    timepoint::text as "external_id"
-    from {{ ref('inc_brainpower_src_bp_age_event_latency') }}
+select
+  null::text as encounter_encounter_id,
+  timepoint::text as external_id
+from {{ ref('inc_brainpower_src_bp_age_event_latency') }}
     
