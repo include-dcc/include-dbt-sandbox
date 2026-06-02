@@ -1,6 +1,6 @@
 sources:
 - name: brainpower
-  schema: inc_brainpower_src
+  schema: inc_brainpower_raw
   tables:
   - name: bp_age_event_latency
     description: Source table for bp_age_event_latency.
