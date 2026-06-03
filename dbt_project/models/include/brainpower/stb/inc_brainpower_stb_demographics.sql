@@ -39,20 +39,3 @@ from {{ ref('inc_brainpower_src_bp_age_event_latency') }}
 where timepoint = '1') as age_data_first
   on d.id = age_data_first.id
 
-
--- select
---     d.gender_info -> 'gender_code' as "sex"
---     -- d.id::text as "subject_id",
---     -- d.gender::text as "sex",
---     -- d.ethnicity::text as "ethnicity",
---     -- null::text as "down_syndrome_status",
---     -- null::integer as "age_at_last_vital_status",
---     -- null::text as "vital_status",
---     -- null::integer as "age_at_first_engagement",
---     -- null::text as "access_policy_id",
---     -- null::text as "study_id"
--- -- {# {{ dbt_utils.pivot('code', dbt_utils.get_column_values(ref('inc_brainpower_int_bp_demographics'), 'code')) }}
-    -- from {{ ref('inc_brainpower_int_bp_demographics') }} as d
-    -- -- left join {{ ref('global_identifiers_include_dcc_brainpower') }} as a --annotations
-    -- -- on CAST(d.id AS text) = a.descriptor
-    -- -- where fhirResourceType = 'Patient' #}
