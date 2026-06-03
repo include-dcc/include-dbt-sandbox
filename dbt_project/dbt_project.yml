@@ -15,9 +15,6 @@ clean-targets:
 vars:
   combined_studies:
   - inc_brainpower
-seeds:
-  include_dbt_sandbox:
-    +schema: kf_inc_seeds
 models:
   +materialized: table
   include_dbt_sandbox:
