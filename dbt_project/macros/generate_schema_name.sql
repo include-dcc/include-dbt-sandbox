@@ -3,13 +3,13 @@
 
     {%- set default_schema = target.schema -%}
 
+    {# If an explicit schema is set in dbt_project.yml, use it as-is (no prefix) #}
+    {%- if custom_schema_name is not none -%}
+        {{ custom_schema_name | trim }}
+
     {# 1. Logic for Seed Files: result will be "dev_schema_import" #}
-    {%- if node.resource_type == 'seed' -%}
-        {%- if custom_schema_name is none -%}
-            {{ default_schema | trim }}
-        {%- else -%}
-            {{ default_schema | trim }}_{{ custom_schema_name | trim }}
-        {%- endif -%}
+    {%- elif node.resource_type == 'seed' -%}
+        {{ default_schema | trim }}
 
     {# 2. Unified Logic for Models #}
     {%- else -%}
