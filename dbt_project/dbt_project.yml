@@ -37,7 +37,7 @@ models:
         +tags:
         - brainpower
         src:
-          +schema: inc_brainpower_src_bg
+          +schema: inc_brainpower_src
         int:
           +schema: inc_brainpower_int
     kids_first:

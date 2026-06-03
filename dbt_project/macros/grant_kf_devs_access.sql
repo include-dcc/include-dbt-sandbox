@@ -1,4 +1,4 @@
-{% macro grant_inc_devs_access() %}
+{% macro grant_kf_devs_access() %}
   {% if execute %}
     {% set grantee_name = 'kf_users' %}
     {% set grantee = adapter.quote(grantee_name) %}
@@ -49,8 +49,4 @@
   {% endif %}
 
   {{ return('') }}
-{% endmacro %}
-
-{% macro grant_devs_access() %}
-  {{ return(grant_kf_devs_access()) }}
 {% endmacro %}

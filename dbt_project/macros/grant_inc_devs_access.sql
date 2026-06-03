@@ -50,7 +50,3 @@
 
   {{ return('') }}
 {% endmacro %}
-
-{% macro grant_devs_access() %}
-  {{ return(grant_inc_devs_access()) }}
-{% endmacro %}
