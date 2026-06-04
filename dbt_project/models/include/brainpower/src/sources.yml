@@ -1,0 +1,509 @@
+sources:
+- name: brainpower
+  schema: inc_brainpower_src
+  tables:
+  - name: bp_age_event_latency
+    description: Source table for bp_age_event_latency.
+    columns:
+    - name: id
+      description: '{{ doc("bp_age_event_latency_id") }}'
+    - name: timepoint
+      description: '{{ doc("bp_age_event_latency_timepoint") }}'
+    - name: age_at_visit
+      description: '{{ doc("bp_age_event_latency_age_at_visit") }}'
+    - name: age_cog
+      description: '{{ doc("bp_age_event_latency_age_cog") }}'
+    - name: age_mri
+      description: '{{ doc("bp_age_event_latency_age_mri") }}'
+    - name: visit_latency
+      description: '{{ doc("bp_age_event_latency_visit_latency") }}'
+    - name: cog_latency
+      description: '{{ doc("bp_age_event_latency_cog_latency") }}'
+    - name: mri_latency
+      description: '{{ doc("bp_age_event_latency_mri_latency") }}'
+  - name: bp_anthropometrics
+    description: Source table for bp_anthropometrics.
+    columns:
+    - name: id
+      description: '{{ doc("bp_anthropometrics_id") }}'
+    - name: timepoint
+      description: '{{ doc("bp_anthropometrics_timepoint") }}'
+    - name: height
+      description: '{{ doc("bp_anthropometrics_height") }}'
+    - name: weight
+      description: '{{ doc("bp_anthropometrics_weight") }}'
+    - name: bmi
+      description: '{{ doc("bp_anthropometrics_bmi") }}'
+    - name: waist
+      description: '{{ doc("bp_anthropometrics_waist") }}'
+    - name: sbp
+      description: '{{ doc("bp_anthropometrics_sbp") }}'
+    - name: dbp
+      description: '{{ doc("bp_anthropometrics_dbp") }}'
+    - name: resting_hr
+      description: '{{ doc("bp_anthropometrics_resting_hr") }}'
+  - name: bp_cognitive_function
+    description: Source table for bp_cognitive_function.
+    columns:
+    - name: id
+      description: '{{ doc("bp_cognitive_function_id") }}'
+    - name: timepoint
+      description: '{{ doc("bp_cognitive_function_timepoint") }}'
+    - name: mtticmd
+      description: '{{ doc("bp_cognitive_function_mtticmd") }}'
+    - name: mttlmd
+      description: '{{ doc("bp_cognitive_function_mttlmd") }}'
+    - name: mttmtcmd
+      description: '{{ doc("bp_cognitive_function_mttmtcmd") }}'
+    - name: mtttic
+      description: '{{ doc("bp_cognitive_function_mtttic") }}'
+    - name: palfams
+      description: '{{ doc("bp_cognitive_function_palfams") }}'
+    - name: paltea
+      description: '{{ doc("bp_cognitive_function_paltea") }}'
+    - name: rtifmdmt
+      description: '{{ doc("bp_cognitive_function_rtifmdmt") }}'
+    - name: rtifmdrt
+      description: '{{ doc("bp_cognitive_function_rtifmdrt") }}'
+    - name: rtismdmt
+      description: '{{ doc("bp_cognitive_function_rtismdmt") }}'
+    - name: rtismdrt
+      description: '{{ doc("bp_cognitive_function_rtismdrt") }}'
+  - name: bp_imaging
+    description: Source table for bp_imaging.
+    columns:
+    - name: id
+      description: '{{ doc("bp_imaging_id") }}'
+    - name: timepoint
+      description: '{{ doc("bp_imaging_timepoint") }}'
+    - name: norm_gray
+      description: '{{ doc("bp_imaging_norm_gray") }}'
+    - name: norm_white
+      description: '{{ doc("bp_imaging_norm_white") }}'
+    - name: norm_lhippo
+      description: '{{ doc("bp_imaging_norm_lhippo") }}'
+    - name: norm_rhippo
+      description: '{{ doc("bp_imaging_norm_rhippo") }}'
+    - name: total_icv
+      description: '{{ doc("bp_imaging_total_icv") }}'
+    - name: total_gray
+      description: '{{ doc("bp_imaging_total_gray") }}'
+    - name: total_white
+      description: '{{ doc("bp_imaging_total_white") }}'
+    - name: total_lhippo
+      description: '{{ doc("bp_imaging_total_lhippo") }}'
+    - name: total_rhippo
+      description: '{{ doc("bp_imaging_total_rhippo") }}'
+    - name: rspcc_dmnmask
+      description: '{{ doc("bp_imaging_rspcc_dmnmask") }}'
+    - name: rspcc_mpfc
+      description: '{{ doc("bp_imaging_rspcc_mpfc") }}'
+    - name: rspcc_lpar
+      description: '{{ doc("bp_imaging_rspcc_lpar") }}'
+    - name: rspcc_rpar
+      description: '{{ doc("bp_imaging_rspcc_rpar") }}'
+    - name: dti_fa
+      description: '{{ doc("bp_imaging_dti_fa") }}'
+    - name: dti_md
+      description: '{{ doc("bp_imaging_dti_md") }}'
+    - name: pcasl
+      description: '{{ doc("bp_imaging_pcasl") }}'
+  - name: bp_physical_activity_day
+    description: Source table for bp_physical_activity_day.
+    columns:
+    - name: id
+      description: '{{ doc("bp_physical_activity_day_id") }}'
+    - name: timepoint
+      description: '{{ doc("bp_physical_activity_day_timepoint") }}'
+    - name: days
+      description: '{{ doc("bp_physical_activity_day_days") }}'
+    - name: weekday
+      description: '{{ doc("bp_physical_activity_day_weekday") }}'
+    - name: season
+      description: '{{ doc("bp_physical_activity_day_season") }}'
+    - name: counts
+      description: '{{ doc("bp_physical_activity_day_counts") }}'
+    - name: vmc
+      description: '{{ doc("bp_physical_activity_day_vmc") }}'
+    - name: steps
+      description: '{{ doc("bp_physical_activity_day_steps") }}'
+    - name: wear_time
+      description: '{{ doc("bp_physical_activity_day_wear_time") }}'
+    - name: sedentary
+      description: '{{ doc("bp_physical_activity_day_sedentary") }}'
+    - name: light
+      description: '{{ doc("bp_physical_activity_day_light") }}'
+    - name: moderate
+      description: '{{ doc("bp_physical_activity_day_moderate") }}'
+    - name: vigorous
+      description: '{{ doc("bp_physical_activity_day_vigorous") }}'
+    - name: mvpa
+      description: '{{ doc("bp_physical_activity_day_mvpa") }}'
+  - name: bp_physical_activity_person
+    description: Source table for bp_physical_activity_person.
+    columns:
+    - name: id
+      description: '{{ doc("bp_physical_activity_person_id") }}'
+    - name: timepoint
+      description: '{{ doc("bp_physical_activity_person_timepoint") }}'
+    - name: counts
+      description: '{{ doc("bp_physical_activity_person_counts") }}'
+    - name: vmc
+      description: '{{ doc("bp_physical_activity_person_vmc") }}'
+    - name: steps
+      description: '{{ doc("bp_physical_activity_person_steps") }}'
+    - name: wear_time
+      description: '{{ doc("bp_physical_activity_person_wear_time") }}'
+    - name: sedentary
+      description: '{{ doc("bp_physical_activity_person_sedentary") }}'
+    - name: light
+      description: '{{ doc("bp_physical_activity_person_light") }}'
+    - name: moderate
+      description: '{{ doc("bp_physical_activity_person_moderate") }}'
+    - name: vigorous
+      description: '{{ doc("bp_physical_activity_person_vigorous") }}'
+    - name: mvpa
+      description: '{{ doc("bp_physical_activity_person_mvpa") }}'
+    - name: valid_days
+      description: '{{ doc("bp_physical_activity_person_valid_days") }}'
+    - name: valid_weekend_days
+      description: '{{ doc("bp_physical_activity_person_valid_weekend_days") }}'
+  - name: bp_randomization
+    description: Source table for bp_randomization.
+    columns:
+    - name: id
+      description: '{{ doc("bp_randomization_id") }}'
+    - name: cohort
+      description: '{{ doc("bp_randomization_cohort") }}'
+    - name: strata
+      description: '{{ doc("bp_randomization_strata") }}'
+    - name: randomization
+      description: '{{ doc("bp_randomization_randomization") }}'
+  - name: bp_demographics
+    description: Source table for bp_demographics.
+    columns:
+    - name: id
+      description: '{{ doc("bp_demographics_id") }}'
+    - name: timepoint
+      description: '{{ doc("bp_demographics_timepoint") }}'
+    - name: gender
+      description: '{{ doc("bp_demographics_gender") }}'
+    - name: level_support
+      description: '{{ doc("bp_demographics_level_support") }}'
+    - name: race
+      description: '{{ doc("bp_demographics_race") }}'
+    - name: ethnicity
+      description: '{{ doc("bp_demographics_ethnicity") }}'
+  - name: bp_health_conditions
+    description: Source table for bp_health_conditions.
+    columns:
+    - name: id
+      description: '{{ doc("bp_health_conditions_id") }}'
+    - name: timepoint
+      description: '{{ doc("bp_health_conditions_timepoint") }}'
+    - name: heart_condition
+      description: '{{ doc("bp_health_conditions_heart_condition") }}'
+    - name: vsd
+      description: '{{ doc("bp_health_conditions_vsd") }}'
+    - name: asd
+      description: '{{ doc("bp_health_conditions_asd") }}'
+    - name: pda
+      description: '{{ doc("bp_health_conditions_pda") }}'
+    - name: avsd
+      description: '{{ doc("bp_health_conditions_avsd") }}'
+    - name: mitral
+      description: '{{ doc("bp_health_conditions_mitral") }}'
+    - name: murmur
+      description: '{{ doc("bp_health_conditions_murmur") }}'
+    - name: hole_no_surgery
+      description: '{{ doc("bp_health_conditions_hole_no_surgery") }}'
+    - name: blood_vessel_surgery
+      description: '{{ doc("bp_health_conditions_blood_vessel_surgery") }}'
+    - name: type1_diabetes
+      description: '{{ doc("bp_health_conditions_type1_diabetes") }}'
+    - name: metabolic_disorder
+      description: '{{ doc("bp_health_conditions_metabolic_disorder") }}'
+    - name: hypertension
+      description: '{{ doc("bp_health_conditions_hypertension") }}'
+    - name: type2_diabetes
+      description: '{{ doc("bp_health_conditions_type2_diabetes") }}'
+    - name: asthma
+      description: '{{ doc("bp_health_conditions_asthma") }}'
+    - name: food_allergies
+      description: '{{ doc("bp_health_conditions_food_allergies") }}'
+    - name: hypothyroidism
+      description: '{{ doc("bp_health_conditions_hypothyroidism") }}'
+  - name: bp_oxygen_kinetics_meta
+    description: Source table for bp_oxygen_kinetics_meta.
+    columns:
+    - name: id
+      description: '{{ doc("bp_oxygen_kinetics_meta_id") }}'
+    - name: timepoint
+      description: '{{ doc("bp_oxygen_kinetics_meta_timepoint") }}'
+    - name: start_time
+      description: '{{ doc("bp_oxygen_kinetics_meta_start_time") }}'
+    - name: room_temperature
+      description: '{{ doc("bp_oxygen_kinetics_meta_room_temperature") }}'
+    - name: barometric_pressure
+      description: '{{ doc("bp_oxygen_kinetics_meta_barometric_pressure") }}'
+    - name: room_humidity
+      description: '{{ doc("bp_oxygen_kinetics_meta_room_humidity") }}'
+    - name: o2_measured
+      description: '{{ doc("bp_oxygen_kinetics_meta_o2_measured") }}'
+    - name: co2_measured
+      description: '{{ doc("bp_oxygen_kinetics_meta_co2_measured") }}'
+  - name: bp_oxygen_kinetics_group
+    description: Source table for bp_oxygen_kinetics_group.
+    columns:
+    - name: id
+      description: '{{ doc("bp_oxygen_kinetics_group_id") }}'
+    - name: timepoint
+      description: '{{ doc("bp_oxygen_kinetics_group_timepoint") }}'
+    - name: predicted_max_hr
+      description: '{{ doc("bp_oxygen_kinetics_group_predicted_max_hr") }}'
+    - name: measured_peak_hr
+      description: '{{ doc("bp_oxygen_kinetics_group_measured_peak_hr") }}'
+    - name: speed
+      description: '{{ doc("bp_oxygen_kinetics_group_speed") }}'
+    - name: incline
+      description: '{{ doc("bp_oxygen_kinetics_group_incline") }}'
+    - name: time_to_peak
+      description: '{{ doc("bp_oxygen_kinetics_group_time_to_peak") }}'
+    - name: vo2_l_min
+      description: '{{ doc("bp_oxygen_kinetics_group_vo2_l_min") }}'
+    - name: vo2_ml_kg_min
+      description: '{{ doc("bp_oxygen_kinetics_group_vo2_ml_kg_min") }}'
+    - name: rer
+      description: '{{ doc("bp_oxygen_kinetics_group_rer") }}'
+    - name: criteria_exhaustion
+      description: '{{ doc("bp_oxygen_kinetics_group_criteria_exhaustion") }}'
+    - name: criteria_hr10
+      description: '{{ doc("bp_oxygen_kinetics_group_criteria_hr10") }}'
+    - name: criteria_rer
+      description: '{{ doc("bp_oxygen_kinetics_group_criteria_rer") }}'
+    - name: valid_peak_test
+      description: '{{ doc("bp_oxygen_kinetics_group_valid_peak_test") }}'
+  - name: tablename_key
+    description: Source table for tablename_key.
+    columns:
+    - name: table_name
+      description: '{{ doc("tablename_key_table_name") }}'
+  - name: timepoint_key
+    description: Source table for timepoint_key.
+    columns:
+    - name: timepoint
+      description: '{{ doc("timepoint_key_timepoint") }}'
+    - name: visit_name
+      description: '{{ doc("timepoint_key_visit_name") }}'
+  - name: study
+    description: Source table for study.
+    columns:
+    - name: Study Code
+      description: '{{ doc("study_study_code") }}'
+    - name: Study Title
+      description: '{{ doc("study_study_title") }}'
+    - name: Program
+      description: '{{ doc("study_program") }}'
+    - name: Study Description
+      description: '{{ doc("study_study_description") }}'
+    - name: Principal Investigator Name
+      description: '{{ doc("study_principal_investigator_name") }}'
+    - name: Study Contact Name
+      description: '{{ doc("study_study_contact_name") }}'
+    - name: Study Contact Institution
+      description: '{{ doc("study_study_contact_institution") }}'
+    - name: Study Contact Email
+      description: '{{ doc("study_study_contact_email") }}'
+    - name: VBR Email
+      description: '{{ doc("study_vbr_email") }}'
+    - name: VBR URL
+      description: '{{ doc("study_vbr_url") }}'
+    - name: VBR Readme
+      description: '{{ doc("study_vbr_readme") }}'
+    - name: Research Domain
+      description: '{{ doc("study_research_domain") }}'
+    - name: Participant Lifespan Stage
+      description: '{{ doc("study_participant_lifespan_stage") }}'
+    - name: Selection Criteria
+      description: '{{ doc("study_selection_criteria") }}'
+    - name: Study Design
+      description: '{{ doc("study_study_design") }}'
+    - name: Clinical Data Source Type
+      description: '{{ doc("study_clinical_data_source_type") }}'
+    - name: Data Category
+      description: '{{ doc("study_data_category") }}'
+    - name: Study Website
+      description: '{{ doc("study_study_website") }}'
+    - name: dbGaP
+      description: '{{ doc("study_dbgap") }}'
+    - name: Publication
+      description: '{{ doc("study_publication") }}'
+    - name: Expected Number of Participants
+      description: '{{ doc("study_expected_number_of_participants") }}'
+    - name: GUID Type
+      description: '{{ doc("study_guid_type") }}'
+    - name: GUID Mapped
+      description: '{{ doc("study_guid_mapped") }}'
+    - name: Acknowledgments
+      description: '{{ doc("study_acknowledgments") }}'
+    - name: Citation Statement
+      description: '{{ doc("study_citation_statement") }}'
+    - name: DOI
+      description: '{{ doc("study_doi") }}'
+    - name: DOI Citation
+      description: '{{ doc("study_doi_citation") }}'
+  - name: inc_kf_access_enums_20260508
+    description: Source table for inc_kf_access_enums_20260508.
+    columns:
+    - name: table_name
+      description: '{{ doc("inc_kf_access_enums_20260508_table_name") }}'
+    - name: variable_name
+      description: '{{ doc("inc_kf_access_enums_20260508_variable_name") }}'
+    - name: enumeration_code
+      description: '{{ doc("inc_kf_access_enums_20260508_enumeration_code") }}'
+    - name: enumeration_display
+      description: '{{ doc("inc_kf_access_enums_20260508_enumeration_display") }}'
+    - name: enumeration_title
+      description: '{{ doc("inc_kf_access_enums_20260508_enumeration_title") }}'
+    - name: enumeration_meaning
+      description: '{{ doc("inc_kf_access_enums_20260508_enumeration_meaning") }}'
+    - name: enumeration_system
+      description: '{{ doc("inc_kf_access_enums_20260508_enumeration_system") }}'
+    - name: enumeration_group
+      description: '{{ doc("inc_kf_access_enums_20260508_enumeration_group") }}'
+  - name: datasets
+    description: Source table for datasets.
+    columns:
+    - name: Study Code
+      description: '{{ doc("datasets_study_code") }}'
+    - name: Dataset Name
+      description: '{{ doc("datasets_dataset_name") }}'
+    - name: Dataset External ID
+      description: '{{ doc("datasets_dataset_external_id") }}'
+    - name: Dataset Global ID
+      description: '{{ doc("datasets_dataset_global_id") }}'
+    - name: Dataset Description
+      description: '{{ doc("datasets_dataset_description") }}'
+    - name: Data Collection Start Year
+      description: '{{ doc("datasets_data_collection_start_year") }}'
+    - name: Data Collection End Year
+      description: '{{ doc("datasets_data_collection_end_year") }}'
+    - name: Data Category
+      description: '{{ doc("datasets_data_category") }}'
+    - name: Data Type
+      description: '{{ doc("datasets_data_type") }}'
+    - name: Experimental Strategy
+      description: '{{ doc("datasets_experimental_strategy") }}'
+    - name: Experimental Platform
+      description: '{{ doc("datasets_experimental_platform") }}'
+    - name: Publication
+      description: '{{ doc("datasets_publication") }}'
+    - name: Access Limitations
+      description: '{{ doc("datasets_access_limitations") }}'
+    - name: Access Requirements
+      description: '{{ doc("datasets_access_requirements") }}'
+    - name: dbGaP
+      description: '{{ doc("datasets_dbgap") }}'
+    - name: Other Repository
+      description: '{{ doc("datasets_other_repository") }}'
+    - name: Other Access Authority
+      description: '{{ doc("datasets_other_access_authority") }}'
+    - name: Is Harmonized
+      description: '{{ doc("datasets_is_harmonized") }}'
+    - name: Dataset Manifest Location
+      description: '{{ doc("datasets_dataset_manifest_location") }}'
+    - name: DOI
+      description: '{{ doc("datasets_doi") }}'
+    - name: DOI Citation
+      description: '{{ doc("datasets_doi_citation") }}'
+  - name: brainpower_md_mappings
+    description: Source table for brainpower_md_mappings.
+    columns:
+    - name: study_title
+      description: '{{ doc("brainpower_md_mappings_study_title") }}'
+    - name: study_name
+      description: '{{ doc("brainpower_md_mappings_study_name") }}'
+    - name: study_id
+      description: '{{ doc("brainpower_md_mappings_study_id") }}'
+    - name: dd_name
+      description: '{{ doc("brainpower_md_mappings_dd_name") }}'
+    - name: dd_id
+      description: '{{ doc("brainpower_md_mappings_dd_id") }}'
+    - name: version
+      description: '{{ doc("brainpower_md_mappings_version") }}'
+    - name: table_id
+      description: '{{ doc("brainpower_md_mappings_table_id") }}'
+    - name: local code
+      description: '{{ doc("brainpower_md_mappings_local_code") }}'
+    - name: text
+      description: '{{ doc("brainpower_md_mappings_text") }}'
+    - name: table_name
+      description: '{{ doc("brainpower_md_mappings_table_name") }}'
+    - name: parent_varname
+      description: '{{ doc("brainpower_md_mappings_parent_varname") }}'
+    - name: local code system
+      description: '{{ doc("brainpower_md_mappings_local_code_system") }}'
+    - name: mapping_relationship
+      description: '{{ doc("brainpower_md_mappings_mapping_relationship") }}'
+    - name: code
+      description: '{{ doc("brainpower_md_mappings_code") }}'
+    - name: display
+      description: '{{ doc("brainpower_md_mappings_display") }}'
+    - name: code system
+      description: '{{ doc("brainpower_md_mappings_code_system") }}'
+    - name: comment
+      description: '{{ doc("brainpower_md_mappings_comment") }}'
+  - name: brainpower_datafile_manifest_2025_06_26
+    description: Source table for brainpower_datafile_manifest_2025_06_26.
+    columns:
+    - name: Study Code
+      description: '{{ doc("brainpower_datafile_manifest_2025_06_26_study_code") }}'
+    - name: Participant Global ID
+      description: '{{ doc("brainpower_datafile_manifest_2025_06_26_participant_1292c5dd")
+        }}'
+    - name: Participant External ID
+      description: '{{ doc("brainpower_datafile_manifest_2025_06_26_participant_4947aa84")
+        }}'
+    - name: Sample Global ID
+      description: '{{ doc("brainpower_datafile_manifest_2025_06_26_sample_global_id")
+        }}'
+    - name: Sample External ID
+      description: '{{ doc("brainpower_datafile_manifest_2025_06_26_sample_external_id")
+        }}'
+    - name: File Name
+      description: '{{ doc("brainpower_datafile_manifest_2025_06_26_file_name") }}'
+    - name: File Global ID
+      description: '{{ doc("brainpower_datafile_manifest_2025_06_26_file_global_id")
+        }}'
+    - name: File Upload Location
+      description: '{{ doc("brainpower_datafile_manifest_2025_06_26_file_upload_location")
+        }}'
+    - name: File S3 Location
+      description: '{{ doc("brainpower_datafile_manifest_2025_06_26_file_s3_location")
+        }}'
+    - name: DRS URI
+      description: '{{ doc("brainpower_datafile_manifest_2025_06_26_drs_uri") }}'
+    - name: File Hash
+      description: '{{ doc("brainpower_datafile_manifest_2025_06_26_file_hash") }}'
+    - name: Data Access
+      description: '{{ doc("brainpower_datafile_manifest_2025_06_26_data_access")
+        }}'
+    - name: Data Category
+      description: '{{ doc("brainpower_datafile_manifest_2025_06_26_data_category")
+        }}'
+    - name: Data Type
+      description: '{{ doc("brainpower_datafile_manifest_2025_06_26_data_type") }}'
+    - name: Experimental Strategy
+      description: '{{ doc("brainpower_datafile_manifest_2025_06_26_experimenta_06c2fc0a")
+        }}'
+    - name: Experimental Platform
+      description: '{{ doc("brainpower_datafile_manifest_2025_06_26_experimenta_fc0c4497")
+        }}'
+    - name: File Format
+      description: '{{ doc("brainpower_datafile_manifest_2025_06_26_file_format")
+        }}'
+    - name: File Size
+      description: '{{ doc("brainpower_datafile_manifest_2025_06_26_file_size") }}'
+    - name: File Size Unit
+      description: '{{ doc("brainpower_datafile_manifest_2025_06_26_file_size_unit")
+        }}'
