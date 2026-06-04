@@ -68,5 +68,5 @@ models:
       - combined_stage
       +schema: combined
 on-run-end:
-  - "{{ grant_inc_devs_access() }}"
-  - "{{ grant_kf_devs_access() }}"
+  - "{{ grant_devs_access(tag='include', users_role='include_users') }}"
+  - "{{ grant_devs_access(tag='kids_first', users_role='kf_users') }}"

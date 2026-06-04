@@ -1,25 +1,37 @@
-{% macro grant_inc_devs_access() %}
+{% macro grant_devs_access(tag, users_role) %}
   {% if execute %}
-    {% set grantee_name = 'include_users' %}
+    {% set command_name = flags.WHICH if flags is defined and flags.WHICH is defined else none %}
+    {% if command_name not in ['run', 'build'] %}
+      {% do log('grant_devs_access: skipping for command ' ~ (command_name or 'unknown') ~ '; grants are only applied for run/build', info=True) %}
+      {{ return('') }}
+    {% endif %}
+
+    {% if not tag %}
+      {% do exceptions.raise_compiler_error('grant_devs_access: tag is required') %}
+    {% endif %}
+
+    {% if not users_role %}
+      {% do exceptions.raise_compiler_error('grant_devs_access: users_role is required') %}
+    {% endif %}
+
+    {% set grantee_name = users_role %}
     {% set grantee = adapter.quote(grantee_name) %}
     {% set ns = namespace(run_schemas=[]) %}
 
     {% if results is defined %}
       {% for res in results %}
         {% set node_tags = res.node.tags if res.node.tags is defined else [] %}
-        {% if res.node.resource_type == 'model' and 'kids_first' not in node_tags %}
+        {% if res.node.resource_type == 'model' and tag in node_tags %}
           {% do ns.run_schemas.append(res.node.schema) %}
         {% endif %}
       {% endfor %}
     {% endif %}
 
-    {% set run_schemas = ns.run_schemas | unique %}
+    {% set run_schemas = ns.run_schemas | unique | list %}
 
     {% if run_schemas | length == 0 %}
-      {% set run_schemas = schemas | unique if schemas is defined else [target.schema] %}
-      {% do log('No node results context found; using run schemas without tag-based exclusion', info=True) %}
+      {% do log('grant_devs_access: no models with the ' ~ tag ~ ' tag found in run results; skipping grants', info=True) %}
     {% endif %}
-    
 
     {% for schema_name in run_schemas %}
       {% set quoted_schema = adapter.quote(schema_name) %}
@@ -34,7 +46,7 @@
       {% endif %}
 
       {% if not schema_granted %}
-        {% do log('Applying include_users grants on schema ' ~ schema_name, info=True) %}
+        {% do log('Applying ' ~ grantee_name ~ ' grants on schema ' ~ schema_name, info=True) %}
 
         {% do run_query("grant usage on schema " ~ quoted_schema ~ " to " ~ grantee) %}
         {% do run_query("grant select, insert, update, delete on all tables in schema " ~ quoted_schema ~ " to " ~ grantee) %}
