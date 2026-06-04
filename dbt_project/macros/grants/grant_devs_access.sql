@@ -21,7 +21,7 @@
     {% if results is defined %}
       {% for res in results %}
         {% set node_tags = res.node.tags if res.node.tags is defined else [] %}
-        {% if res.node.resource_type == 'model' and tag in node_tags %}
+        {% if res.node.resource_type == 'model' and tag in node_tags and 'dev_' in (res.node.schema | lower) %}
           {% do ns.run_schemas.append(res.node.schema) %}
         {% endif %}
       {% endfor %}
@@ -30,7 +30,7 @@
     {% set run_schemas = ns.run_schemas | unique | list %}
 
     {% if run_schemas | length == 0 %}
-      {% do log('grant_devs_access: no models with the ' ~ tag ~ ' tag found in run results; skipping grants', info=True) %}
+      {% do log('grant_devs_access: no models with the ' ~ tag ~ ' tag and schemas containing dev_ found in run results; skipping grants', info=True) %}
     {% endif %}
 
     {% for schema_name in run_schemas %}
