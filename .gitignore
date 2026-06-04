@@ -167,3 +167,5 @@ dbt_packages/
 logs/
 .user.yml
 /dbt_project/seeds
+/dbt_project/scripts/run_*
+/dbt_project/profiles.yml
