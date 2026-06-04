@@ -1,4 +1,3 @@
 {{ config(materialized='table') }}
 
-select *
-from {{ ref('inc_aadsc_stb_study_principal_investigator') }}
+{{ combined_union_from_current_model() }}
