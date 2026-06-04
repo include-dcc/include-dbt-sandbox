@@ -1,23 +1,6 @@
 version: 2
 
 # seeds:
-#  - name: global_identifiers_include_dcc_brainpower
-#    config:
-#      schema: kf_inc_seeds
-
-# seeds:
-#   - name: global_identifiers_include_dcc_brainpower
-#     description: "Global IDs for BrainPower Data"
-#     config:
-#       # Control materialization
-#       schema: kf_inc_seeds
-#   - name: BrainPower_MD_mappings
-#     description: "Map Dragon Annotations for BrainPower conditions"
-#     config:
-#       schema: kf_inc_seeds
-  
-
-# seeds:
 #     - name: alphabet_grouping
 #       config:
 #         schema: kf
