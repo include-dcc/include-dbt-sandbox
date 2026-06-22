@@ -12,27 +12,44 @@ snapshot-paths:
 clean-targets:
 - target
 - dbt_packages
-vars: {}
+vars:
+  combined_studies:
+  - inc_brainpower
 models:
   +materialized: table
   include_dbt_sandbox:
     include:
-      +tags: [study_stage,include]
+      +tags:
+      - study_stage
+      - include
       aadsc:
-        +tags: [SD_ID_HERE, aadsc]
+        +tags:
+        - SD_ID_HERE
+        - aadsc
         src:
           +schema: inc_aadsc_src
         int:
           +schema: inc_aadsc_int
+      brainpower:
+        +tags:
+        - brainpower
+        src:
+          +schema: inc_brainpower_src
+        int:
+          +schema: inc_brainpower_int
       chr_18:
         src:
           +schema: inc_chr_18_src
         int:
           +schema: inc_chr_18_int
     kids_first:
-      +tags: [study_stage,kids_first]
+      +tags:
+      - study_stage
+      - kids_first
       sd_1nns3k8v:
-        +tags: [sd_1nns3k8v,STUDY_SHORTCODE_HERE]
+        +tags:
+        - sd_1nns3k8v
+        - STUDY_SHORTCODE_HERE
         src:
           +schema: kf_sd_1nns3k8v_src
         int:
@@ -41,13 +58,17 @@ models:
         +tags:
         - chr_18
     access:
-      +tags: [access_stage]
+      +tags:
+      - access_stage
       +schema: access
     export:
-      +tags: [export_stage]
+      +tags:
+      - export_stage
       fhir:
-        +tags: [fhir]
+        +tags:
+        - fhir
         +schema: fhir_export
     combined:
-      +tags: [combined_stage]
+      +tags:
+      - combined_stage
       +schema: combined
