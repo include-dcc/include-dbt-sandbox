@@ -7,6 +7,7 @@ import logging
 from airflow.models.dag import DAG
 from airflow.models import Param
 from airflow.operators.python import PythonOperator
+from airflow.operators.bash import BashOperator
 from airflow.hooks.base import BaseHook
 import psycopg2
 
@@ -83,3 +84,10 @@ with DAG(
 		task_id="read_and_export",
 		python_callable=read_table_to_file,
 	)
+
+	wc_output_file = BashOperator(
+		task_id="wc_output_file",
+		bash_command="wc {{ ti.xcom_pull(task_ids='read_and_export') }}",
+	)
+
+	read_and_export >> wc_output_file
