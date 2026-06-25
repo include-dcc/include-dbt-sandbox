@@ -2,7 +2,7 @@
 
     select
     null::text as "biospecimen_collection_id",
-    null::text as "age_at_collection",
+    age_at_sample as "age_at_collection",
     null::text as "method",
     null::text as "site",
     null::text as "spatial_qualifier",

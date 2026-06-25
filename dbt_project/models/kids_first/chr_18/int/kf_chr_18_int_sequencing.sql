@@ -15,5 +15,5 @@
     library_source,
     platform,
     instrument_model
-    from {{ source('chr_18', 'ha_delivery_manifest_6735') }}
+    from {{ ref('kf_chr_18_src_ha_delivery_manifest_6735') }}
     

@@ -1,6 +1,6 @@
 sources:
 - name: chr_18
-  schema: inc_chr_18_src
+  schema: kf_chr_18_src
   tables:
   - name: chr_18_phenotype_data
     description: Source table for chr_18_phenotype_data.
