@@ -21,20 +21,35 @@ with DAG(
 	schedule=None,
 	catchup=False,
 	params={
-		"table_name": Param(
-			default="default_table",
-			type="string",
-			title="Table Name",
-			description="Name of the table to query from the database",
-		),
 		"schema_name": Param(
 			default="default_schema",
 			type="string",
 			title="Schema Name",
 			description="Schema name where the table resides",
 		),
+		"table_name": Param(
+			default="default_table",
+			type="string",
+			title="Table Name",
+			description="Name of the table to query from the database",
+		),
+		"env": Param(
+			default="qa",
+			type="string",
+			title="Environment",
+			description="Environment for the global ID minting command",
+            enum=["qa", "prod"],
+		),
+		"dewrangle_organization_id": Param(
+			default="T3JnYW5pemF0aW9uOmNtZjJ3bzlrdDAwMG9rMTAxcHd4cHFmMWQ=",
+			type="string",
+			title="Dewrangle Organization ID",
+			description="Organization ID for the dewrangle global ID minting command",
+			enum=["T3JnYW5pemF0aW9uOmNtZjJ3bzlrdDAwMG9rMTAxcHd4cHFmMWQ=", "T3JnYW5pemF0aW9uOmNsZHN4MzRrbjAwMTRnMGVzY3JndzUzYWQ=", "org_id_2"]
+			values_display={"T3JnYW5pemF0aW9uOmNtZjJ3bzlrdDAwMG9rMTAxcHd4cHFmMWQ=": "dff dev", "T3JnYW5pemF0aW9uOmNsZHN4MzRrbjAwMTRnMGVzY3JndzUzYWQ=": "Kids First DRC", "org_id_2": "INCLUDE DCC"},
+		),
 	},
-	tags=["example", "postgres", "export"],
+	tags=["non_program", "id_minting", "dewrangle"],
 ) as dag:
 
 	def read_table_to_file(**context):
@@ -85,9 +100,9 @@ with DAG(
 		python_callable=read_table_to_file,
 	)
 
-	wc_output_file = BashOperator(
-		task_id="wc_output_file",
-		bash_command="wc {{ ti.xcom_pull(task_ids='read_and_export') }}",
+	mint_ids = BashOperator(
+		task_id="mint_ids",
+		bash_command="d3b-dewrangle global-id-mint --env {{ params.env }} --db dcc --organization_id {{ params.dewrangle_organization_id }} --manifest {{ ti.xcom_pull(task_ids='read_and_export') }}",
 	)
 
-	read_and_export >> wc_output_file
+	read_and_export >> mint_ids
