@@ -37,6 +37,11 @@ models:
           +schema: inc_brainpower_src
         int:
           +schema: inc_brainpower_int
+      chr_18:
+        src:
+          +schema: inc_chr_18_src
+        int:
+          +schema: inc_chr_18_int
     kids_first:
       +tags:
       - study_stage
@@ -49,6 +54,9 @@ models:
           +schema: kf_sd_1nns3k8v_src
         int:
           +schema: kf_sd_1nns3k8v_int
+      chr_18:
+        +tags:
+        - chr_18
     access:
       +tags:
       - access_stage
