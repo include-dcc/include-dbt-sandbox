@@ -103,6 +103,17 @@ with DAG(
 	mint_ids = BashOperator(
 		task_id="mint_ids",
 		bash_command="d3b-dewrangle global-id-mint --env {{ params.env }} --db dcc --organization_id {{ params.dewrangle_organization_id }} --manifest {{ ti.xcom_pull(task_ids='read_and_export') }}",
+		env={
+			"QA_DCC_WAREHOUSE_DEWRANGLE_IDS_SCHEMA":"",
+			"QA_DCC_WAREHOUSE_DEWRANGLE_IDS_TABLE":"",
+			"PROD_DCC_WAREHOUSE_DEWRANGLE_IDS_SCHEMA":"",
+			"PROD_DCC_WAREHOUSE_DEWRANGLE_IDS_TABLE":""
+			"DCC_WAREHOUSE_HOST":"",
+			"DCC_WAREHOUSE_PORT":"",
+			"DCC_WAREHOUSE_DB_NAME":"",
+			"DCC_WAREHOUSE_DB_USER":"",
+			"DCC_WAREHOUSE_DB_USER_PW": ""
+		}
 	)
 
 	read_and_export >> mint_ids
