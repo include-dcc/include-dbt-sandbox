@@ -63,5 +63,5 @@
     "width_of_10_percent"::integer as width_of_10_percent,
     "width_of_50_percent"::integer as width_of_50_percent,
     "width_of_99_percent"::integer as width_of_99_percent
-from {{ source('chr_18', 'terra_manifest_v2') }}
+from {{ source('chr_18', 'Terra_Manifest_v2') }}
     

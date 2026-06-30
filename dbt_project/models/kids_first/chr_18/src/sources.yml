@@ -169,35 +169,129 @@ sources:
       description: '{{ doc("chr_18_phenotype_data_situs_inversus") }}'
     - name: Sample Tissue Type
       description: '{{ doc("chr_18_phenotype_data_sample_tissue_type") }}'
-  - name: ha_delivery_manifest_6735
-    description: Source table for ha_delivery_manifest_6735.
+  - name: terra_manifest_v2
+    description: Source table for terra_manifest_v2.
     columns:
-    - name: type
-      description: '{{ doc("ha_delivery_manifest_6735_type") }}'
-    - name: sample.sample_id
-      description: '{{ doc("ha_delivery_manifest_6735_sample") }}'
-    - name: file_name
-      description: '{{ doc("ha_delivery_manifest_6735_file_name") }}'
-    - name: file_type
-      description: '{{ doc("ha_delivery_manifest_6735_file_type") }}'
-    - name: file_description
-      description: '{{ doc("ha_delivery_manifest_6735_file_description") }}'
-    - name: file_size
-      description: '{{ doc("ha_delivery_manifest_6735_file_size") }}'
-    - name: md5sum
-      description: '{{ doc("ha_delivery_manifest_6735_md5sum") }}'
-    - name: library_id
-      description: '{{ doc("ha_delivery_manifest_6735_library_id") }}'
-    - name: library_strategy
-      description: '{{ doc("ha_delivery_manifest_6735_library_strategy") }}'
-    - name: library_layout
-      description: '{{ doc("ha_delivery_manifest_6735_library_layout") }}'
-    - name: library_source
-      description: '{{ doc("ha_delivery_manifest_6735_library_source") }}'
-    - name: platform
-      description: '{{ doc("ha_delivery_manifest_6735_platform") }}'
-    - name: instrument_model
-      description: '{{ doc("ha_delivery_manifest_6735_instrument_model") }}'
+    - name: entity:sample_id
+      description: '{{ doc("terra_manifest_v2_entity_sample_id") }}'
+    - name: project
+      description: '{{ doc("terra_manifest_v2_project") }}'
+    - name: collaborator_sample_id
+      description: '{{ doc("terra_manifest_v2_collaborator_sample_id") }}'
+    - name: version
+      description: '{{ doc("terra_manifest_v2_version") }}'
+    - name: data_type
+      description: '{{ doc("terra_manifest_v2_data_type") }}'
+    - name: pdo
+      description: '{{ doc("terra_manifest_v2_pdo") }}'
+    - name: release_date
+      description: '{{ doc("terra_manifest_v2_release_date") }}'
+    - name: reference_sequence_name
+      description: '{{ doc("terra_manifest_v2_reference_sequence_name") }}'
+    - name: collaborator_participant_id
+      description: '{{ doc("terra_manifest_v2_collaborator_participant_id") }}'
+    - name: cram_path
+      description: '{{ doc("terra_manifest_v2_cram_path") }}'
+    - name: crai_path
+      description: '{{ doc("terra_manifest_v2_crai_path") }}'
+    - name: md5_path
+      description: '{{ doc("terra_manifest_v2_md5_path") }}'
+    - name: root_sample_id
+      description: '{{ doc("terra_manifest_v2_root_sample_id") }}'
+    - name: mean_coverage
+      description: '{{ doc("terra_manifest_v2_mean_coverage") }}'
+    - name: adapter_rate
+      description: '{{ doc("terra_manifest_v2_adapter_rate") }}'
+    - name: pf_hq_aligned_q20_bases
+      description: '{{ doc("terra_manifest_v2_pf_hq_aligned_q20_bases") }}'
+    - name: pf_hq_aligned_reads
+      description: '{{ doc("terra_manifest_v2_pf_hq_aligned_reads") }}'
+    - name: pf_mismatch_rate
+      description: '{{ doc("terra_manifest_v2_pf_mismatch_rate") }}'
+    - name: pf_noise_reads
+      description: '{{ doc("terra_manifest_v2_pf_noise_reads") }}'
+    - name: pf_reads
+      description: '{{ doc("terra_manifest_v2_pf_reads") }}'
+    - name: pf_reads_aligned
+      description: '{{ doc("terra_manifest_v2_pf_reads_aligned") }}'
+    - name: total_reads
+      description: '{{ doc("terra_manifest_v2_total_reads") }}'
+    - name: mean_read_length
+      description: '{{ doc("terra_manifest_v2_mean_read_length") }}'
+    - name: pf_reads_rate
+      description: '{{ doc("terra_manifest_v2_pf_reads_rate") }}'
+    - name: pf_reads_aligned_rate
+      description: '{{ doc("terra_manifest_v2_pf_reads_aligned_rate") }}'
+    - name: pf_aligned_bases
+      description: '{{ doc("terra_manifest_v2_pf_aligned_bases") }}'
+    - name: reads_aligned_in_pairs
+      description: '{{ doc("terra_manifest_v2_reads_aligned_in_pairs") }}'
+    - name: contamination_rate
+      description: '{{ doc("terra_manifest_v2_contamination_rate") }}'
+    - name: genome_territory
+      description: '{{ doc("terra_manifest_v2_genome_territory") }}'
+    - name: exc_baseq_rate
+      description: '{{ doc("terra_manifest_v2_exc_baseq_rate") }}'
+    - name: exc_dupe_rate
+      description: '{{ doc("terra_manifest_v2_exc_dupe_rate") }}'
+    - name: exc_mapq_rate
+      description: '{{ doc("terra_manifest_v2_exc_mapq_rate") }}'
+    - name: exc_overlap_rate
+      description: '{{ doc("terra_manifest_v2_exc_overlap_rate") }}'
+    - name: 10x_rate
+      description: '{{ doc("terra_manifest_v2_10x_rate") }}'
+    - name: 20x_rate
+      description: '{{ doc("terra_manifest_v2_20x_rate") }}'
+    - name: exc_total_rate
+      description: '{{ doc("terra_manifest_v2_exc_total_rate") }}'
+    - name: exc_unpaired_rate
+      description: '{{ doc("terra_manifest_v2_exc_unpaired_rate") }}'
+    - name: chimera_rate
+      description: '{{ doc("terra_manifest_v2_chimera_rate") }}'
+    - name: het_snp_q
+      description: '{{ doc("terra_manifest_v2_het_snp_q") }}'
+    - name: het_snp_sensitivity
+      description: '{{ doc("terra_manifest_v2_het_snp_sensitivity") }}'
+    - name: library-1_estimated_library_size
+      description: '{{ doc("terra_manifest_v2_library-1_estimated_library_size") }}'
+    - name: library-1_mean_insert_size
+      description: '{{ doc("terra_manifest_v2_library-1_mean_insert_size") }}'
+    - name: library-1_name
+      description: '{{ doc("terra_manifest_v2_library-1_pair_orientation") }}'
+    - name: library-1_pct_exc_dupe
+      description: '{{ doc("terra_manifest_v2_library-1_pct_exc_dupe") }}'
+    - name: library-1_percent_duplication
+      description: '{{ doc("terra_manifest_v2_library-1_percent_duplication") }}'
+    - name: library-1_read_pairs
+      description: '{{ doc("terra_manifest_v2_library-1_read_pairs") }}'
+    - name: mean_insert_size
+      description: '{{ doc("terra_manifest_v2_mean_insert_size") }}'
+    - name: median_coverage
+      description: '{{ doc("terra_manifest_v2_median_coverage") }}'
+    - name: median_insert_size
+      description: '{{ doc("terra_manifest_v2_median_insert_size") }}'
+    - name: pf_hq_aligned_bases
+      description: '{{ doc("terra_manifest_v2_pf_hq_aligned_bases") }}'
+    - name: pf_hq_error_rate
+      description: '{{ doc("terra_manifest_v2_pf_hq_error_rate") }}'
+    - name: pf_reads_improper_pairs
+      description: '{{ doc("terra_manifest_v2_pf_reads_improper_pairs") }}'
+    - name: read_pair_duplicates
+      description: '{{ doc("terra_manifest_v2_read_pair_duplicates") }}'
+    - name: read_pair_optical_duplicates
+      description: '{{ doc("terra_manifest_v2_read_pair_optical_duplicates") }}'
+    - name: reads_aligned_in_pairs_rate
+      description: '{{ doc("terra_manifest_v2_reads_aligned_in_pairs_rate") }}'
+    - name: sample
+      description: '{{ doc("terra_manifest_v2_sample") }}'
+    - name: strand_balance
+      description: '{{ doc("terra_manifest_v2_strand_balance") }}'
+    - name: width_of_10_percent
+      description: '{{ doc("terra_manifest_v2_width_of_10_percent") }}'
+    - name: width_of_50_percent
+      description: '{{ doc("terra_manifest_v2_width_of_50_percent") }}'
+    - name: width_of_99_percent
+      description: '{{ doc("terra_manifest_v2_width_of_99_percent") }}'
   - name: s3_scrape_cody
     description: Source table for s3_scrape_cody.
     columns:
