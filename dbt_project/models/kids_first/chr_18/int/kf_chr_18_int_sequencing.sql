@@ -2,11 +2,14 @@
 
     with base as (
         select
+        -- commenting these out for now, but linking sample_id differs by study so will be used in some cases
             -- sample_id,
             -- collaborator_sample_id,
             collaborator_participant_id as participant_id,
             root_sample_id as sample_id,
             data_type as sequencing_strategy,
+
+            -- these fields are typically included in ingest package but not sure if they will be needed for access model
             total_reads,
             mean_read_length,
             reference_sequence_name
