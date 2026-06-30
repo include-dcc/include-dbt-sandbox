@@ -2,6 +2,7 @@
 
     select
     's3://' + bucket + '/' + key as s3_path,
+    split_part(key, '/', -1) as file_name,
     case
         when key.like '%.cram' then 'cram'
         when key.like '%.crai' then 'crai'

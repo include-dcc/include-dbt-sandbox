@@ -1,7 +1,7 @@
 {{ config(materialized='table') }}
 
     select
-    null::text as "subject_id",
+    participant_id as "subject_id",
     sex as "sex",
     ethnicity as "ethnicity",
     null::text as "down_syndrome_status", -- could map to Not Applicable?
@@ -10,5 +10,5 @@
     null::integer as "age_at_first_engagement", -- age at phenotype? or sample?
     null::text as "access_policy_id",
     null::text as "study_id"
-    from {{ ref('kf_chr_18_src_chr_18_phenotype_data') }}
+    from {{ ref('kf_chr_18_int_clinical') }}
     
