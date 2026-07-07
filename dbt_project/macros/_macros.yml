@@ -1,0 +1,17 @@
+version: 2
+
+macros:
+  - name: generate_placeholder_global_ids_table
+    description: |
+      Creates an empty placeholder global_ids table with the expected schema.
+
+      Required args:
+        - schema_name
+      Optional args:
+        - table_name (defaults to global_ids)
+
+      Command line usage:
+        dbt run-operation generate_placeholder_global_ids_table --args '{"schema_name": "inc_brainpower_raw"}'
+
+      Explicit table name:
+        dbt run-operation generate_placeholder_global_ids_table --args '{"schema_name": "inc_brainpower_raw", "table_name": "global_ids"}'
