@@ -27,7 +27,7 @@ with DAG(
 		"descriptor_schema_name": Param(
 			default="default_schema",
 			type="string",
-			title="Schema Name",
+			title="Descriptor Schema Name",
 			description="Schema name where the table with descriptors that need global IDs is located",
 		),
 		"descriptor_table_name": Param(
@@ -66,14 +66,15 @@ with DAG(
 	},
 	tags=["non_program", "id_minting", "dewrangle"],
 ) as dag:
+		
+	# Get Airflow connection
+	conn = BaseHook.get_connection("postgres_prd_svc")
 
-	def read_table_to_file(**context):
+	def read_table_to_file(conn=conn, **context):
 		"""Read from PostgreSQL table and save to local file."""
 		schema_name = context["params"]["descriptor_schema_name"]
 		table_name = context["params"]["descriptor_table_name"]
 		
-		# Get Airflow connection
-		conn = BaseHook.get_connection("postgres_prd_svc")
 		
 		# Connect to PostgreSQL
 		connection = psycopg2.connect(
@@ -123,11 +124,11 @@ with DAG(
 			"QA_DCC_WAREHOUSE_DEWRANGLE_IDS_TABLE":"{{ params.globalid_table_name }}",
 			"PROD_DCC_WAREHOUSE_DEWRANGLE_IDS_SCHEMA":"{{ params.globalid_schema_name }}",
 			"PROD_DCC_WAREHOUSE_DEWRANGLE_IDS_TABLE":"{{ params.globalid_table_name }}",
-			"DCC_WAREHOUSE_HOST":"{{ conn.postgres_prd_svc.host }}",
-			"DCC_WAREHOUSE_PORT":"{{ conn.postgres_prd_svc.port }}",
-			"DCC_WAREHOUSE_DB_NAME":"{{ conn.postgres_prd_svc.schema }}",
-			"DCC_WAREHOUSE_DB_USER":"{{ conn.postgres_prd_svc.login }}",
-			"DCC_WAREHOUSE_DB_USER_PW": "{{ conn.postgres_prd_svc.password }}"
+			"DCC_WAREHOUSE_HOST":"{{ conn.host }}",
+			"DCC_WAREHOUSE_PORT":"{{ conn.port }}",
+			"DCC_WAREHOUSE_DB_NAME":"{{ conn.schema }}",
+			"DCC_WAREHOUSE_DB_USER":"{{ conn.login }}",
+			"DCC_WAREHOUSE_DB_USER_PW": "{{ conn.password }}"
 		}
 	)
 
