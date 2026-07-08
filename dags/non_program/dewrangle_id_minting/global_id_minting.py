@@ -124,11 +124,11 @@ with DAG(
 			"QA_DCC_WAREHOUSE_DEWRANGLE_IDS_TABLE":"{{ params.globalid_table_name }}",
 			"PROD_DCC_WAREHOUSE_DEWRANGLE_IDS_SCHEMA":"{{ params.globalid_schema_name }}",
 			"PROD_DCC_WAREHOUSE_DEWRANGLE_IDS_TABLE":"{{ params.globalid_table_name }}",
-			"DCC_WAREHOUSE_HOST":"{{ conn.host }}",
-			"DCC_WAREHOUSE_PORT":"{{ conn.port }}",
-			"DCC_WAREHOUSE_DB_NAME":"{{ conn.schema }}",
-			"DCC_WAREHOUSE_DB_USER":"{{ conn.login }}",
-			"DCC_WAREHOUSE_DB_USER_PW": "{{ conn.password }}"
+			"DCC_WAREHOUSE_HOST":conn.host,
+			"DCC_WAREHOUSE_PORT":conn.port or 5432,
+			"DCC_WAREHOUSE_DB_NAME":conn.schema,
+			"DCC_WAREHOUSE_DB_USER":conn.login,
+			"DCC_WAREHOUSE_DB_USER_PW": conn.password
 		}
 	)
 
