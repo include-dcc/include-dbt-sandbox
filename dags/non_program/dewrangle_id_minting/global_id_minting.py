@@ -16,7 +16,10 @@ logger = logging.getLogger(__name__)
 
 with DAG(
 	dag_id="global_id_minting",
-	description="Read from PostgreSQL table and export to CSV file.",
+	description="""
+    	Given a PostgreSQL table with descriptors, generate global IDs and load
+		those IDs into a target table.
+		""",
 	start_date=datetime(2024, 1, 1),
 	schedule=None,
 	catchup=False,
@@ -57,7 +60,7 @@ with DAG(
 			type="string",
 			title="Dewrangle Organization ID",
 			description="Organization ID for the dewrangle global ID minting command",
-			enum=["T3JnYW5pemF0aW9uOmNtZjJ3bzlrdDAwMG9rMTAxcHd4cHFmMWQ=", "T3JnYW5pemF0aW9uOmNsZHN4MzRrbjAwMTRnMGVzY3JndzUzYWQ=", "org_id_2"]
+			enum=["T3JnYW5pemF0aW9uOmNtZjJ3bzlrdDAwMG9rMTAxcHd4cHFmMWQ=", "T3JnYW5pemF0aW9uOmNsZHN4MzRrbjAwMTRnMGVzY3JndzUzYWQ=", "org_id_2"],
 			values_display={"T3JnYW5pemF0aW9uOmNtZjJ3bzlrdDAwMG9rMTAxcHd4cHFmMWQ=": "dff dev", "T3JnYW5pemF0aW9uOmNsZHN4MzRrbjAwMTRnMGVzY3JndzUzYWQ=": "Kids First DRC", "org_id_2": "INCLUDE DCC"},
 		),
 	},
