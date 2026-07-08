@@ -21,17 +21,29 @@ with DAG(
 	schedule=None,
 	catchup=False,
 	params={
-		"schema_name": Param(
+		"descriptor_schema_name": Param(
 			default="default_schema",
 			type="string",
 			title="Schema Name",
-			description="Schema name where the table resides",
+			description="Schema name where the table with descriptors that need global IDs is located",
 		),
-		"table_name": Param(
+		"descriptor_table_name": Param(
 			default="default_table",
 			type="string",
 			title="Table Name",
-			description="Name of the table to query from the database",
+			description="Name of the table with descriptors that need global IDs",
+		),
+		"globalid_schema_name": Param(
+			default="default_schema",
+			type="string",
+			title="Schema Name",
+			description="Schema name where the table with generated global IDs is located",
+		),
+		"globalid_table_name": Param(
+			default="default_table",
+			type="string",
+			title="Table Name",
+			description="Name of the table with generated global IDs",
 		),
 		"env": Param(
 			default="qa",
@@ -54,8 +66,8 @@ with DAG(
 
 	def read_table_to_file(**context):
 		"""Read from PostgreSQL table and save to local file."""
-		schema_name = context["params"]["schema_name"]
-		table_name = context["params"]["table_name"]
+		schema_name = context["params"]["descriptor_schema_name"]
+		table_name = context["params"]["descriptor_table_name"]
 		
 		# Get Airflow connection
 		conn = BaseHook.get_connection("postgres_prd_svc")
@@ -104,15 +116,15 @@ with DAG(
 		task_id="mint_ids",
 		bash_command="d3b-dewrangle global-id-mint --env {{ params.env }} --db dcc --organization_id {{ params.dewrangle_organization_id }} --manifest {{ ti.xcom_pull(task_ids='read_and_export') }}",
 		env={
-			"QA_DCC_WAREHOUSE_DEWRANGLE_IDS_SCHEMA":"",
-			"QA_DCC_WAREHOUSE_DEWRANGLE_IDS_TABLE":"",
-			"PROD_DCC_WAREHOUSE_DEWRANGLE_IDS_SCHEMA":"",
-			"PROD_DCC_WAREHOUSE_DEWRANGLE_IDS_TABLE":""
-			"DCC_WAREHOUSE_HOST":"",
-			"DCC_WAREHOUSE_PORT":"",
-			"DCC_WAREHOUSE_DB_NAME":"",
-			"DCC_WAREHOUSE_DB_USER":"",
-			"DCC_WAREHOUSE_DB_USER_PW": ""
+			"QA_DCC_WAREHOUSE_DEWRANGLE_IDS_SCHEMA":"{{ params.globalid_schema_name }}",
+			"QA_DCC_WAREHOUSE_DEWRANGLE_IDS_TABLE":"{{ params.globalid_table_name }}",
+			"PROD_DCC_WAREHOUSE_DEWRANGLE_IDS_SCHEMA":"{{ params.globalid_schema_name }}",
+			"PROD_DCC_WAREHOUSE_DEWRANGLE_IDS_TABLE":"{{ params.globalid_table_name }}",
+			"DCC_WAREHOUSE_HOST":"{{ conn.postgres_prd_svc.host }}",
+			"DCC_WAREHOUSE_PORT":"{{ conn.postgres_prd_svc.port }}",
+			"DCC_WAREHOUSE_DB_NAME":"{{ conn.postgres_prd_svc.schema }}",
+			"DCC_WAREHOUSE_DB_USER":"{{ conn.postgres_prd_svc.login }}",
+			"DCC_WAREHOUSE_DB_USER_PW": "{{ conn.postgres_prd_svc.password }}"
 		}
 	)
 
