@@ -117,6 +117,9 @@ with DAG(
 	read_and_export = PythonOperator(
 		task_id="read_and_export",
 		python_callable=read_table_to_file,
+		op_kwargs={
+			"conn": conn,
+		},
 	)
 
 	mint_ids = BashOperator(
