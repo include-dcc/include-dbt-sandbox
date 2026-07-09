@@ -68,7 +68,7 @@ with DAG(
 ) as dag:
 		
 	# Get Airflow connection
-	conn = BaseHook.get_connection("postgres_prd_svc")
+	conn = BaseHook.get_connection("postgres_dev_svc")
 
 	def read_table_to_file(conn=conn, **context):
 		"""Read from PostgreSQL table and save to local file."""
