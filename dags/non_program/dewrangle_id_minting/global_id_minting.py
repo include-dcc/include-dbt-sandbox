@@ -8,7 +8,10 @@ from airflow.models.dag import DAG
 from airflow.models import Param
 from airflow.operators.python import PythonOperator
 from airflow.operators.bash import BashOperator
-from airflow.hooks.base import BaseHook
+try:
+    from airflow.sdk.bases.hook import BaseHook
+except ImportError:  # Since Airflow 3.1, the BaseHook is in the airflow.sdk.bases.hook module
+    from airflow.hooks.base import BaseHook
 import psycopg2
 
 logger = logging.getLogger(__name__)
