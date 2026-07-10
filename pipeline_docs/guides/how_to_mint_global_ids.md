@@ -24,7 +24,8 @@ Make sure all of the following are true before triggering the DAG:
    IDs.
 5. Your source table columns match the descriptor format expected by
    `d3b-dewrangle global-id-mint`. Specifically, the columns required are
-   `fhirResourceType`, `descriptor`, and `descriptorState`.
+   `fhirResourceType`, `descriptor`, and `descriptorState`. To mint IDs within
+   a specific study, the column `studyGlobalId` is also required.
 
 ## What the DAG does
 
