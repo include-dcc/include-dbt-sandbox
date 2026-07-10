@@ -71,9 +71,10 @@ with DAG(
 ) as dag:
 		
 	# Get Airflow connection
-	conn = BaseHook.get_connection("postgres_prd_svc")
+	postgres_conn = BaseHook.get_connection("postgres_prd_svc")
+	dewrangle_conn = BaseHook.get_connection("dewrangle_api")
 
-	def read_table_to_file(conn=conn, **context):
+	def read_table_to_file(conn=postgres_conn, **context):
 		"""Read from PostgreSQL table and save to local file."""
 		schema_name = context["params"]["descriptor_schema_name"]
 		table_name = context["params"]["descriptor_table_name"]
@@ -118,7 +119,7 @@ with DAG(
 		task_id="read_and_export",
 		python_callable=read_table_to_file,
 		op_kwargs={
-			"conn": conn,
+			"conn": postgres_conn,
 		},
 	)
 
@@ -130,11 +131,13 @@ with DAG(
 			"QA_DCC_WAREHOUSE_DEWRANGLE_IDS_TABLE":"{{ params.globalid_table_name }}",
 			"PROD_DCC_WAREHOUSE_DEWRANGLE_IDS_SCHEMA":"{{ params.globalid_schema_name }}",
 			"PROD_DCC_WAREHOUSE_DEWRANGLE_IDS_TABLE":"{{ params.globalid_table_name }}",
-			"DCC_WAREHOUSE_HOST":conn.host,
-			"DCC_WAREHOUSE_PORT":"5432",
-			"DCC_WAREHOUSE_DB_NAME":conn.schema,
-			"DCC_WAREHOUSE_DB_USER":conn.login,
-			"DCC_WAREHOUSE_DB_USER_PW": conn.password
+			"DCC_WAREHOUSE_HOST":postgres_conn.host,
+			"DCC_WAREHOUSE_PORT":postgres_conn.port or 5432,
+			"DCC_WAREHOUSE_DB_NAME":postgres_conn.schema,
+			"DCC_WAREHOUSE_DB_USER":postgres_conn.login,
+			"DCC_WAREHOUSE_DB_USER_PW": postgres_conn.password,
+			"DEWRANGLE_BASE_URL":dewrangle_conn.host,
+			"DEWRANGLE_TOKEN":dewrangle_conn.password,
 		}
 	)
 
