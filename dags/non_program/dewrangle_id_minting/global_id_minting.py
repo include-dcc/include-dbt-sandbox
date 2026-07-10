@@ -132,7 +132,7 @@ with DAG(
 			"PROD_DCC_WAREHOUSE_DEWRANGLE_IDS_SCHEMA":"{{ params.globalid_schema_name }}",
 			"PROD_DCC_WAREHOUSE_DEWRANGLE_IDS_TABLE":"{{ params.globalid_table_name }}",
 			"DCC_WAREHOUSE_HOST":postgres_conn.host,
-			"DCC_WAREHOUSE_PORT":postgres_conn.port or 5432,
+			"DCC_WAREHOUSE_PORT":str(postgres_conn.port or 5432),
 			"DCC_WAREHOUSE_DB_NAME":postgres_conn.schema,
 			"DCC_WAREHOUSE_DB_USER":postgres_conn.login,
 			"DCC_WAREHOUSE_DB_USER_PW": postgres_conn.password,
