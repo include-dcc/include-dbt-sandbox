@@ -138,7 +138,7 @@ with DAG(
 			"DCC_WAREHOUSE_DB_USER_PW": postgres_conn.password,
 			"DEWRANGLE_BASE_URL":dewrangle_conn.host,
 			"DEWRANGLE_TOKEN":dewrangle_conn.password,
-			"DEWRANGLE_CLIENT_EXECUTION_TIMEOUT": "300",
+			"DEWRANGLE_CLIENT_EXECUTION_TIMEOUT": 300,
 		}
 	)
 
