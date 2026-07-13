@@ -36,19 +36,19 @@ with DAG(
 		"descriptor_table_name": Param(
 			default="default_table",
 			type="string",
-			title="Table Name",
+			title="Descriptor Table Name",
 			description="Name of the table with descriptors that need global IDs",
 		),
 		"globalid_schema_name": Param(
 			default="default_schema",
 			type="string",
-			title="Schema Name",
+			title="Global ID Schema Name",
 			description="Schema name where the table with generated global IDs is located",
 		),
 		"globalid_table_name": Param(
 			default="default_table",
 			type="string",
-			title="Table Name",
+			title="Global ID Table Name",
 			description="Name of the table with generated global IDs",
 		),
 		"env": Param(
@@ -138,6 +138,7 @@ with DAG(
 			"DCC_WAREHOUSE_DB_USER_PW": postgres_conn.password,
 			"DEWRANGLE_BASE_URL":dewrangle_conn.host,
 			"DEWRANGLE_TOKEN":dewrangle_conn.password,
+			"DEWRANGLE_CLIENT_EXECUTION_TIMEOUT": "300",
 		}
 	)
 
