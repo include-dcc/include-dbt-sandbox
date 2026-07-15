@@ -1,5 +1,5 @@
 {{ config(materialized='table') }}
 
 {{ generate_descriptor_view_sql(
-program_id='', dewrangle_study_id='', exception_resources=[]
+program_id='inc', dewrangle_study_id=brainpower, exception_resources=[]
 ) }}

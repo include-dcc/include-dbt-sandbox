@@ -5,6 +5,8 @@ model-paths:
 - models
 macro-paths:
 - macros
+analysis-paths:
+- analyses
 seed-paths:
 - seeds
 snapshot-paths:

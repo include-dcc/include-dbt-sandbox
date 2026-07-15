@@ -1,7 +1,8 @@
 {{ config(materialized='table') }}
 
 select
-  {{ normalize_descriptors(descriptor_cols=['the_access_policy_descriptor'], study_id='brainpower') }}::text as access_policy_descriptor,
+  {{ normalize_descriptors(descriptor_cols=['subject_id','consent_id','study_id']) }}::text as access_policy_descriptor,
+  null::text as access_policy_id,
   a.dbgap::text as data_use_accession,
   d.access_limitations::text as data_use_permission,
   d.access_requirements::text as data_use_modifier,
