@@ -135,7 +135,7 @@ with DAG(
 
     mint_ids = BashOperator(
         task_id="mint_ids",
-        bash_command="${ID_MINTING_PATH}/bin/d3b-dewrangle global-id-mint --env {{ params.env }} --db dcc --organization-id {{ params.dewrangle_organization_id }} --manifest {{ ti.xcom_pull(task_ids='read_and_export') --create-dewrangle-ids-table}}",
+        bash_command="${ID_MINTING_PATH}/bin/d3b-dewrangle global-id-mint --env {{ params.env }} --db dcc --organization-id {{ params.dewrangle_organization_id }} --manifest {{ ti.xcom_pull(task_ids='read_and_export') }} --create-dewrangle-ids-table",
         env={
             "QA_DCC_WAREHOUSE_DEWRANGLE_IDS_SCHEMA": "{{ params.globalid_schema_name }}",
             "QA_DCC_WAREHOUSE_DEWRANGLE_IDS_TABLE": "{{ params.globalid_table_name }}",
