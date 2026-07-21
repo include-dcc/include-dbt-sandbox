@@ -1,0 +1,6 @@
+
+
+select
+  null::text as sample_sample_id,
+  null::text as storage_method
+from "includewarehouse"."dev_include_brainpower_src"."inc_brainpower_src_bp_age_event_latency"

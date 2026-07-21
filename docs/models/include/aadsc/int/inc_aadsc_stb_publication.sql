@@ -1,0 +1,9 @@
+
+
+select
+  null::integer as id,
+  null::text as bibliographic_reference,
+  null::text as website,
+  null::text as access_policy_id,
+  null::text as study_id
+from "includewarehouse"."dev_include_aadsc_src"."inc_aadsc_src_chicoine_down_syndrome_extract"

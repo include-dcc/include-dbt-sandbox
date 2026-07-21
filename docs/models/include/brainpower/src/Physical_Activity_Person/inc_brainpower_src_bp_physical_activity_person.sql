@@ -1,0 +1,18 @@
+
+
+select
+  ROW_NUMBER() over () as inc_index,
+  id::integer as id,
+  timepoint::integer as timepoint,
+  counts::float as counts,
+  vmc::float as vmc,
+  steps::float as steps,
+  wear_time::float as wear_time,
+  sedentary::float as sedentary,
+  light::float as light,
+  moderate::float as moderate,
+  vigorous::float as vigorous,
+  mvpa::float as mvpa,
+  valid_days::integer as valid_days,
+  valid_weekend_days::integer as valid_weekend_days
+from "includewarehouse"."inc_brainpower_src"."bp_physical_activity_person"
