@@ -169,3 +169,4 @@ logs/
 /dbt_project/seeds
 /dbt_project/scripts/run_*
 /dbt_project/profiles.yml
+package-lock.yml
