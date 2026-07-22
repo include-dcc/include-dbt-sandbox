@@ -1,8 +1,9 @@
 {{ config(materialized='table') }}
 
+with base as (
 select
-  {{ normalize_descriptors(descriptor_cols=['subject_id','consent_id','study_id']) }}::text as access_policy_descriptor,
-  null::text as access_policy_id,
+  'HARD CODED ACCESS POLICY IDENTIFIER'::text as policy_id, -- Example of how to hard code a value to use as a descriptor
+  -- null::text as access_policy_id, -- Global Id to be generated and joined in the stb model
   a.dbgap::text as data_use_accession,
   d.access_limitations::text as data_use_permission,
   d.access_requirements::text as data_use_modifier,
@@ -17,3 +18,8 @@ left join (select
   selection_criteria
 from {{ ref('inc_brainpower_src_study') }}) as a
   on d.study_code = a.study_code
+)
+
+select *
+,{{ normalize_descriptors(descriptor_cols=['policy_id','data_use_accession']) }}::text as access_policy_descriptor -- access_policy_descriptor will be the column given to the stb model for joining to the global Id table.
+from base

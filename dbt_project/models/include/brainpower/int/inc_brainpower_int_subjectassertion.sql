@@ -1,7 +1,7 @@
 {{ config(materialized='table') }}
 
 select
-   {{ normalize_descriptors(descriptor_cols=[encounter, subject, cond_code]) }}::text as assertion_descriptor,
+  { { normalize_descriptors(descriptor_cols=['encounter', 'subject', 'cond_code']) }}::text as assertion_descriptor,
   d.id::text as subject_descriptor,
   null::text as encounter_descriptor,
   null::text as assertion_provenance,
