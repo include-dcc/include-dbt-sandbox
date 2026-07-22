@@ -8,12 +8,17 @@ select
   study_code::text as study_code,
   a.dbgap::text as data_use_accession,
   d.dataset_name::text as dataset_name,
-  case when dataset_name = 'BrainPower Physical Activity Day' then 'FIXME1'
-       when dataset_name = 'BrainPower Physical Activity Person' then 'FIXME2'
-       when dataset_name = 'BrainPower Randomization' then 'FIXME3'
-       else null end as access_policy_hc
-  from (select * from {{ ref('inc_brainpower_src_study') }}) as a
-left join (select study_code, dataset_name from {{ ref('inc_brainpower_src_datasets') }}) as d
+  case
+    when dataset_name = 'BrainPower Physical Activity Day' then 'FIXME1'
+    when dataset_name = 'BrainPower Physical Activity Person' then 'FIXME2'
+    when dataset_name = 'BrainPower Randomization' then 'FIXME3'
+    else null
+  end as access_policy_hc
+from (select * from {{ ref('inc_brainpower_src_study') }}) as a
+left join (select
+  study_code,
+  dataset_name
+from {{ ref('inc_brainpower_src_datasets') }}) as d
   using(study_code)
 where a.study_code = 'BrainPower'
 
