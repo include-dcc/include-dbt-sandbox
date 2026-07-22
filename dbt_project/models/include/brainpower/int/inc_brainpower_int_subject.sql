@@ -2,19 +2,20 @@
 
 with base as (
 select
-  --null::text as subject_descriptor,
-  -- null::text as subject_id,
+  d.id::text as subject_id,
   null::text as subject_type,
   null::text as organism_type,
-  null::text as access_policy_id,
- -- null::text as study_descriptor,
+  -- null::text as access_policy_id,
+  -- null::text as study_id,
   null::text as external_id
-from {{ ref('inc_brainpower_src_inc_kf_access_enums_20260508') }} as d
-where enumeration_code = 'participant'
+from (select id from {{ ref('inc_brainpower_src_bp_demographics') }}) as d
 )
 
-select *,
-{{ normalize_descriptors(descriptor_cols=['subject_descriptor']) }}::text as subject_descriptor,
-{{ normalize_descriptors(descriptor_cols=['study_descriptor']) }}::text as study_descriptor
-from base
+
+select 
+  base.*,
+  {{ normalize_descriptors(descriptor_cols=['access_policy_hc']) }}::text as access_policy_descriptor,
+  {{ normalize_descriptors(descriptor_cols=['subject_id']) }}::text as subject_descriptor,
+  {{ normalize_descriptors(descriptor_cols=['study_code']) }}::text as study_descriptor
+from base, {{ ref('inc_brainpower_int_manual_supplement') }} as manual
     

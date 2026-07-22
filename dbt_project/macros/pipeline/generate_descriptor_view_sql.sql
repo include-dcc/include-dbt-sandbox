@@ -4,9 +4,9 @@
 {%- set accepted_program_ids = ['inc', 'kf'] -%}
 {%- set descriptor_sources = [
     {'resource_model': 'AccessPolicy', 'relation_name': 'inc_brainpower_int_accesspolicy', 'descriptor_column': 'access_policy_descriptor'},
-    {'resource_model': 'AccessPolicy', 'relation_name': 'inc_brainpower_int_demographics', 'descriptor_column': 'access_policy_descriptor'}, -- may not need this one.
-    {'resource_model': 'Patient', 'relation_name': 'inc_brainpower_int_demographics', 'descriptor_column': 'subject_descriptor'}, -- may be best to get this one from subject
-    {'resource_model': 'ResearchStudy', 'relation_name': 'inc_brainpower_int_demographics', 'descriptor_column': 'study_descriptor'} -- may be best to get this one from study
+    {'resource_model': 'AccessPolicy', 'relation_name': 'inc_brainpower_int_demographics', 'descriptor_column': 'access_policy_descriptor'},
+    {'resource_model': 'Patient', 'relation_name': 'inc_brainpower_int_demographics', 'descriptor_column': 'subject_descriptor'},
+    {'resource_model': 'ResearchStudy', 'relation_name': 'inc_brainpower_int_demographics', 'descriptor_column': 'study_descriptor'}
 ] -%}
 
 {%- if program_id not in accepted_program_ids -%}
