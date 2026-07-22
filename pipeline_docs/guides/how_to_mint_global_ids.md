@@ -49,7 +49,20 @@ d3b-dewrangle global-id-mint \
 
 ## Parameters to provide
 
-Trigger the DAG with the following parameters.
+Trigger the DAG with the following parameters below. While there is the option
+to enter each parameter individually, airflow allows entering these parameters
+as a JSON object:
+
+```json
+{
+    "env": "qa",
+    "globalid_table_name": "global_ids",
+    "globalid_schema_name": "friedmanc1_dev_schema",
+    "descriptor_table_name": "dewrangle_id_minting_test",
+    "descriptor_schema_name": "friedmanc1_dev_schema",
+    "dewrangle_organization_id": "T3JnYW5pemF0aW9uOmNtZjJ3bzlrdDAwMG9rMTAxcHd4cHFmMWQ="
+}
+```
 
 ### `descriptor_schema_name`
 

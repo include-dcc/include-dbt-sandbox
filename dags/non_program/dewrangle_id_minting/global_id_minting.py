@@ -1,4 +1,4 @@
-"""Boilerplate DAG that reads from a PostgreSQL table and saves to a local file."""
+"""DAG to mint Global IDs in Dewrangle for a given PostgreSQL table with descriptors."""
 
 from datetime import datetime
 import csv
@@ -26,7 +26,7 @@ with DAG(
     	Given a PostgreSQL table with descriptors, generate global IDs and load
 		those IDs into a target table.
 		""",
-    start_date=datetime(2024, 1, 1),
+    start_date=datetime(2026, 6, 1),
     schedule=None,
     catchup=False,
     params={
