@@ -172,8 +172,8 @@ sources:
   - name: terra_manifest_v2
     description: Source table for terra_manifest_v2.
     columns:
-    - name: entity:sample_id
-      description: '{{ doc("terra_manifest_v2_entity_sample_id") }}'
+    - name: sample_id
+      description: '{{ doc("terra_manifest_v2_sample_id") }}'
     - name: project
       description: '{{ doc("terra_manifest_v2_project") }}'
     - name: collaborator_sample_id
@@ -252,18 +252,20 @@ sources:
       description: '{{ doc("terra_manifest_v2_het_snp_q") }}'
     - name: het_snp_sensitivity
       description: '{{ doc("terra_manifest_v2_het_snp_sensitivity") }}'
-    - name: library-1_estimated_library_size
-      description: '{{ doc("terra_manifest_v2_library-1_estimated_library_size") }}'
-    - name: library-1_mean_insert_size
-      description: '{{ doc("terra_manifest_v2_library-1_mean_insert_size") }}'
-    - name: library-1_name
-      description: '{{ doc("terra_manifest_v2_library-1_pair_orientation") }}'
-    - name: library-1_pct_exc_dupe
-      description: '{{ doc("terra_manifest_v2_library-1_pct_exc_dupe") }}'
-    - name: library-1_percent_duplication
-      description: '{{ doc("terra_manifest_v2_library-1_percent_duplication") }}'
-    - name: library-1_read_pairs
-      description: '{{ doc("terra_manifest_v2_library-1_read_pairs") }}'
+    - name: library_1_estimated_library_size
+      description: '{{ doc("terra_manifest_v2_library_1_estimated_library_size") }}'
+    - name: library_1_mean_insert_size
+      description: '{{ doc("terra_manifest_v2_library_1_mean_insert_size") }}'
+    - name: library_1_name
+      description: '{{ doc("terra_manifest_v2_library_1_name") }}'
+    - name: library_1_pair_orientation
+      description: '{{ doc("terra_manifest_v2_library_1_pair_orientation") }}'
+    - name: library_1_pct_exc_dupe
+      description: '{{ doc("terra_manifest_v2_library_1_pct_exc_dupe") }}'
+    - name: library_1_percent_duplication
+      description: '{{ doc("terra_manifest_v2_library_1_percent_duplication") }}'
+    - name: library_1_read_pairs
+      description: '{{ doc("terra_manifest_v2_library_1_read_pairs") }}'
     - name: mean_insert_size
       description: '{{ doc("terra_manifest_v2_mean_insert_size") }}'
     - name: median_coverage

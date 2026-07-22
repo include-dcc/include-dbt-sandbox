@@ -14,5 +14,5 @@
         age_at_phenotype,
         affected_status,
         vital_status,
-        sample_tissue_type,
-    from ref{{'kf_chr_18_src_chr_18_phenotype_data'}} 
+        sample_tissue_type
+    from {{ ref('kf_chr_18_src_chr_18_phenotype_data') }} 

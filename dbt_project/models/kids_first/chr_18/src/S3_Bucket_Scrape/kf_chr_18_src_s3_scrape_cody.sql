@@ -2,7 +2,7 @@
 
     select
     ROW_NUMBER() OVER () AS kf_index,
-    "Size"::integer as size,
+    "Size"::bigint as size,
     "Key"::text as key,
     "ETag"::text as etag,
     "Bucket"::text as bucket,
