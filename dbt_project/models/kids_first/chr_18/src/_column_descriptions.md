@@ -318,56 +318,248 @@ situs inversus
 Sample Tissue Type
 {% enddocs %}
 
-{% docs ha_delivery_manifest_6735_type %}
-type
+{% docs terra_manifest_v2_sample_id %}
+sample_id
 {% enddocs %}
 
-{% docs ha_delivery_manifest_6735_sample %}
-sample.sample_id
+{% docs terra_manifest_v2_project %}
+project
 {% enddocs %}
 
-{% docs ha_delivery_manifest_6735_file_name %}
-file_name
+{% docs terra_manifest_v2_collaborator_sample_id %}
+collaborator_sample_id
 {% enddocs %}
 
-{% docs ha_delivery_manifest_6735_file_type %}
-file_type
+{% docs terra_manifest_v2_version %}
+version
 {% enddocs %}
 
-{% docs ha_delivery_manifest_6735_file_description %}
-file_description
+{% docs terra_manifest_v2_data_type %}
+data_type
 {% enddocs %}
 
-{% docs ha_delivery_manifest_6735_file_size %}
-file_size
+{% docs terra_manifest_v2_pdo %}
+pdo
 {% enddocs %}
 
-{% docs ha_delivery_manifest_6735_md5sum %}
-md5sum
+{% docs terra_manifest_v2_release_date %}
+release_date
 {% enddocs %}
 
-{% docs ha_delivery_manifest_6735_library_id %}
-library_id
+{% docs terra_manifest_v2_reference_sequence_name %}
+reference_sequence_name
 {% enddocs %}
 
-{% docs ha_delivery_manifest_6735_library_strategy %}
-library_strategy
+{% docs terra_manifest_v2_collaborator_participant_id %}
+collaborator_participant_id
 {% enddocs %}
 
-{% docs ha_delivery_manifest_6735_library_layout %}
-library_layout
+{% docs terra_manifest_v2_cram_path %}
+cram_path
 {% enddocs %}
 
-{% docs ha_delivery_manifest_6735_library_source %}
-library_source
+{% docs terra_manifest_v2_crai_path %}
+crai_path
 {% enddocs %}
 
-{% docs ha_delivery_manifest_6735_platform %}
-platform
+{% docs terra_manifest_v2_md5_path %}
+md5_path
 {% enddocs %}
 
-{% docs ha_delivery_manifest_6735_instrument_model %}
-instrument_model
+{% docs terra_manifest_v2_root_sample_id %}
+root_sample_id
+{% enddocs %}
+
+{% docs terra_manifest_v2_mean_coverage %}
+mean_coverage
+{% enddocs %}
+
+{% docs terra_manifest_v2_adapter_rate %}
+adapter_rate
+{% enddocs %}
+
+{% docs terra_manifest_v2_pf_hq_aligned_q20_bases %}
+pf_hq_aligned_q20_bases
+{% enddocs %}
+
+{% docs terra_manifest_v2_pf_hq_aligned_reads %}
+pf_hq_aligned_reads
+{% enddocs %}
+
+{% docs terra_manifest_v2_pf_mismatch_rate %}
+pf_mismatch_rate
+{% enddocs %}
+
+{% docs terra_manifest_v2_pf_noise_reads %}
+pf_noise_reads
+{% enddocs %}
+
+{% docs terra_manifest_v2_pf_reads %}
+pf_reads
+{% enddocs %}
+
+{% docs terra_manifest_v2_pf_reads_aligned %}
+pf_reads_aligned
+{% enddocs %}
+
+{% docs terra_manifest_v2_total_reads %}
+total_reads
+{% enddocs %}
+
+{% docs terra_manifest_v2_mean_read_length %}
+mean_read_length
+{% enddocs %}
+
+{% docs terra_manifest_v2_pf_reads_rate %}
+pf_reads_rate
+{% enddocs %}
+
+{% docs terra_manifest_v2_pf_reads_aligned_rate %}
+pf_reads_aligned_rate
+{% enddocs %}
+
+{% docs terra_manifest_v2_pf_aligned_bases %}
+pf_aligned_bases
+{% enddocs %}
+
+{% docs terra_manifest_v2_reads_aligned_in_pairs %}
+reads_aligned_in_pairs
+{% enddocs %}
+
+{% docs terra_manifest_v2_contamination_rate %}
+contamination_rate
+{% enddocs %}
+
+{% docs terra_manifest_v2_genome_territory %}
+genome_territory
+{% enddocs %}
+
+{% docs terra_manifest_v2_exc_baseq_rate %}
+exc_baseq_rate
+{% enddocs %}
+
+{% docs terra_manifest_v2_exc_dupe_rate %}
+exc_dupe_rate
+{% enddocs %}
+
+{% docs terra_manifest_v2_exc_mapq_rate %}
+exc_mapq_rate
+{% enddocs %}
+
+{% docs terra_manifest_v2_exc_overlap_rate %}
+exc_overlap_rate
+{% enddocs %}
+
+{% docs terra_manifest_v2_10x_rate %}
+10x_rate
+{% enddocs %}
+
+{% docs terra_manifest_v2_20x_rate %}
+20x_rate
+{% enddocs %}
+
+{% docs terra_manifest_v2_exc_total_rate %}
+exc_total_rate
+{% enddocs %}
+
+{% docs terra_manifest_v2_exc_unpaired_rate %}
+exc_unpaired_rate
+{% enddocs %}
+
+{% docs terra_manifest_v2_chimera_rate %}
+chimera_rate
+{% enddocs %}
+
+{% docs terra_manifest_v2_het_snp_q %}
+het_snp_q
+{% enddocs %}
+
+{% docs terra_manifest_v2_het_snp_sensitivity %}
+het_snp_sensitivity
+{% enddocs %}
+
+{% docs terra_manifest_v2_library_1_estimated_library_size %}
+library_1_estimated_library_size
+{% enddocs %}
+
+{% docs terra_manifest_v2_library_1_mean_insert_size %}
+library_1_mean_insert_size
+{% enddocs %}
+
+{% docs terra_manifest_v2_library_1_name %}
+library_1_name
+{% enddocs %}
+
+{% docs terra_manifest_v2_library_1_pair_orientation %}
+library_1_pair_orientation
+{% enddocs %}
+
+{% docs terra_manifest_v2_library_1_pct_exc_dupe %}
+library_1_pct_exc_dupe
+{% enddocs %}
+
+{% docs terra_manifest_v2_library_1_percent_duplication %}
+library_1_percent_duplication
+{% enddocs %}
+
+{% docs terra_manifest_v2_library_1_read_pairs %}
+library_1_read_pairs
+{% enddocs %}
+
+{% docs terra_manifest_v2_mean_insert_size %}
+mean_insert_size
+{% enddocs %}
+
+{% docs terra_manifest_v2_median_coverage %}
+median_coverage
+{% enddocs %}
+
+{% docs terra_manifest_v2_median_insert_size %}
+median_insert_size
+{% enddocs %}
+
+{% docs terra_manifest_v2_pf_hq_aligned_bases %}
+pf_hq_aligned_bases
+{% enddocs %}
+
+{% docs terra_manifest_v2_pf_hq_error_rate %}
+pf_hq_error_rate
+{% enddocs %}
+
+{% docs terra_manifest_v2_pf_reads_improper_pairs %}
+pf_reads_improper_pairs
+{% enddocs %}
+
+{% docs terra_manifest_v2_read_pair_duplicates %}
+read_pair_duplicates
+{% enddocs %}
+
+{% docs terra_manifest_v2_read_pair_optical_duplicates %}
+read_pair_optical_duplicates
+{% enddocs %}
+
+{% docs terra_manifest_v2_reads_aligned_in_pairs_rate %}
+reads_aligned_in_pairs_rate
+{% enddocs %}
+
+{% docs terra_manifest_v2_sample %}
+sample
+{% enddocs %}
+
+{% docs terra_manifest_v2_strand_balance %}
+strand_balance
+{% enddocs %}
+
+{% docs terra_manifest_v2_width_of_10_percent %}
+width_of_10_percent
+{% enddocs %}
+
+{% docs terra_manifest_v2_width_of_50_percent %}
+width_of_50_percent
+{% enddocs %}
+
+{% docs terra_manifest_v2_width_of_99_percent %}
+width_of_99_percent
 {% enddocs %}
 
 {% docs s3_scrape_cody_size %}

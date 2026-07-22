@@ -57,6 +57,12 @@ models:
       chr_18:
         +tags:
         - chr_18
+        src:
+          +schema: kf_chr_18_src
+        int:
+          +schema: kf_chr_18_int
+        stb:
+          +schema: kf_chr_18_stb
     access:
       +tags:
       - access_stage
