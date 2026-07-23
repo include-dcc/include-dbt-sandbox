@@ -21,7 +21,7 @@ Make sure all of the following are true before triggering the DAG:
 2. The DAG `global_id_minting` is available in Airflow.
 3. Your source table already exists in the warehouse.
 4. You know which warehouse schema and table should receive the minted global
-   IDs.
+   IDs. Note that this table does not need to exist.
 5. Your source table columns match the descriptor format expected by
    `d3b-dewrangle global-id-mint`. Specifically, the columns required are
    `fhirResourceType`, `descriptor`, and `descriptorState`. To mint IDs within
