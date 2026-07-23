@@ -208,10 +208,12 @@ macros:
          that tag), logs an INFO message and exits without issuing any SQL.
 
       4. For each collected schema, checks `has_schema_privilege(..., 'USAGE')`.
-         Already-granted schemas are skipped with an INFO log.
+        and `has_schema_privilege(..., 'CREATE')`.
+        Schemas that already have both privileges are skipped with an INFO log.
 
       5. For schemas that still need granting, issues:
            - `GRANT USAGE ON SCHEMA` — allows the role to see and interact with the schema.
+         - `GRANT CREATE ON SCHEMA` — allows the role to create objects in the schema.
            - `GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA` — full DML
              access on every table that currently exists in the schema.
            - `GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA` — access to all existing
@@ -267,13 +269,15 @@ macros:
          compiler error if either is missing.
 
       2. Checks whether the role already holds `USAGE` privilege on the schema using
-         `has_schema_privilege`. If access is already granted, the macro logs a skip
-         message and exits without issuing any SQL — making it safe to run repeatedly
+        `has_schema_privilege`, and also checks `CREATE` on the same schema.
+        If both are already granted, the macro logs a skip
+        message and exits without issuing grant SQL — making it safe to run repeatedly
          without accumulating duplicate grants.
 
       3. If access is not yet granted, the macro issues the following statements
          against the target schema:
            - `GRANT USAGE ON SCHEMA` — allows the role to see and interact with the schema.
+           - `GRANT CREATE ON SCHEMA` — allows the role to create objects in the schema.
            - `GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA` — full DML
              access on every table that currently exists in the schema.
            - `GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA` — access to all existing

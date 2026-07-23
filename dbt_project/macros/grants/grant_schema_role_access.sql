@@ -22,26 +22,31 @@
     {% set grantee = adapter.quote(grantee_name) %}
 
     {% set schema_granted_sql %}
-      select has_schema_privilege('{{ grantee_name }}', '{{ schema_name }}', 'USAGE')
+      select
+        has_schema_privilege('{{ grantee_name }}', '{{ schema_name }}', 'USAGE') as has_usage,
+        has_schema_privilege('{{ grantee_name }}', '{{ schema_name }}', 'CREATE') as has_create
     {% endset %}
     {% set schema_granted_result = run_query(schema_granted_sql) %}
-    {% set schema_granted = false %}
+    {% set schema_usage_granted = false %}
+    {% set schema_create_granted = false %}
 
     {% if schema_granted_result is not none and schema_granted_result.rows | length > 0 %}
-      {% set schema_granted = schema_granted_result.rows[0][0] %}
+      {% set schema_usage_granted = schema_granted_result.rows[0][0] %}
+      {% set schema_create_granted = schema_granted_result.rows[0][1] %}
     {% endif %}
 
-    {% if not schema_granted %}
+    {% if not schema_usage_granted or not schema_create_granted %}
       {% do log('Applying ' ~ grantee_name ~ ' grants on schema ' ~ schema_name, info=True) %}
 
       {% do run_query("grant usage on schema " ~ quoted_schema ~ " to " ~ grantee) %}
+      {% do run_query("grant create on schema " ~ quoted_schema ~ " to " ~ grantee) %}
       {% do run_query("grant " ~ table_privileges ~ " on all tables in schema " ~ quoted_schema ~ " to " ~ grantee) %}
       {% do run_query("grant " ~ sequence_privileges ~ " on all sequences in schema " ~ quoted_schema ~ " to " ~ grantee) %}
 
       {% do run_query("alter default privileges in schema " ~ quoted_schema ~ " grant " ~ table_privileges ~ " on tables to " ~ grantee) %}
       {% do run_query("alter default privileges in schema " ~ quoted_schema ~ " grant " ~ sequence_privileges ~ " on sequences to " ~ grantee) %}
     {% else %}
-      {% do log('Skipping grants for schema ' ~ schema_name ~ ' (already granted for role ' ~ grantee_name ~ ')', info=True) %}
+      {% do log('Skipping grants for schema ' ~ schema_name ~ ' (USAGE and CREATE already granted for role ' ~ grantee_name ~ ')', info=True) %}
     {% endif %}
   {% endif %}
 

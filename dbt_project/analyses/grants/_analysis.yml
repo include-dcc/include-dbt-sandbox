@@ -1,0 +1,28 @@
+version: 2
+
+analyses:
+  - name: check_schema_role_privileges
+    description: |
+      Lists schema-level privileges for roles across non-system schemas.
+      Useful for validating whether grant macros are correctly applying
+      CREATE and USAGE permissions.
+
+      Optional vars:
+        - grants_schema_like (default: %brainpower%)
+        - grants_role_like (default: %include%)
+
+      Example dbt show:
+        dbt show --select path:analyses/grants/check_schema_role_privileges.sql
+
+      Example dbt show with vars:
+        dbt show --select path:analyses/grants/check_schema_role_privileges.sql --vars '{"grants_schema_like":"dev_inc_%","grants_role_like":"include%"}'
+
+    columns:
+      - name: schema_name
+        description: Name of the schema being inspected.
+      - name: role_name
+        description: Name of the role being inspected.
+      - name: can_create
+        description: YES when the role has CREATE on the schema; otherwise NO.
+      - name: can_usage
+        description: YES when the role has USAGE on the schema; otherwise NO.
