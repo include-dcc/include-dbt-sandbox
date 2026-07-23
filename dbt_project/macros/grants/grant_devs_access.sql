@@ -1,5 +1,13 @@
 {% macro grant_devs_access(tag, users_role) %}
   {% if execute %}
+    {#
+      Use explicit table privileges instead of GRANT ALL to follow least-privilege.
+      In Postgres, ALL TABLE privileges also include TRIGGER, REFERENCES, and TRUNCATE,
+      which are broader than required for this workflow.
+    #}
+    {% set table_privileges = 'select, insert, update, delete' %}
+    {% set sequence_privileges = 'usage, select' %}
+
     {% set command_name = flags.WHICH if flags is defined and flags.WHICH is defined else none %}
     {% if command_name not in ['run', 'build'] %}
       {% do log('grant_devs_access: skipping for command ' ~ (command_name or 'unknown') ~ '; grants are only applied for run/build', info=True) %}
@@ -49,11 +57,11 @@
         {% do log('Applying ' ~ grantee_name ~ ' grants on schema ' ~ schema_name, info=True) %}
 
         {% do run_query("grant usage on schema " ~ quoted_schema ~ " to " ~ grantee) %}
-        {% do run_query("grant select, insert, update, delete on all tables in schema " ~ quoted_schema ~ " to " ~ grantee) %}
-        {% do run_query("grant usage, select on all sequences in schema " ~ quoted_schema ~ " to " ~ grantee) %}
+        {% do run_query("grant " ~ table_privileges ~ " on all tables in schema " ~ quoted_schema ~ " to " ~ grantee) %}
+        {% do run_query("grant " ~ sequence_privileges ~ " on all sequences in schema " ~ quoted_schema ~ " to " ~ grantee) %}
 
-        {% do run_query("alter default privileges in schema " ~ quoted_schema ~ " grant select, insert, update, delete on tables to " ~ grantee) %}
-        {% do run_query("alter default privileges in schema " ~ quoted_schema ~ " grant usage, select on sequences to " ~ grantee) %}
+        {% do run_query("alter default privileges in schema " ~ quoted_schema ~ " grant " ~ table_privileges ~ " on tables to " ~ grantee) %}
+        {% do run_query("alter default privileges in schema " ~ quoted_schema ~ " grant " ~ sequence_privileges ~ " on sequences to " ~ grantee) %}
       {% else %}
         {% do log('Skipping grants for schema ' ~ schema_name ~ ' (already granted)', info=True) %}
       {% endif %}

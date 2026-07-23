@@ -1,0 +1,493 @@
+version: 2
+
+macros:
+  - name: generate_placeholder_global_ids_table
+    description: |
+      Creates an empty placeholder global_ids table with the expected schema.
+      Used when a downstream pipeline expects the table to exist before real
+      data is populated.
+
+      Required args:
+        - schema_name
+      Optional args:
+        - table_name (defaults to global_ids)
+
+      Command line usage:
+        dbt run-operation generate_placeholder_global_ids_table --args '{"schema_name": "inc_brainpower_raw"}'
+
+      Explicit table name:
+        dbt run-operation generate_placeholder_global_ids_table --args '{"schema_name": "inc_brainpower_raw", "table_name": "global_ids"}'
+
+  - name: store_profile
+    description: |
+      Profiles a relation and stores results in a table.
+      This is the primary ad hoc entry point and supports append-only history:
+      only changed profile rows are inserted with a new profiled_at timestamp.
+
+      Required args:
+        - profile_table
+
+      Optional args:
+        - profile_database (defaults to target.database)
+        - profile_schema (defaults to target.schema)
+        - profile_include_columns (list)
+        - profile_exclude_columns (list)
+        - profile_where_clause
+        - profile_group_by (list)
+        - adhoc_database (defaults to profile_database)
+        - adhoc_schema (defaults to profile_schema)
+        - adhoc_table (defaults to profile_<profile_table>)
+
+      Command line usage:
+        dbt run-operation store_profile --args '{"profile_schema": "dev_inc_brainpower_src", "profile_table": "inc_brainpower_src_datasets"}'
+
+  - name: get_profile
+    description: |
+      Backward-compatible wrapper around store_profile.
+      Accepts an args dictionary and forwards all supported profile options.
+
+      Required args:
+        - args (dictionary)
+
+      Command line usage:
+        dbt run-operation get_profile --args '{"profile_schema": "dev_inc_brainpower_src", "profile_table": "inc_brainpower_src_datasets"}'
+
+  - name: run_get_profile
+    description: |
+      Backward-compatible wrapper around store_profile.
+      Accepts an args dictionary and forwards all supported profile options.
+
+      Required args:
+        - args (dictionary)
+
+      Command line usage:
+        dbt run-operation run_get_profile --args '{"profile_schema": "dev_inc_brainpower_src", "profile_table": "inc_brainpower_src_datasets"}'
+
+  - name: combined_stb_relations
+    description: |
+      Builds a list of ref() relations for a combined union model.
+      Used by union-style models to collect study-specific stb tables.
+
+      Quickstart:
+        macros/pipeline/docs/combined_stb_relations_quickstart.md
+
+      Required args:
+        - table_name
+      Optional args:
+        - studies_var (defaults to combined_studies)
+
+      Used from model SQL, for example:
+        combined_stb_relations(table_name='patient')
+
+  - name: combined_union_from_current_model
+    description: |
+      Unions the study-specific relations that correspond to the current
+      combined_ model. Intended for use inside combined union model SQL.
+
+      Quickstart:
+        macros/pipeline/docs/combined_union_from_current_model_quickstart.md
+
+      Optional args:
+        - studies_var (defaults to combined_studies)
+
+      Used from model SQL, for example:
+        combined_union_from_current_model()
+
+  - name: generate_descriptor_view_sql
+    description: |
+      Generates placeholder SQL for a descriptor view based on program and
+      resource exceptions.
+      Used by descriptor-view models that need a compile-safe SQL stub.
+
+      Quickstart:
+        macros/pipeline/docs/generate_descriptor_view_sql_quickstart.md
+
+      Required args:
+        - program_id
+        - dewrangle_study_id
+      Optional args:
+        - inclusion_resources (list)
+        - exclusion_resources (list)
+
+      Used from model SQL, for example:
+        generate_descriptor_view_sql(program_id='inc', dewrangle_study_id='brainpower', exclusion_resources=[])
+
+  - name: generate_schema_name
+    description: |
+      Custom schema naming macro used by dbt for seeds and models.
+      It prefixes the target schema and appends the model folder path so dev
+      runs land in predictable schema names.
+
+      Quickstart:
+        macros/pipeline/docs/generate_schema_name_quickstart.md
+
+      Used automatically by dbt; not called directly in model SQL.
+
+  - name: generate_stb_sql
+    description: |
+      Generates SQL that joins descriptor sources to GID lookup rows.
+      Used by STB-style models to map descriptors to identifiers.
+
+      Quickstart:
+        macros/pipeline/docs/generate_stb_sql_quickstart.md
+
+      Required args:
+        - base_source
+      Optional args:
+        - gid_lookup
+        - descriptor_sources (list)
+
+      Used from model SQL, for example:
+        generate_stb_sql(base_source='my_base_model', gid_lookup='my_gid_lookup', descriptor_sources=[{'Patient': {} }])
+
+  - name: normalize_descriptors
+    description: |
+      Returns a normalized concatenated SQL expression for one or more
+      descriptor columns.
+      Used when building stable composite descriptors from multiple fields.
+
+      Quickstart:
+        macros/pipeline/docs/normalize_descriptors_quickstart.md
+
+      Default behavior per descriptor entry:
+        - trims leading and trailing whitespace
+        - collapses internal whitespace to a single space
+        - preserves case
+        - preserves special characters
+        - escapes the chosen delimiter
+        - converts blank strings to null
+
+      Keep the common case simple by passing a list of SQL expressions:
+        normalize_descriptors(descriptor_cols=['id', 'study_code'])
+
+      For overrides, pass a list item as a dictionary with expr plus only the
+      options you need to change:
+        normalize_descriptors(
+          descriptor_cols=[
+            'id',
+            {'expr': 'file_name', 'escape_delimiter': false},
+            {'expr': 'normalized_hpo_term', 'keep_case': false}
+          ],
+          delimiter=';'
+        )
+
+      A fixed descriptor string can also be normalized with its own override
+      options:
+        normalize_descriptors(
+          descriptor_str='brainpower,v2',
+          descriptor_str_options={'escape_delimiter': true, 'keep_case': true}
+        )
+
+      Required args:
+        - descriptor_cols (list)
+      Optional args:
+        - descriptor_str
+        - delimiter (defaults to ,)
+        - default_options (dictionary)
+        - descriptor_str_options (dictionary)
+
+  - name: grant_devs_access
+    description: >
+      Shared on-run-end helper that grants a role full access to every schema
+      produced by models matching a given project tag during the current dbt run.
+      The two project-specific wrappers (`grant_inc_devs_access`,
+      `grant_kf_devs_access`) delegate directly to this macro with their
+      fixed `tag` / `users_role` values.
+
+
+      **Behavior:**
+
+      1. Validates that both `tag` and `users_role` are provided; raises a
+         compiler error if either is missing.
+
+      2. Iterates over `results` and collects the schema of every model whose
+         tags contain `tag` — ensuring only schemas belonging to the
+         specified project are touched.
+
+      3. If no matching models are found (e.g. the run contained no models with
+         that tag), logs an INFO message and exits without issuing any SQL.
+
+      4. For each collected schema, checks `has_schema_privilege(..., 'USAGE')`.
+         Already-granted schemas are skipped with an INFO log.
+
+      5. For schemas that still need granting, issues:
+           - `GRANT USAGE ON SCHEMA` — allows the role to see and interact with the schema.
+           - `GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA` — full DML
+             access on every table that currently exists in the schema.
+           - `GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA` — access to all existing
+             sequences (required for auto-increment / serial columns).
+           - `ALTER DEFAULT PRIVILEGES ... GRANT SELECT, INSERT, UPDATE, DELETE ON TABLES`
+             — ensures future tables created in this schema are automatically accessible.
+           - `ALTER DEFAULT PRIVILEGES ... GRANT USAGE, SELECT ON SEQUENCES` — same
+             future coverage for sequences.
+
+
+      6. All actions and skips are logged at `INFO` level.
+
+    arguments:
+      - name: tag
+        type: string
+        description: >
+          The dbt tag used to identify models belonging to the target project.
+          For example, `include` or `kids_first`. Only models whose tags
+          contain this value will have their schemas granted.
+
+      - name: users_role
+        type: string
+        description: >
+          The database role to receive the grants. Must be an existing role
+          in the target database (e.g. `include_users`, `kf_users`).
+
+  - name: grant_inc_devs_access
+    description: >
+      On-run-end wrapper around `grant_devs_access`. Grants `include_users`
+      access to all schemas produced by models tagged `include` in the current
+      run (e.g. `brainpower`, `aadsc` src/int schemas). Delegates entirely to
+      `grant_devs_access(tag='include', users_role='include_users')`.
+
+  - name: grant_kf_devs_access
+    description: >
+      On-run-end wrapper around `grant_devs_access`. Grants `kf_users`
+      access to all schemas produced by models tagged `kids_first` in the
+      current run. Delegates entirely to
+      `grant_devs_access(tag='kids_first', users_role='kf_users')`.
+
+  - name: grant_schema_role_access
+    description: >
+      Standalone utility macro that grants a specified role full access to a target
+      schema. Unlike the on-run-end grant macros (`grant_inc_devs_access`,
+      `grant_kf_devs_access`), this macro is not tied to a dbt run lifecycle and is
+      intended to be called manually via `dbt run-operation` whenever a new role needs
+      access to the `combined`, `access`, or `*_export` schemas.
+
+
+      **Behavior:**
+
+      1. Validates that both `target_schema` and `users_role` are provided; raises a
+         compiler error if either is missing.
+
+      2. Checks whether the role already holds `USAGE` privilege on the schema using
+         `has_schema_privilege`. If access is already granted, the macro logs a skip
+         message and exits without issuing any SQL — making it safe to run repeatedly
+         without accumulating duplicate grants.
+
+      3. If access is not yet granted, the macro issues the following statements
+         against the target schema:
+           - `GRANT USAGE ON SCHEMA` — allows the role to see and interact with the schema.
+           - `GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA` — full DML
+             access on every table that currently exists in the schema.
+           - `GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA` — access to all existing
+             sequences (required for auto-increment / serial columns).
+           - `ALTER DEFAULT PRIVILEGES ... GRANT SELECT, INSERT, UPDATE, DELETE ON TABLES`
+             — ensures future tables created in this schema are automatically accessible.
+           - `ALTER DEFAULT PRIVILEGES ... GRANT USAGE, SELECT ON SEQUENCES` — same
+             future coverage for sequences.
+
+      4. All actions and skips are logged to the dbt console at `INFO` level.
+
+
+      **Example usage:**
+
+      ```bash
+      dbt run-operation grant_schema_role_access \
+        --args '{"target_schema": "combined", "users_role": "analyst_role"}'
+      ```
+
+    arguments:
+      - name: target_schema
+        type: string
+        description: >
+          The name of the database schema to grant access to. Intended for shared,
+          non-program-specific schemas such as `combined`, `access`, or `fhir_export`.
+          
+
+      - name: users_role
+        type: string
+        description: >
+          The name of the database role to receive the grants. This shouldbe 
+          an existing role in the target database.
+
+  - name: generate_placeholder_global_ids_table
+    description: |
+      Creates an empty placeholder global_ids table with the expected schema.
+      Used when a downstream pipeline expects the table to exist before real
+      data is populated.
+
+      Required args:
+        - schema_name
+      Optional args:
+        - table_name (defaults to global_ids)
+
+      Command line usage:
+        dbt run-operation generate_placeholder_global_ids_table --args '{"schema_name": "inc_brainpower_raw"}'
+
+      Explicit table name:
+        dbt run-operation generate_placeholder_global_ids_table --args '{"schema_name": "inc_brainpower_raw", "table_name": "global_ids"}'
+
+  - name: store_profile
+    description: |
+      Profiles a relation and stores results in a table.
+      This is the primary ad hoc entry point and supports append-only history:
+      only changed profile rows are inserted with a new profiled_at timestamp.
+
+      Required args:
+        - profile_table
+
+      Optional args:
+        - profile_database (defaults to target.database)
+        - profile_schema (defaults to target.schema)
+        - profile_include_columns (list)
+        - profile_exclude_columns (list)
+        - profile_where_clause
+        - profile_group_by (list)
+        - adhoc_database (defaults to profile_database)
+        - adhoc_schema (defaults to profile_schema)
+        - adhoc_table (defaults to profile_<profile_table>)
+
+      Command line usage:
+        dbt run-operation store_profile --args '{"profile_schema": "dev_inc_brainpower_src", "profile_table": "inc_brainpower_src_datasets"}'
+
+  - name: get_profile
+    description: |
+      Backward-compatible wrapper around store_profile.
+      Accepts an args dictionary and forwards all supported profile options.
+
+      Required args:
+        - args (dictionary)
+
+      Command line usage:
+        dbt run-operation get_profile --args '{"profile_schema": "dev_inc_brainpower_src", "profile_table": "inc_brainpower_src_datasets"}'
+
+  - name: run_get_profile
+    description: |
+      Backward-compatible wrapper around store_profile.
+      Accepts an args dictionary and forwards all supported profile options.
+
+      Required args:
+        - args (dictionary)
+
+      Command line usage:
+        dbt run-operation run_get_profile --args '{"profile_schema": "dev_inc_brainpower_src", "profile_table": "inc_brainpower_src_datasets"}'
+
+  - name: combined_stb_relations
+    description: |
+      Builds a list of ref() relations for a combined union model.
+      Used by union-style models to collect study-specific stb tables.
+
+      Quickstart:
+        macros/pipeline/docs/combined_stb_relations_quickstart.md
+
+      Required args:
+        - table_name
+      Optional args:
+        - studies_var (defaults to combined_studies)
+
+      Used from model SQL, for example:
+        combined_stb_relations(table_name='patient')
+
+  - name: combined_union_from_current_model
+    description: |
+      Unions the study-specific relations that correspond to the current
+      combined_ model. Intended for use inside combined union model SQL.
+
+      Quickstart:
+        macros/pipeline/docs/combined_union_from_current_model_quickstart.md
+
+      Optional args:
+        - studies_var (defaults to combined_studies)
+
+      Used from model SQL, for example:
+        combined_union_from_current_model()
+
+  - name: generate_descriptor_view_sql
+    description: |
+      Generates placeholder SQL for a descriptor view based on program and
+      resource exceptions.
+      Used by descriptor-view models that need a compile-safe SQL stub.
+
+      Quickstart:
+        macros/pipeline/docs/generate_descriptor_view_sql_quickstart.md
+
+      Required args:
+        - program_id
+        - dewrangle_study_id
+      Optional args:
+        - inclusion_resources (list)
+        - exclusion_resources (list)
+
+      Used from model SQL, for example:
+        generate_descriptor_view_sql(program_id='inc', dewrangle_study_id='brainpower', exclusion_resources=[])
+
+  - name: generate_schema_name
+    description: |
+      Custom schema naming macro used by dbt for seeds and models.
+      It prefixes the target schema and appends the model folder path so dev
+      runs land in predictable schema names.
+
+      Quickstart:
+        macros/pipeline/docs/generate_schema_name_quickstart.md
+
+      Used automatically by dbt; not called directly in model SQL.
+
+  - name: generate_stb_sql
+    description: |
+      Generates SQL that joins descriptor sources to GID lookup rows.
+      Used by STB-style models to map descriptors to identifiers.
+
+      Quickstart:
+        macros/pipeline/docs/generate_stb_sql_quickstart.md
+
+      Required args:
+        - base_source
+      Optional args:
+        - gid_lookup
+        - descriptor_sources (list)
+
+      Used from model SQL, for example:
+        generate_stb_sql(base_source='my_base_model', gid_lookup='my_gid_lookup', descriptor_sources=[{'Patient': {} }])
+
+  - name: normalize_descriptors
+    description: |
+      Returns a normalized concatenated SQL expression for one or more
+      descriptor columns.
+      Used when building stable composite descriptors from multiple fields.
+
+      Quickstart:
+        macros/pipeline/docs/normalize_descriptors_quickstart.md
+
+      Default behavior per descriptor entry:
+        - trims leading and trailing whitespace
+        - collapses internal whitespace to a single space
+        - preserves case
+        - preserves special characters
+        - escapes the chosen delimiter
+        - converts blank strings to null
+
+      Keep the common case simple by passing a list of SQL expressions:
+        normalize_descriptors(descriptor_cols=['id', 'study_code'])
+
+      For overrides, pass a list item as a dictionary with expr plus only the
+      options you need to change:
+        normalize_descriptors(
+          descriptor_cols=[
+            'id',
+            {'expr': 'file_name', 'escape_delimiter': false},
+            {'expr': 'normalized_hpo_term', 'keep_case': false}
+          ],
+          delimiter=';'
+        )
+
+      A fixed descriptor string can also be normalized with its own override
+      options:
+        normalize_descriptors(
+          descriptor_str='brainpower,v2',
+          descriptor_str_options={'escape_delimiter': true, 'keep_case': true}
+        )
+
+      Required args:
+        - descriptor_cols (list)
+      Optional args:
+        - descriptor_str
+        - delimiter (defaults to ,)
+        - default_options (dictionary)
+        - descriptor_str_options (dictionary)
