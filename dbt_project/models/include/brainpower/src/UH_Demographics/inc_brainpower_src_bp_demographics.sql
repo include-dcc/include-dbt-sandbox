@@ -1,7 +1,7 @@
 {{ config(materialized='table') }}
 
 select
-  ROW_NUMBER() over () as inc_index,
+  -- id + race + filedomain_name(demographics) as inc_key,
   id::integer as id,
   timepoint::integer as timepoint,
   gender::integer as gender,
