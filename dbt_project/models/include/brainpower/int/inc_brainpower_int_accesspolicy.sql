@@ -2,10 +2,9 @@
 
 with base as (
   select
-    'HARD CODED ACCESS POLICY IDENTIFIER'::text as policy_id, -- Example of how to hard code a value to use as a descriptor
     -- null::text as access_policy_id, -- Global Id to be generated and joined in the stb model
     a.dbgap::text as data_use_accession,
-    d.access_limitations::text as data_use_permission,
+    -- null::text as data_use_permission,
     d.access_requirements::text as data_use_modifier,
     a.selection_criteria::text as disease_limitation,
     null::text as access_description,
@@ -21,6 +20,8 @@ with base as (
 )
 
 select
-  *,
-  {{ normalize_descriptors(descriptor_cols=['policy_id','data_use_accession']) }}::text as access_policy_descriptor -- access_policy_descriptor will be the column given to the stb model for joining to the global Id table.
-from base
+  distinct
+  base.*,
+  {{ normalize_descriptors(descriptor_cols=['access_policy_hc']) }}::text as access_policy_descriptor,
+  access_policy_hc::text as data_use_permission
+from base, {{ ref('inc_brainpower_int_manual_supplement') }}
