@@ -95,22 +95,23 @@ macros:
 
   - name: generate_descriptor_view_sql
     description: |
-      Generates placeholder SQL for a descriptor view based on program and
-      resource exceptions.
-      Used by descriptor-view models that need a compile-safe SQL stub.
+      Generates a descriptor view by collecting unique descriptors from
+      available int tables and returning only values missing from
+      inc_brainpower_raw.global_ids for the same fhirResourceType and study.
+
+      Source relation resolution:
+        - Each source is resolved as {table_prefix}{relation_name}
+        - Missing relations are skipped automatically
 
       Quickstart:
         macros/pipeline/docs/generate_descriptor_view_sql_quickstart.md
 
       Required args:
-        - program_id
-        - dewrangle_study_id
-      Optional args:
-        - inclusion_resources (list)
-        - exclusion_resources (list)
+        - table_prefix
+        - study_global_id
 
       Used from model SQL, for example:
-        generate_descriptor_view_sql(program_id='inc', dewrangle_study_id='brainpower', exclusion_resources=[])
+        generate_descriptor_view_sql(table_prefix='inc_brainpower_int_', study_global_id='brainpower')
 
   - name: generate_schema_name
     description: |
