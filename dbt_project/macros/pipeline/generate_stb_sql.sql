@@ -34,11 +34,11 @@ with
 {%- for mapping in descriptor_mappings %}
   filtered_{{ mapping['resource_key'] }}_gids as (
     select
-      globalId as {{ mapping['gid_column'] }},
+      "globalId" as {{ mapping['gid_column'] }},
       descriptor as {{ mapping['descriptor_column'] }}
     from {{ gid_lookup }}
-    where fhirResourceType = '{{ mapping['resource'] }}'
-      and studyId = 'brainpower'
+    where "fhirResourceType" = '{{ mapping['resource'] }}'
+      and "studyId" = 'brainpower'
   ){% if not loop.last %},{% endif %}
 {%- endfor %}
 
