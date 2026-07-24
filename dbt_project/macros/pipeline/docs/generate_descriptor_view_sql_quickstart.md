@@ -1,6 +1,8 @@
 # generate_descriptor_view_sql Quickstart
 
-Use this macro to emit a compile-safe descriptor-view SQL placeholder.
+Use this macro to build a descriptor view from available int descriptor tables.
+It returns unique descriptors that are missing from `inc_brainpower_raw.global_ids`
+for the same `fhirResourceType` and study.
 
 ## Basic Usage
 
@@ -8,34 +10,25 @@ Use this macro to emit a compile-safe descriptor-view SQL placeholder.
 {{ config(materialized='table') }}
 
 {{ generate_descriptor_view_sql(
-    program_id='inc',
-    dewrangle_study_id='brainpower'
+    table_prefix='inc_brainpower_int_',
+    study_global_id='brainpower'
 ) }}
 ```
 
-## Exclude Specific Resource Models
+## Arguments
 
-```jinja
-{{ generate_descriptor_view_sql(
-    program_id='inc',
-    dewrangle_study_id='brainpower',
-    exclusion_resources=['AccessPolicy']
-) }}
-```
+- table_prefix: prefix used to resolve descriptor source relations
+- study_global_id: value matched to `global_ids.studyId`, and emitted as `studyGlobalId`
 
-## Include Only Specific Resource Models
+## Relation Resolution
 
-```jinja
-{{ generate_descriptor_view_sql(
-    program_id='inc',
-    dewrangle_study_id='brainpower',
-    inclusion_resources=['Demographics']
-) }}
-```
+The macro attempts each source as:
 
-## Valid Values
+- `{table_prefix}accesspolicy`
+- `{table_prefix}demographics`
+- `{table_prefix}family`
 
-- program_id: `inc` or `kf`
-- inclusion_resources/exclusion_resources items: `AccessPolicy`, `Demographics`
+If a relation does not exist, it is skipped automatically.
 
-Invalid values raise compile errors.
+The macro automatically uses descriptor-source int models that exist and are
+built; missing sources are skipped.

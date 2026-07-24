@@ -9,7 +9,7 @@ Use this macro to join descriptor-based source rows to global IDs (GIDs).
 ## Optional Input
 
 - gid_lookup: model name or relation for GID table
-- descriptor_sources: list describing which resource mappings to include
+- descriptor_sources: list of resource names to include
 
 ## Basic Usage
 
@@ -18,8 +18,8 @@ Use this macro to join descriptor-based source rows to global IDs (GIDs).
     gid_lookup='inc_brainpower_int_global_ids',
     base_source='inc_brainpower_int_accesspolicy',
     descriptor_sources=[
-      {'AccessPolicy': {}},
-      {'Patient': {}}
+      'AccessPolicy',
+      'Patient'
     ]
 ) }}
 ```
