@@ -1,13 +1,9 @@
 {{ config(materialized='table') }}
 
-select
-  null::text as subject_id,
-  null::text as subject_type,
-  null::text as organism_type,
-  null::text as access_policy_id,
-  null::text as study_id,
-  null::text as external_id
-from {{ ref('inc_brainpower_src_inc_kf_access_enums_20260508') }}
-where enumeration_code = 'participant'
-    
-    
+{{ generate_stb_sql(
+    gid_lookup=source('brainpower', 'global_ids'),
+    base_source=ref('inc_brainpower_int_subject'),
+    descriptor_sources=[
+        'Patient'
+    ]
+) }}

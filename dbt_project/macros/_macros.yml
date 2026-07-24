@@ -136,10 +136,10 @@ macros:
         - base_source
       Optional args:
         - gid_lookup
-        - descriptor_sources (list)
+        - descriptor_sources (list of resource names)
 
       Used from model SQL, for example:
-        generate_stb_sql(base_source='my_base_model', gid_lookup='my_gid_lookup', descriptor_sources=[{'Patient': {} }])
+        generate_stb_sql(base_source='my_base_model', gid_lookup='my_gid_lookup', descriptor_sources=['Patient'])
 
   - name: normalize_descriptors
     description: |
