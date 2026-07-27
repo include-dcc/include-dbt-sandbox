@@ -7,21 +7,21 @@
         'GRU' as consent_group,
         age_at_sample,
         case
-            when sample_composition is 'Blood' then 'Peripheral Whole Blood'
-            when sample_composition is 'Lymphoblastoid Cells' then 'Lymphoblastoid Cell Lines'
+            when sample_composition = 'Blood' then 'Peripheral Whole Blood'
+            when sample_composition = 'Lymphoblastoid Cells' then 'Lymphoblastoid Cell Lines'
         end as sample_composition,
         case
-            when race is 'Native American' then 'American Indian or Alaska Native'
-            when race is 'Caucasian' then 'White'
+            when race = 'Native American' then 'American Indian or Alaska Native'
+            when race = 'Caucasian' then 'White'
             else race
         end as race,
         case
-            when sex is 'M' then 'Male'
-            when sex is 'F' then 'Female'
+            when sex = 'M' then 'Male'
+            when sex = 'F' then 'Female'
         end as sex,
         case
-            when ethnicity is 'Not Hispanic' then 'Not Hispanic or Latino'
-            when ethnicity is 'Hispanic' then 'Hispanic or Latino'
+            when ethnicity = 'Not Hispanic' then 'Not Hispanic or Latino'
+            when ethnicity = 'Hispanic' then 'Hispanic or Latino'
         end as ethnicity,
         analyte_type,
         -- age_at_phenotype,

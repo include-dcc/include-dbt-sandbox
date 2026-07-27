@@ -1,7 +1,7 @@
 {{ config(materialized='table') }}
 
     select
-    's3://' + bucket + '/' + key as s3_path,
+    concat('s3://', bucket, '/', key) as s3_path,
     split_part(key, '/', -1) as file_name,
     case
         when key like '%.cram' then 'cram'
@@ -15,7 +15,7 @@
         when key like '%.md5' then 'Other'
         else null
     end as data_type,
-    '{etag' + replace(etag, '"', "") + '}' as hash_dict,
-    'False' as harmonized,
+    concat('{etag', replace(etag, '\"', ''), '}') as hash_dict,
+    'False' as harmonized
     from {{ ref('kf_chr_18_src_s3_scrape_cody') }}
     

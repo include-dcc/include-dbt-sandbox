@@ -20,8 +20,8 @@
         select
         root_sample_id,
         replace(cram_path,
-                "gs://fc-2092c58b-ce12-42e7-9a8e-64b78440537a/",
-                "s3://kf-strides-study-us-east-1-prd-sd-1nns3k8v/source/",
+                'gs://fc-2092c58b-ce12-42e7-9a8e-64b78440537a/',
+                's3://kf-strides-study-us-east-1-prd-sd-1nns3k8v/source/'
                 ) as cram_path
         from {{ ref('kf_chr_18_src_terra_manifest_v2') }} 
     ),
@@ -30,8 +30,8 @@
         select
         root_sample_id,
         replace(crai_path,
-                "gs://fc-2092c58b-ce12-42e7-9a8e-64b78440537a/",
-                "s3://kf-strides-study-us-east-1-prd-sd-1nns3k8v/source/",
+                'gs://fc-2092c58b-ce12-42e7-9a8e-64b78440537a/',
+                's3://kf-strides-study-us-east-1-prd-sd-1nns3k8v/source/'
                 ) as crai_path
         from {{ ref('kf_chr_18_src_terra_manifest_v2') }} as crais
     ),
@@ -40,8 +40,8 @@
         select
         root_sample_id,
         replace(md5_path,
-                "gs://fc-2092c58b-ce12-42e7-9a8e-64b78440537a/",
-                "s3://kf-strides-study-us-east-1-prd-sd-1nns3k8v/source/",
+                'gs://fc-2092c58b-ce12-42e7-9a8e-64b78440537a/',
+                's3://kf-strides-study-us-east-1-prd-sd-1nns3k8v/source/'
                 ) as md5_path
         from {{ ref('kf_chr_18_src_terra_manifest_v2') }} as md5s
     )
