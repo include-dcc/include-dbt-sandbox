@@ -5,6 +5,8 @@ model-paths:
 - models
 macro-paths:
 - macros
+analysis-paths:
+- analyses
 seed-paths:
 - seeds
 snapshot-paths:
@@ -22,14 +24,6 @@ models:
       +tags:
       - study_stage
       - include
-      aadsc:
-        +tags:
-        - SD_ID_HERE
-        - aadsc
-        src:
-          +schema: inc_aadsc_src
-        int:
-          +schema: inc_aadsc_int
       brainpower:
         +tags:
         - brainpower
@@ -37,11 +31,8 @@ models:
           +schema: inc_brainpower_src
         int:
           +schema: inc_brainpower_int
-      chr_18:
-        src:
-          +schema: inc_chr_18_src
-        int:
-          +schema: inc_chr_18_int
+        stb:
+          +schema: inc_brainpower_stb
     kids_first:
       +tags:
       - study_stage
@@ -78,3 +69,6 @@ models:
       +tags:
       - combined_stage
       +schema: combined
+on-run-end:
+  - "{{ grant_devs_access(tag='include', users_role='include_users') }}"
+  - "{{ grant_devs_access(tag='kids_first', users_role='kf_users') }}"

@@ -1,0 +1,14 @@
+version: 2
+
+data_tests:
+  - name: normalize_descriptors_examples__passes
+    description: |
+      Validates normalize_descriptors expected behavior across representative
+      examples (whitespace cleanup, delimiter escaping, case-preserving defaults,
+      and override handling).
+    config:
+      severity: error
+      tags:
+        - unit_test
+        - macros
+        - normalize_descriptors
