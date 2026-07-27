@@ -75,12 +75,12 @@ with DAG(
             enum=[
                 "T3JnYW5pemF0aW9uOmNtZjJ3bzlrdDAwMG9rMTAxcHd4cHFmMWQ=",
                 "T3JnYW5pemF0aW9uOmNsZHN4MzRrbjAwMTRnMGVzY3JndzUzYWQ=",
-                "org_id_2",
+                "T3JnYW5pemF0aW9uOmNsZWhibTF4ZjAwZTdpY2VzZjI0d2tlNHk=",
             ],
             values_display={
                 "T3JnYW5pemF0aW9uOmNtZjJ3bzlrdDAwMG9rMTAxcHd4cHFmMWQ=": "dff dev",
                 "T3JnYW5pemF0aW9uOmNsZHN4MzRrbjAwMTRnMGVzY3JndzUzYWQ=": "Kids First DRC",
-                "org_id_2": "INCLUDE DCC",
+                "T3JnYW5pemF0aW9uOmNsZWhibTF4ZjAwZTdpY2VzZjI0d2tlNHk=": "INCLUDE DCC",
             },
         ),
     },
@@ -138,6 +138,8 @@ with DAG(
             "conn": postgres_conn,
         },
     )
+
+    {set create_dewrangle_ids_table_flag = "--create-dewrangle-ids-table" if dag.params["create_new_globalid_table"] else ""}
 
     create_dewrangle_ids_table_flag = (
         "--create-dewrangle-ids-table"
