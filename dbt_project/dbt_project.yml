@@ -45,6 +45,15 @@ models:
           +schema: kf_sd_1nns3k8v_src
         int:
           +schema: kf_sd_1nns3k8v_int
+      chr_18:
+        +tags:
+        - chr_18
+        src:
+          +schema: kf_chr_18_src
+        int:
+          +schema: kf_chr_18_int
+        stb:
+          +schema: kf_chr_18_stb
     access:
       +tags:
       - access_stage
