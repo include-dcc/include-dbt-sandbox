@@ -8,4 +8,3 @@ select
   access_policy_id::text as access_policy_id,
   study_id::text as study_id
 from {{ ref('combined_familyrelationship') }}
-    
