@@ -58,5 +58,5 @@ select
   cast(null as text) as failing_value
 where 1 = 0
 {% else %}
-{{ failures | join('\nunion all\n') }}
+  {{ failures | join('\nunion all\n') }}
 {% endif %}
