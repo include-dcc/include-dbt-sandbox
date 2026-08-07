@@ -1,3 +1,4 @@
 {{ config(materialized='table') }}
 
-{{ combined_union_from_current_model() }}
+select *
+from {{ ref('inc_brainpower_stb_accesspolicy') }}

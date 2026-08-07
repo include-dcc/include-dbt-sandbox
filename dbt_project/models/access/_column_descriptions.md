@@ -226,10 +226,6 @@ sex
 ethnicity
 {% enddocs %}
 
-{% docs access_demographics_down_syndrome_status %}
-down_syndrome_status
-{% enddocs %}
-
 {% docs access_demographics_age_at_last_vital_status %}
 age_at_last_vital_status
 {% enddocs %}
@@ -362,35 +358,35 @@ access_policy_id
 study_id
 {% enddocs %}
 
-{% docs access_familymember_id %}
-id
+{% docs access_familymembership_family_membership_id %}
+family_membership_id
 {% enddocs %}
 
-{% docs access_familymember_family_id %}
+{% docs access_familymembership_family_id %}
 family_id
 {% enddocs %}
 
-{% docs access_familymember_subject_id %}
+{% docs access_familymembership_subject_id %}
 subject_id
 {% enddocs %}
 
-{% docs access_familymember_family_role %}
+{% docs access_familymembership_family_role %}
 family_role
 {% enddocs %}
 
-{% docs access_familymember_access_policy_id %}
+{% docs access_familymembership_access_policy_id %}
 access_policy_id
 {% enddocs %}
 
-{% docs access_familymember_study_id %}
+{% docs access_familymembership_study_id %}
 study_id
 {% enddocs %}
 
-{% docs access_familymember_external_id_familymember_id %}
-FamilyMember_id
+{% docs access_familymembership_external_id_familymembershi_ed9126b1 %}
+FamilyMembership_family_membership_id
 {% enddocs %}
 
-{% docs access_familymember_external_id_external_id %}
+{% docs access_familymembership_external_id_external_id %}
 external_id
 {% enddocs %}
 
@@ -402,8 +398,8 @@ family_relationship_id
 family_member_id
 {% enddocs %}
 
-{% docs access_familyrelationship_relationship %}
-relationship
+{% docs access_familyrelationship_relation %}
+relation
 {% enddocs %}
 
 {% docs access_familyrelationship_subject_id %}
@@ -446,6 +442,10 @@ filename
 format
 {% enddocs %}
 
+{% docs access_file_file_extension %}
+file_extension
+{% enddocs %}
+
 {% docs access_file_data_category %}
 data_category
 {% enddocs %}
@@ -458,16 +458,24 @@ data_type
 size
 {% enddocs %}
 
-{% docs access_file_staging_url %}
-staging_url
+{% docs access_file_internal_uri %}
+internal_uri
 {% enddocs %}
 
-{% docs access_file_release_url %}
-release_url
+{% docs access_file_release_uri %}
+release_uri
 {% enddocs %}
 
 {% docs access_file_drs_uri %}
 drs_uri
+{% enddocs %}
+
+{% docs access_file_storage_class %}
+storage_class
+{% enddocs %}
+
+{% docs access_file_availability %}
+availability
 {% enddocs %}
 
 {% docs access_file_access_policy_id %}
@@ -476,10 +484,6 @@ access_policy_id
 
 {% docs access_file_study_id %}
 study_id
-{% enddocs %}
-
-{% docs access_file_hash_id %}
-hash_id
 {% enddocs %}
 
 {% docs access_filehash_id %}
@@ -766,28 +770,12 @@ StudyMetadata_study_id
 study_design
 {% enddocs %}
 
-{% docs access_study_clinical_data_source_type_study_study_id %}
-Study_study_id
-{% enddocs %}
-
-{% docs access_study_clinical_data_source_type_clinical_dat_19857653 %}
-clinical_data_source_type
-{% enddocs %}
-
 {% docs access_study_contact_study_study_id %}
 Study_study_id
 {% enddocs %}
 
 {% docs access_study_contact_contact_id %}
 contact_id
-{% enddocs %}
-
-{% docs access_study_data_category_study_study_id %}
-Study_study_id
-{% enddocs %}
-
-{% docs access_study_data_category_data_category %}
-data_category
 {% enddocs %}
 
 {% docs access_study_external_id_study_study_id %}
@@ -804,14 +792,6 @@ Study_study_id
 
 {% docs access_study_funding_source_funding_source %}
 funding_source
-{% enddocs %}
-
-{% docs access_study_participant_lifespan_stage_study_study_id %}
-Study_study_id
-{% enddocs %}
-
-{% docs access_study_participant_lifespan_stage_participant_09d6bd03 %}
-participant_lifespan_stage
 {% enddocs %}
 
 {% docs access_study_principal_investigator_study_study_id %}
@@ -836,22 +816,6 @@ Study_study_id
 
 {% docs access_study_publication_publication_id %}
 publication_id
-{% enddocs %}
-
-{% docs access_study_research_domain_study_study_id %}
-Study_study_id
-{% enddocs %}
-
-{% docs access_study_research_domain_research_domain %}
-research_domain
-{% enddocs %}
-
-{% docs access_study_study_design_study_study_id %}
-Study_study_id
-{% enddocs %}
-
-{% docs access_study_study_design_study_design %}
-study_design
 {% enddocs %}
 
 {% docs access_subject_subject_id %}
@@ -1004,4 +968,68 @@ VirtualBiorepository_vbr_id
 
 {% docs access_virtualbiorepository_external_id_external_id %}
 external_id
+{% enddocs %}
+
+{% docs access_assay_assay_id %}
+assay_id
+{% enddocs %}
+
+{% docs access_assay_assay_type %}
+assay_type
+{% enddocs %}
+
+{% docs access_assay_assay_source %}
+assay_source
+{% enddocs %}
+
+{% docs access_assay_activity_definition_id %}
+activity_definition_id
+{% enddocs %}
+
+{% docs access_assay_access_policy_id %}
+access_policy_id
+{% enddocs %}
+
+{% docs access_assay_study_id %}
+study_id
+{% enddocs %}
+
+{% docs access_assay_external_id_assay_assay_id %}
+Assay_assay_id
+{% enddocs %}
+
+{% docs access_assay_external_id_external_id %}
+external_id
+{% enddocs %}
+
+{% docs access_assay_file_id_assay_assay_id %}
+Assay_assay_id
+{% enddocs %}
+
+{% docs access_assay_file_id_file_id_file_id %}
+file_id_file_id
+{% enddocs %}
+
+{% docs access_assay_sample_id_assay_assay_id %}
+Assay_assay_id
+{% enddocs %}
+
+{% docs access_assay_sample_id_sample_id_sample_id %}
+sample_id_sample_id
+{% enddocs %}
+
+{% docs access_assay_subject_id_assay_assay_id %}
+Assay_assay_id
+{% enddocs %}
+
+{% docs access_assay_subject_id_subject_id_subject_id %}
+subject_id_subject_id
+{% enddocs %}
+
+{% docs access_file_hash_file_file_id %}
+File_file_id
+{% enddocs %}
+
+{% docs access_file_hash_hash_id %}
+hash_id
 {% enddocs %}

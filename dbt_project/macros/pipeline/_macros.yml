@@ -20,13 +20,13 @@ macros:
   - name: combined_union_from_current_model
     description: |
       Unions the study-specific relations that correspond to the current
-      combined_ model. Intended for use inside combined union model SQL.
+      program model. Intended for use inside union model SQL.
 
       Quickstart:
         macros/pipeline/docs/combined_union_from_current_model_quickstart.md
 
       Optional args:
-        - studies_var (defaults to combined_studies)
+        - studies_var (if omitted, inferred from model name: inc_program_ -> inc_studies, kf_program_ -> kf_studies, otherwise combined_studies)
 
       Used from model SQL, for example:
         combined_union_from_current_model()

@@ -1,0 +1,740 @@
+models:
+- name: access_accesspolicy
+  description: Model for access_accesspolicy.
+  columns:
+  - name: access_policy_id
+    description: '{{ doc("access_accesspolicy_access_policy_id") }}'
+  - name: data_use_accession
+    description: '{{ doc("access_accesspolicy_data_use_accession") }}'
+  - name: data_use_permission
+    description: '{{ doc("access_accesspolicy_data_use_permission") }}'
+  - name: data_use_modifier
+    description: '{{ doc("access_accesspolicy_data_use_modifier") }}'
+  - name: disease_limitation
+    description: '{{ doc("access_accesspolicy_disease_limitation") }}'
+  - name: access_description
+    description: '{{ doc("access_accesspolicy_access_description") }}'
+  - name: website
+    description: '{{ doc("access_accesspolicy_website") }}'
+- name: access_activitydefinition
+  description: Model for access_activitydefinition.
+  columns:
+  - name: activity_definition_id
+    description: '{{ doc("access_activitydefinition_activity_definition_id") }}'
+  - name: name
+    description: '{{ doc("access_activitydefinition_name") }}'
+  - name: description
+    description: '{{ doc("access_activitydefinition_description") }}'
+  - name: access_policy_id
+    description: '{{ doc("access_activitydefinition_access_policy_id") }}'
+  - name: study_id
+    description: '{{ doc("access_activitydefinition_study_id") }}'
+- name: access_activitydefinition_external_id
+  description: Model for access_activitydefinition_external_id.
+  columns:
+  - name: ActivityDefinition_activity_definition_id
+    description: '{{ doc("access_activitydefinition_external_id_activitydefin_4fcca922")
+      }}'
+  - name: external_id
+    description: '{{ doc("access_activitydefinition_external_id_external_id") }}'
+- name: access_aliquot
+  description: Model for access_aliquot.
+  columns:
+  - name: aliquot_id
+    description: '{{ doc("access_aliquot_aliquot_id") }}'
+  - name: sample_id
+    description: '{{ doc("access_aliquot_sample_id") }}'
+  - name: availablity_status
+    description: '{{ doc("access_aliquot_availablity_status") }}'
+  - name: quantity_number
+    description: '{{ doc("access_aliquot_quantity_number") }}'
+  - name: quantity_unit
+    description: '{{ doc("access_aliquot_quantity_unit") }}'
+  - name: concentration_number
+    description: '{{ doc("access_aliquot_concentration_number") }}'
+  - name: concentration_unit
+    description: '{{ doc("access_aliquot_concentration_unit") }}'
+  - name: access_policy_id
+    description: '{{ doc("access_aliquot_access_policy_id") }}'
+  - name: study_id
+    description: '{{ doc("access_aliquot_study_id") }}'
+- name: access_aliquot_external_id
+  description: Model for access_aliquot_external_id.
+  columns:
+  - name: Aliquot_aliquot_id
+    description: '{{ doc("access_aliquot_external_id_aliquot_aliquot_id") }}'
+  - name: external_id
+    description: '{{ doc("access_aliquot_external_id_external_id") }}'
+- name: access_biospecimencollection
+  description: Model for access_biospecimencollection.
+  columns:
+  - name: biospecimen_collection_id
+    description: '{{ doc("access_biospecimencollection_biospecimen_collection_id")
+      }}'
+  - name: age_at_collection
+    description: '{{ doc("access_biospecimencollection_age_at_collection") }}'
+  - name: method
+    description: '{{ doc("access_biospecimencollection_method") }}'
+  - name: site
+    description: '{{ doc("access_biospecimencollection_site") }}'
+  - name: spatial_qualifier
+    description: '{{ doc("access_biospecimencollection_spatial_qualifier") }}'
+  - name: laterality
+    description: '{{ doc("access_biospecimencollection_laterality") }}'
+  - name: encounter_id
+    description: '{{ doc("access_biospecimencollection_encounter_id") }}'
+  - name: access_policy_id
+    description: '{{ doc("access_biospecimencollection_access_policy_id") }}'
+  - name: study_id
+    description: '{{ doc("access_biospecimencollection_study_id") }}'
+- name: access_biospecimencollection_external_id
+  description: Model for access_biospecimencollection_external_id.
+  columns:
+  - name: BiospecimenCollection_biospecimen_collection_id
+    description: '{{ doc("access_biospecimencollection_external_id_biospecime_3556898d")
+      }}'
+  - name: external_id
+    description: '{{ doc("access_biospecimencollection_external_id_external_id") }}'
+- name: access_concept
+  description: Model for access_concept.
+  columns:
+  - name: concept_curie
+    description: '{{ doc("access_concept_concept_curie") }}'
+  - name: display
+    description: '{{ doc("access_concept_display") }}'
+- name: access_doi
+  description: Model for access_doi.
+  columns:
+  - name: do_id
+    description: '{{ doc("access_doi_do_id") }}'
+  - name: bibliographic_reference
+    description: '{{ doc("access_doi_bibliographic_reference") }}'
+  - name: access_policy_id
+    description: '{{ doc("access_doi_access_policy_id") }}'
+  - name: study_id
+    description: '{{ doc("access_doi_study_id") }}'
+- name: access_doi_external_id
+  description: Model for access_doi_external_id.
+  columns:
+  - name: DOI_do_id
+    description: '{{ doc("access_doi_external_id_doi_do_id") }}'
+  - name: external_id
+    description: '{{ doc("access_doi_external_id_external_id") }}'
+- name: access_dataset
+  description: Model for access_dataset.
+  columns:
+  - name: dataset_id
+    description: '{{ doc("access_dataset_dataset_id") }}'
+  - name: name
+    description: '{{ doc("access_dataset_name") }}'
+  - name: description
+    description: '{{ doc("access_dataset_description") }}'
+  - name: do_id
+    description: '{{ doc("access_dataset_do_id") }}'
+  - name: data_collection_start
+    description: '{{ doc("access_dataset_data_collection_start") }}'
+  - name: data_collection_end
+    description: '{{ doc("access_dataset_data_collection_end") }}'
+- name: access_dataset_file_id
+  description: Model for access_dataset_file_id.
+  columns:
+  - name: Dataset_dataset_id
+    description: '{{ doc("access_dataset_file_id_dataset_dataset_id") }}'
+  - name: file_id_file_id
+    description: '{{ doc("access_dataset_file_id_file_id_file_id") }}'
+- name: access_dataset_publication
+  description: Model for access_dataset_publication.
+  columns:
+  - name: Dataset_dataset_id
+    description: '{{ doc("access_dataset_publication_dataset_dataset_id") }}'
+  - name: publication_id
+    description: '{{ doc("access_dataset_publication_publication_id") }}'
+- name: access_demographics
+  description: Model for access_demographics.
+  columns:
+  - name: subject_id
+    description: '{{ doc("access_demographics_subject_id") }}'
+  - name: sex
+    description: '{{ doc("access_demographics_sex") }}'
+  - name: ethnicity
+    description: '{{ doc("access_demographics_ethnicity") }}'
+  - name: down_syndrome_status
+    description: '{{ doc("access_demographics_down_syndrome_status") }}'
+  - name: age_at_last_vital_status
+    description: '{{ doc("access_demographics_age_at_last_vital_status") }}'
+  - name: vital_status
+    description: '{{ doc("access_demographics_vital_status") }}'
+  - name: age_at_first_engagement
+    description: '{{ doc("access_demographics_age_at_first_engagement") }}'
+  - name: access_policy_id
+    description: '{{ doc("access_demographics_access_policy_id") }}'
+  - name: study_id
+    description: '{{ doc("access_demographics_study_id") }}'
+- name: access_demographics_external_id
+  description: Model for access_demographics_external_id.
+  columns:
+  - name: Demographics_subject_id
+    description: '{{ doc("access_demographics_external_id_demographics_subject_id")
+      }}'
+  - name: external_id
+    description: '{{ doc("access_demographics_external_id_external_id") }}'
+- name: access_demographics_race
+  description: Model for access_demographics_race.
+  columns:
+  - name: Demographics_subject_id
+    description: '{{ doc("access_demographics_race_demographics_subject_id") }}'
+  - name: race
+    description: '{{ doc("access_demographics_race_race") }}'
+- name: access_encounter
+  description: Model for access_encounter.
+  columns:
+  - name: encounter_id
+    description: '{{ doc("access_encounter_encounter_id") }}'
+  - name: subject_id
+    description: '{{ doc("access_encounter_subject_id") }}'
+  - name: encounter_definition_id
+    description: '{{ doc("access_encounter_encounter_definition_id") }}'
+  - name: age_at_event
+    description: '{{ doc("access_encounter_age_at_event") }}'
+  - name: access_policy_id
+    description: '{{ doc("access_encounter_access_policy_id") }}'
+  - name: study_id
+    description: '{{ doc("access_encounter_study_id") }}'
+- name: access_encounterdefinition
+  description: Model for access_encounterdefinition.
+  columns:
+  - name: encounter_definition_id
+    description: '{{ doc("access_encounterdefinition_encounter_definition_id") }}'
+  - name: name
+    description: '{{ doc("access_encounterdefinition_name") }}'
+  - name: description
+    description: '{{ doc("access_encounterdefinition_description") }}'
+  - name: access_policy_id
+    description: '{{ doc("access_encounterdefinition_access_policy_id") }}'
+  - name: study_id
+    description: '{{ doc("access_encounterdefinition_study_id") }}'
+- name: access_encounterdefinition_activity_definition_id
+  description: Model for access_encounterdefinition_activity_definition_id.
+  columns:
+  - name: EncounterDefinition_encounter_definition_id
+    description: '{{ doc("access_encounterdefinition_activity_definition_id_e_62a03145")
+      }}'
+  - name: activity_definition_id_activity_definition_id
+    description: '{{ doc("access_encounterdefinition_activity_definition_id_a_97e4a4e2")
+      }}'
+- name: access_encounterdefinition_external_id
+  description: Model for access_encounterdefinition_external_id.
+  columns:
+  - name: EncounterDefinition_encounter_definition_id
+    description: '{{ doc("access_encounterdefinition_external_id_encounterdef_a044d398")
+      }}'
+  - name: external_id
+    description: '{{ doc("access_encounterdefinition_external_id_external_id") }}'
+- name: access_encounter_external_id
+  description: Model for access_encounter_external_id.
+  columns:
+  - name: Encounter_encounter_id
+    description: '{{ doc("access_encounter_external_id_encounter_encounter_id") }}'
+  - name: external_id
+    description: '{{ doc("access_encounter_external_id_external_id") }}'
+- name: access_family
+  description: Model for access_family.
+  columns:
+  - name: family_id
+    description: '{{ doc("access_family_family_id") }}'
+  - name: family_type
+    description: '{{ doc("access_family_family_type") }}'
+  - name: family_description
+    description: '{{ doc("access_family_family_description") }}'
+  - name: consanguinity
+    description: '{{ doc("access_family_consanguinity") }}'
+  - name: family_study_focus
+    description: '{{ doc("access_family_family_study_focus") }}'
+  - name: access_policy_id
+    description: '{{ doc("access_family_access_policy_id") }}'
+  - name: study_id
+    description: '{{ doc("access_family_study_id") }}'
+- name: access_familymember
+  description: Model for access_familymember.
+  columns:
+  - name: id
+    description: '{{ doc("access_familymember_id") }}'
+  - name: family_id
+    description: '{{ doc("access_familymember_family_id") }}'
+  - name: subject_id
+    description: '{{ doc("access_familymember_subject_id") }}'
+  - name: family_role
+    description: '{{ doc("access_familymember_family_role") }}'
+  - name: access_policy_id
+    description: '{{ doc("access_familymember_access_policy_id") }}'
+  - name: study_id
+    description: '{{ doc("access_familymember_study_id") }}'
+- name: access_familymember_external_id
+  description: Model for access_familymember_external_id.
+  columns:
+  - name: FamilyMember_id
+    description: '{{ doc("access_familymember_external_id_familymember_id") }}'
+  - name: external_id
+    description: '{{ doc("access_familymember_external_id_external_id") }}'
+- name: access_familyrelationship
+  description: Model for access_familyrelationship.
+  columns:
+  - name: family_relationship_id
+    description: '{{ doc("access_familyrelationship_family_relationship_id") }}'
+  - name: family_member_id
+    description: '{{ doc("access_familyrelationship_family_member_id") }}'
+  - name: relationship
+    description: '{{ doc("access_familyrelationship_relationship") }}'
+  - name: subject_id
+    description: '{{ doc("access_familyrelationship_subject_id") }}'
+  - name: access_policy_id
+    description: '{{ doc("access_familyrelationship_access_policy_id") }}'
+  - name: study_id
+    description: '{{ doc("access_familyrelationship_study_id") }}'
+- name: access_familyrelationship_external_id
+  description: Model for access_familyrelationship_external_id.
+  columns:
+  - name: FamilyRelationship_family_relationship_id
+    description: '{{ doc("access_familyrelationship_external_id_familyrelatio_18485280")
+      }}'
+  - name: external_id
+    description: '{{ doc("access_familyrelationship_external_id_external_id") }}'
+- name: access_family_external_id
+  description: Model for access_family_external_id.
+  columns:
+  - name: Family_family_id
+    description: '{{ doc("access_family_external_id_family_family_id") }}'
+  - name: external_id
+    description: '{{ doc("access_family_external_id_external_id") }}'
+- name: access_file
+  description: Model for access_file.
+  columns:
+  - name: file_id
+    description: '{{ doc("access_file_file_id") }}'
+  - name: filename
+    description: '{{ doc("access_file_filename") }}'
+  - name: format
+    description: '{{ doc("access_file_format") }}'
+  - name: data_category
+    description: '{{ doc("access_file_data_category") }}'
+  - name: data_type
+    description: '{{ doc("access_file_data_type") }}'
+  - name: size
+    description: '{{ doc("access_file_size") }}'
+  - name: staging_url
+    description: '{{ doc("access_file_staging_url") }}'
+  - name: release_url
+    description: '{{ doc("access_file_release_url") }}'
+  - name: drs_uri
+    description: '{{ doc("access_file_drs_uri") }}'
+  - name: access_policy_id
+    description: '{{ doc("access_file_access_policy_id") }}'
+  - name: study_id
+    description: '{{ doc("access_file_study_id") }}'
+  - name: hash_id
+    description: '{{ doc("access_file_hash_id") }}'
+- name: access_filehash
+  description: Model for access_filehash.
+  columns:
+  - name: id
+    description: '{{ doc("access_filehash_id") }}'
+  - name: hash_type
+    description: '{{ doc("access_filehash_hash_type") }}'
+  - name: hash_value
+    description: '{{ doc("access_filehash_hash_value") }}'
+- name: access_file_external_id
+  description: Model for access_file_external_id.
+  columns:
+  - name: File_file_id
+    description: '{{ doc("access_file_external_id_file_file_id") }}'
+  - name: external_id
+    description: '{{ doc("access_file_external_id_external_id") }}'
+- name: access_file_sample_id
+  description: Model for access_file_sample_id.
+  columns:
+  - name: File_file_id
+    description: '{{ doc("access_file_sample_id_file_file_id") }}'
+  - name: sample_id_sample_id
+    description: '{{ doc("access_file_sample_id_sample_id_sample_id") }}'
+- name: access_file_subject_id
+  description: Model for access_file_subject_id.
+  columns:
+  - name: File_file_id
+    description: '{{ doc("access_file_subject_id_file_file_id") }}'
+  - name: subject_id_subject_id
+    description: '{{ doc("access_file_subject_id_subject_id_subject_id") }}'
+- name: access_investigator
+  description: Model for access_investigator.
+  columns:
+  - name: id
+    description: '{{ doc("access_investigator_id") }}'
+  - name: name
+    description: '{{ doc("access_investigator_name") }}'
+  - name: institution
+    description: '{{ doc("access_investigator_institution") }}'
+  - name: investigator_title
+    description: '{{ doc("access_investigator_investigator_title") }}'
+  - name: email
+    description: '{{ doc("access_investigator_email") }}'
+  - name: access_policy_id
+    description: '{{ doc("access_investigator_access_policy_id") }}'
+  - name: study_id
+    description: '{{ doc("access_investigator_study_id") }}'
+- name: access_investigator_external_id
+  description: Model for access_investigator_external_id.
+  columns:
+  - name: Investigator_id
+    description: '{{ doc("access_investigator_external_id_investigator_id") }}'
+  - name: external_id
+    description: '{{ doc("access_investigator_external_id_external_id") }}'
+- name: access_publication
+  description: Model for access_publication.
+  columns:
+  - name: id
+    description: '{{ doc("access_publication_id") }}'
+  - name: bibliographic_reference
+    description: '{{ doc("access_publication_bibliographic_reference") }}'
+  - name: website
+    description: '{{ doc("access_publication_website") }}'
+  - name: access_policy_id
+    description: '{{ doc("access_publication_access_policy_id") }}'
+  - name: study_id
+    description: '{{ doc("access_publication_study_id") }}'
+- name: access_publication_external_id
+  description: Model for access_publication_external_id.
+  columns:
+  - name: Publication_id
+    description: '{{ doc("access_publication_external_id_publication_id") }}'
+  - name: external_id
+    description: '{{ doc("access_publication_external_id_external_id") }}'
+- name: access_record_external_id
+  description: Model for access_record_external_id.
+  columns:
+  - name: Record_id
+    description: '{{ doc("access_record_external_id_record_id") }}'
+  - name: external_id
+    description: '{{ doc("access_record_external_id_external_id") }}'
+- name: access_sample
+  description: Model for access_sample.
+  columns:
+  - name: sample_id
+    description: '{{ doc("access_sample_sample_id") }}'
+  - name: biospecimen_collection_id
+    description: '{{ doc("access_sample_biospecimen_collection_id") }}'
+  - name: parent_sample_id
+    description: '{{ doc("access_sample_parent_sample_id") }}'
+  - name: sample_type
+    description: '{{ doc("access_sample_sample_type") }}'
+  - name: availablity_status
+    description: '{{ doc("access_sample_availablity_status") }}'
+  - name: quantity_number
+    description: '{{ doc("access_sample_quantity_number") }}'
+  - name: quantity_unit
+    description: '{{ doc("access_sample_quantity_unit") }}'
+  - name: access_policy_id
+    description: '{{ doc("access_sample_access_policy_id") }}'
+  - name: study_id
+    description: '{{ doc("access_sample_study_id") }}'
+- name: access_sample_external_id
+  description: Model for access_sample_external_id.
+  columns:
+  - name: Sample_sample_id
+    description: '{{ doc("access_sample_external_id_sample_sample_id") }}'
+  - name: external_id
+    description: '{{ doc("access_sample_external_id_external_id") }}'
+- name: access_sample_processing
+  description: Model for access_sample_processing.
+  columns:
+  - name: Sample_sample_id
+    description: '{{ doc("access_sample_processing_sample_sample_id") }}'
+  - name: processing
+    description: '{{ doc("access_sample_processing_processing") }}'
+- name: access_sample_storage_method
+  description: Model for access_sample_storage_method.
+  columns:
+  - name: Sample_sample_id
+    description: '{{ doc("access_sample_storage_method_sample_sample_id") }}'
+  - name: storage_method
+    description: '{{ doc("access_sample_storage_method_storage_method") }}'
+- name: access_study
+  description: Model for access_study.
+  columns:
+  - name: parent_study
+    description: '{{ doc("access_study_parent_study") }}'
+  - name: study_title
+    description: '{{ doc("access_study_study_title") }}'
+  - name: study_code
+    description: '{{ doc("access_study_study_code") }}'
+  - name: study_short_name
+    description: '{{ doc("access_study_study_short_name") }}'
+  - name: study_description
+    description: '{{ doc("access_study_study_description") }}'
+  - name: website
+    description: '{{ doc("access_study_website") }}'
+  - name: acknowledgments
+    description: '{{ doc("access_study_acknowledgments") }}'
+  - name: citation_statement
+    description: '{{ doc("access_study_citation_statement") }}'
+  - name: do_id
+    description: '{{ doc("access_study_do_id") }}'
+  - name: access_policy_id
+    description: '{{ doc("access_study_access_policy_id") }}'
+  - name: study_id
+    description: '{{ doc("access_study_study_id") }}'
+- name: access_studymetadata
+  description: Model for access_studymetadata.
+  columns:
+  - name: study_id
+    description: '{{ doc("access_studymetadata_study_id") }}'
+  - name: selection_criteria
+    description: '{{ doc("access_studymetadata_selection_criteria") }}'
+  - name: vbr_id
+    description: '{{ doc("access_studymetadata_vbr_id") }}'
+  - name: expected_number_of_participants
+    description: '{{ doc("access_studymetadata_expected_number_of_participants") }}'
+  - name: actual_number_of_participants
+    description: '{{ doc("access_studymetadata_actual_number_of_participants") }}'
+  - name: access_policy_id
+    description: '{{ doc("access_studymetadata_access_policy_id") }}'
+- name: access_studymetadata_clinical_data_source_type
+  description: Model for access_studymetadata_clinical_data_source_type.
+  columns:
+  - name: StudyMetadata_study_id
+    description: '{{ doc("access_studymetadata_clinical_data_source_type_stud_97e48ca0")
+      }}'
+  - name: clinical_data_source_type
+    description: '{{ doc("access_studymetadata_clinical_data_source_type_clin_b7225af4")
+      }}'
+- name: access_studymetadata_data_category
+  description: Model for access_studymetadata_data_category.
+  columns:
+  - name: StudyMetadata_study_id
+    description: '{{ doc("access_studymetadata_data_category_studymetadata_study_id")
+      }}'
+  - name: data_category
+    description: '{{ doc("access_studymetadata_data_category_data_category") }}'
+- name: access_studymetadata_external_id
+  description: Model for access_studymetadata_external_id.
+  columns:
+  - name: StudyMetadata_study_id
+    description: '{{ doc("access_studymetadata_external_id_studymetadata_study_id")
+      }}'
+  - name: external_id
+    description: '{{ doc("access_studymetadata_external_id_external_id") }}'
+- name: access_studymetadata_participant_lifespan_stage
+  description: Model for access_studymetadata_participant_lifespan_stage.
+  columns:
+  - name: StudyMetadata_study_id
+    description: '{{ doc("access_studymetadata_participant_lifespan_stage_stu_1394e022")
+      }}'
+  - name: participant_lifespan_stage
+    description: '{{ doc("access_studymetadata_participant_lifespan_stage_par_a3e3f1e1")
+      }}'
+- name: access_studymetadata_research_domain
+  description: Model for access_studymetadata_research_domain.
+  columns:
+  - name: StudyMetadata_study_id
+    description: '{{ doc("access_studymetadata_research_domain_studymetadata_study_id")
+      }}'
+  - name: research_domain
+    description: '{{ doc("access_studymetadata_research_domain_research_domain") }}'
+- name: access_studymetadata_study_design
+  description: Model for access_studymetadata_study_design.
+  columns:
+  - name: StudyMetadata_study_id
+    description: '{{ doc("access_studymetadata_study_design_studymetadata_study_id")
+      }}'
+  - name: study_design
+    description: '{{ doc("access_studymetadata_study_design_study_design") }}'
+- name: access_study_clinical_data_source_type
+  description: Model for access_study_clinical_data_source_type.
+  columns:
+  - name: Study_study_id
+    description: '{{ doc("access_study_clinical_data_source_type_study_study_id")
+      }}'
+  - name: clinical_data_source_type
+    description: '{{ doc("access_study_clinical_data_source_type_clinical_dat_19857653")
+      }}'
+- name: access_study_contact
+  description: Model for access_study_contact.
+  columns:
+  - name: Study_study_id
+    description: '{{ doc("access_study_contact_study_study_id") }}'
+  - name: contact_id
+    description: '{{ doc("access_study_contact_contact_id") }}'
+- name: access_study_data_category
+  description: Model for access_study_data_category.
+  columns:
+  - name: Study_study_id
+    description: '{{ doc("access_study_data_category_study_study_id") }}'
+  - name: data_category
+    description: '{{ doc("access_study_data_category_data_category") }}'
+- name: access_study_external_id
+  description: Model for access_study_external_id.
+  columns:
+  - name: Study_study_id
+    description: '{{ doc("access_study_external_id_study_study_id") }}'
+  - name: external_id
+    description: '{{ doc("access_study_external_id_external_id") }}'
+- name: access_study_funding_source
+  description: Model for access_study_funding_source.
+  columns:
+  - name: Study_study_id
+    description: '{{ doc("access_study_funding_source_study_study_id") }}'
+  - name: funding_source
+    description: '{{ doc("access_study_funding_source_funding_source") }}'
+- name: access_study_participant_lifespan_stage
+  description: Model for access_study_participant_lifespan_stage.
+  columns:
+  - name: Study_study_id
+    description: '{{ doc("access_study_participant_lifespan_stage_study_study_id")
+      }}'
+  - name: participant_lifespan_stage
+    description: '{{ doc("access_study_participant_lifespan_stage_participant_09d6bd03")
+      }}'
+- name: access_study_principal_investigator
+  description: Model for access_study_principal_investigator.
+  columns:
+  - name: Study_study_id
+    description: '{{ doc("access_study_principal_investigator_study_study_id") }}'
+  - name: principal_investigator_id
+    description: '{{ doc("access_study_principal_investigator_principal_inves_601d4c89")
+      }}'
+- name: access_study_program
+  description: Model for access_study_program.
+  columns:
+  - name: Study_study_id
+    description: '{{ doc("access_study_program_study_study_id") }}'
+  - name: program
+    description: '{{ doc("access_study_program_program") }}'
+- name: access_study_publication
+  description: Model for access_study_publication.
+  columns:
+  - name: Study_study_id
+    description: '{{ doc("access_study_publication_study_study_id") }}'
+  - name: publication_id
+    description: '{{ doc("access_study_publication_publication_id") }}'
+- name: access_study_research_domain
+  description: Model for access_study_research_domain.
+  columns:
+  - name: Study_study_id
+    description: '{{ doc("access_study_research_domain_study_study_id") }}'
+  - name: research_domain
+    description: '{{ doc("access_study_research_domain_research_domain") }}'
+- name: access_study_study_design
+  description: Model for access_study_study_design.
+  columns:
+  - name: Study_study_id
+    description: '{{ doc("access_study_study_design_study_study_id") }}'
+  - name: study_design
+    description: '{{ doc("access_study_study_design_study_design") }}'
+- name: access_subject
+  description: Model for access_subject.
+  columns:
+  - name: subject_id
+    description: '{{ doc("access_subject_subject_id") }}'
+  - name: subject_type
+    description: '{{ doc("access_subject_subject_type") }}'
+  - name: organism_type
+    description: '{{ doc("access_subject_organism_type") }}'
+  - name: access_policy_id
+    description: '{{ doc("access_subject_access_policy_id") }}'
+  - name: study_id
+    description: '{{ doc("access_subject_study_id") }}'
+- name: access_subjectassertion
+  description: Model for access_subjectassertion.
+  columns:
+  - name: assertion_id
+    description: '{{ doc("access_subjectassertion_assertion_id") }}'
+  - name: subject_id
+    description: '{{ doc("access_subjectassertion_subject_id") }}'
+  - name: encounter_id
+    description: '{{ doc("access_subjectassertion_encounter_id") }}'
+  - name: assertion_provenance
+    description: '{{ doc("access_subjectassertion_assertion_provenance") }}'
+  - name: age_at_assertion
+    description: '{{ doc("access_subjectassertion_age_at_assertion") }}'
+  - name: age_at_event
+    description: '{{ doc("access_subjectassertion_age_at_event") }}'
+  - name: age_at_resolution
+    description: '{{ doc("access_subjectassertion_age_at_resolution") }}'
+  - name: concept_source
+    description: '{{ doc("access_subjectassertion_concept_source") }}'
+  - name: value_number
+    description: '{{ doc("access_subjectassertion_value_number") }}'
+  - name: value_source
+    description: '{{ doc("access_subjectassertion_value_source") }}'
+  - name: value_unit
+    description: '{{ doc("access_subjectassertion_value_unit") }}'
+  - name: value_unit_source
+    description: '{{ doc("access_subjectassertion_value_unit_source") }}'
+  - name: access_policy_id
+    description: '{{ doc("access_subjectassertion_access_policy_id") }}'
+  - name: study_id
+    description: '{{ doc("access_subjectassertion_study_id") }}'
+- name: access_subjectassertion_concept
+  description: Model for access_subjectassertion_concept.
+  columns:
+  - name: SubjectAssertion_assertion_id
+    description: '{{ doc("access_subjectassertion_concept_subjectassertion_as_f731235e")
+      }}'
+  - name: concept_concept_curie
+    description: '{{ doc("access_subjectassertion_concept_concept_concept_curie")
+      }}'
+- name: access_subjectassertion_external_id
+  description: Model for access_subjectassertion_external_id.
+  columns:
+  - name: SubjectAssertion_assertion_id
+    description: '{{ doc("access_subjectassertion_external_id_subjectassertio_6d7fc20d")
+      }}'
+  - name: external_id
+    description: '{{ doc("access_subjectassertion_external_id_external_id") }}'
+- name: access_subjectassertion_value_concept
+  description: Model for access_subjectassertion_value_concept.
+  columns:
+  - name: SubjectAssertion_assertion_id
+    description: '{{ doc("access_subjectassertion_value_concept_subjectassert_496e1823")
+      }}'
+  - name: value_concept_concept_curie
+    description: '{{ doc("access_subjectassertion_value_concept_value_concept_21377dec")
+      }}'
+- name: access_subject_external_id
+  description: Model for access_subject_external_id.
+  columns:
+  - name: Subject_subject_id
+    description: '{{ doc("access_subject_external_id_subject_subject_id") }}'
+  - name: external_id
+    description: '{{ doc("access_subject_external_id_external_id") }}'
+- name: access_virtualbiorepository
+  description: Model for access_virtualbiorepository.
+  columns:
+  - name: vbr_id
+    description: '{{ doc("access_virtualbiorepository_vbr_id") }}'
+  - name: name
+    description: '{{ doc("access_virtualbiorepository_name") }}'
+  - name: institution
+    description: '{{ doc("access_virtualbiorepository_institution") }}'
+  - name: website
+    description: '{{ doc("access_virtualbiorepository_website") }}'
+  - name: vbr_readme
+    description: '{{ doc("access_virtualbiorepository_vbr_readme") }}'
+  - name: access_policy_id
+    description: '{{ doc("access_virtualbiorepository_access_policy_id") }}'
+  - name: study_id
+    description: '{{ doc("access_virtualbiorepository_study_id") }}'
+- name: access_virtualbiorepository_contact
+  description: Model for access_virtualbiorepository_contact.
+  columns:
+  - name: VirtualBiorepository_vbr_id
+    description: '{{ doc("access_virtualbiorepository_contact_virtualbiorepos_104595b6")
+      }}'
+  - name: contact_id
+    description: '{{ doc("access_virtualbiorepository_contact_contact_id") }}'
+- name: access_virtualbiorepository_external_id
+  description: Model for access_virtualbiorepository_external_id.
+  columns:
+  - name: VirtualBiorepository_vbr_id
+    description: '{{ doc("access_virtualbiorepository_external_id_virtualbior_f26b3bf0")
+      }}'
+  - name: external_id
+    description: '{{ doc("access_virtualbiorepository_external_id_external_id") }}'
