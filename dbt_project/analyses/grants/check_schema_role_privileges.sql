@@ -6,25 +6,25 @@
 {% set grants_schema_like = var('grants_schema_like', '%brainpower%') %}
 {% set grants_role_like = var('grants_role_like', '%include%') %}
 
-SELECT
-    n.nspname AS schema_name,
-    r.rolname AS role_name,
-    CASE
-        WHEN has_schema_privilege(r.rolname, n.nspname, 'CREATE') THEN 'YES'
-        ELSE 'NO'
-    END AS can_create,
-    CASE
-        WHEN has_schema_privilege(r.rolname, n.nspname, 'USAGE') THEN 'YES'
-        ELSE 'NO'
-    END AS can_usage
-FROM
-    pg_namespace n
-CROSS JOIN
-    pg_roles r
-WHERE
-    n.nspname NOT LIKE 'pg_%'
-    AND n.nspname <> 'information_schema'
-    AND n.nspname LIKE '{{ grants_schema_like }}'
-    AND r.rolname LIKE '{{ grants_role_like }}'
-ORDER BY
-    schema_name, role_name
+select
+  n.nspname as schema_name,
+  r.rolname as role_name,
+  case
+    when has_schema_privilege(r.rolname, n.nspname, 'CREATE') then 'YES'
+    else 'NO'
+  end as can_create,
+  case
+    when has_schema_privilege(r.rolname, n.nspname, 'USAGE') then 'YES'
+    else 'NO'
+  end as can_usage
+from
+  pg_namespace as n
+cross join
+  pg_roles as r
+where
+  n.nspname not like 'pg_%'
+  and n.nspname <> 'information_schema'
+  and n.nspname like '{{ grants_schema_like }}'
+  and r.rolname like '{{ grants_role_like }}'
+order by
+  schema_name, role_name

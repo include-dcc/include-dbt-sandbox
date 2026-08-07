@@ -9,6 +9,8 @@ analysis-paths:
 - analyses
 seed-paths:
 - seeds
+test-paths:
+- tests
 snapshot-paths:
 - snapshots
 clean-targets:
