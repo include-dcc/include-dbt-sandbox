@@ -26,15 +26,15 @@
 {% endfor %}
 
 with source_data as (
-    select *
-    from {{ target_relation }}
-    {% if where_clause %}
+  select *
+  from {{ target_relation }}
+  {% if where_clause %}
     where {{ where_clause }}
     {% endif %}
 ),
 
 column_profiles as (
-    {% for col in selected_columns %}
+  {% for col in selected_columns %}
     {% set col_name = col.name %}
     {% set data_type = (col.data_type or '') | lower %}
     {% set is_numeric = (
@@ -83,22 +83,22 @@ column_profiles as (
 )
 
 select
-    {%- for group_col in group_by %}
+{%- for group_col in group_by %}
     {{ group_col }},
     {%- endfor %}
-    column_name,
-    data_type,
-    row_count,
-    not_null_proportion,
-    distinct_proportion,
-    distinct_count,
-    is_unique,
-    min,
-    max,
-    avg,
-    median,
-    std_dev_population,
-    std_dev_sample,
-    profiled_at
+  column_name,
+  data_type,
+  row_count,
+  not_null_proportion,
+  distinct_proportion,
+  distinct_count,
+  is_unique,
+  min,
+  max,
+  avg,
+  median,
+  std_dev_population,
+  std_dev_sample,
+  profiled_at
 from column_profiles
 order by {% if group_by %}{{ group_by | join(', ') }}, {% endif %}_column_position asc
