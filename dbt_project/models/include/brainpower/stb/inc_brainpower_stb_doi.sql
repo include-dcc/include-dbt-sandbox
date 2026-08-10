@@ -1,9 +1,8 @@
 {{ config(materialized='table') }}
 
-    select
-    null::text as "do_id",
-    null::text as "bibliographic_reference",
-    null::text as "access_policy_id",
-    null::integer as "study_id"
-    from {{ ref('inc_brainpower_src_bp_age_event_latency') }}
-    
+select
+  doi::text as do_id,
+  doi_citation::text as bibliographic_reference,
+  null::text as access_policy_id,
+  null::text as study_id
+from {{ ref('inc_brainpower_src_study') }}

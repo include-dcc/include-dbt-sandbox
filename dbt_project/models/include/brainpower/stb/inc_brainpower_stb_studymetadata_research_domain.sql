@@ -1,7 +1,7 @@
 {{ config(materialized='table') }}
 
-    select
-    null::integer as "studymetadata_study_id",
-    null::text as "research_domain"
-    from {{ ref('inc_brainpower_src_bp_age_event_latency') }}
+select
+  null::text as studymetadata_study_id,
+  string_to_table(replace(lower(s.research_domain), ' ', '_'), '|')::text as research_domain
+from {{ ref('inc_brainpower_src_study') }} as s
     

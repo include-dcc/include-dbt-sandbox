@@ -45,6 +45,7 @@ models:
         stb:
           +schema: inc_brainpower_stb
     kids_first:
+      +enabled: false
       +tags:
       - study_stage
       - kids_first
@@ -69,15 +70,33 @@ models:
           +schema: kf_chr_18_int
         stb:
           +schema: kf_chr_18_stb
-    access:
+    cdm:
       +tags:
-      - access_stage
-      +schema: access
-    combined:
-      +schema: combined
-    export:
-      fhir:
-        +schema: fhir_export
+      - cdm_stage
+      inc_access:
+        +tags:
+        - access_stage
+        +schema: inc_access
+      inc_common:
+        +tags:
+        - common_stage
+        +schema: inc_common
+      kf_access:
+        +enabled: false
+        +tags:
+        - access_stage
+        +schema: kf_access
+      kf_common:
+        +enabled: false
+        +tags:
+        - common_stage
+        +schema: kf_common
+      combined_common:
+        +enabled: false
+        +tags:
+        - common_stage
+        +schema: combined_common
+
 on-run-end:
 - '{{ grant_devs_access(tag=''include'', users_role=''include_users'') }}'
 - '{{ grant_devs_access(tag=''kids_first'', users_role=''kf_users'') }}'
