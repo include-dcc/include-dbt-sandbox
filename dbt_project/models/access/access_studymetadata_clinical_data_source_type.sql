@@ -1,7 +1,0 @@
-{{ config(materialized='table') }}
-
-    select
-    studymetadata_study_id::integer as "studymetadata_study_id",
-    clinical_data_source_type::text as "clinical_data_source_type"
-    from {{ ref('combined_studymetadata_clinical_data_source_type') }}
-    
