@@ -21,6 +21,9 @@ vars:
   - inc_brainpower
   kf_studies:
   - sd_1nns3k8v
+  common_access_data:
+  - inc_common
+  - kf_common
 models:
   +materialized: table
   include_dbt_sandbox:

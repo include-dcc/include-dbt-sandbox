@@ -1,4 +1,5 @@
 {{ config(materialized='table') }}
+{%- set program_ref = generate_source_ref_from_current_model(prefix='inc_program') -%}
 
     select
     null::text as "access_policy_id",
@@ -8,5 +9,4 @@
     null::text as "disease_limitation",
     null::text as "access_description",
     null::text as "website"
-    from {{ ref('inc_brainpower_src_bp_age_event_latency') }}
-    
+    from {{ program_ref }}    

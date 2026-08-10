@@ -31,6 +31,29 @@ macros:
       Used from model SQL, for example:
         combined_union_from_current_model()
 
+  - name: generate_source_ref_from_current_model
+    description: |
+      Builds and returns a ref() relation by combining a caller-supplied
+      prefix with the current model's table name.
+
+      It strips known stage prefixes from model.name before building the ref:
+        - kf_access_
+        - inc_access_
+        - access_
+        - combined_
+        - inc_program_
+        - kf_program_
+
+      Example for model kf_access_accesspolicy:
+        generate_source_ref_from_current_model(prefix='kf_program')
+      resolves to:
+        ref('kf_program_accesspolicy')
+
+      Required args:
+        - prefix
+      Optional args:
+        - strip_prefixes (list)
+
   - name: generate_descriptor_view_sql
     description: |
       Generates a descriptor view by collecting unique descriptors from

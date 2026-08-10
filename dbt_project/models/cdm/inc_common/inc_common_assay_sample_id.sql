@@ -1,7 +1,7 @@
 {{ config(materialized='table') }}
+{%- set program_ref = generate_source_ref_from_current_model(prefix='inc_program') -%}
 
     select
     null::text as "assay_assay_id",
     null::integer as "sample_id_sample_id"
-    from {{ ref('inc_brainpower_src_bp_age_event_latency') }}
-    
+    from {{ program_ref }}    

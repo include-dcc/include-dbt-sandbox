@@ -1,7 +1,7 @@
 {{ config(materialized='table') }}
+{%- set program_ref = generate_source_ref_from_current_model(prefix='inc_program') -%}
 
     select
     null::integer as "studymetadata_study_id",
     null::text as "study_design"
-    from {{ ref('inc_brainpower_src_bp_age_event_latency') }}
-    
+    from {{ program_ref }}    
