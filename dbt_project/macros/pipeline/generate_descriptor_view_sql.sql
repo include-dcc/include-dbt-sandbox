@@ -9,7 +9,7 @@
     {'resource_model': 'DocumentReference', 'relation_name': 'file', 'descriptor_column': 'file_descriptor'},
     {'resource_model': 'List', 'relation_name': 'dataset', 'descriptor_column': 'dataset_descriptor'},
     {'resource_model': 'Encounter', 'relation_name': 'encounter', 'descriptor_column': 'encounter_descriptor'},
-    {'resource_model': 'Observation', 'relation_name': 'subjectassertion', 'descriptor_column': 'subject_assertion_descriptor'}
+    {'resource_model': 'Observation', 'relation_name': 'subjectassertion', 'descriptor_column': 'assertion_descriptor'}
 ] -%}
 
 
