@@ -1,7 +1,10 @@
 {{ config(materialized='table') }}
 
-select
-  null::text as studymetadata_study_id,
-  lower(s.participant_lifespan_stage)::text as participant_lifespan_stage
-from {{ ref('inc_brainpower_src_study') }} as s
-    
+{{ generate_stb_sql(
+    study_global_id='sd-dbaknypgqp',
+    gid_lookup=source('brainpower', 'global_ids'),
+    base_source=ref('inc_brainpower_int_studymetadata_participant_lifespan_stage'),
+    descriptor_sources=[
+
+    ]
+) }}

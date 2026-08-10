@@ -1,10 +1,10 @@
 {{ config(materialized='table') }}
 
-select
-  null::text as encounter_definition_id,
-  timepoint::text as name,
-  visit_name::text as description,
-  null::text as access_policy_id,
-  null::text as study_id
-from {{ ref('inc_brainpower_src_timepoint_key') }}
-    
+{{ generate_stb_sql(
+    study_global_id='sd-dbaknypgqp',
+    gid_lookup=source('brainpower', 'global_ids'),
+    base_source=ref('inc_brainpower_int_encounterdefinition'),
+    descriptor_sources=[
+
+    ]
+) }}

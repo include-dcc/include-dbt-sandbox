@@ -1,8 +1,10 @@
 {{ config(materialized='table') }}
 
-select
-  doi::text as do_id,
-  doi_citation::text as bibliographic_reference,
-  null::text as access_policy_id,
-  null::text as study_id
-from {{ ref('inc_brainpower_src_study') }}
+{{ generate_stb_sql(
+    study_global_id='sd-dbaknypgqp',
+    gid_lookup=source('brainpower', 'global_ids'),
+    base_source=ref('inc_brainpower_int_doi'),
+    descriptor_sources=[
+
+    ]
+) }}

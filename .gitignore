@@ -170,3 +170,6 @@ logs/
 /dbt_project/scripts/run_*
 /dbt_project/profiles.yml
 package-lock.yml
+
+# pipeline_utils artifacts
+_pipeline_data/

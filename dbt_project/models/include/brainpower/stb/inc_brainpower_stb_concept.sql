@@ -1,14 +1,10 @@
 {{ config(materialized='table') }}
 
-select
-  map.code::text as concept_curie,
-  map.display::text as display
-from {{ ref('inc_brainpower_src_brainpower_md_mappings') }} as map
+{{ generate_stb_sql(
+    study_global_id='sd-dbaknypgqp',
+    gid_lookup=source('brainpower', 'global_ids'),
+    base_source=ref('inc_brainpower_int_concept'),
+    descriptor_sources=[
 
-union all
-
-select
-  enumeration_meaning::text as concept_curie,
-  enumeration_display::text as display
-from {{ ref('inc_brainpower_src_inc_kf_access_enums_20260508') }}
-where enumeration_meaning is not null
+    ]
+) }}

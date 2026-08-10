@@ -1,12 +1,10 @@
 {{ config(materialized='table') }}
 
-select
-  null::text as family_id,
-  null::text as family_type,
-  null::text as family_description,
-  null::text as consanguinity,
-  null::text as family_study_focus,
-  null::text as access_policy_id,
-  null::text as study_id
-from {{ ref('inc_brainpower_src_bp_age_event_latency') }}
-    
+{{ generate_stb_sql(
+    study_global_id='sd-dbaknypgqp',
+    gid_lookup=source('brainpower', 'global_ids'),
+    base_source=ref('inc_brainpower_int_family'),
+    descriptor_sources=[
+
+    ]
+) }}
