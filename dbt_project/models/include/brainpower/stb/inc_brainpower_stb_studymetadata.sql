@@ -2,9 +2,9 @@
 
 {{ generate_stb_sql(
     gid_lookup=source('brainpower', 'global_ids'),
-    base_source=ref('inc_brainpower_int_accesspolicy'),
+    base_source=ref('inc_brainpower_int_studymetadata'),
     descriptor_sources=[
-        'AccessPolicy',
+        'Consent',
         'ResearchStudy'
     ]
 ) }}
