@@ -2,7 +2,7 @@
 
 with base as (
 select
-  null::text as encounter_id,
+  -- null::text as encounter_id,
   null::text as subject_id,
   null::text as encounter_definition_id,
   age_at_visit::integer as age_at_event,

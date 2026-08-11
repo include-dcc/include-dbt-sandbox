@@ -2,7 +2,7 @@
 
 with base as (
   select
-    d.id::text as subject_id,
+    d.id::text as id_sub,
     gen_map.code::text as sex,
     eth_map.code::text as ethnicity,
     null::text as down_syndrome_status, -- Required but not in src data
@@ -44,7 +44,7 @@ with base as (
 select
   distinct
   base.*,
-  {{ normalize_descriptors(descriptor_cols=['subject_id']) }}::text as subject_descriptor,
+  {{ normalize_descriptors(descriptor_cols=['id_sub']) }}::text as subject_descriptor,
   {{ normalize_descriptors(descriptor_cols=['access_policy_hc']) }}::text as access_policy_descriptor,
   {{ normalize_descriptors(descriptor_cols=['study_code']) }}::text as study_descriptor
 from base, {{ ref('inc_brainpower_int_manual_supplement') }}

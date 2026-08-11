@@ -2,7 +2,7 @@
 
 with base as (
 select
-  null::text as dataset_id,
+  -- null::text as dataset_id,
   d.dataset_name::text as name,
   d.dataset_description::text as description,
   null::text as do_id,

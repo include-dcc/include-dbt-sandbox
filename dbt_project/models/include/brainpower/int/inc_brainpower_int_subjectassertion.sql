@@ -2,9 +2,9 @@
 
 with base as (
 select
-  null::text as assertion_id,
-  d.id::text as subject_id,
-  age_data.timepoint::text as encounter_id,
+  -- null::text as assertion_id,
+  d.id::text as id,
+  age_data.timepoint::text as encounter_id_2,
   null::text as assertion_provenance,
   null::integer as age_at_assertion,
   age_data.age_at_visit::integer as age_at_event,
@@ -15,8 +15,8 @@ select
   null::text as value_source,
   null::text as value_unit,
   null::text as value_unit_source,
-  null::text as access_policy_id,
-  null::text as study_id,
+  -- null::text as access_policy_id,
+  -- null::text as study_id,
   case 
     when d.cond_code = '1' then 'LOINC:LA9633-4'
     when d.cond_code = '0' then 'LOINC:LA9634-2'
@@ -45,9 +45,9 @@ from {{ ref('inc_brainpower_src_bp_age_event_latency') }}) as age_data
 union all
 
 select
-  null::text as assertion_id,
-  a.id::text as subject_id,
-  age_data2.timepoint::text as encounter_id,
+  -- null::text as assertion_id,
+  a.id::text as id,
+  age_data2.timepoint::text as encounter_id_2,
   null::text as assertion_provenance,
   null::integer as age_at_assertion,
   age_data2.age_at_visit::integer as age_at_event,
@@ -58,8 +58,8 @@ select
   null::text as value_source,
   null::text as value_unit,
   null::text as value_unit_source,
-  null::text as access_policy_id,
-  null::text as study_id,
+  -- null::text as access_policy_id,
+  -- null::text as study_id,
   null::text as value_concept
 from ({{ dbt_utils.unpivot(
   relation=ref('inc_brainpower_src_bp_anthropometrics'),
@@ -86,9 +86,9 @@ where a.meas_val is not null
 select
   distinct
   base.*,
-  {{ normalize_descriptors(descriptor_cols=['subject_id']) }}::text as subject_descriptor,
+  {{ normalize_descriptors(descriptor_cols=['id']) }}::text as subject_descriptor,
   {{ normalize_descriptors(descriptor_cols=['access_policy_hc']) }}::text as access_policy_descriptor,
   {{ normalize_descriptors(descriptor_cols=['study_code']) }}::text as study_descriptor,
-  {{ normalize_descriptors(descriptor_cols=['subject_id', 'encounter_id']) }}::text as encounter_descriptor,
-  {{ normalize_descriptors(descriptor_cols=['subject_id', 'encounter_id', 'concept']) }}::text as assertion_descriptor
+  {{ normalize_descriptors(descriptor_cols=['id', 'encounter_id_2']) }}::text as encounter_descriptor,
+  {{ normalize_descriptors(descriptor_cols=['id', 'encounter_id_2', 'concept']) }}::text as assertion_descriptor
 from base, {{ ref('inc_brainpower_int_manual_supplement') }}
