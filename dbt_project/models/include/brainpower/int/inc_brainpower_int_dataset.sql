@@ -1,11 +1,18 @@
 {{ config(materialized='table') }}
 
+with base as (
 select
-  null::text as dataset_id,
-  null::text as name,
-  null::text as description,
+  -- null::text as dataset_id,
+  d.dataset_name::text as name,
+  d.dataset_description::text as description,
   null::text as do_id,
-  null::text as data_collection_start,
-  null::text as data_collection_end
-from {{ ref('inc_brainpower_src_bp_age_event_latency') }}
-    
+  d.data_collection_start_year::text as data_collection_start,
+  d.data_collection_end_year::text as data_collection_end
+from {{ ref('inc_brainpower_src_datasets') }} as d
+)
+
+select 
+  distinct
+  base.*,
+  {{ normalize_descriptors(descriptor_cols=['name']) }}::text as dataset_descriptor
+from base

@@ -1,9 +1,14 @@
 {%- macro generate_stb_sql(study_global_id='', gid_lookup='', base_source='', descriptor_sources=[]) -%}
 
 {%- set resource_config = {
-    'accesspolicy': {'resource': 'AccessPolicy', 'descriptor_column': 'access_policy_descriptor', 'gid_column': 'access_policy_id'},
+    'consent': {'resource': 'Consent', 'descriptor_column': 'access_policy_descriptor', 'gid_column': 'access_policy_id'},
     'activitydefinition': {'resource': 'ActivityDefinition', 'descriptor_column': 'activity_definition_descriptor', 'gid_column': 'activity_definition_id'},
-    'patient': {'resource': 'Patient', 'descriptor_column': 'subject_descriptor', 'gid_column': 'subject_id'}
+    'patient': {'resource': 'Patient', 'descriptor_column': 'subject_descriptor', 'gid_column': 'subject_id'},
+    'list': {'resource': 'List', 'descriptor_column': 'dataset_descriptor', 'gid_column': 'dataset_id'},
+    'documentreference': {'resource': 'DocumentReference', 'descriptor_column': 'file_descriptor', 'gid_column': 'file_id'},
+    'researchstudy': {'resource': 'ResearchStudy', 'descriptor_column': 'study_descriptor', 'gid_column': 'study_id'},
+    'encounter': {'resource': 'Encounter', 'descriptor_column': 'encounter_descriptor', 'gid_column': 'encounter_id'},
+    'observation': {'resource': 'Observation', 'descriptor_column': 'assertion_descriptor', 'gid_column': 'assertion_id'}
 } -%}
 
 {%- if gid_lookup is string -%}
