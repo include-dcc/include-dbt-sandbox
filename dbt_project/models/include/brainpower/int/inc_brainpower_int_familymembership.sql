@@ -7,5 +7,5 @@ select
   null::text as family_role,
   null::text as access_policy_id,
   null::integer as study_id
-from {{ ref('inc_brainpower_src_bp_age_event_latency') }}
+where 1 = 0
     

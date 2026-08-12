@@ -2,6 +2,6 @@
 {%- set program_ref = generate_source_ref_from_current_model(prefix='inc_program') -%}
 
 select
-  null::integer as demographics_subject_id,
-  null::text as race
+  subject_id::integer as subject_id,
+  race::text as race
 from {{ program_ref }}    

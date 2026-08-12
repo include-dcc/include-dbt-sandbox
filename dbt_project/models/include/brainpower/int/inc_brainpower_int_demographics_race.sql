@@ -1,7 +1,7 @@
 {{ config(materialized='table') }}
 
 select
-  null::integer as includeparticipant_subject_id,
+  null::integer as subject_id,
   null::text as race
-from {{ ref('inc_brainpower_src_bp_age_event_latency') }}
+where 1 = 0
     

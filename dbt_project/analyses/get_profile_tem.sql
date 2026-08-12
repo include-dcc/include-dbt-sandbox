@@ -47,39 +47,39 @@ column_profiles as (
         or 'real' in data_type
     ) %}
     select
-        {%- for group_col in group_by %}
+    {%- for group_col in group_by %}
         {{ group_col }},
         {%- endfor %}
-        lower('{{ col_name }}') as column_name,
-        nullif('{{ data_type }}', '') as data_type,
-        count(*) as row_count,
-        count({{ adapter.quote(col_name) }})::float / nullif(count(*), 0) as not_null_proportion,
-        count(distinct {{ adapter.quote(col_name) }})::float / nullif(count(*), 0) as distinct_proportion,
-        count(distinct {{ adapter.quote(col_name) }}) as distinct_count,
-        (count(*) = count(distinct {{ adapter.quote(col_name) }})) as is_unique,
-        min(cast({{ adapter.quote(col_name) }} as varchar)) as min,
-        max(cast({{ adapter.quote(col_name) }} as varchar)) as max,
-        {% if is_numeric %}
+      lower('{{ col_name }}') as column_name,
+      nullif('{{ data_type }}', '') as data_type,
+      count(*) as row_count,
+      count({{ adapter.quote(col_name) }})::float / nullif(count(*), 0) as not_null_proportion,
+      count(distinct {{ adapter.quote(col_name) }})::float / nullif(count(*), 0) as distinct_proportion,
+      count(distinct {{ adapter.quote(col_name) }}) as distinct_count,
+      (count(*) = count(distinct {{ adapter.quote(col_name) }})) as is_unique,
+      min(cast({{ adapter.quote(col_name) }} as varchar)) as min,
+      max(cast({{ adapter.quote(col_name) }} as varchar)) as max,
+      {% if is_numeric %}
         avg({{ adapter.quote(col_name) }}) as avg,
         percentile_cont(0.5) within group (order by {{ adapter.quote(col_name) }}) as median,
         stddev_pop({{ adapter.quote(col_name) }}) as std_dev_population,
         stddev_samp({{ adapter.quote(col_name) }}) as std_dev_sample,
-        {% else %}
+      {% else %}
         cast(null as double precision) as avg,
         cast(null as double precision) as median,
         cast(null as double precision) as std_dev_population,
         cast(null as double precision) as std_dev_sample,
         {% endif %}
-        cast(current_timestamp as varchar) as profiled_at,
-        {{ loop.index }} as _column_position
+      cast(current_timestamp as varchar) as profiled_at,
+      {{ loop.index }} as _column_position
     from source_data
     {% if group_by %}
     group by {{ group_by | join(', ') }}
     {% endif %}
     {% if not loop.last %}
-    union all
+      union all
     {% endif %}
-    {% endfor %}
+  {% endfor %}
 )
 
 select

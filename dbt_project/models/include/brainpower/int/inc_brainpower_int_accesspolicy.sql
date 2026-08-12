@@ -19,8 +19,7 @@ with base as (
     on d.study_code = a.study_code
 )
 
-select
-  distinct
+select distinct
   base.*,
   {{ normalize_descriptors(descriptor_cols=['access_policy_hc']) }}::text as access_policy_descriptor,
   access_policy_hc::text as data_use_permission

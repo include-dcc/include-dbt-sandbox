@@ -2,18 +2,18 @@
 {%- set program_ref = generate_source_ref_from_current_model(prefix='inc_program') -%}
 
 select
-  null::text as file_id,
-  null::text as filename,
-  null::text as format,
-  null::text as file_extension,
-  null::text as data_category,
-  null::text as data_type,
-  null::integer as size,
-  null::text as internal_uri,
-  null::text as release_uri,
-  null::text as drs_uri,
-  null::text as storage_class,
-  null::text as availability,
-  null::text as access_policy_id,
-  null::integer as study_id
+  file_id::text as file_id,
+  filename::text as filename,
+  format::text as format,
+  file_extension::text as file_extension,
+  data_category::text as data_category,
+  data_type::text as data_type,
+  size::integer as size,
+  internal_uri::text as internal_uri,
+  release_uri::text as release_uri,
+  drs_uri::text as drs_uri,
+  storage_class::text as storage_class,
+  availability::text as availability,
+  access_policy_id::text as access_policy_id,
+  study_id::integer as study_id
 from {{ program_ref }}    

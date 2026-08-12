@@ -1,12 +1,3 @@
 {{ config(materialized='table') }}
 
-    select
-    null::text as "family_id",
-    null::text as "family_type",
-    null::text as "family_description",
-    null::text as "consanguinity",
-    null::text as "family_study_focus",
-    null::text as "access_policy_id",
-    null::integer as "study_id"
-    from {{ ref('inc_brainpower_src_bp_age_event_latency') }}
-    
+{{ combined_union_from_current_model(studies_var='common_access_data') }}
