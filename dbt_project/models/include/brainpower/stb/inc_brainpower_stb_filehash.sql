@@ -1,7 +1,10 @@
 {{ config(materialized='table') }}
 
-select
-  null::integer as id,
-  null::text as hash_type,
-  file_hash::text as hash_value
-from {{ ref('inc_brainpower_src_brainpower_datafile_manifest_2025_06_26') }}
+{{ generate_stb_sql(
+    study_global_id='sd-dbaknypgqp',
+    gid_lookup=source('brainpower', 'global_ids'),
+    base_source=ref('inc_brainpower_int_filehash'),
+    descriptor_sources=[
+
+    ]
+) }}

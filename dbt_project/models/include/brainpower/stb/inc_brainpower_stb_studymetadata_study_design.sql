@@ -1,7 +1,10 @@
 {{ config(materialized='table') }}
 
-select
-  null::text as studymetadata_study_id,
-  string_to_table(replace(lower(s.study_design), ' ', '_'), '|')::text as study_design
-from {{ ref('inc_brainpower_src_study') }} as s
-    
+{{ generate_stb_sql(
+    study_global_id='sd-dbaknypgqp',
+    gid_lookup=source('brainpower', 'global_ids'),
+    base_source=ref('inc_brainpower_int_studymetadata_study_design'),
+    descriptor_sources=[
+
+    ]
+) }}

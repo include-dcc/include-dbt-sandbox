@@ -14,6 +14,7 @@ Use in combined models where each study has a model like:
 ```
 
 The study list comes from var `combined_studies` by default.
+Program models commonly pass `inc_studies` or `kf_studies`.
 
 ## Override Study Var Name
 

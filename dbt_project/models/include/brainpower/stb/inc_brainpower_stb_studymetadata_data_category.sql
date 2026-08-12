@@ -1,13 +1,10 @@
 {{ config(materialized='table') }}
 
-with categories as(
-  select
-    null::text as studymetadata_study_id,
-    string_to_table(replace(lower(s.data_category), ' ', '_'), '|')::text as data_category
-  from {{ ref('inc_brainpower_src_study') }} as s
-)
+{{ generate_stb_sql(
+    study_global_id='sd-dbaknypgqp',
+    gid_lookup=source('brainpower', 'global_ids'),
+    base_source=ref('inc_brainpower_int_studymetadata_data_category'),
+    descriptor_sources=[
 
-select
-  studymetadata_study_id,
-  replace(data_category, '/', '_') as data_category
-from categories
+    ]
+) }}

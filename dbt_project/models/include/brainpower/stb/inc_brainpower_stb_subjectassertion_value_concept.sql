@@ -1,8 +1,10 @@
 {{ config(materialized='table') }}
 
-select
-  null::text as subjectassertion_assertion_id,
-  enumeration_meaning::text as value_concept_concept_curie
-from {{ ref('inc_brainpower_src_inc_kf_access_enums_20260508') }} 
-where table_name = 'Assertion_status'
-    
+{{ generate_stb_sql(
+    study_global_id='sd-dbaknypgqp',
+    gid_lookup=source('brainpower', 'global_ids'),
+    base_source=ref('inc_brainpower_int_subjectassertion_value_concept'),
+    descriptor_sources=[
+
+    ]
+) }}

@@ -1,7 +1,10 @@
 {{ config(materialized='table') }}
 
-select
-  null::text as activitydefinition_activity_definition_id,
-  table_name::text as external_id
-from {{ ref('inc_brainpower_src_tablename_key') }}
-    
+{{ generate_stb_sql(
+    study_global_id='sd-dbaknypgqp',
+    gid_lookup=source('brainpower', 'global_ids'),
+    base_source=ref('inc_brainpower_int_activitydefinition_external_id'),
+    descriptor_sources=[
+
+    ]
+) }}

@@ -1,4 +1,4 @@
-{%- macro generate_stb_sql(gid_lookup='', base_source='', descriptor_sources=[]) -%}
+{%- macro generate_stb_sql(study_global_id='', gid_lookup='', base_source='', descriptor_sources=[]) -%}
 
 {%- set resource_config = {
     'consent': {'resource': 'Consent', 'descriptor_column': 'access_policy_descriptor', 'gid_column': 'access_policy_id'},
@@ -28,13 +28,14 @@
   {%- set resource_key = descriptor_source | lower -%}
   {%- if resource_key in resource_config -%}
     {%- set entry = resource_config[resource_key].copy() -%}
-    {%- do entry.update({'resource_key': resource_key}) -%}
+    {%- do entry.update({'resource_key': resource_key, 'study_global_id': study_global_id}) -%}
     {%- do descriptor_mappings.append(entry) -%}
   {%- else -%}
-    {{ exceptions.raise_compiler_error("Unsupported descriptor source: " ~ descriptor_source ~ ". Supported values are: AccessPolicy, ActivityDefinition, Patient") }}
+    {{ exceptions.raise_compiler_error("Unsupported descriptor source: " ~ descriptor_source ~ ". Check 'macros/pipeline/generate_stb_sql.sql' for supported descriptor sources.") }}
   {%- endif -%}
 {%- endfor -%}
 
+{%- if descriptor_mappings | length > 0 %}
 with
 {%- for mapping in descriptor_mappings %}
   filtered_{{ mapping['resource_key'] }}_gids as (
@@ -43,10 +44,13 @@ with
       descriptor as {{ mapping['descriptor_column'] }}
     from {{ gid_lookup }}
     where "fhirResourceType" = '{{ mapping['resource'] }}'
-      and "studyId" = 'brainpower'
+      {%- if mapping['study_global_id'] %}
+      and "studyId" = '{{ mapping['study_global_id'] }}'
+      {%- endif %}
   ){% if not loop.last %},{% endif %}
 {%- endfor %}
 
+{%- endif %}
 
 select
   base.*

@@ -1,8 +1,10 @@
 {{ config(materialized='table') }}
 
-select
-  null::text as subjectassertion_assertion_id,
-  code::text as concept_concept_curie
-from {{ ref('inc_brainpower_src_brainpower_md_mappings') }}
-where table_name = 'Health Conditions' or table_name = 'Anthropometrics'
-    
+{{ generate_stb_sql(
+    study_global_id='sd-dbaknypgqp',
+    gid_lookup=source('brainpower', 'global_ids'),
+    base_source=ref('inc_brainpower_int_subjectassertion_concept'),
+    descriptor_sources=[
+
+    ]
+) }}

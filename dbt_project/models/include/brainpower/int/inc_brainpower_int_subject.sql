@@ -5,11 +5,9 @@ with base as (
     d.id,
     -- null::text as subject_id,
     null::text as subject_type,
-    null::text as organism_type,
+    null::text as organism_type
     -- null::text as access_policy_id,
-    null::text as cleaned_access_policy,
     -- null::text as study_id,
-    null::text as external_id
   from (select id from {{ ref('inc_brainpower_src_bp_demographics') }}) as d
 )
 

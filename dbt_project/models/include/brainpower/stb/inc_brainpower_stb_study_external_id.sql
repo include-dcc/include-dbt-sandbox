@@ -1,7 +1,10 @@
 {{ config(materialized='table') }}
 
-select
-  null::text as study_study_id,
-  null::text as external_id
-from {{ ref('inc_brainpower_src_bp_age_event_latency') }}
-    
+{{ generate_stb_sql(
+    study_global_id='sd-dbaknypgqp',
+    gid_lookup=source('brainpower', 'global_ids'),
+    base_source=ref('inc_brainpower_int_study_external_id'),
+    descriptor_sources=[
+
+    ]
+) }}
