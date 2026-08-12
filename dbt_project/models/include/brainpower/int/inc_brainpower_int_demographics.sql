@@ -41,8 +41,7 @@ with base as (
     on d.id = age_data_first.id
 )
 
-select
-  distinct
+select distinct
   base.*,
   {{ normalize_descriptors(descriptor_cols=['id_sub']) }}::text as subject_descriptor,
   {{ normalize_descriptors(descriptor_cols=['access_policy_hc']) }}::text as access_policy_descriptor,
