@@ -1,8 +1,8 @@
 {%- macro generate_descriptor_view_sql(table_prefix='', study_global_id='') -%}
 
 {%- set descriptor_sources = [
-    {'resource_model': 'AccessPolicy', 'relation_name': 'accesspolicy', 'descriptor_column': 'access_policy_descriptor'},
-    {'resource_model': 'AccessPolicy', 'relation_name': 'demographics', 'descriptor_column': 'access_policy_descriptor'},
+    {'resource_model': 'Consent', 'relation_name': 'accesspolicy', 'descriptor_column': 'access_policy_descriptor'},
+    {'resource_model': 'Consent', 'relation_name': 'demographics', 'descriptor_column': 'access_policy_descriptor'},
     {'resource_model': 'Patient', 'relation_name': 'demographics', 'descriptor_column': 'subject_descriptor'},
     {'resource_model': 'ResearchStudy', 'relation_name': 'demographics', 'descriptor_column': 'study_descriptor'},
     {'resource_model': 'Family', 'relation_name': 'family', 'descriptor_column': 'study_descriptor'},

@@ -1,7 +1,7 @@
 {%- macro generate_stb_sql(gid_lookup='', base_source='', descriptor_sources=[]) -%}
 
 {%- set resource_config = {
-    'accesspolicy': {'resource': 'AccessPolicy', 'descriptor_column': 'access_policy_descriptor', 'gid_column': 'access_policy_id'},
+    'consent': {'resource': 'Consent', 'descriptor_column': 'access_policy_descriptor', 'gid_column': 'access_policy_id'},
     'activitydefinition': {'resource': 'ActivityDefinition', 'descriptor_column': 'activity_definition_descriptor', 'gid_column': 'activity_definition_id'},
     'patient': {'resource': 'Patient', 'descriptor_column': 'subject_descriptor', 'gid_column': 'subject_id'},
     'list': {'resource': 'List', 'descriptor_column': 'dataset_descriptor', 'gid_column': 'dataset_id'},
