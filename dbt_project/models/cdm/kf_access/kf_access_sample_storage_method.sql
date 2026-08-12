@@ -1,0 +1,8 @@
+{{ config(materialized='table') }}
+{%- set program_ref = generate_source_ref_from_current_model(prefix='kf_program') -%}
+
+    select
+    sample_sample_id::integer as "sample_sample_id",
+    storage_method::text as "storage_method"
+    from {{ program_ref }}
+    

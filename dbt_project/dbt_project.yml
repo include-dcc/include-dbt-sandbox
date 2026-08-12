@@ -17,8 +17,13 @@ clean-targets:
 - target
 - dbt_packages
 vars:
-  combined_studies:
+  inc_studies:
   - inc_brainpower
+  kf_studies:
+  - sd_1nns3k8v
+  common_access_data:
+  - inc_common
+  - kf_common
 models:
   +materialized: table
   include_dbt_sandbox:
@@ -26,6 +31,10 @@ models:
       +tags:
       - study_stage
       - include
+      _inc_program:
+        +tags:
+        - inc_program
+        +schema: inc_program
       brainpower:
         +tags:
         - brainpower
@@ -36,9 +45,14 @@ models:
         stb:
           +schema: inc_brainpower_stb
     kids_first:
+      +enabled: false
       +tags:
       - study_stage
       - kids_first
+      _kf_program:
+        +tags:
+        - kf_program
+        +schema: kf_program
       sd_1nns3k8v:
         +tags:
         - sd_1nns3k8v
@@ -56,21 +70,33 @@ models:
           +schema: kf_chr_18_int
         stb:
           +schema: kf_chr_18_stb
-    access:
+    cdm:
       +tags:
-      - access_stage
-      +schema: access
-    export:
-      +tags:
-      - export_stage
-      fhir:
+      - cdm_stage
+      inc_access:
         +tags:
-        - fhir
-        +schema: fhir_export
-    combined:
-      +tags:
-      - combined_stage
-      +schema: combined
+        - access_stage
+        +schema: inc_access
+      inc_common:
+        +tags:
+        - common_stage
+        +schema: inc_common
+      kf_access:
+        +enabled: false
+        +tags:
+        - access_stage
+        +schema: kf_access
+      kf_common:
+        +enabled: false
+        +tags:
+        - common_stage
+        +schema: kf_common
+      combined_common:
+        +enabled: false
+        +tags:
+        - common_stage
+        +schema: combined_common
+
 on-run-end:
-  - "{{ grant_devs_access(tag='include', users_role='include_users') }}"
-  - "{{ grant_devs_access(tag='kids_first', users_role='kf_users') }}"
+- '{{ grant_devs_access(tag=''include'', users_role=''include_users'') }}'
+- '{{ grant_devs_access(tag=''kids_first'', users_role=''kf_users'') }}'
