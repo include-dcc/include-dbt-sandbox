@@ -2,10 +2,9 @@
 
 {%- set descriptor_sources = [
     {'resource_model': 'Consent', 'relation_name': 'accesspolicy', 'descriptor_column': 'access_policy_descriptor'},
-    {'resource_model': 'Consent', 'relation_name': 'demographics', 'descriptor_column': 'access_policy_descriptor'},
     {'resource_model': 'Patient', 'relation_name': 'demographics', 'descriptor_column': 'subject_descriptor'},
     {'resource_model': 'ResearchStudy', 'relation_name': 'demographics', 'descriptor_column': 'study_descriptor'},
-    {'resource_model': 'Family', 'relation_name': 'family', 'descriptor_column': 'study_descriptor'},
+    {'resource_model': 'Family', 'relation_name': 'family', 'descriptor_column': 'family_descriptor'},
     {'resource_model': 'DocumentReference', 'relation_name': 'file', 'descriptor_column': 'file_descriptor'},
     {'resource_model': 'List', 'relation_name': 'dataset', 'descriptor_column': 'dataset_descriptor'},
     {'resource_model': 'Encounter', 'relation_name': 'encounter', 'descriptor_column': 'encounter_descriptor'},

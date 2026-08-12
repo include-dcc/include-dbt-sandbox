@@ -2,10 +2,10 @@
 {%- set program_ref = generate_source_ref_from_current_model(prefix='inc_program') -%}
 
 select
-  null::text as assay_id,
-  null::text as assay_type,
-  null::text as assay_source,
-  null::text as activity_definition_id,
-  null::text as access_policy_id,
-  null::integer as study_id
+  assay_id::text as assay_id,
+  assay_type::text as assay_type,
+  assay_source::text as assay_source,
+  activity_definition_id::text as activity_definition_id,
+  access_policy_id::text as access_policy_id,
+  study_id::integer as study_id
 from {{ program_ref }}    

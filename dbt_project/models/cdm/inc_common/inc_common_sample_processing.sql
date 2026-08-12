@@ -2,6 +2,6 @@
 {%- set program_ref = generate_source_ref_from_current_model(prefix='inc_program') -%}
 
 select
-  null::integer as sample_sample_id,
-  null::text as processing
+  sample_sample_id::integer as sample_sample_id,
+  processing::text as processing
 from {{ program_ref }}    

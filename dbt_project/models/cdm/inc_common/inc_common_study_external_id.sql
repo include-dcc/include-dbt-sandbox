@@ -2,6 +2,6 @@
 {%- set program_ref = generate_source_ref_from_current_model(prefix='inc_program') -%}
 
 select
-  null::integer as study_study_id,
-  null::text as external_id
+  study_study_id::integer as study_study_id,
+  external_id::text as external_id
 from {{ program_ref }}    

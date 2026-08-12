@@ -25,6 +25,6 @@ select
   base.*,
   {{ normalize_descriptors(descriptor_cols=['access_policy_hc']) }}::text as access_policy_descriptor,
   {{ normalize_descriptors(descriptor_cols=['study_code']) }}::text as study_descriptor,
-  {{ normalize_descriptors(descriptor_cols=['release_url']) }}::text as file_descriptor
+  {{ normalize_descriptors(descriptor_cols=['release_uri']) }}::text as file_descriptor
 from base, {{ ref('inc_brainpower_int_manual_supplement') }}
 

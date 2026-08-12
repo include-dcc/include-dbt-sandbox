@@ -2,6 +2,6 @@
 {%- set program_ref = generate_source_ref_from_current_model(prefix='inc_program') -%}
 
 select
-  null::text as encounter_encounter_id,
-  null::text as external_id
+  encounter_encounter_id::text as encounter_encounter_id,
+  external_id::text as external_id
 from {{ program_ref }}    

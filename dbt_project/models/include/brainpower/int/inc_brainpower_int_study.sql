@@ -19,6 +19,7 @@ from {{ ref('inc_brainpower_src_study') }}
 select
 distinct
   base.*,
+  study_code::text as study_code,
   {{ normalize_descriptors(descriptor_cols=['access_policy_hc']) }}::text as access_policy_descriptor,
   {{ normalize_descriptors(descriptor_cols=['study_code']) }}::text as study_descriptor
 from base, {{ ref('inc_brainpower_int_manual_supplement') }}

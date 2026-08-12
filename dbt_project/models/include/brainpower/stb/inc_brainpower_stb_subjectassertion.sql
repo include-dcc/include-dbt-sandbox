@@ -8,6 +8,7 @@
         'Patient',
         'ResearchStudy',
         'Encounter',
-        'Observation'
+        'Observation',
+        'Consent'
     ]
 ) }}

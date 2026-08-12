@@ -2,6 +2,6 @@
 {%- set program_ref = generate_source_ref_from_current_model(prefix='inc_program') -%}
 
 select
-  null::text as assay_assay_id,
-  null::integer as subject_id_subject_id
+  assay_assay_id::text as assay_assay_id,
+  subject_id_subject_id::integer as subject_id_subject_id
 from {{ program_ref }}    
