@@ -9,4 +9,4 @@ select
   disease_limitation::text as disease_limitation,
   access_description::text as access_description,
   website::text as website
-    from {{ program_ref }}    
+from {{ program_ref }}    

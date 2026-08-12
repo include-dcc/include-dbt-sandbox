@@ -7,4 +7,4 @@ select
   description::text as description,
   access_policy_id::text as access_policy_id,
   study_id::text as study_id
-    from {{ program_ref }}    
+from {{ program_ref }}    

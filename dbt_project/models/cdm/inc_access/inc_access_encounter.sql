@@ -8,4 +8,4 @@ select
   age_at_event::integer as age_at_event,
   access_policy_id::text as access_policy_id,
   study_id::text as study_id
-    from {{ program_ref }}    
+from {{ program_ref }}    

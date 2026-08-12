@@ -4,4 +4,4 @@
 select
   concept_curie::text as concept_curie,
   display::text as display
-    from {{ program_ref }}    
+from {{ program_ref }}    

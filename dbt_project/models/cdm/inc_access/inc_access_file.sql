@@ -14,4 +14,4 @@ select
   access_policy_id::text as access_policy_id,
   study_id::text as study_id,
   hash_id::integer as hash_id
-    from {{ program_ref }}    
+from {{ program_ref }}    

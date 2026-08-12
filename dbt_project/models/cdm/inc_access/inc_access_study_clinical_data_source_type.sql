@@ -4,4 +4,4 @@
 select
   study_study_id::text as study_study_id,
   clinical_data_source_type::text as clinical_data_source_type
-    from {{ program_ref }}    
+from {{ program_ref }}    

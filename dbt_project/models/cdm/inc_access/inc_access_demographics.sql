@@ -11,4 +11,4 @@ select
   age_at_first_engagement::integer as age_at_first_engagement,
   access_policy_id::text as access_policy_id,
   study_id::text as study_id
-    from {{ program_ref }}    
+from {{ program_ref }}    

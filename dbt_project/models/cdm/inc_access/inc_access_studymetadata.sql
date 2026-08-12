@@ -8,4 +8,4 @@ select
   expected_number_of_participants::integer as expected_number_of_participants,
   actual_number_of_participants::integer as actual_number_of_participants,
   access_policy_id::text as access_policy_id
-    from {{ program_ref }}    
+from {{ program_ref }}    

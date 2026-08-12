@@ -4,4 +4,4 @@
 select
   studymetadata_study_id::text as studymetadata_study_id,
   data_category::text as data_category
-    from {{ program_ref }}    
+from {{ program_ref }}    

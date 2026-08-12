@@ -8,4 +8,4 @@ select
   do_id::text as do_id,
   data_collection_start::text as data_collection_start,
   data_collection_end::text as data_collection_end
-    from {{ program_ref }}    
+from {{ program_ref }}    

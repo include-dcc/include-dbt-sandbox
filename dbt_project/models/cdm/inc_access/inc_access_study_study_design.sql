@@ -4,4 +4,4 @@
 select
   study_study_id::text as study_study_id,
   study_design::text as study_design
-    from {{ program_ref }}    
+from {{ program_ref }}    
